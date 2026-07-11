@@ -1,0 +1,1 @@
+def show_menu():\n    return 'menu'\n

@@ -1,0 +1,1 @@
+def main():\n    print('Project 01 is ready')\n\n\nif __name__ == '__main__':\n    main()\n

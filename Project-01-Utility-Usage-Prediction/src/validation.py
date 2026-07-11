@@ -1,0 +1,1 @@
+def validate(data):\n    return data is not None\n

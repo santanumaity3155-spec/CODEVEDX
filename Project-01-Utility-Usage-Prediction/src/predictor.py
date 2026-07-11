@@ -1,0 +1,1 @@
+def predict():\n    return 'prediction'\n

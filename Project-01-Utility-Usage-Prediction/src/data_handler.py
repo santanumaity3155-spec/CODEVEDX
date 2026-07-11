@@ -1,0 +1,1 @@
+def load_data(path):\n    return path\n
