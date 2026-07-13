@@ -1,1 +1,196 @@
-__pycache__/\n*.py[cod]\n*.pkl\n
+# ========================================
+# PYTHON
+# ========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ========================================
+# VIRTUAL ENVIRONMENT
+# ========================================
+venv/
+ENV/
+env/
+.venv
+virtualenv/
+pyvenv.cfg
+pip-selfcheck.json
+
+# ========================================
+# IDE / EDITOR
+# ========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+.metadata/
+*.iml
+
+# ========================================
+# JUPYTER NOTEBOOKS
+# ========================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+*.nbconvert.ipynb
+
+# ========================================
+# MODEL & DATA FILES
+# ========================================
+# Model files
+*.pkl
+*.pickle
+*.joblib
+*.model
+
+# Large data files (keep structure, ignore actual data)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*.csv
+!data/processed/.gitkeep
+
+# ========================================
+# LOGS
+# ========================================
+*.log
+logs/
+*.log.*
+
+# ========================================
+# OUTPUTS
+# ========================================
+# Charts and visualizations
+outputs/charts/*.png
+outputs/charts/*.jpg
+outputs/charts/*.jpeg
+outputs/charts/*.pdf
+!outputs/charts/.gitkeep
+
+# Predictions
+outputs/predictions/*.csv
+!outputs/predictions/.gitkeep
+
+# Reports
+outputs/reports/*.txt
+outputs/reports/*.md
+outputs/reports/*.html
+!outputs/reports/.gitkeep
+
+# ========================================
+# TESTING & COVERAGE
+# ========================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+test-results/
+
+# ========================================
+# DOCUMENTATION BUILD
+# ========================================
+docs/_build/
+docs/api/
+*.md.html
+site/
+
+# ========================================
+# SYSTEM FILES
+# ========================================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ========================================
+# BACKUP FILES
+# ========================================
+*.bak
+*.backup
+*.orig
+*.rej
+
+# ========================================
+# TEMPORARY FILES
+# ========================================
+*.tmp
+*.temp
+.cache/
+.temp/
+
+# ========================================
+# SECRETS & CREDENTIALS
+# ========================================
+.env
+.env.local
+.env.*.local
+secrets.yaml
+credentials.json
+*.pem
+*.key
+
+# ========================================
+# PROFILING & DEBUGGING
+# ========================================
+*.prof
+*.lprof
+*.memory_profile
+callgrind.out.*
+massif.out.*
+
+# ========================================
+# PACKAGE MANAGER
+# ========================================
+# pip
+pip-log.txt
+pip-delete-this-directory.txt
+
+# conda
+conda-meta/
+conda-bld/
+
+# poetry
+poetry.lock
+
+# pipenv
+Pipfile.lock
+
+# ========================================
+# MYPY
+# ========================================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# ========================================
+# BLACK
+# ========================================
+/.black
+
+# ========================================
+# COVERAGE
+# ========================================
+coverage.xml
+*.cover
+.hypothesis/
