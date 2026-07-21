@@ -42,7 +42,7 @@ DATASET_PATH: Path = PROCESSED_DATA_DIR / "utility_usage.csv"
 MODELS_DIR: Path = PROJECT_ROOT / "models"
 
 # Model file path
-MODEL_PATH: Path = MODELS_DIR / "utility_usage_model.pkl"
+MODEL_PATH: Path = MODELS_DIR / "usage_prediction.pkl"
 
 # ========================================
 # OUTPUT PATHS

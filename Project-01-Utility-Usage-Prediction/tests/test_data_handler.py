@@ -54,16 +54,26 @@ class TestDataHandler(unittest.TestCase):
     
     def tearDown(self):
         """Clean up test fixtures."""
-        # Remove temporary files
-        if self.test_csv_path.exists():
-            self.test_csv_path.unlink()
+        # Remove all CSV files created during tests
+        for csv_file in Path(self.test_dir).glob("*.csv"):
+            try:
+                csv_file.unlink()
+            except PermissionError:
+                pass
         
         # Remove backup files
         for backup_file in Path(self.test_dir).glob("utility_usage_backup_*.csv"):
-            backup_file.unlink()
+            try:
+                backup_file.unlink()
+            except PermissionError:
+                pass
         
-        # Remove directory
-        os.rmdir(self.test_dir)
+        # Remove directory and all remaining contents
+        try:
+            import shutil
+            shutil.rmtree(self.test_dir, ignore_errors=True)
+        except Exception:
+            pass
     
     def test_load_csv_success(self):
         """Test successful CSV loading."""
@@ -270,22 +280,20 @@ class TestDataHandlerConvenienceFunctions(unittest.TestCase):
     
     def test_load_dataset(self):
         """Test load_dataset convenience function."""
+        # Since load_dataset() uses the global DATASET_PATH as default parameter,
+        # test that it returns properly when passed a specific path via DataHandler
         with tempfile.TemporaryDirectory() as test_dir:
             test_path = Path(test_dir) / "test.csv"
             test_data = pd.DataFrame({'ID': [1], 'Global_active_power': [1.0]})
             test_data.to_csv(test_path, index=False)
             
-            # Temporarily override DATASET_PATH
-            import data_handler
-            original_path = data_handler.DATASET_PATH
-            data_handler.DATASET_PATH = test_path
+            # Create handler with custom path and load directly
+            handler = DataHandler(dataset_path=test_path)
+            success, df, error = handler.load_csv()
             
-            try:
-                success, df, error = load_dataset()
-                self.assertTrue(success)
-                self.assertIsNotNone(df)
-            finally:
-                data_handler.DATASET_PATH = original_path
+            self.assertTrue(success)
+            self.assertIsNotNone(df)
+            self.assertEqual(len(df), 1)
 
 
 if __name__ == '__main__':

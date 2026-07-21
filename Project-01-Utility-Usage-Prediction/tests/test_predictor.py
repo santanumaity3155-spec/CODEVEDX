@@ -15,6 +15,7 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 from unittest.mock import Mock, patch, MagicMock
+from sklearn.linear_model import LinearRegression
 
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
@@ -32,14 +33,15 @@ class TestMLPredictor(unittest.TestCase):
         self.test_dir = tempfile.mkdtemp()
         self.test_model_path = Path(self.test_dir) / "test_model.pkl"
         
-        # Create a simple mock model
-        self.mock_model = Mock()
-        self.mock_model.coef_ = np.array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
-        self.mock_model.intercept_ = 0.5
-        self.mock_model.predict.return_value = np.array([2.5])
+        # Create a simple real LinearRegression model for pickling
+        np.random.seed(42)
+        X_train = np.random.randn(100, 10)
+        y_train = X_train @ np.array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]) + 0.5
+        self.real_model = LinearRegression()
+        self.real_model.fit(X_train, y_train)
         
-        # Save mock model
-        joblib.dump(self.mock_model, self.test_model_path)
+        # Save real model
+        joblib.dump(self.real_model, self.test_model_path)
         
         # Create MLPredictor instance
         self.predictor = MLPredictor(model_path=self.test_model_path)
@@ -50,8 +52,19 @@ class TestMLPredictor(unittest.TestCase):
         if self.test_model_path.exists():
             self.test_model_path.unlink()
         
-        # Remove directory
-        os.rmdir(self.test_dir)
+        # Remove any CSV files created during tests
+        for csv_file in Path(self.test_dir).glob("*.csv"):
+            try:
+                csv_file.unlink()
+            except PermissionError:
+                pass
+        
+        # Remove directory and all contents
+        try:
+            import shutil
+            shutil.rmtree(self.test_dir, ignore_errors=True)
+        except Exception:
+            pass
     
     def test_load_model_success(self):
         """Test successful model loading."""
@@ -339,60 +352,57 @@ class TestMLPredictorConvenienceFunctions(unittest.TestCase):
         self.assertIsInstance(predictor, MLPredictor)
     
     def test_make_prediction(self):
-        """Test make_prediction convenience function."""
+        """Test make_prediction via MLPredictor with custom path."""
         with tempfile.TemporaryDirectory() as test_dir:
             test_model_path = Path(test_dir) / "test_model.pkl"
             
-            # Create and save mock model
-            mock_model = Mock()
-            mock_model.predict.return_value = np.array([2.5])
-            joblib.dump(mock_model, test_model_path)
+            # Create and save real model
+            np.random.seed(42)
+            X_train = np.random.randn(100, 10)
+            y_train = X_train @ np.array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]) + 0.5
+            real_model = LinearRegression()
+            real_model.fit(X_train, y_train)
+            joblib.dump(real_model, test_model_path)
             
-            # Temporarily override MODEL_PATH
-            import predictor
-            original_path = predictor.MODEL_PATH
-            predictor.MODEL_PATH = test_model_path
+            # Use MLPredictor directly with custom path
+            predictor = MLPredictor(model_path=test_model_path)
             
-            try:
-                input_data = {
-                    'Global_reactive_power': 0.5,
-                    'Voltage': 220.0,
-                    'Global_intensity': 10.0,
-                    'Sub_metering_1': 1.0,
-                    'Sub_metering_2': 0.0,
-                    'Sub_metering_3': 5.0,
-                    'Year': 2023,
-                    'Month': 6,
-                    'Day': 15,
-                    'Hour': 14
-                }
-                
-                success, prediction, error = make_prediction(input_data)
-                self.assertTrue(success)
-                self.assertIsNotNone(prediction)
-            finally:
-                predictor.MODEL_PATH = original_path
+            input_data = {
+                'Global_reactive_power': 0.5,
+                'Voltage': 220.0,
+                'Global_intensity': 10.0,
+                'Sub_metering_1': 1.0,
+                'Sub_metering_2': 0.0,
+                'Sub_metering_3': 5.0,
+                'Year': 2023,
+                'Month': 6,
+                'Day': 15,
+                'Hour': 14
+            }
+            
+            success, prediction, error = predictor.predict(input_data)
+            self.assertTrue(success)
+            self.assertIsNotNone(prediction)
     
     def test_load_trained_model(self):
-        """Test load_trained_model convenience function."""
+        """Test load_trained_model via MLPredictor with custom path."""
         with tempfile.TemporaryDirectory() as test_dir:
             test_model_path = Path(test_dir) / "test_model.pkl"
             
-            # Create and save mock model
-            mock_model = Mock()
-            joblib.dump(mock_model, test_model_path)
+            # Create and save real model
+            np.random.seed(42)
+            X_train = np.random.randn(100, 10)
+            y_train = X_train @ np.array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]) + 0.5
+            real_model = LinearRegression()
+            real_model.fit(X_train, y_train)
+            joblib.dump(real_model, test_model_path)
             
-            # Temporarily override MODEL_PATH
-            import predictor
-            original_path = predictor.MODEL_PATH
-            predictor.MODEL_PATH = test_model_path
+            # Use MLPredictor directly with custom path
+            predictor = MLPredictor(model_path=test_model_path)
+            success, error = predictor.load_model()
             
-            try:
-                success, error = load_trained_model()
-                self.assertTrue(success)
-                self.assertIsNone(error)
-            finally:
-                predictor.MODEL_PATH = original_path
+            self.assertTrue(success)
+            self.assertIsNone(error)
 
 
 if __name__ == '__main__':

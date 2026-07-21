@@ -531,8 +531,8 @@ def is_valid_phone(phone: str) -> bool:
     Returns:
         True if valid phone, False otherwise
     """
-    # Remove common separators
-    cleaned = re.sub(r'[\s\-\(\)]', '', phone)
+    # Remove common separators and leading +
+    cleaned = re.sub(r'[\s\-\(\)\+]', '', phone)
     # Check if it's 10-15 digits
     return bool(re.match(r'^\d{10,15}$', cleaned))
 

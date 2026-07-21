@@ -115,7 +115,7 @@ Project-01-Utility-Usage-Prediction/
 │   └── model_training.ipynb          # Model training notebook
 │
 ├── models/
-│   └── utility_usage_model.pkl       # Trained model file
+│   └── usage_prediction.pkl          # Trained model file
 │
 ├── outputs/
 │   ├── charts/                       # Visualization charts
@@ -299,13 +299,13 @@ python -m pytest tests/ --cov=src --cov-report=html
    - Mean Squared Error (MSE)
    - Root Mean Squared Error (RMSE)
    - R² Score
-8. **Save Model**: Export to `models/utility_usage_model.pkl`
-9. **Generate Visualizations**: 5 charts
-10. **Generate Reports**: Evaluation report and predictions CSV
+8. **Save Model**: Export to `models/usage_prediction.pkl`
+9. **Generate Visualizations**: 5 charts (automatically via application)
+10. **Generate Reports**: Evaluation report and predictions CSV (automatically via application)
 
 **Input**: `data/processed/utility_usage.csv`  
 **Outputs**:
-- `models/utility_usage_model.pkl`
+- `models/usage_prediction.pkl`
 - `outputs/charts/*.png` (5 charts)
 - `outputs/predictions/model_predictions.csv`
 - `outputs/reports/model_evaluation_report.txt`
@@ -407,9 +407,10 @@ Train a new Linear Regression model on the dataset.
 - Dataset must be valid
 
 **Output**:
-- Trained model saved to `models/utility_usage_model.pkl`
-- Training metrics displayed
-- Model performance (R² Score)
+- Trained model saved to `models/usage_prediction.pkl`
+- Training & Testing metrics (MAE, MSE, RMSE, R² Score)
+- Charts generated in `outputs/charts/`
+- Reports generated in `outputs/reports/`
 
 ### Option 7: Predict Usage
 

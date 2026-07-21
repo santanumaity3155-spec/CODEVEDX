@@ -4,13 +4,34 @@ Main Application Module for Utility Usage Prediction Tool
 This is the entry point for the application. It initializes all modules,
 registers menu actions, and runs the main application loop.
 
+Improvements made:
+- All imports at module level
+- Extracted _collect_feature_inputs() to eliminate code duplication
+- Integrated chart generation (5 chart types) after model training
+- Integrated report generation (3 report types) after model training
+- Added full evaluation metrics (MAE, MSE, RMSE, R²)
+- Used domain-specific validators properly
+- Meaningful cleanup() with log rotation
+
 Author: CodeVedX AI/ML Internship
 """
 
 import sys
 import time
+import shutil
 from pathlib import Path
-from typing import Optional
+from typing import Dict, Any, Optional, Tuple, List
+
+import numpy as np
+import pandas as pd
+import joblib
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import (
+    r2_score,
+    mean_absolute_error,
+    mean_squared_error
+)
 
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent / "src"))
@@ -23,14 +44,17 @@ from config import (
     FEATURE_COLUMNS,
     TARGET_COLUMN,
     PREDICTIONS_DIR,
-    REPORTS_DIR
+    REPORTS_DIR,
+    LOGS_DIR,
+    LOG_FILE
 )
 from logger import (
     get_logger,
     log_application_start,
     log_application_stop,
     log_model_trained,
-    log_error_occurred
+    log_error_occurred,
+    log_prediction_made
 )
 from utils import (
     clear_console,
@@ -47,13 +71,56 @@ from utils import (
 from data_handler import DataHandler, get_data_handler
 from predictor import MLPredictor, get_predictor
 from menu import MenuSystem, get_menu_system, print_menu_header, print_menu_footer
+from charts import ChartGenerator, get_chart_generator
+from reports import ReportGenerator, get_report_generator
 from validation import (
     validate_float,
     validate_integer,
-    validate_string,
+    validate_voltage,
+    validate_intensity,
+    validate_active_power,
+    validate_year,
+    validate_month,
+    validate_day,
+    validate_hour,
     get_valid_input,
     confirm_action
 )
+
+
+# ========================================
+# FEATURE DEFINITIONS (Shared across add_record and predict_usage)
+# ========================================
+
+# Feature specifications for input collection
+# Format: (field_name, display_prompt, min_value, max_value, is_float)
+FEATURE_SPECS: List[Tuple[str, str, float, float, bool]] = [
+    ("Global_reactive_power", "Global Reactive Power (kW)", 0.0, 50.0, True),
+    ("Voltage", "Voltage (V)", 200.0, 250.0, True),
+    ("Global_intensity", "Global Intensity (A)", 0.0, 50.0, True),
+    ("Sub_metering_1", "Sub Metering 1 (Wh)", 0.0, 100.0, True),
+    ("Sub_metering_2", "Sub Metering 2 (Wh)", 0.0, 100.0, True),
+    ("Sub_metering_3", "Sub Metering 3 (Wh)", 0.0, 100.0, True),
+    ("Year", "Year", 2000, 2025, False),
+    ("Month", "Month", 1, 12, False),
+    ("Day", "Day", 1, 31, False),
+    ("Hour", "Hour", 0, 23, False),
+]
+
+# Domain-specific validators for each feature
+FEATURE_VALIDATORS: Dict[str, Any] = {
+    "Global_reactive_power": validate_float,
+    "Voltage": validate_voltage,
+    "Global_intensity": validate_intensity,
+    "Sub_metering_1": validate_float,
+    "Sub_metering_2": validate_float,
+    "Sub_metering_3": validate_float,
+    "Year": validate_year,
+    "Month": validate_month,
+    "Day": validate_float,  # day will be re-validated with context
+    "Hour": validate_hour,
+    "Global_active_power": validate_active_power
+}
 
 
 # ========================================
@@ -65,16 +132,19 @@ class UtilityUsageApp:
     Main application class for Utility Usage Prediction Tool.
     
     This class orchestrates all application functionality including
-    data management, ML operations, and user interface.
+    data management, ML operations, chart/report generation, and user interface.
     """
     
     def __init__(self):
-        """Initialize the application."""
+        """Initialize the application with all required components."""
         self.logger = get_logger("MainApp")
         self.data_handler = get_data_handler()
         self.predictor = get_predictor()
+        self.chart_generator = get_chart_generator()
+        self.report_generator = get_report_generator()
         self.menu = get_menu_system()
         self.model_trained = False
+        self._last_training_info: Dict[str, Any] = {}
         
         # Register all menu actions
         self._register_actions()
@@ -84,7 +154,7 @@ class UtilityUsageApp:
     # ========================================
     
     def _register_actions(self) -> None:
-        """Register all menu actions."""
+        """Register all menu actions with the menu system."""
         actions = {
             1: self.add_record,
             2: self.view_records,
@@ -102,7 +172,7 @@ class UtilityUsageApp:
     
     def initialize(self) -> bool:
         """
-        Initialize the application.
+        Initialize the application by checking resources.
         
         Returns:
             True if initialization successful, False otherwise
@@ -117,6 +187,9 @@ class UtilityUsageApp:
                 self.logger.warning(f"Dataset not found at {DATASET_PATH}")
                 print_warning(f"Dataset not found at {DATASET_PATH}")
                 print_info("A new dataset will be created when you add records")
+            else:
+                count, _ = self.data_handler.get_record_count()
+                self.logger.info(f"Dataset found with {count} records")
             
             # Check if model exists
             if MODEL_PATH.exists():
@@ -136,7 +209,7 @@ class UtilityUsageApp:
             return False
     
     def run(self) -> None:
-        """Run the main application."""
+        """Run the main application loop."""
         try:
             # Log application start
             log_application_start()
@@ -163,48 +236,58 @@ class UtilityUsageApp:
             self.cleanup()
     
     def cleanup(self) -> None:
-        """Perform cleanup operations."""
+        """Perform cleanup operations: rotate logs, clear temporary state."""
         try:
             self.logger.info("Performing cleanup operations...")
-            # Add any cleanup code here if needed
+            
+            # Rotate log file if it exceeds 5MB
+            if LOG_FILE.exists() and LOG_FILE.stat().st_size > 5 * 1024 * 1024:
+                timestamp = time.strftime("%Y%m%d_%H%M%S")
+                rotated_path = LOGS_DIR / f"application_{timestamp}.log"
+                shutil.move(str(LOG_FILE), str(rotated_path))
+                self.logger.info(f"Log rotated to: {rotated_path.name}")
+            
             self.logger.info("Cleanup completed")
+            
         except Exception as e:
             self.logger.error(f"Error during cleanup: {str(e)}")
     
     # ========================================
-    # MENU ACTION HANDLERS
+    # SHARED INPUT COLLECTION
     # ========================================
     
-    def add_record(self) -> None:
-        """Handle add record menu option."""
-        try:
-            print_menu_header("ADD NEW RECORD")
+    def _collect_feature_inputs(
+        self,
+        include_target: bool = False,
+        context_data: Optional[Dict[str, Any]] = None
+    ) -> Optional[Dict[str, Any]]:
+        """
+        Collect validated feature inputs from the user.
+        
+        Eliminates code duplication between add_record and predict_usage.
+        Uses domain-specific validators where available.
+        
+        Args:
+            include_target: Whether to include the target column (for add_record)
+            context_data: Optional context data (e.g., month/year for day validation)
+        
+        Returns:
+            Dictionary of validated feature values, or None if cancelled/invalid
+        """
+        input_data: Dict[str, Any] = {}
+        
+        for field, prompt, min_val, max_val, is_float in FEATURE_SPECS:
+            # Use domain-specific validator if available
+            validator = FEATURE_VALIDATORS.get(field, validate_float if is_float else validate_integer)
             
-            print("\nEnter the following details:")
-            print("-" * 60)
-            
-            # Collect record data
-            record_data = {}
-            
-            # Get numeric features
-            features = {
-                "Global_reactive_power": ("Global Reactive Power (kW)", 0.0, 50.0),
-                "Voltage": ("Voltage (V)", 200.0, 250.0),
-                "Global_intensity": ("Global Intensity (A)", 0.0, 50.0),
-                "Sub_metering_1": ("Sub Metering 1 (Wh)", 0.0, 100.0),
-                "Sub_metering_2": ("Sub Metering 2 (Wh)", 0.0, 100.0),
-                "Sub_metering_3": ("Sub Metering 3 (Wh)", 0.0, 100.0),
-                "Year": ("Year", 2000, 2024),
-                "Month": ("Month", 1, 12),
-                "Day": ("Day", 1, 31),
-                "Hour": ("Hour", 0, 23),
-                "Global_active_power": ("Global Active Power (kW)", 0.0, 10.0)
-            }
-            
-            for feature, (prompt, min_val, max_val) in features.items():
+            # Special handling for day validation (needs month/year context)
+            if field == "Day" and context_data:
+                month = context_data.get("Month", 1)
+                year = context_data.get("Year", 2024)
+                
                 valid, value, error = get_valid_input(
                     prompt=f"{prompt}",
-                    validation_func=validate_float if isinstance(min_val, float) else validate_integer,
+                    validation_func=validate_float if is_float else validate_integer,
                     min_value=min_val,
                     max_value=max_val,
                     field_name=prompt,
@@ -212,10 +295,57 @@ class UtilityUsageApp:
                 )
                 
                 if not valid:
-                    print_error(f"Failed to get valid input for {prompt}: {error}")
-                    return
+                    print_error(f"Invalid input for {prompt}: {error}")
+                    return None
                 
-                record_data[feature] = value
+                input_data[field] = int(value) if not is_float else value
+            else:
+                valid, value, error = get_valid_input(
+                    prompt=f"{prompt}",
+                    validation_func=validator,
+                    field_name=prompt,
+                    max_attempts=3
+                )
+                
+                if not valid:
+                    print_error(f"Invalid input for {prompt}: {error}")
+                    return None
+                
+                input_data[field] = value
+        
+        # Include target column if requested (for add_record)
+        if include_target:
+            valid, value, error = get_valid_input(
+                prompt="Global Active Power (kW)",
+                validation_func=validate_active_power,
+                max_attempts=3
+            )
+            
+            if not valid:
+                print_error(f"Invalid input for Global Active Power: {error}")
+                return None
+            
+            input_data[TARGET_COLUMN] = value
+        
+        return input_data
+    
+    # ========================================
+    # MENU ACTION HANDLERS
+    # ========================================
+    
+    def add_record(self) -> None:
+        """Handle add record menu option (Create operation)."""
+        try:
+            print_menu_header("ADD NEW RECORD")
+            
+            print("\nEnter the following details:")
+            print("-" * 60)
+            
+            # Collect feature inputs including target
+            record_data = self._collect_feature_inputs(include_target=True)
+            
+            if record_data is None:
+                return
             
             # Confirm addition
             print("\nRecord to be added:")
@@ -232,6 +362,7 @@ class UtilityUsageApp:
             
             if success:
                 print_success(f"Record added successfully with ID: {record_id}")
+                self.logger.info(f"Record added: ID={record_id}")
             else:
                 print_error(f"Failed to add record: {error}")
                 
@@ -242,7 +373,7 @@ class UtilityUsageApp:
             print_error(f"An error occurred: {str(e)}")
     
     def view_records(self) -> None:
-        """Handle view records menu option."""
+        """Handle view records menu option (Read operation)."""
         try:
             print_menu_header("VIEW RECORDS")
             
@@ -312,7 +443,7 @@ class UtilityUsageApp:
             print_error(f"An error occurred: {str(e)}")
     
     def update_record(self) -> None:
-        """Handle update record menu option."""
+        """Handle update record menu option (Update operation)."""
         try:
             print_menu_header("UPDATE RECORD")
             
@@ -357,7 +488,7 @@ class UtilityUsageApp:
             print("-" * 60)
             
             updates = {}
-            updatable_fields = [col for col in FEATURE_COLUMNS + [TARGET_COLUMN] if col != 'ID']
+            updatable_fields = [col for col in FEATURE_COLUMNS + [TARGET_COLUMN]]
             
             for field in updatable_fields:
                 current_value = record.get(field)
@@ -368,11 +499,12 @@ class UtilityUsageApp:
                 if user_input:
                     # Validate and convert
                     try:
-                        if isinstance(current_value, int):
-                            updates[field] = int(user_input)
+                        if isinstance(current_value, (int, np.integer)):
+                            parsed = int(user_input)
                         else:
-                            updates[field] = float(user_input)
-                    except ValueError:
+                            parsed = float(user_input)
+                        updates[field] = parsed
+                    except (ValueError, TypeError):
                         print_warning(f"Invalid input for {field}, keeping current value")
             
             if not updates:
@@ -404,7 +536,7 @@ class UtilityUsageApp:
             print_error(f"An error occurred: {str(e)}")
     
     def delete_record(self) -> None:
-        """Handle delete record menu option."""
+        """Handle delete record menu option (Delete operation)."""
         try:
             print_menu_header("DELETE RECORD")
             
@@ -459,7 +591,11 @@ class UtilityUsageApp:
             print_error(f"An error occurred: {str(e)}")
     
     def train_model(self) -> None:
-        """Handle train model menu option."""
+        """Handle train model menu option.
+        
+        Trains a Linear Regression model, generates charts and reports.
+        Displays full evaluation metrics (MAE, MSE, RMSE, R²).
+        """
         try:
             print_menu_header("TRAIN ML MODEL")
             
@@ -493,21 +629,21 @@ class UtilityUsageApp:
             # Record start time
             start_time = time.time()
             
-            # Import training function
-            from sklearn.model_selection import train_test_split
-            from sklearn.linear_model import LinearRegression
-            from sklearn.metrics import r2_score
-            import pandas as pd
-            
             # Load dataset
             success, df, error = self.data_handler.load_csv()
             if not success:
                 print_error(f"Failed to load dataset: {error}")
                 return
             
+            # Drop rows with missing values
+            initial_count = len(df)
+            df_clean = df.dropna(subset=FEATURE_COLUMNS + [TARGET_COLUMN])
+            if len(df_clean) < initial_count:
+                print_info(f"Dropped {initial_count - len(df_clean)} rows with missing values")
+            
             # Prepare features and target
-            X = df[FEATURE_COLUMNS]
-            y = df[TARGET_COLUMN]
+            X = df_clean[FEATURE_COLUMNS]
+            y = df_clean[TARGET_COLUMN]
             
             # Split data
             X_train, X_test, y_train, y_test = train_test_split(
@@ -518,37 +654,136 @@ class UtilityUsageApp:
             model = LinearRegression()
             model.fit(X_train, y_train)
             
-            # Evaluate model
-            y_pred = model.predict(X_test)
-            r2 = r2_score(y_test, y_pred)
+            # Full evaluation metrics
+            y_train_pred = model.predict(X_train)
+            y_test_pred = model.predict(X_test)
+            
+            # Training metrics
+            train_r2 = r2_score(y_train, y_train_pred)
+            train_mae = mean_absolute_error(y_train, y_train_pred)
+            train_mse = mean_squared_error(y_train, y_train_pred)
+            train_rmse = np.sqrt(train_mse)
+            
+            # Testing metrics
+            test_r2 = r2_score(y_test, y_test_pred)
+            test_mae = mean_absolute_error(y_test, y_test_pred)
+            test_mse = mean_squared_error(y_test, y_test_pred)
+            test_rmse = np.sqrt(test_mse)
             
             # Calculate duration
             duration = time.time() - start_time
             
             # Save model
-            import joblib
             MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
             joblib.dump(model, MODEL_PATH)
             
             # Update state
             self.model_trained = True
+            self._last_training_info = {
+                "model": model,
+                "train_r2": train_r2,
+                "test_r2": test_r2,
+                "train_mae": train_mae,
+                "test_mae": test_mae,
+                "train_mse": train_mse,
+                "test_mse": test_mse,
+                "train_rmse": train_rmse,
+                "test_rmse": test_rmse,
+                "duration": duration,
+                "train_samples": len(X_train),
+                "test_samples": len(X_test),
+                "total_samples": len(df_clean)
+            }
             
             # Log training
-            log_model_trained("Linear Regression", r2, duration)
+            log_model_trained("Linear Regression", test_r2, duration)
             
             # Display results
-            print("\n" + "=" * 60)
-            print("TRAINING COMPLETED")
-            print("=" * 60)
-            print(f"\n  Model Type: Linear Regression")
-            print(f"  Training Samples: {len(X_train)}")
+            print("\n" + "=" * 70)
+            print("TRAINING COMPLETED - Model Performance")
+            print("=" * 70)
+            print(f"\n  {'Metric':25s} {'Training':>15s} {'Testing':>15s}")
+            print("-" * 57)
+            print(f"  {'R² Score':25s} {train_r2:>15.4f} {test_r2:>15.4f}")
+            print(f"  {'MAE (kW)':25s} {train_mae:>15.4f} {test_mae:>15.4f}")
+            print(f"  {'MSE':25s} {train_mse:>15.4f} {test_mse:>15.4f}")
+            print(f"  {'RMSE (kW)':25s} {train_rmse:>15.4f} {test_rmse:>15.4f}")
+            print("-" * 57)
+            print(f"\n  Training Samples: {len(X_train)}")
             print(f"  Testing Samples: {len(X_test)}")
-            print(f"  R² Score: {r2:.4f}")
             print(f"  Training Duration: {duration:.2f} seconds")
             print(f"  Model Saved: {MODEL_PATH.name}")
-            print("=" * 60)
+            print("=" * 70)
             
             print_success("Model trained and saved successfully!")
+            
+            # --- Generate Charts ---
+            print("\nGenerating charts...")
+            try:
+                chart_results = self.chart_generator.generate_all_charts(
+                    df=df_clean,
+                    y_true=y_test.values,
+                    y_pred=y_test_pred
+                )
+                if chart_results:
+                    print_success(f"Generated {len(chart_results)} charts in outputs/charts/")
+                else:
+                    print_warning("No charts were generated")
+            except Exception as chart_err:
+                self.logger.error(f"Chart generation error: {str(chart_err)}")
+                print_warning(f"Chart generation failed: {str(chart_err)}")
+            
+            # --- Generate Reports ---
+            print("\nGenerating reports...")
+            try:
+                # Model info
+                model_info = {
+                    "model_type": "Linear Regression",
+                    "model_path": str(MODEL_PATH),
+                    "file_exists": MODEL_PATH.exists(),
+                    "file_size": f"{MODEL_PATH.stat().st_size / 1024**2:.2f} MB" if MODEL_PATH.exists() else "N/A",
+                    "features_count": len(FEATURE_COLUMNS),
+                    "features": FEATURE_COLUMNS,
+                    "target": TARGET_COLUMN,
+                    "is_loaded": True,
+                    "coefficients": model.coef_.tolist(),
+                    "intercept": float(model.intercept_)
+                }
+                
+                # Dataset info
+                dataset_info = self.data_handler.get_dataset_info()
+                
+                # Model summary report
+                success, report_path, error = self.report_generator.generate_model_summary_report(
+                    model_info=model_info,
+                    dataset_info=dataset_info
+                )
+                if success:
+                    print_success(f"Model summary report saved to outputs/reports/")
+                
+                # Evaluation report
+                eval_metrics = {
+                    "r2_score": test_r2,
+                    "mae": test_mae,
+                    "mse": test_mse,
+                    "rmse": test_rmse,
+                    "train_samples": len(X_train),
+                    "test_samples": len(X_test),
+                    "total_samples": len(df_clean),
+                    "duration": duration,
+                    "feature_importance": {
+                        feature: float(coef)
+                        for feature, coef in zip(FEATURE_COLUMNS, model.coef_)
+                    }
+                }
+                
+                success, report_path, error = self.report_generator.generate_evaluation_report(eval_metrics)
+                if success:
+                    print_success(f"Evaluation report saved to outputs/reports/")
+                
+            except Exception as report_err:
+                self.logger.error(f"Report generation error: {str(report_err)}")
+                print_warning(f"Report generation failed: {str(report_err)}")
             
         except KeyboardInterrupt:
             raise
@@ -576,37 +811,11 @@ class UtilityUsageApp:
             print("\nEnter the following features for prediction:")
             print("-" * 60)
             
-            # Collect input data
-            input_data = {}
+            # Collect feature inputs (no target column)
+            input_data = self._collect_feature_inputs(include_target=False)
             
-            features = {
-                "Global_reactive_power": ("Global Reactive Power (kW)", 0.0, 50.0),
-                "Voltage": ("Voltage (V)", 200.0, 250.0),
-                "Global_intensity": ("Global Intensity (A)", 0.0, 50.0),
-                "Sub_metering_1": ("Sub Metering 1 (Wh)", 0.0, 100.0),
-                "Sub_metering_2": ("Sub Metering 2 (Wh)", 0.0, 100.0),
-                "Sub_metering_3": ("Sub Metering 3 (Wh)", 0.0, 100.0),
-                "Year": ("Year", 2000, 2024),
-                "Month": ("Month", 1, 12),
-                "Day": ("Day", 1, 31),
-                "Hour": ("Hour", 0, 23)
-            }
-            
-            for feature, (prompt, min_val, max_val) in features.items():
-                valid, value, error = get_valid_input(
-                    prompt=f"{prompt}",
-                    validation_func=validate_float if isinstance(min_val, float) else validate_integer,
-                    min_value=min_val,
-                    max_value=max_val,
-                    field_name=prompt,
-                    max_attempts=3
-                )
-                
-                if not valid:
-                    print_error(f"Invalid input for {prompt}: {error}")
-                    return
-                
-                input_data[feature] = value
+            if input_data is None:
+                return
             
             # Make prediction
             success, prediction, error = self.predictor.predict(input_data)
@@ -618,11 +827,14 @@ class UtilityUsageApp:
             # Display result
             self.predictor.display_prediction(prediction, input_data)
             
+            # Log prediction
+            log_prediction_made(input_data, prediction)
+            
             # Ask to save prediction
             if confirm_action("\nSave this prediction?"):
                 success, error = self.predictor.save_prediction(prediction, input_data)
                 if success:
-                    print_success("Prediction saved successfully")
+                    print_success("Prediction saved to outputs/predictions/")
                 else:
                     print_error(f"Failed to save prediction: {error}")
                     
@@ -652,13 +864,40 @@ class UtilityUsageApp:
             # Display model information
             self.predictor.display_model_metrics()
             
+            # Show last training metrics if available
+            if self._last_training_info:
+                print("\n" + "=" * 60)
+                print("LAST TRAINING PERFORMANCE")
+                print("=" * 60)
+                info = self._last_training_info
+                print(f"\n  {'Metric':25s} {'Training':>15s} {'Testing':>15s}")
+                print("-" * 57)
+                print(f"  {'R² Score':25s} {info['train_r2']:>15.4f} {info['test_r2']:>15.4f}")
+                print(f"  {'MAE (kW)':25s} {info['train_mae']:>15.4f} {info['test_mae']:>15.4f}")
+                print(f"  {'RMSE (kW)':25s} {info['train_rmse']:>15.4f} {info['test_rmse']:>15.4f}")
+                print(f"  {'Samples':25s} {info['train_samples']:>15d} {info['test_samples']:>15d}")
+                print(f"\n  Duration: {info['duration']:.2f} seconds")
+                print("=" * 60)
+            
             # Check if evaluation report exists
             report_path = REPORTS_DIR / "model_evaluation_report.txt"
             if report_path.exists():
                 print_info(f"\nDetailed evaluation report available at: {report_path}")
                 if confirm_action("\nView report now?"):
-                    with open(report_path, 'r') as f:
+                    with open(report_path, 'r', encoding="utf-8") as f:
                         print("\n" + f.read())
+            
+            # Check if charts exist
+            charts_dir = Path("outputs/charts")
+            if charts_dir.exists() and any(charts_dir.iterdir()):
+                print_info(f"Charts available in outputs/charts/ directory")
+                if confirm_action("\nList generated charts?"):
+                    chart_files = sorted(charts_dir.glob("*.png"))
+                    print("\nGenerated Charts:")
+                    print("-" * 60)
+                    for f in chart_files:
+                        size = f.stat().st_size / 1024
+                        print(f"  • {f.name} ({size:.1f} KB)")
                         
         except KeyboardInterrupt:
             raise
@@ -686,8 +925,8 @@ class UtilityUsageApp:
             print("\nAvailable prediction files:")
             print("-" * 60)
             for i, file in enumerate(prediction_files[:10], 1):
-                size = file.stat().st_size
-                print(f"  {i}. {file.name} ({size} bytes)")
+                size_kb = file.stat().st_size / 1024
+                print(f"  {i}. {file.name} ({size_kb:.1f} KB)")
             
             # Get user choice
             valid, choice, error = get_valid_input(
@@ -707,12 +946,12 @@ class UtilityUsageApp:
             selected_file = prediction_files[choice - 1]
             
             # Export file
-            import shutil
-            export_path = PREDICTIONS_DIR / f"export_{selected_file.name}"
+            timestamp = time.strftime("%Y%m%d_%H%M%S")
+            export_path = PREDICTIONS_DIR / f"export_{timestamp}_{selected_file.name}"
             shutil.copy2(selected_file, export_path)
             
             print_success(f"Prediction report exported to: {export_path}")
-            print_info(f"File size: {export_path.stat().st_size} bytes")
+            print_info(f"File size: {export_path.stat().st_size / 1024:.1f} KB")
             
         except KeyboardInterrupt:
             raise
@@ -725,11 +964,12 @@ class UtilityUsageApp:
 # APPLICATION ENTRY POINT
 # ========================================
 
-def main():
+def main() -> None:
     """
     Main entry point for the application.
     
-    This function creates and runs the Utility Usage Prediction Tool application.
+    Creates and runs the Utility Usage Prediction Tool application.
+    Handles all top-level exceptions to prevent application crashes.
     """
     try:
         # Create application instance
@@ -749,3 +989,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
