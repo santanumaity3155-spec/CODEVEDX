@@ -1,0 +1,45 @@
+{
+  "project": "Student Performance Prediction System",
+  "best_model": "Linear Regression",
+  "metrics": {
+    "R2": 0.7697,
+    "MAE": 0.4523,
+    "MSE": 3.256,
+    "RMSE": 1.8044
+  },
+  "all_models": [
+    {
+      "Model": "Linear Regression",
+      "MAE": 0.4523,
+      "MSE": 3.256,
+      "RMSE": 1.8044,
+      "R2": 0.7697
+    },
+    {
+      "Model": "Decision Tree",
+      "MAE": 1.9115,
+      "MSE": 14.7315,
+      "RMSE": 3.8382,
+      "R2": -0.0422
+    },
+    {
+      "Model": "Random Forest",
+      "MAE": 1.1787,
+      "MSE": 4.9569,
+      "RMSE": 2.2264,
+      "R2": 0.6493
+    }
+  ],
+  "dataset": {
+    "rows": 6607,
+    "features": 19,
+    "numerical": 6,
+    "categorical": 13
+  },
+  "train_test_split": {
+    "train_size": 5285,
+    "test_size": 1322,
+    "random_state": 42
+  },
+  "mean_absolute_error": 0.45227837318678343
+}
