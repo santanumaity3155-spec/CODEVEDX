@@ -199,7 +199,7 @@ class Predictor:
         features = {}
         for feature in MODEL_FEATURES:
             if feature in input_data:
-                features[feature] = [float(input_data[feature])]
+                features[feature] = [input_data[feature]]
             else:
                 raise PredictionError(f"Missing required feature: {feature}")
         

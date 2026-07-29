@@ -8,12 +8,12 @@ import sys
 import signal
 from pathlib import Path
 
-from config import APP_NAME, APP_VERSION, PROJECT_ROOT
-from logger import app_logger, log_startup, log_shutdown, log_error
-from utils import print_success, print_error, print_info, print_warning
-from data_handler import DataHandler
-from predictor import Predictor
-from menu import Menu
+from .config import APP_NAME, APP_VERSION, PROJECT_ROOT, MODEL_PATH
+from .logger import app_logger, log_startup, log_shutdown, log_error
+from .utils import print_success, print_error, print_info, print_warning
+from .data_handler import DataHandler
+from .predictor import Predictor
+from .menu import Menu
 
 
 def signal_handler(sig, frame):
@@ -70,7 +70,7 @@ def initialize_application() -> tuple[DataHandler, Predictor, bool]:
     Returns:
         Tuple of (DataHandler, Predictor, success)
     """
-    from utils import print_header
+    from .utils import print_header
     
     # Initialize DataHandler
     print_header("INITIALIZING DATA HANDLER", char="=", length=80)
@@ -93,7 +93,7 @@ def initialize_application() -> tuple[DataHandler, Predictor, bool]:
         print_info("Please ensure the model file exists and is valid.")
     
     # Initialize directories
-    from config import create_directories
+    from .config import create_directories
     create_directories()
     print_success("Directories Initialized")
     

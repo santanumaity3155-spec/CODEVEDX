@@ -66,7 +66,7 @@ def format_score(score: float, max_score: float = 100.0) -> str:
     else:
         grade = "F"
     
-    return f"{score:.2f}/100 ({grade})"
+    return f"{score:.2f}/{max_score} ({grade})"
 
 
 def get_timestamp() -> str:
@@ -148,11 +148,17 @@ def export_to_csv(
         if fieldnames is None:
             fieldnames = list(data[0].keys())
         
+        # Filter data to only include specified fieldnames
+        filtered_data = []
+        for record in data:
+            filtered_record = {key: record.get(key, '') for key in fieldnames if key in record}
+            filtered_data.append(filtered_record)
+        
         # Write CSV
         with open(file_path, 'w', newline='', encoding='utf-8') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
             writer.writeheader()
-            writer.writerows(data)
+            writer.writerows(filtered_data)
         
         return True
     
@@ -217,7 +223,14 @@ def print_header(title: str, char: str = "=", length: int = 80) -> None:
     print_separator(char, length)
     # Center the title
     padding = (length - len(title) - 2) // 2
-    print(f"{char}{' ' * padding} {title} {' ' * (length - len(title) - padding - 2)}{char}")
+    remaining = length - len(title) - padding - 2
+    line = f"{char}{' ' * padding} {title} {' ' * remaining}{char}"
+    # Ensure the line is exactly the right length
+    if len(line) < length:
+        line = line + char * (length - len(line))
+    elif len(line) > length:
+        line = line[:length]
+    print(line)
     print_separator(char, length)
 
 

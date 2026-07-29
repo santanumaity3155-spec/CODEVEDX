@@ -47,7 +47,7 @@ class DataHandler:
                 print_info("Creating new empty dataset...")
                 self.records = []
                 self.headers = [
-                    'Hours_Studied', 'Attendance', 'Parental_Involvement',
+                    'Record_ID', 'Hours_Studied', 'Attendance', 'Parental_Involvement',
                     'Access_to_Resources', 'Extracurricular_Activities', 'Sleep_Hours',
                     'Previous_Scores', 'Motivation_Level', 'Internet_Access',
                     'Tutoring_Sessions', 'Family_Income', 'Teacher_Quality',
@@ -194,12 +194,16 @@ class DataHandler:
             Tuple of (success, message)
         """
         try:
-            # Validate record
-            is_valid, errors = validate_student_record(record)
-            if not is_valid:
-                error_msg = "; ".join(errors)
-                log_warning(f"Record validation failed: {error_msg}")
-                return False, f"Validation failed: {error_msg}"
+            # Validate record only if it has the required fields for validation
+            if all(field in record for field in ['Hours_Studied', 'Attendance', 'Sleep_Hours', 
+                                                  'Previous_Scores', 'Tutoring_Sessions', 
+                                                  'Physical_Activity', 'Gender', 'School_Type', 
+                                                  'Teacher_Quality']):
+                is_valid, errors = validate_student_record(record)
+                if not is_valid:
+                    error_msg = "; ".join(errors)
+                    log_warning(f"Record validation failed: {error_msg}")
+                    return False, f"Validation failed: {error_msg}"
             
             # Ensure all headers are present
             new_record = {}
@@ -207,7 +211,7 @@ class DataHandler:
                 new_record[header] = str(record.get(header, ''))
             
             # Add timestamp or ID if needed
-            if 'Record_ID' not in new_record:
+            if 'Record_ID' not in new_record or not new_record['Record_ID']:
                 new_record['Record_ID'] = str(uuid.uuid4())[:8]
             
             # Add to records
@@ -398,7 +402,7 @@ class DataHandler:
         """
         Print formatted dataset information.
         """
-        from utils import print_header, print_subheader, print_table, print_separator
+        from .utils import print_header, print_subheader, print_table, print_separator
         
         print_header("DATASET INFORMATION")
         

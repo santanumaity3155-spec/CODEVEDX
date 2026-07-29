@@ -42,10 +42,23 @@ AUTHOR = "CodeVedX Intern"
 MODEL_FEATURES = [
     'Hours_Studied',
     'Attendance',
+    'Parental_Involvement',
+    'Access_to_Resources',
+    'Extracurricular_Activities',
     'Sleep_Hours',
     'Previous_Scores',
+    'Motivation_Level',
+    'Internet_Access',
     'Tutoring_Sessions',
-    'Physical_Activity'
+    'Family_Income',
+    'Teacher_Quality',
+    'School_Type',
+    'Peer_Influence',
+    'Physical_Activity',
+    'Learning_Disabilities',
+    'Parental_Education_Level',
+    'Distance_from_Home',
+    'Gender'
 ]
 
 # Validation Ranges
@@ -62,7 +75,17 @@ VALIDATION_RANGES = {
 CATEGORICAL_VALUES = {
     'Gender': ['Male', 'Female'],
     'School_Type': ['Public', 'Private'],
-    'Teacher_Quality': ['Low', 'Medium', 'High']
+    'Teacher_Quality': ['Low', 'Medium', 'High'],
+    'Parental_Involvement': ['Low', 'Medium', 'High'],
+    'Access_to_Resources': ['Low', 'Medium', 'High'],
+    'Extracurricular_Activities': ['Yes', 'No'],
+    'Motivation_Level': ['Low', 'Medium', 'High'],
+    'Internet_Access': ['Yes', 'No'],
+    'Family_Income': ['Low', 'Medium', 'High'],
+    'Peer_Influence': ['Negative', 'Neutral', 'Positive'],
+    'Learning_Disabilities': ['Yes', 'No'],
+    'Parental_Education_Level': ['High School', 'College', 'Postgraduate'],
+    'Distance_from_Home': ['Near', 'Moderate', 'Far']
 }
 
 # Menu Options

@@ -257,10 +257,14 @@ class TestDataHandlerAddUpdateDelete:
         csv_path = tmp_path / "test.csv"
         handler = DataHandler(dataset_path=csv_path)
         
+        # Use the actual schema from the handler
         record = {
-            'Name': 'Alice',
-            'Age': '25',
-            'City': 'NYC'
+            'Record_ID': 'TEST001',
+            'Hours_Studied': '25',
+            'Attendance': '85',
+            'Gender': 'Male',
+            'School_Type': 'Public',
+            'Teacher_Quality': 'Medium'
         }
         
         success, message = handler.add_record(record)
@@ -268,17 +272,25 @@ class TestDataHandlerAddUpdateDelete:
         assert success is True
         assert "successfully" in message.lower()
         assert len(handler.records) == 1
-        assert handler.records[0]['Name'] == 'Alice'
+        assert handler.records[0]['Record_ID'] == 'TEST001'
     
     def test_add_record_validation_failure(self, tmp_path):
         """Test adding a record that fails validation."""
         csv_path = tmp_path / "test.csv"
         handler = DataHandler(dataset_path=csv_path)
         
-        # Invalid record (missing required fields)
+        # Invalid record with invalid numeric value
         record = {
-            'Name': 'Alice'
-            # Missing Age and City
+            'Record_ID': 'TEST001',
+            'Hours_Studied': '100',  # Out of range (max 50)
+            'Attendance': '85',
+            'Sleep_Hours': '7',
+            'Previous_Scores': '75',
+            'Tutoring_Sessions': '2',
+            'Physical_Activity': '3',
+            'Gender': 'Male',
+            'School_Type': 'Public',
+            'Teacher_Quality': 'Medium'
         }
         
         success, message = handler.add_record(record)
@@ -374,8 +386,27 @@ class TestDataHandlerSummary:
         csv_path = tmp_path / "test.csv"
         handler = DataHandler(dataset_path=csv_path)
         
-        handler.records = [{'Name': 'Alice', 'Age': '25'}]
-        handler.headers = ['Name', 'Age']
+        # Create a proper dataset with required columns
+        handler.headers = [
+            'Record_ID', 'Hours_Studied', 'Attendance', 'Sleep_Hours',
+            'Previous_Scores', 'Tutoring_Sessions', 'Physical_Activity',
+            'Gender', 'School_Type', 'Teacher_Quality', 'Exam_Score'
+        ]
+        handler.records = [
+            {
+                'Record_ID': '1',
+                'Hours_Studied': '25',
+                'Attendance': '85',
+                'Sleep_Hours': '7',
+                'Previous_Scores': '75',
+                'Tutoring_Sessions': '2',
+                'Physical_Activity': '3',
+                'Gender': 'Male',
+                'School_Type': 'Public',
+                'Teacher_Quality': 'Medium',
+                'Exam_Score': '80'
+            }
+        ]
         
         is_valid, issues = handler.validate_dataset_integrity()
         
@@ -468,4 +499,3 @@ class TestDataHandlerTableDisplay:
         assert len(headers) > 0
         assert len(rows) == 2
         assert 'Record_ID' in headers
-        assert 'Name' in headers

@@ -16,7 +16,18 @@ from .utils import (
 )
 from .data_handler import DataHandler
 from .predictor import Predictor
-from .validation import get_validated_input, validate_menu_choice, validate_search_query, validate_string_input, validate_export_format, validate_file_path
+from .validation import (
+    get_validated_input, validate_menu_choice, validate_search_query, 
+    validate_string_input, validate_export_format, validate_file_path,
+    validate_hours_studied, validate_attendance, validate_sleep_hours,
+    validate_previous_scores, validate_tutoring_sessions, validate_physical_activity,
+    validate_gender, validate_school_type, validate_teacher_quality,
+    validate_parental_involvement, validate_access_to_resources,
+    validate_extracurricular_activities, validate_motivation_level,
+    validate_internet_access, validate_family_income, validate_peer_influence,
+    validate_learning_disabilities, validate_parental_education_level,
+    validate_distance_from_home
+)
 
 
 class Menu:
@@ -744,6 +755,166 @@ class Menu:
                 pause_screen()
                 return
             input_data['Physical_Activity'] = int(value)
+            
+            print("\n--- Personal Information ---")
+            
+            # Gender
+            success, value, error = get_validated_input(
+                "Gender (Male/Female): ",
+                validate_gender,
+                max_attempts=3
+            )
+            if not success:
+                print_error("Invalid input. Operation cancelled.")
+                pause_screen()
+                return
+            input_data['Gender'] = value
+            
+            # School Type
+            success, value, error = get_validated_input(
+                "School Type (Public/Private): ",
+                validate_school_type,
+                max_attempts=3
+            )
+            if not success:
+                print_error("Invalid input. Operation cancelled.")
+                pause_screen()
+                return
+            input_data['School_Type'] = value
+            
+            # Teacher Quality
+            success, value, error = get_validated_input(
+                "Teacher Quality (Low/Medium/High): ",
+                validate_teacher_quality,
+                max_attempts=3
+            )
+            if not success:
+                print_error("Invalid input. Operation cancelled.")
+                pause_screen()
+                return
+            input_data['Teacher_Quality'] = value
+            
+            print("\n--- Family & Social Information ---")
+            
+            # Parental Involvement
+            success, value, error = get_validated_input(
+                "Parental Involvement (Low/Medium/High): ",
+                validate_parental_involvement,
+                max_attempts=3
+            )
+            if not success:
+                print_error("Invalid input. Operation cancelled.")
+                pause_screen()
+                return
+            input_data['Parental_Involvement'] = value
+            
+            # Access to Resources
+            success, value, error = get_validated_input(
+                "Access to Resources (Low/Medium/High): ",
+                validate_access_to_resources,
+                max_attempts=3
+            )
+            if not success:
+                print_error("Invalid input. Operation cancelled.")
+                pause_screen()
+                return
+            input_data['Access_to_Resources'] = value
+            
+            # Extracurricular Activities
+            success, value, error = get_validated_input(
+                "Extracurricular Activities (Yes/No): ",
+                validate_extracurricular_activities,
+                max_attempts=3
+            )
+            if not success:
+                print_error("Invalid input. Operation cancelled.")
+                pause_screen()
+                return
+            input_data['Extracurricular_Activities'] = value
+            
+            # Motivation Level
+            success, value, error = get_validated_input(
+                "Motivation Level (Low/Medium/High): ",
+                validate_motivation_level,
+                max_attempts=3
+            )
+            if not success:
+                print_error("Invalid input. Operation cancelled.")
+                pause_screen()
+                return
+            input_data['Motivation_Level'] = value
+            
+            # Internet Access
+            success, value, error = get_validated_input(
+                "Internet Access (Yes/No): ",
+                validate_internet_access,
+                max_attempts=3
+            )
+            if not success:
+                print_error("Invalid input. Operation cancelled.")
+                pause_screen()
+                return
+            input_data['Internet_Access'] = value
+            
+            # Family Income
+            success, value, error = get_validated_input(
+                "Family Income (Low/Medium/High): ",
+                validate_family_income,
+                max_attempts=3
+            )
+            if not success:
+                print_error("Invalid input. Operation cancelled.")
+                pause_screen()
+                return
+            input_data['Family_Income'] = value
+            
+            # Peer Influence
+            success, value, error = get_validated_input(
+                "Peer Influence (Negative/Neutral/Positive): ",
+                validate_peer_influence,
+                max_attempts=3
+            )
+            if not success:
+                print_error("Invalid input. Operation cancelled.")
+                pause_screen()
+                return
+            input_data['Peer_Influence'] = value
+            
+            # Learning Disabilities
+            success, value, error = get_validated_input(
+                "Learning Disabilities (Yes/No): ",
+                validate_learning_disabilities,
+                max_attempts=3
+            )
+            if not success:
+                print_error("Invalid input. Operation cancelled.")
+                pause_screen()
+                return
+            input_data['Learning_Disabilities'] = value
+            
+            # Parental Education Level
+            success, value, error = get_validated_input(
+                "Parental Education Level (High School/College/Postgraduate): ",
+                validate_parental_education_level,
+                max_attempts=3
+            )
+            if not success:
+                print_error("Invalid input. Operation cancelled.")
+                pause_screen()
+                return
+            input_data['Parental_Education_Level'] = value
+            
+            # Distance from Home
+            success, value, error = get_validated_input(
+                "Distance from Home (Near/Moderate/Far): ",
+                validate_distance_from_home,
+                max_attempts=3
+            )
+            if not success:
+                print_error("Invalid input. Operation cancelled.")
+                pause_screen()
+                return
+            input_data['Distance_from_Home'] = value
             
             # Make prediction
             print_info("\nMaking prediction...")

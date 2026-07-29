@@ -42,9 +42,10 @@ def validate_numeric_input(
         if allow_float:
             numeric_value = float(value)
         else:
-            numeric_value = int(value)
-            if str(numeric_value) != value.strip():
+            # Check if it's a valid integer
+            if '.' in value:
                 return False, 0.0, f"{field_name} must be a whole number"
+            numeric_value = int(value)
     except ValueError:
         return False, 0.0, f"{field_name} must be a numeric value"
     
@@ -229,6 +230,216 @@ def validate_teacher_quality(value: str) -> Tuple[bool, str, str]:
         return True, value, ""
     
     return False, "", f"Teacher Quality must be one of: {', '.join(CATEGORICAL_VALUES['Teacher_Quality'])}"
+
+
+def validate_parental_involvement(value: str) -> Tuple[bool, str, str]:
+    """
+    Validate Parental Involvement input.
+    
+    Args:
+        value: String value to validate
+    
+    Returns:
+        Tuple of (is_valid, validated_value, error_message)
+    """
+    if not value or not value.strip():
+        return False, "", "Parental Involvement cannot be empty"
+    
+    value = value.strip().capitalize()
+    
+    if value in CATEGORICAL_VALUES['Parental_Involvement']:
+        return True, value, ""
+    
+    return False, "", f"Parental Involvement must be one of: {', '.join(CATEGORICAL_VALUES['Parental_Involvement'])}"
+
+
+def validate_access_to_resources(value: str) -> Tuple[bool, str, str]:
+    """
+    Validate Access to Resources input.
+    
+    Args:
+        value: String value to validate
+    
+    Returns:
+        Tuple of (is_valid, validated_value, error_message)
+    """
+    if not value or not value.strip():
+        return False, "", "Access to Resources cannot be empty"
+    
+    value = value.strip().capitalize()
+    
+    if value in CATEGORICAL_VALUES['Access_to_Resources']:
+        return True, value, ""
+    
+    return False, "", f"Access to Resources must be one of: {', '.join(CATEGORICAL_VALUES['Access_to_Resources'])}"
+
+
+def validate_extracurricular_activities(value: str) -> Tuple[bool, str, str]:
+    """
+    Validate Extracurricular Activities input.
+    
+    Args:
+        value: String value to validate
+    
+    Returns:
+        Tuple of (is_valid, validated_value, error_message)
+    """
+    if not value or not value.strip():
+        return False, "", "Extracurricular Activities cannot be empty"
+    
+    value = value.strip().capitalize()
+    
+    if value in CATEGORICAL_VALUES['Extracurricular_Activities']:
+        return True, value, ""
+    
+    return False, "", f"Extracurricular Activities must be one of: {', '.join(CATEGORICAL_VALUES['Extracurricular_Activities'])}"
+
+
+def validate_motivation_level(value: str) -> Tuple[bool, str, str]:
+    """
+    Validate Motivation Level input.
+    
+    Args:
+        value: String value to validate
+    
+    Returns:
+        Tuple of (is_valid, validated_value, error_message)
+    """
+    if not value or not value.strip():
+        return False, "", "Motivation Level cannot be empty"
+    
+    value = value.strip().capitalize()
+    
+    if value in CATEGORICAL_VALUES['Motivation_Level']:
+        return True, value, ""
+    
+    return False, "", f"Motivation Level must be one of: {', '.join(CATEGORICAL_VALUES['Motivation_Level'])}"
+
+
+def validate_internet_access(value: str) -> Tuple[bool, str, str]:
+    """
+    Validate Internet Access input.
+    
+    Args:
+        value: String value to validate
+    
+    Returns:
+        Tuple of (is_valid, validated_value, error_message)
+    """
+    if not value or not value.strip():
+        return False, "", "Internet Access cannot be empty"
+    
+    value = value.strip().capitalize()
+    
+    if value in CATEGORICAL_VALUES['Internet_Access']:
+        return True, value, ""
+    
+    return False, "", f"Internet Access must be one of: {', '.join(CATEGORICAL_VALUES['Internet_Access'])}"
+
+
+def validate_family_income(value: str) -> Tuple[bool, str, str]:
+    """
+    Validate Family Income input.
+    
+    Args:
+        value: String value to validate
+    
+    Returns:
+        Tuple of (is_valid, validated_value, error_message)
+    """
+    if not value or not value.strip():
+        return False, "", "Family Income cannot be empty"
+    
+    value = value.strip().capitalize()
+    
+    if value in CATEGORICAL_VALUES['Family_Income']:
+        return True, value, ""
+    
+    return False, "", f"Family Income must be one of: {', '.join(CATEGORICAL_VALUES['Family_Income'])}"
+
+
+def validate_peer_influence(value: str) -> Tuple[bool, str, str]:
+    """
+    Validate Peer Influence input.
+    
+    Args:
+        value: String value to validate
+    
+    Returns:
+        Tuple of (is_valid, validated_value, error_message)
+    """
+    if not value or not value.strip():
+        return False, "", "Peer Influence cannot be empty"
+    
+    value = value.strip().capitalize()
+    
+    if value in CATEGORICAL_VALUES['Peer_Influence']:
+        return True, value, ""
+    
+    return False, "", f"Peer Influence must be one of: {', '.join(CATEGORICAL_VALUES['Peer_Influence'])}"
+
+
+def validate_learning_disabilities(value: str) -> Tuple[bool, str, str]:
+    """
+    Validate Learning Disabilities input.
+    
+    Args:
+        value: String value to validate
+    
+    Returns:
+        Tuple of (is_valid, validated_value, error_message)
+    """
+    if not value or not value.strip():
+        return False, "", "Learning Disabilities cannot be empty"
+    
+    value = value.strip().capitalize()
+    
+    if value in CATEGORICAL_VALUES['Learning_Disabilities']:
+        return True, value, ""
+    
+    return False, "", f"Learning Disabilities must be one of: {', '.join(CATEGORICAL_VALUES['Learning_Disabilities'])}"
+
+
+def validate_parental_education_level(value: str) -> Tuple[bool, str, str]:
+    """
+    Validate Parental Education Level input.
+    
+    Args:
+        value: String value to validate
+    
+    Returns:
+        Tuple of (is_valid, validated_value, error_message)
+    """
+    if not value or not value.strip():
+        return False, "", "Parental Education Level cannot be empty"
+    
+    value = value.strip().title()
+    
+    if value in CATEGORICAL_VALUES['Parental_Education_Level']:
+        return True, value, ""
+    
+    return False, "", f"Parental Education Level must be one of: {', '.join(CATEGORICAL_VALUES['Parental_Education_Level'])}"
+
+
+def validate_distance_from_home(value: str) -> Tuple[bool, str, str]:
+    """
+    Validate Distance From Home input.
+    
+    Args:
+        value: String value to validate
+    
+    Returns:
+        Tuple of (is_valid, validated_value, error_message)
+    """
+    if not value or not value.strip():
+        return False, "", "Distance From Home cannot be empty"
+    
+    value = value.strip().capitalize()
+    
+    if value in CATEGORICAL_VALUES['Distance_from_Home']:
+        return True, value, ""
+    
+    return False, "", f"Distance From Home must be one of: {', '.join(CATEGORICAL_VALUES['Distance_from_Home'])}"
 
 
 def validate_menu_choice(value: str, min_choice: int = 1, max_choice: int = 10) -> Tuple[bool, int, str]:

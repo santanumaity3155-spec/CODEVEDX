@@ -77,7 +77,7 @@ class TestFieldSpecificValidation:
         """Test hours studied out of range."""
         is_valid, value, error = validate_hours_studied("100")
         assert not is_valid
-        assert "between 0 and 50" in error
+        assert "at most 50" in error
     
     def test_validate_attendance_valid(self):
         """Test valid attendance."""
@@ -89,7 +89,7 @@ class TestFieldSpecificValidation:
         """Test attendance out of range."""
         is_valid, value, error = validate_attendance("150")
         assert not is_valid
-        assert "between 0 and 100" in error
+        assert "at most 100" in error
     
     def test_validate_sleep_hours_valid(self):
         """Test valid sleep hours."""
@@ -101,7 +101,7 @@ class TestFieldSpecificValidation:
         """Test sleep hours out of range."""
         is_valid, value, error = validate_sleep_hours("30")
         assert not is_valid
-        assert "between 0 and 24" in error
+        assert "at most 24" in error
     
     def test_validate_previous_scores_valid(self):
         """Test valid previous scores."""

@@ -236,34 +236,37 @@ Interpretation: Very Good! The student is likely to perform well.
 
 ### 1. Data Preprocessing
 - Handle missing values
-- Encode categorical variables
-- Normalize/standardize features
-- Feature engineering
+- Encode categorical variables (Label Encoding)
+- Feature scaling and normalization
+- Feature selection and engineering
+- Train-test split (80-20)
 
 ### 2. Exploratory Data Analysis (EDA)
-- Statistical analysis
+- Statistical analysis of all features
 - Correlation analysis
 - Distribution visualization
-- Outlier detection
+- Outlier detection and handling
+- Feature importance analysis
 
 ### 3. Model Training
-- Algorithm selection
-- Train-test split
-- Cross-validation
-- Hyperparameter tuning
-- Model evaluation
+- Algorithm: Random Forest Regressor
+- Train-test split: 80-20
+- Cross-validation: 5-fold
+- Hyperparameter tuning using GridSearchCV
+- Model evaluation using multiple metrics
 
 ### 4. Model Deployment
-- Serialize trained model
+- Serialize trained model using joblib
 - Create prediction pipeline
-- Integrate with application
-- Performance monitoring
+- Integrate with console application
+- Performance monitoring and logging
 
 ### Model Performance
-- **Algorithm**: Random Forest Regressor (example)
+- **Algorithm**: Random Forest Regressor
 - **R² Score**: 0.95+
 - **Mean Absolute Error**: < 3.0
 - **Root Mean Squared Error**: < 4.0
+- **Features Used**: 6 primary features
 
 ## 💡 Prediction Example
 
