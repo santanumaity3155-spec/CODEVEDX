@@ -1,0 +1,86 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# Logs
+*.log
+logs/
+application.log
+
+# Model Files
+*.pkl
+*.pickle
+*.joblib
+models/*.pkl
+models/*.pickle
+
+# Output Files
+outputs/
+outputs/predictions/
+outputs/charts/
+outputs/reports/
+exports/
+
+# Data Files (optional - uncomment if you don't want to track data)
+# data/raw/*
+# data/processed/*.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Documentation
+docs/_build/
+site/
+
+# Distribution
+dist/
+build/
