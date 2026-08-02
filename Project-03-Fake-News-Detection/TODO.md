@@ -1,57 +1,54 @@
-# Module 2 — Data Preprocessing Tracking
+# Module 3 — EDA Tracking
 
-This file tracks progress for **Module 2: Data Preprocessing**.
+This file tracks progress for **Module 3: Exploratory Data Analysis (EDA)**.
 It is a temporary tracking artifact and will be removed before final submission.
 
-## ✅ Completed (Module 1 — Foundation)
+## ✅ Completed (Modules 1–2)
 
-- [x] Verify folder structure
-- [x] Verify dataset presence (`data/raw/Fake.csv`, `data/raw/True.csv`)
-- [x] Create `.gitignore`, `requirements.txt`, `README.md`, `PROJECT_SUMMARY.md`
-- [x] Initialize `src/__init__.py`
+- [x] Module 1 — Project Foundation
+- [x] Module 2 — Data Preprocessing
+  - [x] `data/processed/fake_news_dataset.csv` (43,971 rows × 10 cols)
+  - [x] `outputs/reports/preprocessing_report.txt`
 
-## 🔄 Module 2 — Data Preprocessing
+## 🔄 Module 3 — Exploratory Data Analysis (EDA)
 
 ### Plan Steps (approved)
 
-- [x] 1. Rewrite `notebooks/write_preprocessing_notebook.py` (complete, Steps 1–20)
-- [ ] 2. Generate `notebooks/data_preprocessing.ipynb`
-- [ ] 3. Execute notebook end-to-end (nbconvert)
-- [ ] 4. Verify `data/processed/fake_news_dataset.csv` + `outputs/reports/preprocessing_report.txt`
-- [ ] 5. Update this TODO.md
+- [x] 1. Create `notebooks/write_eda_notebook.py` (builder script, Steps 1–20)
+- [x] 2. Generate `notebooks/eda.ipynb`
+- [x] 3. Execute notebook end-to-end (nbconvert)
+- [x] 4. Verify charts in `outputs/charts/` + `outputs/reports/eda_report.txt`
+- [x] 5. Update this TODO.md
 
 ### Notebook Build Steps
 
-- [x] Create notebook generator script (`notebooks/write_preprocessing_notebook.py`)
-- [ ] Generate `notebooks/data_preprocessing.ipynb`
-- [ ] Step 1: Project introduction (Markdown)
-- [ ] Step 2: Import libraries (pandas, numpy, re, string, pathlib, nltk, warnings)
-- [ ] Step 3: Auto-download NLTK resources (punkt, stopwords, wordnet, omw-1.4)
-- [ ] Step 4: Load Fake.csv & True.csv (shape, columns, head, tail, info)
-- [ ] Step 5: Add labels (Fake → 0, True → 1)
-- [ ] Step 6: Merge, shuffle, reset index
-- [ ] Step 7: Merged shape & class distribution
-- [ ] Step 8: Missing values, duplicates, empty text/title checks
-- [ ] Step 9: Handle missing/duplicates/invalid text/whitespace
-- [ ] Step 10: Full NLP cleaning (lowercase, HTML, URLs, emails, punctuation, numbers, whitespace, special chars, non-ASCII)
-- [ ] Step 11: Tokenization (NLTK)
-- [ ] Step 12: Stopword removal (keeping not/no/never)
-- [ ] Step 13: Lemmatization (WordNetLemmatizer)
-- [ ] Step 14: Create `clean_text` column (originals preserved)
-- [ ] Step 15: NLP features (word_count, char_count, sentence_count, avg_word_length)
-- [ ] Step 16: Verify preprocessing (original → clean examples)
-- [ ] Step 17: Quality checks (no missing, no duplicates, no empty clean_text, balanced labels)
-- [ ] Step 18: Save processed dataset (`data/processed/fake_news_dataset.csv`)
-- [ ] Step 19: Reload & verify (shape, columns, dtypes)
-- [ ] Step 20: Generate preprocessing report (`outputs/reports/preprocessing_report.txt`)
-- [ ] Execute notebook end-to-end (nbconvert)
-- [ ] Verify CSV + report exist and are correct
-- [ ] Update this TODO.md
+- [x] Create notebook generator script (`notebooks/write_eda_notebook.py`)
+- [x] Generate `notebooks/eda.ipynb`
+- [x] Step 1: Markdown intro (project overview, purpose of EDA, dataset summary, expected outputs)
+- [x] Step 2: Import libraries (pandas, numpy, matplotlib, seaborn, pathlib, warnings, wordcloud, collections)
+- [x] Step 3: Load dataset (shape, columns, dtypes, head, tail)
+- [x] Step 4: Dataset summary (describe, missing values, duplicates, memory usage)
+- [x] Step 5: Target/label analysis (bar + pie chart, percentage distribution)
+- [x] Step 6: Text length analysis (word/char/sentence — histogram, boxplot, violin, density)
+- [x] Step 7: Avg word length analysis (histogram + boxplot)
+- [x] Step 8: Subject analysis (count plot, pie chart, top categories)
+- [x] Step 9: Publication date analysis (parse dates, year/month, time series + bar charts)
+- [x] Step 10: WordClouds (fake vs real, high-res PNG)
+- [x] Step 11: Top 30 common words (fake vs real, horizontal bar charts)
+- [x] Step 12: Top 20 bigrams (fake vs real)
+- [x] Step 13: Top 20 trigrams (fake vs real)
+- [x] Step 14: Correlation analysis (heatmap of numerical features)
+- [x] Step 15: Outlier analysis (IQR + boxplots)
+- [x] Step 16: Statistical summary (fake vs real comparison)
+- [x] Step 17: Interesting insights (auto-printed observations)
+- [x] Step 18: Save all charts to `outputs/charts/` (descriptive filenames)
+- [x] Step 19: Generate `outputs/reports/eda_report.txt`
+- [x] Step 20: Notebook validation (assert charts + report exist)
 
-## ✅ Module 2 Success Criteria
+## ✅ Module 3 Success Criteria
 
-- [ ] `data/processed/fake_news_dataset.csv` created
-- [ ] `outputs/reports/preprocessing_report.txt` created
-- [ ] Notebook executes top-to-bottom without errors
-- [ ] All preprocessing functions work correctly
+- [x] `notebooks/eda.ipynb` generated and executes top-to-bottom
+- [x] All charts saved to `outputs/charts/`
+- [x] `outputs/reports/eda_report.txt` generated
+- [x] No exceptions during execution
 
