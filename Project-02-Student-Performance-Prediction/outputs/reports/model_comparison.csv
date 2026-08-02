@@ -1,4 +1,3 @@
-Model,MAE,MSE,RMSE,R2
-Linear Regression,0.4523,3.256,1.8044,0.7697
-Random Forest,1.1787,4.9569,2.2264,0.6493
-Decision Tree,1.9115,14.7315,3.8382,-0.0422
+version https://git-lfs.github.com/spec/v1
+oid sha256:5f0710207f2d79d06561fe3aa003f1dbf1d9a9765d8ae9b62e7279ebf9a8806a
+size 157

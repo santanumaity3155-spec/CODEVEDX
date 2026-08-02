@@ -12,7 +12,17 @@ It is a temporary tracking artifact and will be removed before final submission.
 
 ## 🔄 Module 2 — Data Preprocessing
 
-- [ ] Create notebook generator script (`notebooks/write_preprocessing_notebook.py`)
+### Plan Steps (approved)
+
+- [x] 1. Rewrite `notebooks/write_preprocessing_notebook.py` (complete, Steps 1–20)
+- [ ] 2. Generate `notebooks/data_preprocessing.ipynb`
+- [ ] 3. Execute notebook end-to-end (nbconvert)
+- [ ] 4. Verify `data/processed/fake_news_dataset.csv` + `outputs/reports/preprocessing_report.txt`
+- [ ] 5. Update this TODO.md
+
+### Notebook Build Steps
+
+- [x] Create notebook generator script (`notebooks/write_preprocessing_notebook.py`)
 - [ ] Generate `notebooks/data_preprocessing.ipynb`
 - [ ] Step 1: Project introduction (Markdown)
 - [ ] Step 2: Import libraries (pandas, numpy, re, string, pathlib, nltk, warnings)
