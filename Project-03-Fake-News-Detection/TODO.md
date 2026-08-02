@@ -1,54 +1,71 @@
-# Module 3 — EDA Tracking
+# Module 4 — Model Training Tracking
 
-This file tracks progress for **Module 3: Exploratory Data Analysis (EDA)**.
-It is a temporary tracking artifact and will be removed before final submission.
+This file tracks progress for **Module 4: TF-IDF Vectorization, Model Training,
+Evaluation, Comparison, and Saving**. It is a temporary tracking artifact and
+will be removed before final submission.
 
-## ✅ Completed (Modules 1–2)
+## ✅ Completed (Modules 1–3)
 
 - [x] Module 1 — Project Foundation
 - [x] Module 2 — Data Preprocessing
   - [x] `data/processed/fake_news_dataset.csv` (43,971 rows × 10 cols)
   - [x] `outputs/reports/preprocessing_report.txt`
+- [x] Module 3 — Exploratory Data Analysis (EDA)
+  - [x] `notebooks/eda.ipynb`
+  - [x] `outputs/reports/eda_report.txt`
+  - [x] 32 charts in `outputs/charts/`
 
-## 🔄 Module 3 — Exploratory Data Analysis (EDA)
+## ✅ Module 4 — Model Training
 
-### Plan Steps (approved)
+### Plan Steps (approved — complete)
 
-- [x] 1. Create `notebooks/write_eda_notebook.py` (builder script, Steps 1–20)
-- [x] 2. Generate `notebooks/eda.ipynb`
+- [x] 1. Create `notebooks/write_model_training_notebook.py` (builder script, Steps 1–20)
+- [x] 2. Generate `notebooks/model_training.ipynb`
 - [x] 3. Execute notebook end-to-end (nbconvert)
-- [x] 4. Verify charts in `outputs/charts/` + `outputs/reports/eda_report.txt`
+- [x] 4. Verify models, charts, reports, and validation outputs
 - [x] 5. Update this TODO.md
 
 ### Notebook Build Steps
 
-- [x] Create notebook generator script (`notebooks/write_eda_notebook.py`)
-- [x] Generate `notebooks/eda.ipynb`
-- [x] Step 1: Markdown intro (project overview, purpose of EDA, dataset summary, expected outputs)
-- [x] Step 2: Import libraries (pandas, numpy, matplotlib, seaborn, pathlib, warnings, wordcloud, collections)
-- [x] Step 3: Load dataset (shape, columns, dtypes, head, tail)
-- [x] Step 4: Dataset summary (describe, missing values, duplicates, memory usage)
-- [x] Step 5: Target/label analysis (bar + pie chart, percentage distribution)
-- [x] Step 6: Text length analysis (word/char/sentence — histogram, boxplot, violin, density)
-- [x] Step 7: Avg word length analysis (histogram + boxplot)
-- [x] Step 8: Subject analysis (count plot, pie chart, top categories)
-- [x] Step 9: Publication date analysis (parse dates, year/month, time series + bar charts)
-- [x] Step 10: WordClouds (fake vs real, high-res PNG)
-- [x] Step 11: Top 30 common words (fake vs real, horizontal bar charts)
-- [x] Step 12: Top 20 bigrams (fake vs real)
-- [x] Step 13: Top 20 trigrams (fake vs real)
-- [x] Step 14: Correlation analysis (heatmap of numerical features)
-- [x] Step 15: Outlier analysis (IQR + boxplots)
-- [x] Step 16: Statistical summary (fake vs real comparison)
-- [x] Step 17: Interesting insights (auto-printed observations)
-- [x] Step 18: Save all charts to `outputs/charts/` (descriptive filenames)
-- [x] Step 19: Generate `outputs/reports/eda_report.txt`
-- [x] Step 20: Notebook validation (assert charts + report exist)
+- [x] Step 1: Markdown intro (project overview, purpose, pipeline overview, expected outputs)
+- [x] Step 2: Import libraries (pandas, numpy, matplotlib, seaborn, pathlib, warnings, joblib, scikit-learn)
+- [x] Step 3: Load dataset (shape, columns, label distribution, missing-value checks)
+- [x] Step 4: Prepare features (X = clean_text, y = label)
+- [x] Step 5: Train/test split (80/20, random_state=42, stratify=y)
+- [x] Step 6: TF-IDF vectorization (fit train, transform train/test, vocabulary size, matrix shape)
+- [x] Step 7: Train 4 models (LogReg, MultinomialNB, LinearSVM, RandomForest) with timing
+- [x] Step 8: Evaluate every model (accuracy, precision, recall, F1, ROC-AUC, report, confusion matrix, times)
+- [x] Step 9: Comparison table sorted by F1, best model highlighted
+- [x] Step 10: Visualizations (accuracy, F1, precision, recall, confusion matrices, ROC, PR curves)
+- [x] Step 11: Feature importance (top 30 fake/real indicators, horizontal bar charts)
+- [x] Step 12: Confidence score validation (probability distribution + decision_function for SVM)
+- [x] Step 13: 5-fold cross-validation (mean accuracy + std)
+- [x] Step 14: Error analysis (misclassified samples, original text, predicted/actual, confidence)
+- [x] Step 15: Select best model (highest F1, tie-break accuracy, printed reason)
+- [x] Step 16: Save `models/fake_news_model.pkl`
+- [x] Step 17: Save `models/tfidf_vectorizer.pkl`
+- [x] Step 18: Generate `outputs/reports/model_report.txt`
+- [x] Step 19: Validation (reload model + vectorizer, predict on 5 sample articles) — 5/5 correct
+- [x] Step 20: Notebook validation (assert all files/charts/reports exist) — 14/14 charts, 3/3 artifacts PASS
 
-## ✅ Module 3 Success Criteria
+## ✅ Module 4 Success Criteria
 
-- [x] `notebooks/eda.ipynb` generated and executes top-to-bottom
-- [x] All charts saved to `outputs/charts/`
-- [x] `outputs/reports/eda_report.txt` generated
-- [x] No exceptions during execution
+- [x] `notebooks/model_training.ipynb` generated and executes top-to-bottom (43 cells: 23 code, 20 markdown)
+- [x] `models/fake_news_model.pkl` created (Random Forest, F1=0.9967)
+- [x] `models/tfidf_vectorizer.pkl` created
+- [x] `outputs/reports/model_report.txt` generated
+- [x] All comparison/evaluation charts saved to `outputs/charts/` (14 new Module 4 charts)
+- [x] Reload + prediction validation passes (5/5 correct with confidence scores)
+- [x] No exceptions during execution (0 error outputs)
+
+### Key Results
+
+- **Best Model**: Random Forest — Accuracy 0.9968, Precision 0.9948, Recall 0.9986, F1 0.9967, ROC-AUC 0.9999
+- **5-Fold CV**: Mean accuracy 0.9969 ± 0.0008
+- **Misclassified**: 28 / 8,795 test samples (0.32%)
+
+## 🛑 STOP — Do NOT start Module 5
+
+This module must be confirmed by the user before Module 5 (Console Application)
+begins.
 
