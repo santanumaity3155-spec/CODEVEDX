@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 from datetime import datetime
 
-from config import LOG_DIR, LOG_FILE
+from src.config import LOG_DIR, LOG_FILE
 
 
 def setup_logger():

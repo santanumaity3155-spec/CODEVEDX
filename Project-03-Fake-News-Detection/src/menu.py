@@ -8,24 +8,24 @@ from pathlib import Path
 from datetime import datetime
 from typing import Optional
 
-from config import (
+from src.config import (
     APP_NAME, APP_VERSION, PREDICTIONS_DIR, 
     MIN_TEXT_LENGTH, MAX_TEXT_LENGTH
 )
-from logger import logger
-from utils import (
+from src.logger import logger
+from src.utils import (
     clear_screen, pause, print_banner, print_section_header,
     format_number, format_percentage, format_file_size,
     format_timestamp, truncate_text, confirm_action, get_user_input,
     display_progress_bar, get_system_info, get_memory_usage
 )
-from validation import (
+from src.validation import (
     validate_text_input, validate_file_path, validate_csv_file,
     validate_text_column, validate_menu_choice, validate_export_format,
     validate_history_limit
 )
-from data_handler import data_handler
-from predictor import predictor
+from src.data_handler import data_handler
+from src.predictor import predictor
 
 
 class MenuSystem:
@@ -667,7 +667,7 @@ class MenuSystem:
             
             print("\nDIRECTORY STRUCTURE")
             print("-" * 70)
-            from config import (
+            from src.config import (
                 PROJECT_ROOT, DATA_DIR, MODEL_DIR, OUTPUT_DIR, 
                 PREDICTIONS_DIR, LOG_DIR
             )

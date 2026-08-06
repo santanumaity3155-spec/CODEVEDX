@@ -12,8 +12,8 @@ from typing import Dict, Any, Optional, Tuple
 
 import numpy as np
 
-from config import MODEL_PATH, VECTORIZER_PATH, MODEL_INFO
-from logger import logger
+from src.config import MODEL_PATH, VECTORIZER_PATH, MODEL_INFO
+from src.logger import logger
 
 
 class NewsPredictor:

@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 from typing import Tuple, Optional
 
-from config import MIN_TEXT_LENGTH, MAX_TEXT_LENGTH, PROCESSED_DATASET_PATH
+from src.config import MIN_TEXT_LENGTH, MAX_TEXT_LENGTH, PROCESSED_DATASET_PATH
 
 
 class ValidationError(Exception):

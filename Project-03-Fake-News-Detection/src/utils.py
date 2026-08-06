@@ -11,7 +11,7 @@ from pathlib import Path
 from datetime import datetime
 from typing import Optional
 
-from config import PROJECT_ROOT
+from src.config import PROJECT_ROOT
 
 
 def clear_screen():

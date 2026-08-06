@@ -13,14 +13,14 @@ from typing import Optional, List, Dict, Any
 
 import pandas as pd
 
-from config import (
+from src.config import (
     PROCESSED_DATASET_PATH,
     PREDICTIONS_DIR,
     PREDICTION_HISTORY_FILE,
     CHARTS_DIR,
     REPORTS_DIR
 )
-from logger import logger
+from src.logger import logger
 
 
 class DataHandler:
@@ -288,7 +288,7 @@ class DataHandler:
         Returns:
             Dictionary with model file information
         """
-        from config import MODEL_PATH, VECTORIZER_PATH
+        from src.config import MODEL_PATH, VECTORIZER_PATH
         
         info = {
             "model": {
