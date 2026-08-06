@@ -1,0 +1,80 @@
+MIT License
+
+Copyright (c) 2024 CodeVedX Intern - AI/ML Track
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+## Project Information
+
+**Project Name**: AI Based Fake News Detection Tool  
+**Author**: CodeVedX Intern - AI/ML Track  
+**GitHub**: [@santanumaity3155-spec](https://github.com/santanumaity3155-spec)  
+**Program**: CodeVedX Internship Program 2024  
+**Version**: 1.0.0  
+**License**: MIT License  
+
+---
+
+## Dataset Attribution
+
+This project uses the **Fake and real news dataset** from Kaggle.
+
+**Dataset Source**: Kaggle - Fake and real news dataset  
+**Original Authors**: Various news outlets and fact-checking websites  
+**Usage**: Educational and research purposes as part of CodeVedX Internship Program  
+
+The dataset is used in accordance with its original license terms.  
+No modifications to the original dataset structure have been made beyond preprocessing for ML training.
+
+---
+
+## Third-Party Libraries
+
+This project uses the following open-source libraries, each with its own license:
+
+- **pandas** (BSD 3-Clause License)
+- **numpy** (BSD 3-Clause License)
+- **scikit-learn** (BSD 3-Clause License)
+- **NLTK** (Apache License 2.0)
+- **matplotlib** (PSF License)
+- **seaborn** (BSD 3-Clause License)
+- **wordcloud** (MIT License)
+- **joblib** (BSD 3-Clause License)
+- **pytest** (MIT License)
+- **jupyter** (BSD 3-Clause License)
+- **psutil** (BSD 3-Clause License)
+- **openpyxl** (MIT License)
+
+All third-party libraries are used in accordance with their respective licenses.
+
+---
+
+## Contact
+
+For questions about this license or the project:
+- **GitHub Issues**: https://github.com/santanumaity3155-spec/CODEVEDX/issues
+- **Email**: Available through GitHub profile
+
+---
+
+**Last Updated**: August 2024  
+**License Version**: MIT  
+**Applicable From**: Module 1 (2024-08-02) through Module 6 (2024-08-07)
