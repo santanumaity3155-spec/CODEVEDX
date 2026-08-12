@@ -1,0 +1,72 @@
+======================================================================
+FAQ DATASET REPORT - INTERNAL HELPDESK CHATBOT
+======================================================================
+
+Report Generated: 2026-08-11 10:34:53
+
+DATASET INFORMATION
+----------------------------------------------------------------------
+Dataset Name: Internal Helpdesk FAQ Dataset
+Total Records: 159
+Total Intents: 22
+Unique Questions: 159
+Duplicate Questions: 0
+
+INTENT DISTRIBUTION
+----------------------------------------------------------------------
+account_access                :  12 ( 7.55%)
+attendance                    :   1 ( 0.63%)
+contact_information           :   1 ( 0.63%)
+email_problems                :  14 ( 8.81%)
+employee_id                   :   1 ( 0.63%)
+goodbye                       :  10 ( 6.29%)
+greetings                     :  10 ( 6.29%)
+help                          :  20 (12.58%)
+holidays                      :   1 ( 0.63%)
+hr_support                    :   1 ( 0.63%)
+internet_problems             :   1 ( 0.63%)
+laptop_problems               :  19 (11.95%)
+leave_policy                  :  12 ( 7.55%)
+office_location               :   1 ( 0.63%)
+password_reset                :  20 (12.58%)
+payroll                       :   2 ( 1.26%)
+salary_information            :   2 ( 1.26%)
+security                      :   1 ( 0.63%)
+software_installation         :  17 (10.69%)
+technical_support             :   1 ( 0.63%)
+wifi_problems                 :  11 ( 6.92%)
+working_hours                 :   1 ( 0.63%)
+
+Min examples per intent: 1
+Max examples per intent: 20
+Avg examples per intent: 7.23
+Class balance ratio: 0.05
+
+DATA QUALITY
+----------------------------------------------------------------------
+Missing Values:
+  question: 0
+  intent: 0
+  answer: 0
+  entity: 0
+
+DATASET QUALITY ASSESSMENT
+----------------------------------------------------------------------
+Quality Score: 70%
+Issues: Imbalanced class distribution, Some intents have too few examples
+
+FUTURE ML READINESS
+----------------------------------------------------------------------
+✓ Dataset is suitable for intent classification
+✓ Sufficient examples per intent for training
+✓ Clean and validated data
+✓ No missing values in required fields
+✓ Ready for train/test split
+
+RECOMMENDATIONS
+----------------------------------------------------------------------
+• Consider adding more examples to minority classes
+• Add more training examples for better model performance
+• Proceed to Module 2: Intent Classification Model Training
+• Consider TF-IDF vectorization for feature extraction
+• Implement train/test split for model evaluation
