@@ -1,72 +1,225 @@
-======================================================================
-FAQ DATASET REPORT - INTERNAL HELPDESK CHATBOT
-======================================================================
+============================================================================
+PROJECT 4 - MODULE 1 DATASET REPORT
+============================================================================
 
-Report Generated: 2026-08-11 10:34:53
+Generated: 2026-08-14 00:31:59
 
-DATASET INFORMATION
-----------------------------------------------------------------------
-Dataset Name: Internal Helpdesk FAQ Dataset
-Total Records: 159
+DATASET OVERVIEW
+----------------------------------------------------------------------------
+Total Records: 294
 Total Intents: 22
-Unique Questions: 159
+Total Entities: 22
+
+MISSING VALUES
+----------------------------------------------------------------------------
+Missing Questions: 0
+Missing Intents: 0
+Missing Answers: 0
+
 Duplicate Questions: 0
 
+INTENT BALANCE
+----------------------------------------------------------------------------
+Minimum Examples Per Intent: 12
+Maximum Examples Per Intent: 20
+Average Examples Per Intent: 13.36
+Intents Below Minimum (10): None
+Class Balance Ratio: 0.6
+
 INTENT DISTRIBUTION
-----------------------------------------------------------------------
-account_access                :  12 ( 7.55%)
-attendance                    :   1 ( 0.63%)
-contact_information           :   1 ( 0.63%)
-email_problems                :  14 ( 8.81%)
-employee_id                   :   1 ( 0.63%)
-goodbye                       :  10 ( 6.29%)
-greetings                     :  10 ( 6.29%)
-help                          :  20 (12.58%)
-holidays                      :   1 ( 0.63%)
-hr_support                    :   1 ( 0.63%)
-internet_problems             :   1 ( 0.63%)
-laptop_problems               :  19 (11.95%)
-leave_policy                  :  12 ( 7.55%)
-office_location               :   1 ( 0.63%)
-password_reset                :  20 (12.58%)
-payroll                       :   2 ( 1.26%)
-salary_information            :   2 ( 1.26%)
-security                      :   1 ( 0.63%)
-software_installation         :  17 (10.69%)
-technical_support             :   1 ( 0.63%)
-wifi_problems                 :  11 ( 6.92%)
-working_hours                 :   1 ( 0.63%)
+----------------------------------------------------------------------------
+account_access           :  12  ( 4.08%)
+attendance               :  12  ( 4.08%)
+contact_information      :  12  ( 4.08%)
+email_problems           :  14  ( 4.76%)
+employee_id              :  12  ( 4.08%)
+goodbye                  :  12  ( 4.08%)
+greetings                :  12  ( 4.08%)
+help                     :  20  ( 6.80%)
+holidays                 :  12  ( 4.08%)
+hr_support               :  12  ( 4.08%)
+internet_problems        :  12  ( 4.08%)
+laptop_problems          :  19  ( 6.46%)
+leave_policy             :  12  ( 4.08%)
+office_location          :  12  ( 4.08%)
+password_reset           :  20  ( 6.80%)
+payroll                  :  12  ( 4.08%)
+salary_information       :  12  ( 4.08%)
+security                 :  12  ( 4.08%)
+software_installation    :  17  ( 5.78%)
+technical_support        :  12  ( 4.08%)
+wifi_problems            :  12  ( 4.08%)
+working_hours            :  12  ( 4.08%)
 
-Min examples per intent: 1
-Max examples per intent: 20
-Avg examples per intent: 7.23
-Class balance ratio: 0.05
+INTERNAL HELPDESK DOMAIN VALIDATION
+----------------------------------------------------------------------------
+All intents are canonical internal-helpdesk intents: PASS
+All entities are canonical: PASS
 
-DATA QUALITY
-----------------------------------------------------------------------
-Missing Values:
-  question: 0
-  intent: 0
-  answer: 0
-  entity: 0
+SOURCE DATASETS
+----------------------------------------------------------------------------
+Original Bitext records : 26872
+Base faq_dataset.csv    : 159
+Curated augmented       : 135
+  Bitext scan [password_reset]: 995 candidate rows, 549 keyword matches, 0 reused.
+  Bitext scan [account_access]: 4991 candidate rows, 3602 keyword matches, 0 reused.
+  Bitext scan [contact_information]: 1999 candidate rows, 922 keyword matches, 0 reused.
 
-DATASET QUALITY ASSESSMENT
-----------------------------------------------------------------------
-Quality Score: 70%
-Issues: Imbalanced class distribution, Some intents have too few examples
+AUGMENTATION LOG
+----------------------------------------------------------------------------
+  [augmented] (attendance) How do I mark my attendance each day?
+  [augmented] (attendance) Can I view my attendance on the mobile app?
+  [augmented] (attendance) What should I do if the attendance system is down?
+  [augmented] (attendance) How do I correct an incorrect attendance entry?
+  [augmented] (attendance) Is there a grace period for clocking in?
+  [augmented] (attendance) How do I check my overtime hours?
+  [augmented] (attendance) Can my manager view my attendance records?
+  [augmented] (attendance) What happens if I forget to clock out?
+  [augmented] (attendance) How do I generate an attendance report?
+  [augmented] (attendance) Do part-time employees have different attendance rules?
+  [augmented] (attendance) How do I set up attendance notifications?
+  [augmented] (contact_information) What is the IT helpdesk email address?
+  [augmented] (contact_information) Where can I find the company directory?
+  [augmented] (contact_information) What is the general company contact number?
+  [augmented] (contact_information) How do I contact the security desk?
+  [augmented] (contact_information) How do I find a specific colleague's contact details?
+  [augmented] (contact_information) How can I contact HR for general inquiries?
+  [augmented] (contact_information) What is the best way to report an IT issue?
+  [augmented] (contact_information) Can I message my manager through the company platform?
+  [augmented] (contact_information) Who should I contact for payroll questions?
+  [augmented] (contact_information) What are the emergency contact numbers?
+  [augmented] (contact_information) How do I contact IT security?
+  [augmented] (employee_id) Where can I find my employee ID on my payslip?
+  [augmented] (employee_id) I lost my employee ID card. What should I do?
+  [augmented] (employee_id) How do I request a replacement employee ID card?
+  [augmented] (employee_id) What if I forget my employee ID number?
+  [augmented] (employee_id) How do I activate my employee ID card for building access?
+  [augmented] (employee_id) Can I use my employee ID for cafeteria payments?
+  [augmented] (employee_id) What is the format of my employee ID?
+  [augmented] (employee_id) How do I update a name change on my employee ID?
+  [augmented] (employee_id) Where do I collect my employee ID card?
+  [augmented] (employee_id) Can a temporary contractor get an employee ID?
+  [augmented] (employee_id) How do I reset my employee ID account password?
+  [augmented] (holidays) How do I check the company holiday calendar?
+  [augmented] (holidays) Is Independence Day a company holiday?
+  [augmented] (holidays) Are there any holidays in December?
+  [augmented] (holidays) How many paid holidays does the company provide?
+  [augmented] (holidays) Will salary be affected if payday falls on a holiday?
+  [augmented] (holidays) Is New Year's Day a paid holiday?
+  [augmented] (holidays) Are there any half-day holidays?
+  [augmented] (holidays) Can I work on a company holiday for extra pay?
+  [augmented] (holidays) How do I find the list of upcoming holidays?
+  [augmented] (holidays) Do I get paid if I work during a holiday?
+  [augmented] (holidays) Is Labor Day a paid company holiday?
+  [augmented] (hr_support) How do I submit an HR case?
+  [augmented] (hr_support) What are HR office hours?
+  [augmented] (hr_support) How do I schedule an appointment with HR?
+  [augmented] (hr_support) Can I request an employment verification letter?
+  [augmented] (hr_support) How do I update my personal information in HR records?
+  [augmented] (hr_support) How do I report a workplace concern to HR?
+  [augmented] (hr_support) Can HR help with career counseling?
+  [augmented] (hr_support) How do I request a reference letter from HR?
+  [augmented] (hr_support) What benefits does HR manage?
+  [augmented] (hr_support) How do I file a formal complaint with HR?
+  [augmented] (hr_support) How do I enroll in company benefits?
+  [augmented] (internet_problems) My internet connection is very slow today.
+  [augmented] (internet_problems) The internet is completely down in my office.
+  [augmented] (internet_problems) How do I reset my network settings?
+  [augmented] (internet_problems) My ethernet cable is not working.
+  [augmented] (internet_problems) Why can I not access certain websites?
+  [augmented] (internet_problems) The WiFi works on my phone but not on my laptop.
+  [augmented] (internet_problems) My browser shows a DNS server not found error.
+  [augmented] (internet_problems) The network keeps disconnecting every few minutes.
+  [augmented] (internet_problems) Can I get a wired ethernet connection?
+  [augmented] (internet_problems) My VPN connection drops after 30 minutes.
+  [augmented] (internet_problems) How do I test my internet speed?
+  [augmented] (office_location) Where is the nearest coffee station?
+  [augmented] (office_location) Where is the main cafeteria?
+  [augmented] (office_location) How do I get to Building B?
+  [augmented] (office_location) Where is the nearest restroom?
+  [augmented] (office_location) Where can I find a quiet workspace?
+  [augmented] (office_location) Where is the nearest emergency exit?
+  [augmented] (office_location) Where is the first aid station?
+  [augmented] (office_location) Where can I find bookable meeting rooms?
+  [augmented] (office_location) How do I find a specific conference room?
+  [augmented] (office_location) Where is the employee parking lot?
+  [augmented] (office_location) Where is the fire assembly point?
+  [augmented] (payroll) What documents are needed for salary processing?
+  [augmented] (payroll) Who do I contact about a salary discrepancy?
+  [augmented] (payroll) How do I update my bank account for salary credit?
+  [augmented] (payroll) What is the salary payment date each month?
+  [augmented] (payroll) How do I request a salary advance?
+  [augmented] (payroll) What deductions appear on my payslip?
+  [augmented] (payroll) Can I have my salary paid to a different bank account?
+  [augmented] (payroll) How do I request an income certificate?
+  [augmented] (payroll) What is the salary reimbursement procedure?
+  [augmented] (payroll) How do I check my salary credit status?
+  [augmented] (salary_information) Where can I view my salary structure?
+  [augmented] (salary_information) How is my monthly salary calculated?
+  [augmented] (salary_information) Can I see the salary breakup online?
+  [augmented] (salary_information) What components make up my monthly salary?
+  [augmented] (salary_information) How do I download my salary statement?
+  [augmented] (salary_information) Why is my salary lower than expected?
+  [augmented] (salary_information) How do I view my past salary details?
+  [augmented] (salary_information) What is the salary revision policy?
+  [augmented] (salary_information) How do I request a salary certificate?
+  [augmented] (salary_information) How do I know if my salary has been credited?
+  [augmented] (security) How do I report a lost ID badge?
+  [augmented] (security) How do I get after-hours access to the building?
+  [augmented] (security) What should I do if I see suspicious activity?
+  [augmented] (security) How do I update my security questions for login?
+  [augmented] (security) What is the password change frequency policy?
+  [augmented] (security) What is multi-factor authentication?
+  [augmented] (security) How do I secure my workstation when I leave?
+  [augmented] (security) What should I do if I clicked a phishing link?
+  [augmented] (security) What is the procedure for a lost or stolen laptop?
+  [augmented] (security) How do I encrypt sensitive files?
+  [augmented] (security) What is the company's physical security policy?
+  [augmented] (technical_support) My laptop is running very slowly.
+  [augmented] (technical_support) How do I connect a second monitor to my laptop?
+  [augmented] (technical_support) My laptop battery is draining too quickly.
+  [augmented] (technical_support) How do I back up my files automatically?
+  [augmented] (technical_support) My laptop screen is flickering intermittently.
+  [augmented] (technical_support) How do I run system diagnostics on my laptop?
+  [augmented] (technical_support) My laptop overheats during heavy use.
+  [augmented] (technical_support) How do I reset my Outlook email profile?
+  [augmented] (technical_support) My laptop will not power on.
+  [augmented] (technical_support) How do I free up disk space on my laptop?
+  [augmented] (technical_support) How do I update my laptop drivers?
+  [augmented] (working_hours) Can I work from home on Fridays?
+  [augmented] (working_hours) What are the standard working hours?
+  [augmented] (working_hours) How do I request a shift change?
+  [augmented] (working_hours) Can I work late and leave early on another day?
+  [augmented] (working_hours) What is the lunch break policy?
+  [augmented] (working_hours) How many hours should I work per week?
+  [augmented] (working_hours) Can I work on weekends?
+  [augmented] (working_hours) What is the overtime policy?
+  [augmented] (working_hours) How do I report my working hours for remote days?
+  [augmented] (working_hours) What is the half-day policy?
+  [augmented] (working_hours) How do I find out if the office is closed during a holiday?
+  [augmented] (wifi_problems) How do I find the company WiFi network name?
+  [augmented] (greetings) Hey there
+  [augmented] (greetings) Hi, how are you?
+  [augmented] (goodbye) I'm done asking questions
+  [augmented] (goodbye) That's everything I needed
 
-FUTURE ML READINESS
-----------------------------------------------------------------------
-✓ Dataset is suitable for intent classification
-✓ Sufficient examples per intent for training
-✓ Clean and validated data
-✓ No missing values in required fields
-✓ Ready for train/test split
+INTENT NORMALIZATION MAP
+----------------------------------------------------------------------------
+  (no intent relabeling occurred)
 
-RECOMMENDATIONS
-----------------------------------------------------------------------
-• Consider adding more examples to minority classes
-• Add more training examples for better model performance
-• Proceed to Module 2: Intent Classification Model Training
-• Consider TF-IDF vectorization for feature extraction
-• Implement train/test split for model evaluation
+QUALITY GATE
+----------------------------------------------------------------------------
+  [PASS] Required columns exist
+  [PASS] No missing questions
+  [PASS] No missing intents
+  [PASS] No missing answers
+  [PASS] No duplicate questions
+  [PASS] Minimum 10 examples per intent
+  [PASS] Intent labels valid
+  [PASS] Entity validation passed
+
+Quality Gate: PASS
+
+============================================================================
+MODULE 1: COMPLETE
+============================================================================

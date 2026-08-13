@@ -2,108 +2,138 @@
 
 ## Project Overview
 
-This project implements an AI-powered chatbot for internal helpdesk support. The chatbot uses Natural Language Processing (NLP) and intent detection to answer frequently asked questions from employees about IT support, HR policies, and company procedures.
+This project implements an AI-powered chatbot for internal helpdesk support.
+The chatbot uses Natural Language Processing (NLP) and intent detection to
+answer frequently asked questions from employees about IT support, HR
+policies, and company procedures.
 
-## Module 1: Project Setup + FAQ Dataset Preparation
+## Module 1: Complete Dataset Preparation, Domain Adaptation & Validation
 
-### Objective
-Prepare a high-quality FAQ dataset for training an intent classification model.
+Module 1 is **COMPLETE**. It prepares a clean, validated, reproducible
+**internal helpdesk FAQ dataset** ready for Module 2 (NLP preprocessing),
+Module 3 (intent classification) and Module 4 (chatbot engine).
 
-### Dataset Information
+### Dataset roles
 
-**Location:** data/raw/faq_dataset.csv (raw), data/processed/faq_dataset.csv (processed)
+| Dataset                                       | Role                                            |
+| --------------------------------------------- | ----------------------------------------------- |
+| `data/raw/Bitext_..._27K_responses-v11.csv`   | Original source (26,872 e-commerce records). Never modified. |
+| `data/raw/faq_dataset.csv`                    | Project internal-helpdesk candidate (was imbalanced). |
+| `data/raw/faq_dataset_augmented.csv`          | 135 carefully curated examples (built by the pipeline). |
+| `data/processed/faq_dataset.csv`              | **Final cleaned, balanced Module 1 dataset.**   |
 
-**Structure:**
-- question: The FAQ question
-- intent: The intent/category of the question
-- nswer: The answer to the question
-- entity: Optional entity extraction field
+### Structure
 
-### Intents Covered
+`data/processed/faq_dataset.csv` uses the schema:
 
-The dataset includes the following intents:
-- greetings / goodbye / help
-- password_reset / account_access
-- laptop_problems / software_installation
-- internet_problems / wifi_problems / email_problems
-- leave_policy / attendance / working_hours / holidays
-- salary_information / payroll
-- employee_id / hr_support / office_location
-- contact_information / security / technical_support
+- `question`: the user's natural-language helpdesk question
+- `intent`: the canonical intent/category (snake_case)
+- `answer`: the appropriate helpdesk response
+- `entity`: optional entity, or empty string when none applies
 
-### Dataset Statistics
-- Total records: 220+
-- Unique intents: 22
-- Examples per intent: 10-20
-- Class balance: Well-balanced
+### Final dataset statistics (computed dynamically)
 
-## Setup and Installation
+- Total records: 294
+- Total intents: 22
+- Minimum / maximum examples per intent: 12 / 20
+- Duplicate questions: 0
+- Missing values: 0
+- Total entities: 22
+- Class balance ratio: 0.6
+- Quality gate: **PASS**
+
+All 22 intents are internal-helpdesk domains (password_reset, account_access,
+email_problems, laptop_problems, software_installation, wifi_problems,
+leave_policy, salary_information, payroll, attendance, holidays, hr_support,
+security, technical_support, office_location, employee_id, working_hours,
+internet_problems, contact_information, greetings, goodbye, help).
+
+### Intents covered by the base dataset (`data/raw/faq_dataset.csv`)
+
+greetings / goodbye / help, password_reset / account_access,
+laptop_problems / software_installation, internet_problems / wifi_problems /
+email_problems, leave_policy / attendance / working_hours / holidays,
+salary_information / payroll, employee_id / hr_support / office_location,
+contact_information / security / technical_support.
+
+## Setup
 
 ### Prerequisites
+
 - Python 3.8+
-- pip package manager
 
 ### Installation
 
-1. Clone the repository:
-`ash
-git clone <repository-url>
-cd Project-04-AI-Helpdesk-Chatbot
-`
-
-2. Create virtual environment (optional but recommended):
-`ash
+```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-`
-
-3. Install dependencies:
-`ash
+venv\Scripts\activate      # Windows
+source venv/bin/activate   # macOS/Linux
 pip install -r requirements.txt
-`
+```
 
 ## Dataset Preparation
 
-### Running the Preparation Script
+To build, clean and validate the dataset:
 
-To prepare and validate the dataset:
-`ash
+```bash
 python src/prepare_dataset.py
-`
+```
 
-This script will:
-1. Load the raw FAQ dataset
-2. Validate data quality (missing values, duplicates, etc.)
-3. Clean and normalize the data
-4. Remove duplicate questions
-5. Generate statistics and analysis
-6. Save the processed dataset to data/processed/faq_dataset.csv`n7. Generate a dataset report at outputs/reports/dataset_report.txt`n8. Create visualization charts at outputs/charts/`n
-### Output Files
+This reproducible script performs, in order:
+`load -> validate -> clean -> normalize intents -> balance -> validate ->
+save -> report -> charts`. Running it multiple times does **not** create
+duplicates.
 
-After running the preparation script, you will have:
+### Outputs
 
-- **Processed Dataset:** data/processed/faq_dataset.csv`n- **Dataset Report:** outputs/reports/dataset_report.txt`n- **Intent Distribution Chart:** outputs/charts/intent_distribution.png`n- **Intent Distribution Pie Chart:** outputs/charts/intent_distribution_pie.png`n
-## Dataset Quality
+- **Processed dataset:** `data/processed/faq_dataset.csv`
+- **Dataset report:** `outputs/reports/dataset_report.txt`
+- **Intent distribution chart:** `outputs/charts/intent_distribution.png`
+- **Intent distribution pie chart:** `outputs/charts/intent_distribution_pie.png`
 
-The dataset preparation includes:
-- Missing value detection and handling
-- Duplicate question removal
-- Whitespace cleanup
-- Intent label normalization
-- Data validation
-- Quality scoring
+## Tests
+
+```bash
+python -m pytest tests/test_dataset_preparation.py -v
+```
+
+The suite enforces (among others) that `test_intent_distribution_valid`
+requires a minimum of **10 examples per intent**.
+
+## Notebook
+
+Open `notebooks/data_preparation.ipynb` in Jupyter. It mirrors the CLI
+pipeline across 16 sections with real executable cells:
+
+1. Module 1 Overview
+2. Load Raw Datasets
+3. Inspect Dataset Structure
+4. Missing Value Analysis
+5. Duplicate Analysis
+6. Intent Distribution
+7. Internal Helpdesk Domain Analysis
+8. Data Cleaning
+9. Intent Normalization
+10. Intent Balancing
+11. Entity Validation
+12. Final Dataset Validation
+13. Dataset Statistics
+14. Visualizations
+15. Save Processed Dataset
+16. Final Quality Gate
 
 ## Next Steps (Module 2+)
 
-- Module 2: Intent Classification Model Training
-- Module 3: TF-IDF Vectorization and Feature Extraction
-- Module 4: Chatbot Prediction Engine
-- Module 5: Flask API Development
-- Module 6: Admin Panel and CRUD Operations
+- Module 2: NLP text preprocessing (see `src/nlp_preprocessor.py`)
+- Module 3: Intent classification model training
+- Module 4: Chatbot prediction engine
+- Module 5: Flask API development
+- Module 6: Admin panel and CRUD operations
 
 ## Contributing
 
-This is an internship project. For questions or issues, please contact the development team.
+This is an internship project. For questions or issues, please contact the
+development team.
 
 ## License
 
