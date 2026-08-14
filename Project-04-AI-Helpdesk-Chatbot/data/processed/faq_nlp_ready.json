@@ -1,0 +1,8339 @@
+[
+  {
+    "question": "How do I reset my password?",
+    "clean_question": "how do i reset my password",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "reset",
+      "my",
+      "password"
+    ],
+    "filtered_tokens": [
+      "reset",
+      "password"
+    ],
+    "lemmatized_tokens": [
+      "reset",
+      "password"
+    ],
+    "intent": "password_reset",
+    "answer": "You can reset your password through the internal password reset portal at portal.company.com/reset. You will need your employee ID to verify your identity.",
+    "entity": "password",
+    "entities": [
+      "password"
+    ]
+  },
+  {
+    "question": "I forgot my company password.",
+    "clean_question": "i forgot my company password",
+    "tokens": [
+      "i",
+      "forgot",
+      "my",
+      "company",
+      "password"
+    ],
+    "filtered_tokens": [
+      "forgot",
+      "company",
+      "password"
+    ],
+    "lemmatized_tokens": [
+      "forgot",
+      "company",
+      "password"
+    ],
+    "intent": "password_reset",
+    "answer": "Use the 'Forgot Password' link on the login page or visit the IT helpdesk in Building A, Room 101 during business hours.",
+    "entity": "password",
+    "entities": [
+      "password"
+    ]
+  },
+  {
+    "question": "Where can I change my password?",
+    "clean_question": "where can i change my password",
+    "tokens": [
+      "where",
+      "can",
+      "i",
+      "change",
+      "my",
+      "password"
+    ],
+    "filtered_tokens": [
+      "change",
+      "password"
+    ],
+    "lemmatized_tokens": [
+      "change",
+      "password"
+    ],
+    "intent": "password_reset",
+    "answer": "You can change your password by going to Settings > Security > Change Password in the employee portal.",
+    "entity": "password",
+    "entities": [
+      "password"
+    ]
+  },
+  {
+    "question": "I cannot remember my login password.",
+    "clean_question": "i cannot remember my login password",
+    "tokens": [
+      "i",
+      "can",
+      "not",
+      "remember",
+      "my",
+      "login",
+      "password"
+    ],
+    "filtered_tokens": [
+      "remember",
+      "login",
+      "password"
+    ],
+    "lemmatized_tokens": [
+      "remember",
+      "login",
+      "password"
+    ],
+    "intent": "password_reset",
+    "answer": "Click 'Forgot Password' on the login screen and follow the instructions sent to your registered email.",
+    "entity": "password",
+    "entities": [
+      "account",
+      "password"
+    ]
+  },
+  {
+    "question": "How do I create a new password?",
+    "clean_question": "how do i create a new password",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "create",
+      "a",
+      "new",
+      "password"
+    ],
+    "filtered_tokens": [
+      "create",
+      "new",
+      "password"
+    ],
+    "lemmatized_tokens": [
+      "create",
+      "new",
+      "password"
+    ],
+    "intent": "password_reset",
+    "answer": "Log into the employee portal, navigate to Settings > Security, and select 'Change Password'. Your new password must be at least 8 characters with uppercase, lowercase, numbers, and special characters.",
+    "entity": "password",
+    "entities": [
+      "password"
+    ]
+  },
+  {
+    "question": "Where is the password reset option?",
+    "clean_question": "where is the password reset option",
+    "tokens": [
+      "where",
+      "is",
+      "the",
+      "password",
+      "reset",
+      "option"
+    ],
+    "filtered_tokens": [
+      "password",
+      "reset",
+      "option"
+    ],
+    "lemmatized_tokens": [
+      "password",
+      "reset",
+      "option"
+    ],
+    "intent": "password_reset",
+    "answer": "The password reset option is available on the login page under the password field. You can also access it directly at portal.company.com/reset.",
+    "entity": "password",
+    "entities": [
+      "password"
+    ]
+  },
+  {
+    "question": "My password expired and I need to reset it.",
+    "clean_question": "my password expired and i need to reset it",
+    "tokens": [
+      "my",
+      "password",
+      "expired",
+      "and",
+      "i",
+      "need",
+      "to",
+      "reset",
+      "it"
+    ],
+    "filtered_tokens": [
+      "password",
+      "expired",
+      "need",
+      "reset"
+    ],
+    "lemmatized_tokens": [
+      "password",
+      "expire",
+      "need",
+      "reset"
+    ],
+    "intent": "password_reset",
+    "answer": "Expired passwords can be reset using the same process as regular password resets. Visit portal.company.com/reset and verify your identity with your employee ID.",
+    "entity": "password",
+    "entities": [
+      "password"
+    ]
+  },
+  {
+    "question": "How often should I change my password?",
+    "clean_question": "how often should i change my password",
+    "tokens": [
+      "how",
+      "often",
+      "should",
+      "i",
+      "change",
+      "my",
+      "password"
+    ],
+    "filtered_tokens": [
+      "often",
+      "change",
+      "password"
+    ],
+    "lemmatized_tokens": [
+      "often",
+      "change",
+      "password"
+    ],
+    "intent": "password_reset",
+    "answer": "Company policy requires password changes every 90 days. You will receive an email reminder 7 days before expiration.",
+    "entity": "password",
+    "entities": [
+      "password"
+    ]
+  },
+  {
+    "question": "What are the password requirements?",
+    "clean_question": "what are the password requirements",
+    "tokens": [
+      "what",
+      "are",
+      "the",
+      "password",
+      "requirements"
+    ],
+    "filtered_tokens": [
+      "password",
+      "requirements"
+    ],
+    "lemmatized_tokens": [
+      "password",
+      "requirement"
+    ],
+    "intent": "password_reset",
+    "answer": "Passwords must be at least 8 characters long and include uppercase letters, lowercase letters, numbers, and special characters. Avoid using personal information.",
+    "entity": "password",
+    "entities": [
+      "password"
+    ]
+  },
+  {
+    "question": "I locked my account after too many failed attempts.",
+    "clean_question": "i locked my account after too many failed attempts",
+    "tokens": [
+      "i",
+      "locked",
+      "my",
+      "account",
+      "after",
+      "too",
+      "many",
+      "failed",
+      "attempts"
+    ],
+    "filtered_tokens": [
+      "locked",
+      "account",
+      "many",
+      "failed",
+      "attempts"
+    ],
+    "lemmatized_tokens": [
+      "lock",
+      "account",
+      "many",
+      "fail",
+      "attempt"
+    ],
+    "intent": "password_reset",
+    "answer": "Wait 30 minutes for automatic unlock, or contact IT support at extension 1234 for immediate assistance.",
+    "entity": "password",
+    "entities": [
+      "account"
+    ]
+  },
+  {
+    "question": "Can I reset my password without my employee ID?",
+    "clean_question": "can i reset my password without my employee id",
+    "tokens": [
+      "can",
+      "i",
+      "reset",
+      "my",
+      "password",
+      "without",
+      "my",
+      "employee",
+      "id"
+    ],
+    "filtered_tokens": [
+      "reset",
+      "password",
+      "without",
+      "employee",
+      "id"
+    ],
+    "lemmatized_tokens": [
+      "reset",
+      "password",
+      "without",
+      "employee",
+      "id"
+    ],
+    "intent": "password_reset",
+    "answer": "No, employee ID verification is required for security. If you forgot your ID, contact HR at extension 5678.",
+    "entity": "password",
+    "entities": [
+      "password",
+      "employee_id"
+    ]
+  },
+  {
+    "question": "How do I unlock my account?",
+    "clean_question": "how do i unlock my account",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "unlock",
+      "my",
+      "account"
+    ],
+    "filtered_tokens": [
+      "unlock",
+      "account"
+    ],
+    "lemmatized_tokens": [
+      "unlock",
+      "account"
+    ],
+    "intent": "password_reset",
+    "answer": "Accounts are automatically unlocked after 30 minutes. For immediate unlock, contact IT support at extension 1234 with your employee ID.",
+    "entity": "password",
+    "entities": [
+      "account"
+    ]
+  },
+  {
+    "question": "My password reset email didn't arrive.",
+    "clean_question": "my password reset email didn't arrive",
+    "tokens": [
+      "my",
+      "password",
+      "reset",
+      "email",
+      "did",
+      "not",
+      "arrive"
+    ],
+    "filtered_tokens": [
+      "password",
+      "reset",
+      "email",
+      "arrive"
+    ],
+    "lemmatized_tokens": [
+      "password",
+      "reset",
+      "email",
+      "arrive"
+    ],
+    "intent": "password_reset",
+    "answer": "Check your spam folder first. If not found, wait 15 minutes and try again, or contact IT support at extension 1234.",
+    "entity": "password",
+    "entities": [
+      "email",
+      "password"
+    ]
+  },
+  {
+    "question": "Can I use my personal email for password reset?",
+    "clean_question": "can i use my personal email for password reset",
+    "tokens": [
+      "can",
+      "i",
+      "use",
+      "my",
+      "personal",
+      "email",
+      "for",
+      "password",
+      "reset"
+    ],
+    "filtered_tokens": [
+      "use",
+      "personal",
+      "email",
+      "password",
+      "reset"
+    ],
+    "lemmatized_tokens": [
+      "use",
+      "personal",
+      "email",
+      "password",
+      "reset"
+    ],
+    "intent": "password_reset",
+    "answer": "No, only your registered company email can be used for password reset verification.",
+    "entity": "password",
+    "entities": [
+      "email",
+      "password"
+    ]
+  },
+  {
+    "question": "How do I update my security questions?",
+    "clean_question": "how do i update my security questions",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "update",
+      "my",
+      "security",
+      "questions"
+    ],
+    "filtered_tokens": [
+      "update",
+      "security",
+      "questions"
+    ],
+    "lemmatized_tokens": [
+      "update",
+      "security",
+      "question"
+    ],
+    "intent": "password_reset",
+    "answer": "Log into the employee portal, go to Settings > Security > Security Questions, and update your questions and answers.",
+    "entity": "password",
+    "entities": [
+      "security"
+    ]
+  },
+  {
+    "question": "I need to reset my password for the VPN.",
+    "clean_question": "i need to reset my password for the vpn",
+    "tokens": [
+      "i",
+      "need",
+      "to",
+      "reset",
+      "my",
+      "password",
+      "for",
+      "the",
+      "vpn"
+    ],
+    "filtered_tokens": [
+      "need",
+      "reset",
+      "password",
+      "vpn"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "reset",
+      "password",
+      "vpn"
+    ],
+    "intent": "password_reset",
+    "answer": "VPN uses the same password as your company account. Reset it through portal.company.com/reset.",
+    "entity": "password",
+    "entities": [
+      "password"
+    ]
+  },
+  {
+    "question": "What if I don't receive the password reset link?",
+    "clean_question": "what if i don't receive the password reset link",
+    "tokens": [
+      "what",
+      "if",
+      "i",
+      "do",
+      "not",
+      "receive",
+      "the",
+      "password",
+      "reset",
+      "link"
+    ],
+    "filtered_tokens": [
+      "receive",
+      "password",
+      "reset",
+      "link"
+    ],
+    "lemmatized_tokens": [
+      "receive",
+      "password",
+      "reset",
+      "link"
+    ],
+    "intent": "password_reset",
+    "answer": "Contact IT support at extension 1234 or visit the helpdesk in Building A, Room 101.",
+    "entity": "password",
+    "entities": [
+      "password"
+    ]
+  },
+  {
+    "question": "How do I change my password on my mobile device?",
+    "clean_question": "how do i change my password on my mobile device",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "change",
+      "my",
+      "password",
+      "on",
+      "my",
+      "mobile",
+      "device"
+    ],
+    "filtered_tokens": [
+      "change",
+      "password",
+      "mobile",
+      "device"
+    ],
+    "lemmatized_tokens": [
+      "change",
+      "password",
+      "mobile",
+      "device"
+    ],
+    "intent": "password_reset",
+    "answer": "Use the same process: go to Settings in the employee portal app and select 'Change Password'.",
+    "entity": "password",
+    "entities": [
+      "password"
+    ]
+  },
+  {
+    "question": "My password was compromised. What should I do?",
+    "clean_question": "my password was compromised what should i do",
+    "tokens": [
+      "my",
+      "password",
+      "was",
+      "compromised",
+      "what",
+      "should",
+      "i",
+      "do"
+    ],
+    "filtered_tokens": [
+      "password",
+      "compromised"
+    ],
+    "lemmatized_tokens": [
+      "password",
+      "compromise"
+    ],
+    "intent": "password_reset",
+    "answer": "Immediately reset your password at portal.company.com/reset and report the incident to IT security at extension 9999.",
+    "entity": "password",
+    "entities": [
+      "password"
+    ]
+  },
+  {
+    "question": "Can I recover my old password?",
+    "clean_question": "can i recover my old password",
+    "tokens": [
+      "can",
+      "i",
+      "recover",
+      "my",
+      "old",
+      "password"
+    ],
+    "filtered_tokens": [
+      "recover",
+      "old",
+      "password"
+    ],
+    "lemmatized_tokens": [
+      "recover",
+      "old",
+      "password"
+    ],
+    "intent": "password_reset",
+    "answer": "No, passwords are encrypted and cannot be recovered. You must reset to a new password.",
+    "entity": "password",
+    "entities": [
+      "password"
+    ]
+  },
+  {
+    "question": "How do I recover my account?",
+    "clean_question": "how do i recover my account",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "recover",
+      "my",
+      "account"
+    ],
+    "filtered_tokens": [
+      "recover",
+      "account"
+    ],
+    "lemmatized_tokens": [
+      "recover",
+      "account"
+    ],
+    "intent": "account_access",
+    "answer": "Contact IT support at extension 1234 with your employee ID and a government-issued ID for verification.",
+    "entity": "account",
+    "entities": [
+      "account"
+    ]
+  },
+  {
+    "question": "I cannot log into my account.",
+    "clean_question": "i cannot log into my account",
+    "tokens": [
+      "i",
+      "can",
+      "not",
+      "log",
+      "into",
+      "my",
+      "account"
+    ],
+    "filtered_tokens": [
+      "log",
+      "account"
+    ],
+    "lemmatized_tokens": [
+      "log",
+      "account"
+    ],
+    "intent": "account_access",
+    "answer": "First verify your credentials are correct. If the problem persists, your account may be locked. Contact IT support at extension 1234.",
+    "entity": "account",
+    "entities": [
+      "account"
+    ]
+  },
+  {
+    "question": "My account is locked. How do I unlock it?",
+    "clean_question": "my account is locked how do i unlock it",
+    "tokens": [
+      "my",
+      "account",
+      "is",
+      "locked",
+      "how",
+      "do",
+      "i",
+      "unlock",
+      "it"
+    ],
+    "filtered_tokens": [
+      "account",
+      "locked",
+      "unlock"
+    ],
+    "lemmatized_tokens": [
+      "account",
+      "lock",
+      "unlock"
+    ],
+    "intent": "account_access",
+    "answer": "Accounts lock after 5 failed login attempts. Wait 30 minutes for auto-unlock or contact IT support at extension 1234.",
+    "entity": "account",
+    "entities": [
+      "account"
+    ]
+  },
+  {
+    "question": "How do I create a new account?",
+    "clean_question": "how do i create a new account",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "create",
+      "a",
+      "new",
+      "account"
+    ],
+    "filtered_tokens": [
+      "create",
+      "new",
+      "account"
+    ],
+    "lemmatized_tokens": [
+      "create",
+      "new",
+      "account"
+    ],
+    "intent": "account_access",
+    "answer": "New accounts are created by HR during onboarding. Contact HR at extension 5678 if you need a new account.",
+    "entity": "account",
+    "entities": [
+      "account"
+    ]
+  },
+  {
+    "question": "I need to update my account information.",
+    "clean_question": "i need to update my account information",
+    "tokens": [
+      "i",
+      "need",
+      "to",
+      "update",
+      "my",
+      "account",
+      "information"
+    ],
+    "filtered_tokens": [
+      "need",
+      "update",
+      "account",
+      "information"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "update",
+      "account",
+      "information"
+    ],
+    "intent": "account_access",
+    "answer": "Log into the employee portal, go to Settings > Profile, and update your information. Changes to email require HR approval.",
+    "entity": "account",
+    "entities": [
+      "account"
+    ]
+  },
+  {
+    "question": "How do I change my username?",
+    "clean_question": "how do i change my username",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "change",
+      "my",
+      "username"
+    ],
+    "filtered_tokens": [
+      "change",
+      "username"
+    ],
+    "lemmatized_tokens": [
+      "change",
+      "username"
+    ],
+    "intent": "account_access",
+    "answer": "Usernames cannot be changed as they are tied to your employee ID. Contact HR at extension 5678 for special cases.",
+    "entity": "account",
+    "entities": [
+      "account"
+    ]
+  },
+  {
+    "question": "My account shows incorrect information.",
+    "clean_question": "my account shows incorrect information",
+    "tokens": [
+      "my",
+      "account",
+      "shows",
+      "incorrect",
+      "information"
+    ],
+    "filtered_tokens": [
+      "account",
+      "shows",
+      "incorrect",
+      "information"
+    ],
+    "lemmatized_tokens": [
+      "account",
+      "show",
+      "incorrect",
+      "information"
+    ],
+    "intent": "account_access",
+    "answer": "Report the issue to HR at extension 5678 with supporting documents for correction.",
+    "entity": "account",
+    "entities": [
+      "account"
+    ]
+  },
+  {
+    "question": "How do I deactivate my account?",
+    "clean_question": "how do i deactivate my account",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "deactivate",
+      "my",
+      "account"
+    ],
+    "filtered_tokens": [
+      "deactivate",
+      "account"
+    ],
+    "lemmatized_tokens": [
+      "deactivate",
+      "account"
+    ],
+    "intent": "account_access",
+    "answer": "Account deactivation is handled by HR during offboarding. Contact HR at extension 5678 for the process.",
+    "entity": "account",
+    "entities": [
+      "account"
+    ]
+  },
+  {
+    "question": "I want to reactivate my old account.",
+    "clean_question": "i want to reactivate my old account",
+    "tokens": [
+      "i",
+      "want",
+      "to",
+      "reactivate",
+      "my",
+      "old",
+      "account"
+    ],
+    "filtered_tokens": [
+      "want",
+      "reactivate",
+      "old",
+      "account"
+    ],
+    "lemmatized_tokens": [
+      "want",
+      "reactivate",
+      "old",
+      "account"
+    ],
+    "intent": "account_access",
+    "answer": "Contact HR at extension 5678 and IT support at extension 1234. Account reactivation requires manager approval.",
+    "entity": "account",
+    "entities": [
+      "account"
+    ]
+  },
+  {
+    "question": "How do I enable two-factor authentication?",
+    "clean_question": "how do i enable two-factor authentication",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "enable",
+      "authentication"
+    ],
+    "filtered_tokens": [
+      "enable",
+      "authentication"
+    ],
+    "lemmatized_tokens": [
+      "enable",
+      "authentication"
+    ],
+    "intent": "account_access",
+    "answer": "Go to Settings > Security > Two-Factor Authentication in the employee portal and follow the setup instructions.",
+    "entity": "account",
+    "entities": []
+  },
+  {
+    "question": "My account was hacked. What should I do?",
+    "clean_question": "my account was hacked what should i do",
+    "tokens": [
+      "my",
+      "account",
+      "was",
+      "hacked",
+      "what",
+      "should",
+      "i",
+      "do"
+    ],
+    "filtered_tokens": [
+      "account",
+      "hacked"
+    ],
+    "lemmatized_tokens": [
+      "account",
+      "hack"
+    ],
+    "intent": "account_access",
+    "answer": "Immediately contact IT security at extension 9999 and change your password. Monitor your account for suspicious activity.",
+    "entity": "account",
+    "entities": [
+      "account"
+    ]
+  },
+  {
+    "question": "How do I check my account activity?",
+    "clean_question": "how do i check my account activity",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "check",
+      "my",
+      "account",
+      "activity"
+    ],
+    "filtered_tokens": [
+      "check",
+      "account",
+      "activity"
+    ],
+    "lemmatized_tokens": [
+      "check",
+      "account",
+      "activity"
+    ],
+    "intent": "account_access",
+    "answer": "Log into the employee portal and go to Settings > Security > Account Activity to view recent logins.",
+    "entity": "account",
+    "entities": [
+      "account"
+    ]
+  },
+  {
+    "question": "I need help with my laptop.",
+    "clean_question": "i need help with my laptop",
+    "tokens": [
+      "i",
+      "need",
+      "help",
+      "with",
+      "my",
+      "laptop"
+    ],
+    "filtered_tokens": [
+      "need",
+      "help",
+      "laptop"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "help",
+      "laptop"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Contact IT support at extension 1234 or visit the IT helpdesk in Building A, Room 101. Describe the issue in detail for faster resolution.",
+    "entity": "laptop",
+    "entities": [
+      "laptop",
+      "help"
+    ]
+  },
+  {
+    "question": "My laptop is not turning on.",
+    "clean_question": "my laptop is not turning on",
+    "tokens": [
+      "my",
+      "laptop",
+      "is",
+      "not",
+      "turning",
+      "on"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "turning"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "turning"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Check the power adapter and battery. If still not working, bring your laptop to the IT helpdesk in Building A, Room 101.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop screen is broken.",
+    "clean_question": "my laptop screen is broken",
+    "tokens": [
+      "my",
+      "laptop",
+      "screen",
+      "is",
+      "broken"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "screen",
+      "broken"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "screen",
+      "broken"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Report to IT support at extension 1234 immediately. Do not attempt to fix it yourself. A replacement will be arranged.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop keyboard is not working.",
+    "clean_question": "my laptop keyboard is not working",
+    "tokens": [
+      "my",
+      "laptop",
+      "keyboard",
+      "is",
+      "not",
+      "working"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "keyboard",
+      "working"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "keyboard",
+      "work"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Try an external USB keyboard as a temporary solution. Report the issue to IT support at extension 1234 for repair or replacement.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop is running very slow.",
+    "clean_question": "my laptop is running very slow",
+    "tokens": [
+      "my",
+      "laptop",
+      "is",
+      "running",
+      "very",
+      "slow"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "running",
+      "slow"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "running",
+      "slow"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Restart your laptop and close unnecessary applications. If the problem persists, contact IT support at extension 1234.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop battery is not charging.",
+    "clean_question": "my laptop battery is not charging",
+    "tokens": [
+      "my",
+      "laptop",
+      "battery",
+      "is",
+      "not",
+      "charging"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "battery",
+      "charging"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "battery",
+      "charge"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Check the power adapter connection. Try a different outlet. If still not charging, contact IT support at extension 1234.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop keeps overheating.",
+    "clean_question": "my laptop keeps overheating",
+    "tokens": [
+      "my",
+      "laptop",
+      "keeps",
+      "overheating"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "keeps",
+      "overheating"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "keep",
+      "overheat"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Ensure proper ventilation and clean the air vents. If overheating continues, contact IT support at extension 1234.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop has a virus.",
+    "clean_question": "my laptop has a virus",
+    "tokens": [
+      "my",
+      "laptop",
+      "has",
+      "a",
+      "virus"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "virus"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "virus"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Disconnect from the network immediately and contact IT security at extension 9999. Do not open any files.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop won't connect to the internet.",
+    "clean_question": "my laptop won't connect to the internet",
+    "tokens": [
+      "my",
+      "laptop",
+      "will",
+      "not",
+      "connect",
+      "to",
+      "the",
+      "internet"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "connect",
+      "internet"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "connect",
+      "internet"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Check your Wi-Fi connection first. If Wi-Fi is working on other devices, contact IT support at extension 1234.",
+    "entity": "laptop",
+    "entities": [
+      "laptop",
+      "internet"
+    ]
+  },
+  {
+    "question": "My laptop display has dead pixels.",
+    "clean_question": "my laptop display has dead pixels",
+    "tokens": [
+      "my",
+      "laptop",
+      "display",
+      "has",
+      "dead",
+      "pixels"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "display",
+      "dead",
+      "pixels"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "display",
+      "dead",
+      "pixel"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Document the dead pixels with photos and report to IT support at extension 1234 for warranty assessment.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop touchpad is not working.",
+    "clean_question": "my laptop touchpad is not working",
+    "tokens": [
+      "my",
+      "laptop",
+      "touchpad",
+      "is",
+      "not",
+      "working"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "touchpad",
+      "working"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "touchpad",
+      "work"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Connect an external mouse and report the issue to IT support at extension 1234.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop speakers are not working.",
+    "clean_question": "my laptop speakers are not working",
+    "tokens": [
+      "my",
+      "laptop",
+      "speakers",
+      "are",
+      "not",
+      "working"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "speakers",
+      "working"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "speaker",
+      "work"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Check the volume settings and audio output device. If still not working, contact IT support at extension 1234.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop webcam is not working.",
+    "clean_question": "my laptop webcam is not working",
+    "tokens": [
+      "my",
+      "laptop",
+      "webcam",
+      "is",
+      "not",
+      "working"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "webcam",
+      "working"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "webcam",
+      "work"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Check if the webcam is enabled in settings. If the problem persists, contact IT support at extension 1234.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop Bluetooth is not working.",
+    "clean_question": "my laptop bluetooth is not working",
+    "tokens": [
+      "my",
+      "laptop",
+      "bluetooth",
+      "is",
+      "not",
+      "working"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "bluetooth",
+      "working"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "bluetooth",
+      "work"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Restart Bluetooth in settings. If still not working, contact IT support at extension 1234.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop USB ports are not working.",
+    "clean_question": "my laptop usb ports are not working",
+    "tokens": [
+      "my",
+      "laptop",
+      "usb",
+      "ports",
+      "are",
+      "not",
+      "working"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "usb",
+      "ports",
+      "working"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "usb",
+      "port",
+      "work"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Try different USB devices to isolate the issue. If ports are still not working, contact IT support at extension 1234.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop is making strange noises.",
+    "clean_question": "my laptop is making strange noises",
+    "tokens": [
+      "my",
+      "laptop",
+      "is",
+      "making",
+      "strange",
+      "noises"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "making",
+      "strange",
+      "noises"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "make",
+      "strange",
+      "noise"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Turn off your laptop immediately and contact IT support at extension 1234. Strange noises may indicate hardware failure.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop won't sleep or hibernate.",
+    "clean_question": "my laptop won't sleep or hibernate",
+    "tokens": [
+      "my",
+      "laptop",
+      "will",
+      "not",
+      "sleep",
+      "or",
+      "hibernate"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "sleep",
+      "hibernate"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "sleep",
+      "hibernate"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Check power settings in Control Panel. If settings are correct, contact IT support at extension 1234.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop trackpad is too sensitive.",
+    "clean_question": "my laptop trackpad is too sensitive",
+    "tokens": [
+      "my",
+      "laptop",
+      "trackpad",
+      "is",
+      "too",
+      "sensitive"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "trackpad",
+      "sensitive"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "trackpad",
+      "sensitive"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Adjust trackpad sensitivity in Settings > Devices > Touchpad. If adjustment doesn't help, contact IT support at extension 1234.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop is not recognized by the docking station.",
+    "clean_question": "my laptop is not recognized by the docking station",
+    "tokens": [
+      "my",
+      "laptop",
+      "is",
+      "not",
+      "recognized",
+      "by",
+      "the",
+      "docking",
+      "station"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "recognized",
+      "docking",
+      "station"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "recognize",
+      "docking",
+      "station"
+    ],
+    "intent": "laptop_problems",
+    "answer": "Ensure your laptop is properly aligned with the docking station connector. If still not recognized, contact IT support at extension 1234.",
+    "entity": "laptop",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "How do I install new software?",
+    "clean_question": "how do i install new software",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "install",
+      "new",
+      "software"
+    ],
+    "filtered_tokens": [
+      "install",
+      "new",
+      "software"
+    ],
+    "lemmatized_tokens": [
+      "install",
+      "new",
+      "software"
+    ],
+    "intent": "software_installation",
+    "answer": "Submit a software request through the IT portal at portal.company.com/software-request. IT will review and install approved software.",
+    "entity": "software",
+    "entities": [
+      "software"
+    ]
+  },
+  {
+    "question": "I need to install Microsoft Office.",
+    "clean_question": "i need to install microsoft office",
+    "tokens": [
+      "i",
+      "need",
+      "to",
+      "install",
+      "microsoft",
+      "office"
+    ],
+    "filtered_tokens": [
+      "need",
+      "install",
+      "microsoft",
+      "office"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "install",
+      "microsoft",
+      "office"
+    ],
+    "intent": "software_installation",
+    "answer": "Microsoft Office is pre-installed on all company laptops. If missing, contact IT support at extension 1234.",
+    "entity": "software",
+    "entities": [
+      "software"
+    ]
+  },
+  {
+    "question": "How do I install development tools?",
+    "clean_question": "how do i install development tools",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "install",
+      "development",
+      "tools"
+    ],
+    "filtered_tokens": [
+      "install",
+      "development",
+      "tools"
+    ],
+    "lemmatized_tokens": [
+      "install",
+      "development",
+      "tool"
+    ],
+    "intent": "software_installation",
+    "answer": "Submit a request through the IT portal with your manager's approval. Development tools require additional security review.",
+    "entity": "software",
+    "entities": [
+      "software"
+    ]
+  },
+  {
+    "question": "I need Adobe Photoshop for my work.",
+    "clean_question": "i need adobe photoshop for my work",
+    "tokens": [
+      "i",
+      "need",
+      "adobe",
+      "photoshop",
+      "for",
+      "my",
+      "work"
+    ],
+    "filtered_tokens": [
+      "need",
+      "adobe",
+      "photoshop",
+      "work"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "adobe",
+      "photoshop",
+      "work"
+    ],
+    "intent": "software_installation",
+    "answer": "Submit a software request through the IT portal. Adobe Creative Cloud licenses are available for approved roles.",
+    "entity": "software",
+    "entities": []
+  },
+  {
+    "question": "How do I update existing software?",
+    "clean_question": "how do i update existing software",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "update",
+      "existing",
+      "software"
+    ],
+    "filtered_tokens": [
+      "update",
+      "existing",
+      "software"
+    ],
+    "lemmatized_tokens": [
+      "update",
+      "exist",
+      "software"
+    ],
+    "intent": "software_installation",
+    "answer": "Most software updates automatically. For manual updates, go to Settings > Update in the respective application.",
+    "entity": "software",
+    "entities": [
+      "software"
+    ]
+  },
+  {
+    "question": "Can I install personal software on my work laptop?",
+    "clean_question": "can i install personal software on my work laptop",
+    "tokens": [
+      "can",
+      "i",
+      "install",
+      "personal",
+      "software",
+      "on",
+      "my",
+      "work",
+      "laptop"
+    ],
+    "filtered_tokens": [
+      "install",
+      "personal",
+      "software",
+      "work",
+      "laptop"
+    ],
+    "lemmatized_tokens": [
+      "install",
+      "personal",
+      "software",
+      "work",
+      "laptop"
+    ],
+    "intent": "software_installation",
+    "answer": "No, personal software installation is prohibited on company devices for security reasons.",
+    "entity": "software",
+    "entities": [
+      "laptop",
+      "software"
+    ]
+  },
+  {
+    "question": "How do I request a new software license?",
+    "clean_question": "how do i request a new software license",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "request",
+      "a",
+      "new",
+      "software",
+      "license"
+    ],
+    "filtered_tokens": [
+      "request",
+      "new",
+      "software",
+      "license"
+    ],
+    "lemmatized_tokens": [
+      "request",
+      "new",
+      "software",
+      "license"
+    ],
+    "intent": "software_installation",
+    "answer": "Submit a request through the IT portal with justification and manager approval.",
+    "entity": "software",
+    "entities": [
+      "software"
+    ]
+  },
+  {
+    "question": "My software installation failed.",
+    "clean_question": "my software installation failed",
+    "tokens": [
+      "my",
+      "software",
+      "installation",
+      "failed"
+    ],
+    "filtered_tokens": [
+      "software",
+      "installation",
+      "failed"
+    ],
+    "lemmatized_tokens": [
+      "software",
+      "installation",
+      "fail"
+    ],
+    "intent": "software_installation",
+    "answer": "Note the error message and contact IT support at extension 1234 for assistance.",
+    "entity": "software",
+    "entities": [
+      "software"
+    ]
+  },
+  {
+    "question": "How do I uninstall software?",
+    "clean_question": "how do i uninstall software",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "uninstall",
+      "software"
+    ],
+    "filtered_tokens": [
+      "uninstall",
+      "software"
+    ],
+    "lemmatized_tokens": [
+      "uninstall",
+      "software"
+    ],
+    "intent": "software_installation",
+    "answer": "Go to Settings > Apps > Apps & Features, select the software, and click Uninstall. For company software, contact IT support at extension 1234.",
+    "entity": "software",
+    "entities": [
+      "software"
+    ]
+  },
+  {
+    "question": "I need antivirus software installed.",
+    "clean_question": "i need antivirus software installed",
+    "tokens": [
+      "i",
+      "need",
+      "antivirus",
+      "software",
+      "installed"
+    ],
+    "filtered_tokens": [
+      "need",
+      "antivirus",
+      "software",
+      "installed"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "antivirus",
+      "software",
+      "instal"
+    ],
+    "intent": "software_installation",
+    "answer": "Antivirus is pre-installed and managed centrally. If you need additional security tools, contact IT security at extension 9999.",
+    "entity": "software",
+    "entities": [
+      "software"
+    ]
+  },
+  {
+    "question": "How do I install Python on my laptop?",
+    "clean_question": "how do i install python on my laptop",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "install",
+      "python",
+      "on",
+      "my",
+      "laptop"
+    ],
+    "filtered_tokens": [
+      "install",
+      "python",
+      "laptop"
+    ],
+    "lemmatized_tokens": [
+      "install",
+      "python",
+      "laptop"
+    ],
+    "intent": "software_installation",
+    "answer": "Submit a request through the IT portal. Python and required packages will be installed by IT support.",
+    "entity": "software",
+    "entities": [
+      "laptop",
+      "software"
+    ]
+  },
+  {
+    "question": "I need to install a VPN client.",
+    "clean_question": "i need to install a vpn client",
+    "tokens": [
+      "i",
+      "need",
+      "to",
+      "install",
+      "a",
+      "vpn",
+      "client"
+    ],
+    "filtered_tokens": [
+      "need",
+      "install",
+      "vpn",
+      "client"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "install",
+      "vpn",
+      "client"
+    ],
+    "intent": "software_installation",
+    "answer": "VPN client is pre-installed on all company laptops. If missing, contact IT support at extension 1234.",
+    "entity": "software",
+    "entities": [
+      "software"
+    ]
+  },
+  {
+    "question": "How do I install printer drivers?",
+    "clean_question": "how do i install printer drivers",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "install",
+      "printer",
+      "drivers"
+    ],
+    "filtered_tokens": [
+      "install",
+      "printer",
+      "drivers"
+    ],
+    "lemmatized_tokens": [
+      "install",
+      "printer",
+      "driver"
+    ],
+    "intent": "software_installation",
+    "answer": "Printer drivers are installed automatically when you connect to a network printer. For manual installation, contact IT support at extension 1234.",
+    "entity": "software",
+    "entities": [
+      "software"
+    ]
+  },
+  {
+    "question": "My software license has expired.",
+    "clean_question": "my software license has expired",
+    "tokens": [
+      "my",
+      "software",
+      "license",
+      "has",
+      "expired"
+    ],
+    "filtered_tokens": [
+      "software",
+      "license",
+      "expired"
+    ],
+    "lemmatized_tokens": [
+      "software",
+      "license",
+      "expire"
+    ],
+    "intent": "software_installation",
+    "answer": "Contact IT support at extension 1234 to renew your software license.",
+    "entity": "software",
+    "entities": [
+      "software"
+    ]
+  },
+  {
+    "question": "How do I install database tools?",
+    "clean_question": "how do i install database tools",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "install",
+      "database",
+      "tools"
+    ],
+    "filtered_tokens": [
+      "install",
+      "database",
+      "tools"
+    ],
+    "lemmatized_tokens": [
+      "install",
+      "database",
+      "tool"
+    ],
+    "intent": "software_installation",
+    "answer": "Submit a request through the IT portal with manager approval. Database tools require security review.",
+    "entity": "software",
+    "entities": [
+      "software"
+    ]
+  },
+  {
+    "question": "I need to install communication tools like Slack.",
+    "clean_question": "i need to install communication tools like slack",
+    "tokens": [
+      "i",
+      "need",
+      "to",
+      "install",
+      "communication",
+      "tools",
+      "like",
+      "slack"
+    ],
+    "filtered_tokens": [
+      "need",
+      "install",
+      "communication",
+      "tools",
+      "like",
+      "slack"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "install",
+      "communication",
+      "tool",
+      "like",
+      "slack"
+    ],
+    "intent": "software_installation",
+    "answer": "Slack and Teams are pre-approved. Download from the company software portal at software.company.com.",
+    "entity": "software",
+    "entities": [
+      "software"
+    ]
+  },
+  {
+    "question": "How do I install design software?",
+    "clean_question": "how do i install design software",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "install",
+      "design",
+      "software"
+    ],
+    "filtered_tokens": [
+      "install",
+      "design",
+      "software"
+    ],
+    "lemmatized_tokens": [
+      "install",
+      "design",
+      "software"
+    ],
+    "intent": "software_installation",
+    "answer": "Submit a request through the IT portal with your role justification. Design software requires manager approval.",
+    "entity": "software",
+    "entities": [
+      "software"
+    ]
+  },
+  {
+    "question": "My internet is not working.",
+    "clean_question": "my internet is not working",
+    "tokens": [
+      "my",
+      "internet",
+      "is",
+      "not",
+      "working"
+    ],
+    "filtered_tokens": [
+      "internet",
+      "working"
+    ],
+    "lemmatized_tokens": [
+      "internet",
+      "work"
+    ],
+    "intent": "internet_problems",
+    "answer": "Check if other devices can connect to the internet. If only your device is affected, restart your device. If the problem persists, contact IT support at extension 1234.",
+    "entity": "internet",
+    "entities": [
+      "internet"
+    ]
+  },
+  {
+    "question": "My Wi-Fi is not working.",
+    "clean_question": "my wi-fi is not working",
+    "tokens": [
+      "my",
+      "is",
+      "not",
+      "working"
+    ],
+    "filtered_tokens": [
+      "working"
+    ],
+    "lemmatized_tokens": [
+      "work"
+    ],
+    "intent": "wifi_problems",
+    "answer": "Check if Wi-Fi is enabled on your device. Try forgetting and reconnecting to the network. If still not working, contact IT support at extension 1234.",
+    "entity": "wifi",
+    "entities": [
+      "wifi"
+    ]
+  },
+  {
+    "question": "I cannot connect to the company Wi-Fi.",
+    "clean_question": "i cannot connect to the company wi-fi",
+    "tokens": [
+      "i",
+      "can",
+      "not",
+      "connect",
+      "to",
+      "the",
+      "company"
+    ],
+    "filtered_tokens": [
+      "connect",
+      "company"
+    ],
+    "lemmatized_tokens": [
+      "connect",
+      "company"
+    ],
+    "intent": "wifi_problems",
+    "answer": "Ensure you are using the correct network name (SSID) and your company credentials. Contact IT support at extension 1234 if you need the network password.",
+    "entity": "wifi",
+    "entities": [
+      "wifi"
+    ]
+  },
+  {
+    "question": "My Wi-Fi keeps disconnecting.",
+    "clean_question": "my wi-fi keeps disconnecting",
+    "tokens": [
+      "my",
+      "keeps",
+      "disconnecting"
+    ],
+    "filtered_tokens": [
+      "keeps",
+      "disconnecting"
+    ],
+    "lemmatized_tokens": [
+      "keep",
+      "disconnect"
+    ],
+    "intent": "wifi_problems",
+    "answer": "Move closer to the Wi-Fi router. If disconnections continue, contact IT support at extension 1234 to check network coverage.",
+    "entity": "wifi",
+    "entities": [
+      "wifi"
+    ]
+  },
+  {
+    "question": "My Wi-Fi speed is very slow.",
+    "clean_question": "my wi-fi speed is very slow",
+    "tokens": [
+      "my",
+      "speed",
+      "is",
+      "very",
+      "slow"
+    ],
+    "filtered_tokens": [
+      "speed",
+      "slow"
+    ],
+    "lemmatized_tokens": [
+      "speed",
+      "slow"
+    ],
+    "intent": "wifi_problems",
+    "answer": "Try moving closer to the router or use a wired connection. If speed is still slow, contact IT support at extension 1234.",
+    "entity": "wifi",
+    "entities": [
+      "wifi"
+    ]
+  },
+  {
+    "question": "How do I connect to the guest Wi-Fi?",
+    "clean_question": "how do i connect to the guest wi-fi",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "connect",
+      "to",
+      "the",
+      "guest"
+    ],
+    "filtered_tokens": [
+      "connect",
+      "guest"
+    ],
+    "lemmatized_tokens": [
+      "connect",
+      "guest"
+    ],
+    "intent": "wifi_problems",
+    "answer": "Select the 'Company-Guest' network and use the password provided at reception or by your host.",
+    "entity": "wifi",
+    "entities": [
+      "wifi"
+    ]
+  },
+  {
+    "question": "I forgot the Wi-Fi password.",
+    "clean_question": "i forgot the wi-fi password",
+    "tokens": [
+      "i",
+      "forgot",
+      "the",
+      "password"
+    ],
+    "filtered_tokens": [
+      "forgot",
+      "password"
+    ],
+    "lemmatized_tokens": [
+      "forgot",
+      "password"
+    ],
+    "intent": "wifi_problems",
+    "answer": "Contact IT support at extension 1234 for the current Wi-Fi password. Do not share the password with unauthorized persons.",
+    "entity": "wifi",
+    "entities": [
+      "password",
+      "wifi"
+    ]
+  },
+  {
+    "question": "My Wi-Fi shows limited connectivity.",
+    "clean_question": "my wi-fi shows limited connectivity",
+    "tokens": [
+      "my",
+      "shows",
+      "limited",
+      "connectivity"
+    ],
+    "filtered_tokens": [
+      "shows",
+      "limited",
+      "connectivity"
+    ],
+    "lemmatized_tokens": [
+      "show",
+      "limit",
+      "connectivity"
+    ],
+    "intent": "wifi_problems",
+    "answer": "Restart your device and router. If the problem persists, contact IT support at extension 1234.",
+    "entity": "wifi",
+    "entities": [
+      "wifi"
+    ]
+  },
+  {
+    "question": "How do I set up Wi-Fi on my new laptop?",
+    "clean_question": "how do i set up wi-fi on my new laptop",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "set",
+      "up",
+      "on",
+      "my",
+      "new",
+      "laptop"
+    ],
+    "filtered_tokens": [
+      "set",
+      "new",
+      "laptop"
+    ],
+    "lemmatized_tokens": [
+      "set",
+      "new",
+      "laptop"
+    ],
+    "intent": "wifi_problems",
+    "answer": "Contact IT support at extension 1234 during laptop setup. They will configure the Wi-Fi connection for you.",
+    "entity": "wifi",
+    "entities": [
+      "laptop",
+      "wifi"
+    ]
+  },
+  {
+    "question": "My mobile hotspot is not working on company Wi-Fi.",
+    "clean_question": "my mobile hotspot is not working on company wi-fi",
+    "tokens": [
+      "my",
+      "mobile",
+      "hotspot",
+      "is",
+      "not",
+      "working",
+      "on",
+      "company"
+    ],
+    "filtered_tokens": [
+      "mobile",
+      "hotspot",
+      "working",
+      "company"
+    ],
+    "lemmatized_tokens": [
+      "mobile",
+      "hotspot",
+      "work",
+      "company"
+    ],
+    "intent": "wifi_problems",
+    "answer": "Personal hotspots may be blocked by company security policy. Contact IT security at extension 9999 for clarification.",
+    "entity": "wifi",
+    "entities": [
+      "wifi"
+    ]
+  },
+  {
+    "question": "How do I improve my Wi-Fi signal?",
+    "clean_question": "how do i improve my wi-fi signal",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "improve",
+      "my",
+      "signal"
+    ],
+    "filtered_tokens": [
+      "improve",
+      "signal"
+    ],
+    "lemmatized_tokens": [
+      "improve",
+      "signal"
+    ],
+    "intent": "wifi_problems",
+    "answer": "Move closer to the router, reduce physical obstructions, or use a Wi-Fi extender. Contact IT support at extension 1234 for network optimization.",
+    "entity": "wifi",
+    "entities": [
+      "wifi"
+    ]
+  },
+  {
+    "question": "My Wi-Fi works on some devices but not others.",
+    "clean_question": "my wi-fi works on some devices but not others",
+    "tokens": [
+      "my",
+      "works",
+      "on",
+      "some",
+      "devices",
+      "but",
+      "not",
+      "others"
+    ],
+    "filtered_tokens": [
+      "works",
+      "devices",
+      "others"
+    ],
+    "lemmatized_tokens": [
+      "work",
+      "device",
+      "others"
+    ],
+    "intent": "wifi_problems",
+    "answer": "Check if the affected devices have the correct network settings. Contact IT support at extension 1234 if the problem continues.",
+    "entity": "wifi",
+    "entities": [
+      "wifi"
+    ]
+  },
+  {
+    "question": "How do I reset my email password?",
+    "clean_question": "how do i reset my email password",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "reset",
+      "my",
+      "email",
+      "password"
+    ],
+    "filtered_tokens": [
+      "reset",
+      "email",
+      "password"
+    ],
+    "lemmatized_tokens": [
+      "reset",
+      "email",
+      "password"
+    ],
+    "intent": "email_problems",
+    "answer": "Email uses the same password as your company account. Reset it at portal.company.com/reset.",
+    "entity": "email",
+    "entities": [
+      "email",
+      "password"
+    ]
+  },
+  {
+    "question": "I cannot send emails.",
+    "clean_question": "i cannot send emails",
+    "tokens": [
+      "i",
+      "can",
+      "not",
+      "send",
+      "emails"
+    ],
+    "filtered_tokens": [
+      "send",
+      "emails"
+    ],
+    "lemmatized_tokens": [
+      "send",
+      "email"
+    ],
+    "intent": "email_problems",
+    "answer": "Check your internet connection and email client settings. If the problem persists, contact IT support at extension 1234.",
+    "entity": "email",
+    "entities": []
+  },
+  {
+    "question": "I am not receiving emails.",
+    "clean_question": "i am not receiving emails",
+    "tokens": [
+      "i",
+      "am",
+      "not",
+      "receiving",
+      "emails"
+    ],
+    "filtered_tokens": [
+      "receiving",
+      "emails"
+    ],
+    "lemmatized_tokens": [
+      "receive",
+      "email"
+    ],
+    "intent": "email_problems",
+    "answer": "Check your spam folder and filters. If still not receiving emails, contact IT support at extension 1234 to check your mailbox.",
+    "entity": "email",
+    "entities": []
+  },
+  {
+    "question": "My email storage is full.",
+    "clean_question": "my email storage is full",
+    "tokens": [
+      "my",
+      "email",
+      "storage",
+      "is",
+      "full"
+    ],
+    "filtered_tokens": [
+      "email",
+      "storage",
+      "full"
+    ],
+    "lemmatized_tokens": [
+      "email",
+      "storage",
+      "full"
+    ],
+    "intent": "email_problems",
+    "answer": "Delete old emails and empty the trash folder. If you need more storage, contact IT support at extension 1234.",
+    "entity": "email",
+    "entities": [
+      "email"
+    ]
+  },
+  {
+    "question": "How do I set up my email on my phone?",
+    "clean_question": "how do i set up my email on my phone",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "set",
+      "up",
+      "my",
+      "email",
+      "on",
+      "my",
+      "phone"
+    ],
+    "filtered_tokens": [
+      "set",
+      "email",
+      "phone"
+    ],
+    "lemmatized_tokens": [
+      "set",
+      "email",
+      "phone"
+    ],
+    "intent": "email_problems",
+    "answer": "Follow the setup guide in the employee portal under Settings > Email > Mobile Setup, or contact IT support at extension 1234.",
+    "entity": "email",
+    "entities": [
+      "email",
+      "contact"
+    ]
+  },
+  {
+    "question": "My email signature is not working.",
+    "clean_question": "my email signature is not working",
+    "tokens": [
+      "my",
+      "email",
+      "signature",
+      "is",
+      "not",
+      "working"
+    ],
+    "filtered_tokens": [
+      "email",
+      "signature",
+      "working"
+    ],
+    "lemmatized_tokens": [
+      "email",
+      "signature",
+      "work"
+    ],
+    "intent": "email_problems",
+    "answer": "Check your email client settings. If the problem persists, contact IT support at extension 1234.",
+    "entity": "email",
+    "entities": [
+      "email"
+    ]
+  },
+  {
+    "question": "How do I create a distribution list?",
+    "clean_question": "how do i create a distribution list",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "create",
+      "a",
+      "distribution",
+      "list"
+    ],
+    "filtered_tokens": [
+      "create",
+      "distribution",
+      "list"
+    ],
+    "lemmatized_tokens": [
+      "create",
+      "distribution",
+      "list"
+    ],
+    "intent": "email_problems",
+    "answer": "Contact IT support at extension 1234 to create a distribution list for your team.",
+    "entity": "email",
+    "entities": []
+  },
+  {
+    "question": "I cannot access my email from outside the office.",
+    "clean_question": "i cannot access my email from outside the office",
+    "tokens": [
+      "i",
+      "can",
+      "not",
+      "access",
+      "my",
+      "email",
+      "from",
+      "outside",
+      "the",
+      "office"
+    ],
+    "filtered_tokens": [
+      "access",
+      "email",
+      "outside",
+      "office"
+    ],
+    "lemmatized_tokens": [
+      "access",
+      "email",
+      "outside",
+      "office"
+    ],
+    "intent": "email_problems",
+    "answer": "Ensure you are using the company VPN or webmail at mail.company.com. Contact IT support at extension 1234 if you cannot access webmail.",
+    "entity": "email",
+    "entities": [
+      "email"
+    ]
+  },
+  {
+    "question": "My email attachments are being blocked.",
+    "clean_question": "my email attachments are being blocked",
+    "tokens": [
+      "my",
+      "email",
+      "attachments",
+      "are",
+      "being",
+      "blocked"
+    ],
+    "filtered_tokens": [
+      "email",
+      "attachments",
+      "blocked"
+    ],
+    "lemmatized_tokens": [
+      "email",
+      "attachment",
+      "block"
+    ],
+    "intent": "email_problems",
+    "answer": "Large attachments may be blocked. Use the company file sharing service or compress the file. Contact IT support at extension 1234 for size limits.",
+    "entity": "email",
+    "entities": [
+      "email"
+    ]
+  },
+  {
+    "question": "How do I set up email forwarding?",
+    "clean_question": "how do i set up email forwarding",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "set",
+      "up",
+      "email",
+      "forwarding"
+    ],
+    "filtered_tokens": [
+      "set",
+      "email",
+      "forwarding"
+    ],
+    "lemmatized_tokens": [
+      "set",
+      "email",
+      "forwarding"
+    ],
+    "intent": "email_problems",
+    "answer": "Go to Settings > Email > Forwarding in the employee portal, or contact IT support at extension 1234.",
+    "entity": "email",
+    "entities": [
+      "email"
+    ]
+  },
+  {
+    "question": "My email calendar is not syncing.",
+    "clean_question": "my email calendar is not syncing",
+    "tokens": [
+      "my",
+      "email",
+      "calendar",
+      "is",
+      "not",
+      "syncing"
+    ],
+    "filtered_tokens": [
+      "email",
+      "calendar",
+      "syncing"
+    ],
+    "lemmatized_tokens": [
+      "email",
+      "calendar",
+      "sync"
+    ],
+    "intent": "email_problems",
+    "answer": "Check your internet connection and sync settings. If the problem persists, contact IT support at extension 1234.",
+    "entity": "email",
+    "entities": [
+      "email"
+    ]
+  },
+  {
+    "question": "How do I recover deleted emails?",
+    "clean_question": "how do i recover deleted emails",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "recover",
+      "deleted",
+      "emails"
+    ],
+    "filtered_tokens": [
+      "recover",
+      "deleted",
+      "emails"
+    ],
+    "lemmatized_tokens": [
+      "recover",
+      "delete",
+      "email"
+    ],
+    "intent": "email_problems",
+    "answer": "Check the Deleted Items folder first. For permanently deleted emails, contact IT support at extension 1234 within 30 days.",
+    "entity": "email",
+    "entities": []
+  },
+  {
+    "question": "My email is sending spam.",
+    "clean_question": "my email is sending spam",
+    "tokens": [
+      "my",
+      "email",
+      "is",
+      "sending",
+      "spam"
+    ],
+    "filtered_tokens": [
+      "email",
+      "sending",
+      "spam"
+    ],
+    "lemmatized_tokens": [
+      "email",
+      "send",
+      "spam"
+    ],
+    "intent": "email_problems",
+    "answer": "Immediately change your password and contact IT security at extension 9999. Your account may be compromised.",
+    "entity": "email",
+    "entities": [
+      "email"
+    ]
+  },
+  {
+    "question": "How do I add a delegate to my email?",
+    "clean_question": "how do i add a delegate to my email",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "add",
+      "a",
+      "delegate",
+      "to",
+      "my",
+      "email"
+    ],
+    "filtered_tokens": [
+      "add",
+      "delegate",
+      "email"
+    ],
+    "lemmatized_tokens": [
+      "add",
+      "delegate",
+      "email"
+    ],
+    "intent": "email_problems",
+    "answer": "Go to Settings > Email > Delegates in the employee portal, or contact IT support at extension 1234.",
+    "entity": "email",
+    "entities": [
+      "email"
+    ]
+  },
+  {
+    "question": "What is the leave policy?",
+    "clean_question": "what is the leave policy",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "leave",
+      "policy"
+    ],
+    "filtered_tokens": [
+      "leave",
+      "policy"
+    ],
+    "lemmatized_tokens": [
+      "leave",
+      "policy"
+    ],
+    "intent": "leave_policy",
+    "answer": "Employees are entitled to 20 days of paid annual leave per year. Leave must be approved by your manager at least 2 weeks in advance.",
+    "entity": "leave",
+    "entities": [
+      "leave"
+    ]
+  },
+  {
+    "question": "How do I apply for leave?",
+    "clean_question": "how do i apply for leave",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "apply",
+      "for",
+      "leave"
+    ],
+    "filtered_tokens": [
+      "apply",
+      "leave"
+    ],
+    "lemmatized_tokens": [
+      "apply",
+      "leave"
+    ],
+    "intent": "leave_policy",
+    "answer": "Submit a leave request through the HR portal at portal.company.com/leave. Your manager will be notified for approval.",
+    "entity": "leave",
+    "entities": [
+      "leave"
+    ]
+  },
+  {
+    "question": "How many sick days do I get?",
+    "clean_question": "how many sick days do i get",
+    "tokens": [
+      "how",
+      "many",
+      "sick",
+      "days",
+      "do",
+      "i",
+      "get"
+    ],
+    "filtered_tokens": [
+      "many",
+      "sick",
+      "days",
+      "get"
+    ],
+    "lemmatized_tokens": [
+      "many",
+      "sick",
+      "day",
+      "get"
+    ],
+    "intent": "leave_policy",
+    "answer": "Employees receive 10 paid sick days per year. A medical certificate is required for sick leave exceeding 3 consecutive days.",
+    "entity": "leave",
+    "entities": [
+      "leave"
+    ]
+  },
+  {
+    "question": "Can I carry over unused leave?",
+    "clean_question": "can i carry over unused leave",
+    "tokens": [
+      "can",
+      "i",
+      "carry",
+      "over",
+      "unused",
+      "leave"
+    ],
+    "filtered_tokens": [
+      "carry",
+      "unused",
+      "leave"
+    ],
+    "lemmatized_tokens": [
+      "carry",
+      "unused",
+      "leave"
+    ],
+    "intent": "leave_policy",
+    "answer": "Up to 5 days of unused annual leave can be carried over to the next year. Excess leave will be forfeited.",
+    "entity": "leave",
+    "entities": [
+      "leave"
+    ]
+  },
+  {
+    "question": "How do I check my leave balance?",
+    "clean_question": "how do i check my leave balance",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "check",
+      "my",
+      "leave",
+      "balance"
+    ],
+    "filtered_tokens": [
+      "check",
+      "leave",
+      "balance"
+    ],
+    "lemmatized_tokens": [
+      "check",
+      "leave",
+      "balance"
+    ],
+    "intent": "leave_policy",
+    "answer": "Log into the HR portal and go to My Account > Leave Balance to view your remaining leave days.",
+    "entity": "leave",
+    "entities": [
+      "leave"
+    ]
+  },
+  {
+    "question": "What is the notice period for leave?",
+    "clean_question": "what is the notice period for leave",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "notice",
+      "period",
+      "for",
+      "leave"
+    ],
+    "filtered_tokens": [
+      "notice",
+      "period",
+      "leave"
+    ],
+    "lemmatized_tokens": [
+      "notice",
+      "period",
+      "leave"
+    ],
+    "intent": "leave_policy",
+    "answer": "Annual leave requires 2 weeks notice. Sick leave should be reported as soon as possible. Emergency leave requires manager approval.",
+    "entity": "leave",
+    "entities": [
+      "leave"
+    ]
+  },
+  {
+    "question": "Can I take unpaid leave?",
+    "clean_question": "can i take unpaid leave",
+    "tokens": [
+      "can",
+      "i",
+      "take",
+      "unpaid",
+      "leave"
+    ],
+    "filtered_tokens": [
+      "take",
+      "unpaid",
+      "leave"
+    ],
+    "lemmatized_tokens": [
+      "take",
+      "unpaid",
+      "leave"
+    ],
+    "intent": "leave_policy",
+    "answer": "Unpaid leave is possible with manager and HR approval. Submit a request through the HR portal with justification.",
+    "entity": "leave",
+    "entities": [
+      "leave"
+    ]
+  },
+  {
+    "question": "How do I cancel a leave request?",
+    "clean_question": "how do i cancel a leave request",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "cancel",
+      "a",
+      "leave",
+      "request"
+    ],
+    "filtered_tokens": [
+      "cancel",
+      "leave",
+      "request"
+    ],
+    "lemmatized_tokens": [
+      "cancel",
+      "leave",
+      "request"
+    ],
+    "intent": "leave_policy",
+    "answer": "Go to the HR portal, find your pending leave request, and click Cancel. Your manager will be notified.",
+    "entity": "leave",
+    "entities": [
+      "leave"
+    ]
+  },
+  {
+    "question": "What is maternity leave policy?",
+    "clean_question": "what is maternity leave policy",
+    "tokens": [
+      "what",
+      "is",
+      "maternity",
+      "leave",
+      "policy"
+    ],
+    "filtered_tokens": [
+      "maternity",
+      "leave",
+      "policy"
+    ],
+    "lemmatized_tokens": [
+      "maternity",
+      "leave",
+      "policy"
+    ],
+    "intent": "leave_policy",
+    "answer": "Eligible employees receive 16 weeks of paid maternity leave. Contact HR at extension 5678 for eligibility criteria and application process.",
+    "entity": "leave",
+    "entities": [
+      "leave"
+    ]
+  },
+  {
+    "question": "What is paternity leave policy?",
+    "clean_question": "what is paternity leave policy",
+    "tokens": [
+      "what",
+      "is",
+      "paternity",
+      "leave",
+      "policy"
+    ],
+    "filtered_tokens": [
+      "paternity",
+      "leave",
+      "policy"
+    ],
+    "lemmatized_tokens": [
+      "paternity",
+      "leave",
+      "policy"
+    ],
+    "intent": "leave_policy",
+    "answer": "Eligible employees receive 2 weeks of paid paternity leave. Contact HR at extension 5678 for details.",
+    "entity": "leave",
+    "entities": [
+      "leave"
+    ]
+  },
+  {
+    "question": "How do I apply for bereavement leave?",
+    "clean_question": "how do i apply for bereavement leave",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "apply",
+      "for",
+      "bereavement",
+      "leave"
+    ],
+    "filtered_tokens": [
+      "apply",
+      "bereavement",
+      "leave"
+    ],
+    "lemmatized_tokens": [
+      "apply",
+      "bereavement",
+      "leave"
+    ],
+    "intent": "leave_policy",
+    "answer": "Contact HR at extension 5678 immediately. Bereavement leave is granted for immediate family members.",
+    "entity": "leave",
+    "entities": [
+      "leave"
+    ]
+  },
+  {
+    "question": "Can I take leave during probation?",
+    "clean_question": "can i take leave during probation",
+    "tokens": [
+      "can",
+      "i",
+      "take",
+      "leave",
+      "during",
+      "probation"
+    ],
+    "filtered_tokens": [
+      "take",
+      "leave",
+      "probation"
+    ],
+    "lemmatized_tokens": [
+      "take",
+      "leave",
+      "probation"
+    ],
+    "intent": "leave_policy",
+    "answer": "Leave during probation is subject to manager approval. Annual leave accrues from your start date.",
+    "entity": "leave",
+    "entities": [
+      "leave"
+    ]
+  },
+  {
+    "question": "How do I check my attendance?",
+    "clean_question": "how do i check my attendance",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "check",
+      "my",
+      "attendance"
+    ],
+    "filtered_tokens": [
+      "check",
+      "attendance"
+    ],
+    "lemmatized_tokens": [
+      "check",
+      "attendance"
+    ],
+    "intent": "attendance",
+    "answer": "Log into the HR portal and go to My Account > Attendance to view your attendance records.",
+    "entity": "attendance",
+    "entities": [
+      "attendance"
+    ]
+  },
+  {
+    "question": "What are the working hours?",
+    "clean_question": "what are the working hours",
+    "tokens": [
+      "what",
+      "are",
+      "the",
+      "working",
+      "hours"
+    ],
+    "filtered_tokens": [
+      "working",
+      "hours"
+    ],
+    "lemmatized_tokens": [
+      "working",
+      "hour"
+    ],
+    "intent": "working_hours",
+    "answer": "Standard working hours are 9:00 AM to 6:00 PM, Monday to Friday. Flexible working arrangements require manager approval.",
+    "entity": "working_hours",
+    "entities": [
+      "working_hours"
+    ]
+  },
+  {
+    "question": "What is the company holiday list?",
+    "clean_question": "what is the company holiday list",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "company",
+      "holiday",
+      "list"
+    ],
+    "filtered_tokens": [
+      "company",
+      "holiday",
+      "list"
+    ],
+    "lemmatized_tokens": [
+      "company",
+      "holiday",
+      "list"
+    ],
+    "intent": "holidays",
+    "answer": "The holiday list is available on the company intranet under HR > Holidays. Major holidays include New Year, Independence Day, and Christmas.",
+    "entity": "holiday",
+    "entities": [
+      "holiday"
+    ]
+  },
+  {
+    "question": "How do I check my salary?",
+    "clean_question": "how do i check my salary",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "check",
+      "my",
+      "salary"
+    ],
+    "filtered_tokens": [
+      "check",
+      "salary"
+    ],
+    "lemmatized_tokens": [
+      "check",
+      "salary"
+    ],
+    "intent": "salary_information",
+    "answer": "Salary details are available on your payslip, which is distributed via the HR portal. Contact HR at extension 5678 for questions.",
+    "entity": "salary",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "How do I get my salary slip?",
+    "clean_question": "how do i get my salary slip",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "get",
+      "my",
+      "salary",
+      "slip"
+    ],
+    "filtered_tokens": [
+      "get",
+      "salary",
+      "slip"
+    ],
+    "lemmatized_tokens": [
+      "get",
+      "salary",
+      "slip"
+    ],
+    "intent": "salary_information",
+    "answer": "Salary slips are available in the HR portal under My Account > Payslips. They are released on the last working day of each month.",
+    "entity": "salary",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "When is payday?",
+    "clean_question": "when is payday",
+    "tokens": [
+      "when",
+      "is",
+      "payday"
+    ],
+    "filtered_tokens": [
+      "payday"
+    ],
+    "lemmatized_tokens": [
+      "payday"
+    ],
+    "intent": "payroll",
+    "answer": "Payday is the last working day of each month. If payday falls on a weekend or holiday, salary is paid on the previous working day.",
+    "entity": "payroll",
+    "entities": [
+      "payroll"
+    ]
+  },
+  {
+    "question": "How do I update my bank details for payroll?",
+    "clean_question": "how do i update my bank details for payroll",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "update",
+      "my",
+      "bank",
+      "details",
+      "for",
+      "payroll"
+    ],
+    "filtered_tokens": [
+      "update",
+      "bank",
+      "details",
+      "payroll"
+    ],
+    "lemmatized_tokens": [
+      "update",
+      "bank",
+      "detail",
+      "payroll"
+    ],
+    "intent": "payroll",
+    "answer": "Submit a bank detail update form through the HR portal. Changes require verification and take effect from the next pay cycle.",
+    "entity": "payroll",
+    "entities": [
+      "payroll"
+    ]
+  },
+  {
+    "question": "What is my employee ID?",
+    "clean_question": "what is my employee id",
+    "tokens": [
+      "what",
+      "is",
+      "my",
+      "employee",
+      "id"
+    ],
+    "filtered_tokens": [
+      "employee",
+      "id"
+    ],
+    "lemmatized_tokens": [
+      "employee",
+      "id"
+    ],
+    "intent": "employee_id",
+    "answer": "Your employee ID is provided in your offer letter and on your employee ID card. You can also find it in the HR portal under My Profile.",
+    "entity": "employee_id",
+    "entities": [
+      "employee_id"
+    ]
+  },
+  {
+    "question": "How do I contact HR?",
+    "clean_question": "how do i contact hr",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "contact",
+      "hr"
+    ],
+    "filtered_tokens": [
+      "contact",
+      "hr"
+    ],
+    "lemmatized_tokens": [
+      "contact",
+      "hr"
+    ],
+    "intent": "hr_support",
+    "answer": "Contact HR at extension 5678 or email hr@company.com. HR office is located in Building B, Room 201.",
+    "entity": "hr",
+    "entities": [
+      "hr",
+      "contact"
+    ]
+  },
+  {
+    "question": "How do I find the office location?",
+    "clean_question": "how do i find the office location",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "find",
+      "the",
+      "office",
+      "location"
+    ],
+    "filtered_tokens": [
+      "find",
+      "office",
+      "location"
+    ],
+    "lemmatized_tokens": [
+      "find",
+      "office",
+      "location"
+    ],
+    "intent": "office_location",
+    "answer": "Our main office is at 123 Business Park, Tech City. Building A houses IT and Operations. Building B houses HR and Finance.",
+    "entity": "location",
+    "entities": [
+      "location"
+    ]
+  },
+  {
+    "question": "What is the contact number for IT support?",
+    "clean_question": "what is the contact number for it support",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "contact",
+      "number",
+      "for",
+      "it",
+      "support"
+    ],
+    "filtered_tokens": [
+      "contact",
+      "number",
+      "support"
+    ],
+    "lemmatized_tokens": [
+      "contact",
+      "number",
+      "support"
+    ],
+    "intent": "contact_information",
+    "answer": "IT support can be reached at extension 1234 or email it-support@company.com. The IT helpdesk is in Building A, Room 101.",
+    "entity": "contact",
+    "entities": [
+      "contact",
+      "it_support"
+    ]
+  },
+  {
+    "question": "How do I report a security incident?",
+    "clean_question": "how do i report a security incident",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "report",
+      "a",
+      "security",
+      "incident"
+    ],
+    "filtered_tokens": [
+      "report",
+      "security",
+      "incident"
+    ],
+    "lemmatized_tokens": [
+      "report",
+      "security",
+      "incident"
+    ],
+    "intent": "security",
+    "answer": "Immediately report security incidents to IT security at extension 9999 or email security@company.com. Do not share sensitive information.",
+    "entity": "security",
+    "entities": [
+      "security"
+    ]
+  },
+  {
+    "question": "How do I request technical support?",
+    "clean_question": "how do i request technical support",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "request",
+      "technical",
+      "support"
+    ],
+    "filtered_tokens": [
+      "request",
+      "technical",
+      "support"
+    ],
+    "lemmatized_tokens": [
+      "request",
+      "technical",
+      "support"
+    ],
+    "intent": "technical_support",
+    "answer": "Submit a support ticket through the IT portal or call IT support at extension 1234. Provide detailed information about your issue.",
+    "entity": "it_support",
+    "entities": [
+      "it_support"
+    ]
+  },
+  {
+    "question": "Hello",
+    "clean_question": "hello",
+    "tokens": [
+      "hello"
+    ],
+    "filtered_tokens": [
+      "hello"
+    ],
+    "lemmatized_tokens": [
+      "hello"
+    ],
+    "intent": "greetings",
+    "answer": "Hello! I am the internal helpdesk chatbot. How can I assist you today? You can ask me about password resets, IT support, HR policies, and more.",
+    "entity": "greeting",
+    "entities": [
+      "greeting"
+    ]
+  },
+  {
+    "question": "Hi there",
+    "clean_question": "hi there",
+    "tokens": [
+      "hi",
+      "there"
+    ],
+    "filtered_tokens": [
+      "hi"
+    ],
+    "lemmatized_tokens": [
+      "hi"
+    ],
+    "intent": "greetings",
+    "answer": "Hi! Welcome to the internal helpdesk. How can I help you? I can assist with IT issues, HR questions, and company policies.",
+    "entity": "greeting",
+    "entities": [
+      "greeting"
+    ]
+  },
+  {
+    "question": "Good morning",
+    "clean_question": "good morning",
+    "tokens": [
+      "good",
+      "morning"
+    ],
+    "filtered_tokens": [
+      "good",
+      "morning"
+    ],
+    "lemmatized_tokens": [
+      "good",
+      "morning"
+    ],
+    "intent": "greetings",
+    "answer": "Good morning! How can I assist you today? Feel free to ask about password resets, software installation, leave policies, and more.",
+    "entity": "greeting",
+    "entities": [
+      "greeting"
+    ]
+  },
+  {
+    "question": "Good afternoon",
+    "clean_question": "good afternoon",
+    "tokens": [
+      "good",
+      "afternoon"
+    ],
+    "filtered_tokens": [
+      "good",
+      "afternoon"
+    ],
+    "lemmatized_tokens": [
+      "good",
+      "afternoon"
+    ],
+    "intent": "greetings",
+    "answer": "Good afternoon! How can I help you? I can provide information on IT support, HR policies, and company procedures.",
+    "entity": "greeting",
+    "entities": [
+      "greeting"
+    ]
+  },
+  {
+    "question": "Good evening",
+    "clean_question": "good evening",
+    "tokens": [
+      "good",
+      "evening"
+    ],
+    "filtered_tokens": [
+      "good",
+      "evening"
+    ],
+    "lemmatized_tokens": [
+      "good",
+      "evening"
+    ],
+    "intent": "greetings",
+    "answer": "Good evening! How can I assist you? I can help with IT issues, HR questions, and general company information.",
+    "entity": "greeting",
+    "entities": [
+      "greeting"
+    ]
+  },
+  {
+    "question": "Hey",
+    "clean_question": "hey",
+    "tokens": [
+      "hey"
+    ],
+    "filtered_tokens": [
+      "hey"
+    ],
+    "lemmatized_tokens": [
+      "hey"
+    ],
+    "intent": "greetings",
+    "answer": "Hey! I'm here to help with your questions. Ask me about password resets, leave policies, IT support, and more.",
+    "entity": "greeting",
+    "entities": [
+      "greeting"
+    ]
+  },
+  {
+    "question": "Hello chatbot",
+    "clean_question": "hello chatbot",
+    "tokens": [
+      "hello",
+      "chatbot"
+    ],
+    "filtered_tokens": [
+      "hello",
+      "chatbot"
+    ],
+    "lemmatized_tokens": [
+      "hello",
+      "chatbot"
+    ],
+    "intent": "greetings",
+    "answer": "Hello! I'm the internal helpdesk assistant. How can I help you today?",
+    "entity": "greeting",
+    "entities": [
+      "greeting"
+    ]
+  },
+  {
+    "question": "Hi chatbot",
+    "clean_question": "hi chatbot",
+    "tokens": [
+      "hi",
+      "chatbot"
+    ],
+    "filtered_tokens": [
+      "hi",
+      "chatbot"
+    ],
+    "lemmatized_tokens": [
+      "hi",
+      "chatbot"
+    ],
+    "intent": "greetings",
+    "answer": "Hi there! How can I assist you? I can help with IT support, HR questions, and company policies.",
+    "entity": "greeting",
+    "entities": [
+      "greeting"
+    ]
+  },
+  {
+    "question": "Good day",
+    "clean_question": "good day",
+    "tokens": [
+      "good",
+      "day"
+    ],
+    "filtered_tokens": [
+      "good",
+      "day"
+    ],
+    "lemmatized_tokens": [
+      "good",
+      "day"
+    ],
+    "intent": "greetings",
+    "answer": "Good day! How can I assist you today? Feel free to ask about any internal helpdesk topics.",
+    "entity": "greeting",
+    "entities": []
+  },
+  {
+    "question": "Greetings",
+    "clean_question": "greetings",
+    "tokens": [
+      "greetings"
+    ],
+    "filtered_tokens": [
+      "greetings"
+    ],
+    "lemmatized_tokens": [
+      "greeting"
+    ],
+    "intent": "greetings",
+    "answer": "Greetings! I'm here to help with your questions. Ask me about password resets, leave policies, IT support, and more.",
+    "entity": "greeting",
+    "entities": [
+      "greeting"
+    ]
+  },
+  {
+    "question": "Bye",
+    "clean_question": "bye",
+    "tokens": [
+      "bye"
+    ],
+    "filtered_tokens": [
+      "bye"
+    ],
+    "lemmatized_tokens": [
+      "bye"
+    ],
+    "intent": "goodbye",
+    "answer": "Goodbye! If you have more questions later, feel free to ask. Have a great day!",
+    "entity": "goodbye",
+    "entities": [
+      "goodbye"
+    ]
+  },
+  {
+    "question": "Goodbye",
+    "clean_question": "goodbye",
+    "tokens": [
+      "goodbye"
+    ],
+    "filtered_tokens": [
+      "goodbye"
+    ],
+    "lemmatized_tokens": [
+      "goodbye"
+    ],
+    "intent": "goodbye",
+    "answer": "Goodbye! Thank you for using the helpdesk. Have a wonderful day!",
+    "entity": "goodbye",
+    "entities": [
+      "goodbye"
+    ]
+  },
+  {
+    "question": "See you later",
+    "clean_question": "see you later",
+    "tokens": [
+      "see",
+      "you",
+      "later"
+    ],
+    "filtered_tokens": [
+      "see",
+      "later"
+    ],
+    "lemmatized_tokens": [
+      "see",
+      "later"
+    ],
+    "intent": "goodbye",
+    "answer": "See you later! If you need further assistance, don't hesitate to reach out. Have a great day!",
+    "entity": "goodbye",
+    "entities": [
+      "goodbye"
+    ]
+  },
+  {
+    "question": "Thank you, bye",
+    "clean_question": "thank you bye",
+    "tokens": [
+      "thank",
+      "you",
+      "bye"
+    ],
+    "filtered_tokens": [
+      "thank",
+      "bye"
+    ],
+    "lemmatized_tokens": [
+      "thank",
+      "bye"
+    ],
+    "intent": "goodbye",
+    "answer": "You're welcome! Goodbye! If you have more questions, I'm here to help.",
+    "entity": "goodbye",
+    "entities": [
+      "goodbye"
+    ]
+  },
+  {
+    "question": "Thanks, goodbye",
+    "clean_question": "thanks goodbye",
+    "tokens": [
+      "thanks",
+      "goodbye"
+    ],
+    "filtered_tokens": [
+      "thanks",
+      "goodbye"
+    ],
+    "lemmatized_tokens": [
+      "thanks",
+      "goodbye"
+    ],
+    "intent": "goodbye",
+    "answer": "You're welcome! Goodbye! Have a productive day ahead.",
+    "entity": "goodbye",
+    "entities": [
+      "goodbye"
+    ]
+  },
+  {
+    "question": "Take care",
+    "clean_question": "take care",
+    "tokens": [
+      "take",
+      "care"
+    ],
+    "filtered_tokens": [
+      "take",
+      "care"
+    ],
+    "lemmatized_tokens": [
+      "take",
+      "care"
+    ],
+    "intent": "goodbye",
+    "answer": "Take care! If you need any help in the future, I'm here for you. Goodbye!",
+    "entity": "goodbye",
+    "entities": [
+      "goodbye"
+    ]
+  },
+  {
+    "question": "Have a good day",
+    "clean_question": "have a good day",
+    "tokens": [
+      "have",
+      "a",
+      "good",
+      "day"
+    ],
+    "filtered_tokens": [
+      "good",
+      "day"
+    ],
+    "lemmatized_tokens": [
+      "good",
+      "day"
+    ],
+    "intent": "goodbye",
+    "answer": "You too! Goodbye! Feel free to return if you have more questions.",
+    "entity": "goodbye",
+    "entities": []
+  },
+  {
+    "question": "Bye for now",
+    "clean_question": "bye for now",
+    "tokens": [
+      "bye",
+      "for",
+      "now"
+    ],
+    "filtered_tokens": [
+      "bye"
+    ],
+    "lemmatized_tokens": [
+      "bye"
+    ],
+    "intent": "goodbye",
+    "answer": "Bye for now! Thank you for using the helpdesk. Have a great day!",
+    "entity": "goodbye",
+    "entities": [
+      "goodbye"
+    ]
+  },
+  {
+    "question": "See you",
+    "clean_question": "see you",
+    "tokens": [
+      "see",
+      "you"
+    ],
+    "filtered_tokens": [
+      "see"
+    ],
+    "lemmatized_tokens": [
+      "see"
+    ],
+    "intent": "goodbye",
+    "answer": "See you! If you need assistance later, I'm here to help. Goodbye!",
+    "entity": "goodbye",
+    "entities": [
+      "goodbye"
+    ]
+  },
+  {
+    "question": "Thanks, that's all",
+    "clean_question": "thanks that's all",
+    "tokens": [
+      "thanks",
+      "that",
+      "is",
+      "all"
+    ],
+    "filtered_tokens": [
+      "thanks"
+    ],
+    "lemmatized_tokens": [
+      "thanks"
+    ],
+    "intent": "goodbye",
+    "answer": "You're welcome! Goodbye! If you have more questions, don't hesitate to ask.",
+    "entity": "goodbye",
+    "entities": []
+  },
+  {
+    "question": "Can you help me?",
+    "clean_question": "can you help me",
+    "tokens": [
+      "can",
+      "you",
+      "help",
+      "me"
+    ],
+    "filtered_tokens": [
+      "help"
+    ],
+    "lemmatized_tokens": [
+      "help"
+    ],
+    "intent": "help",
+    "answer": "Of course! I can help you with various topics including password resets, IT support, HR policies, leave applications, software installation, and more. What do you need help with?",
+    "entity": "help",
+    "entities": [
+      "help"
+    ]
+  },
+  {
+    "question": "I need assistance",
+    "clean_question": "i need assistance",
+    "tokens": [
+      "i",
+      "need",
+      "assistance"
+    ],
+    "filtered_tokens": [
+      "need",
+      "assistance"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "assistance"
+    ],
+    "intent": "help",
+    "answer": "I'm here to help! You can ask me about password resets, account access, IT support, HR policies, leave, attendance, and more.",
+    "entity": "help",
+    "entities": [
+      "help"
+    ]
+  },
+  {
+    "question": "Help me please",
+    "clean_question": "help me please",
+    "tokens": [
+      "help",
+      "me",
+      "please"
+    ],
+    "filtered_tokens": [
+      "help",
+      "please"
+    ],
+    "lemmatized_tokens": [
+      "help",
+      "please"
+    ],
+    "intent": "help",
+    "answer": "I'd be happy to help! Tell me what you need assistance with. I can help with IT issues, HR questions, and company policies.",
+    "entity": "help",
+    "entities": [
+      "help"
+    ]
+  },
+  {
+    "question": "I have a question",
+    "clean_question": "i have a question",
+    "tokens": [
+      "i",
+      "have",
+      "a",
+      "question"
+    ],
+    "filtered_tokens": [
+      "question"
+    ],
+    "lemmatized_tokens": [
+      "question"
+    ],
+    "intent": "help",
+    "answer": "Sure! Ask me anything about password resets, IT support, HR policies, leave, attendance, or other company topics.",
+    "entity": "help",
+    "entities": []
+  },
+  {
+    "question": "Can you assist me?",
+    "clean_question": "can you assist me",
+    "tokens": [
+      "can",
+      "you",
+      "assist",
+      "me"
+    ],
+    "filtered_tokens": [
+      "assist"
+    ],
+    "lemmatized_tokens": [
+      "assist"
+    ],
+    "intent": "help",
+    "answer": "Absolutely! I can assist with password resets, account issues, IT support, HR questions, software installation, and more. What do you need?",
+    "entity": "help",
+    "entities": [
+      "help"
+    ]
+  },
+  {
+    "question": "I need some help",
+    "clean_question": "i need some help",
+    "tokens": [
+      "i",
+      "need",
+      "some",
+      "help"
+    ],
+    "filtered_tokens": [
+      "need",
+      "help"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "help"
+    ],
+    "intent": "help",
+    "answer": "I'm here to help! What do you need assistance with? I can help with IT issues, HR questions, and company policies.",
+    "entity": "help",
+    "entities": [
+      "help"
+    ]
+  },
+  {
+    "question": "What can you help me with?",
+    "clean_question": "what can you help me with",
+    "tokens": [
+      "what",
+      "can",
+      "you",
+      "help",
+      "me",
+      "with"
+    ],
+    "filtered_tokens": [
+      "help"
+    ],
+    "lemmatized_tokens": [
+      "help"
+    ],
+    "intent": "help",
+    "answer": "I can help with password resets, account access, IT support, HR policies, leave applications, attendance, software installation, and more.",
+    "entity": "help",
+    "entities": [
+      "help"
+    ]
+  },
+  {
+    "question": "I need support",
+    "clean_question": "i need support",
+    "tokens": [
+      "i",
+      "need",
+      "support"
+    ],
+    "filtered_tokens": [
+      "need",
+      "support"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "support"
+    ],
+    "intent": "help",
+    "answer": "I'm here to support you! Ask me about password resets, IT issues, HR policies, or any other company-related questions.",
+    "entity": "help",
+    "entities": []
+  },
+  {
+    "question": "Can you answer my questions?",
+    "clean_question": "can you answer my questions",
+    "tokens": [
+      "can",
+      "you",
+      "answer",
+      "my",
+      "questions"
+    ],
+    "filtered_tokens": [
+      "answer",
+      "questions"
+    ],
+    "lemmatized_tokens": [
+      "answer",
+      "question"
+    ],
+    "intent": "help",
+    "answer": "Yes, I can answer questions about password resets, IT support, HR policies, leave, attendance, and other company topics.",
+    "entity": "help",
+    "entities": []
+  },
+  {
+    "question": "I need guidance",
+    "clean_question": "i need guidance",
+    "tokens": [
+      "i",
+      "need",
+      "guidance"
+    ],
+    "filtered_tokens": [
+      "need",
+      "guidance"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "guidance"
+    ],
+    "intent": "help",
+    "answer": "I'm here to provide guidance! Ask me about password resets, account access, IT support, HR policies, and more.",
+    "entity": "help",
+    "entities": []
+  },
+  {
+    "question": "What should I do if I have a problem?",
+    "clean_question": "what should i do if i have a problem",
+    "tokens": [
+      "what",
+      "should",
+      "i",
+      "do",
+      "if",
+      "i",
+      "have",
+      "a",
+      "problem"
+    ],
+    "filtered_tokens": [
+      "problem"
+    ],
+    "lemmatized_tokens": [
+      "problem"
+    ],
+    "intent": "help",
+    "answer": "If you have a problem, describe it to me and I'll help you find the right solution. I can assist with IT issues, HR questions, and company policies.",
+    "entity": "help",
+    "entities": []
+  },
+  {
+    "question": "I don't know what to do",
+    "clean_question": "i don't know what to do",
+    "tokens": [
+      "i",
+      "do",
+      "not",
+      "know",
+      "what",
+      "to",
+      "do"
+    ],
+    "filtered_tokens": [
+      "know"
+    ],
+    "lemmatized_tokens": [
+      "know"
+    ],
+    "intent": "help",
+    "answer": "Don't worry! Tell me what you're trying to accomplish, and I'll guide you through the process. I can help with IT, HR, and other topics.",
+    "entity": "help",
+    "entities": []
+  },
+  {
+    "question": "Who can help me?",
+    "clean_question": "who can help me",
+    "tokens": [
+      "who",
+      "can",
+      "help",
+      "me"
+    ],
+    "filtered_tokens": [
+      "help"
+    ],
+    "lemmatized_tokens": [
+      "help"
+    ],
+    "intent": "help",
+    "answer": "I can help you! For complex issues, I can also direct you to the right department: IT support at extension 1234, HR at extension 5678, or IT security at extension 9999.",
+    "entity": "help",
+    "entities": [
+      "help"
+    ]
+  },
+  {
+    "question": "I need information",
+    "clean_question": "i need information",
+    "tokens": [
+      "i",
+      "need",
+      "information"
+    ],
+    "filtered_tokens": [
+      "need",
+      "information"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "information"
+    ],
+    "intent": "help",
+    "answer": "I'm here to provide information! Ask me about password resets, leave policies, IT support, HR questions, and more.",
+    "entity": "help",
+    "entities": []
+  },
+  {
+    "question": "Can you guide me?",
+    "clean_question": "can you guide me",
+    "tokens": [
+      "can",
+      "you",
+      "guide",
+      "me"
+    ],
+    "filtered_tokens": [
+      "guide"
+    ],
+    "lemmatized_tokens": [
+      "guide"
+    ],
+    "intent": "help",
+    "answer": "Yes, I can guide you! Tell me what you need help with, and I'll provide step-by-step assistance.",
+    "entity": "help",
+    "entities": []
+  },
+  {
+    "question": "I'm lost",
+    "clean_question": "i'm lost",
+    "tokens": [
+      "i",
+      "am",
+      "lost"
+    ],
+    "filtered_tokens": [
+      "lost"
+    ],
+    "lemmatized_tokens": [
+      "lose"
+    ],
+    "intent": "help",
+    "answer": "I'm here to help! Tell me what you're looking for. I can assist with IT issues, HR questions, and company policies.",
+    "entity": "help",
+    "entities": []
+  },
+  {
+    "question": "What are my options?",
+    "clean_question": "what are my options",
+    "tokens": [
+      "what",
+      "are",
+      "my",
+      "options"
+    ],
+    "filtered_tokens": [
+      "options"
+    ],
+    "lemmatized_tokens": [
+      "option"
+    ],
+    "intent": "help",
+    "answer": "You can ask me about password resets, account access, IT support, HR policies, leave, attendance, software installation, and more.",
+    "entity": "help",
+    "entities": []
+  },
+  {
+    "question": "I need directions",
+    "clean_question": "i need directions",
+    "tokens": [
+      "i",
+      "need",
+      "directions"
+    ],
+    "filtered_tokens": [
+      "need",
+      "directions"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "direction"
+    ],
+    "intent": "help",
+    "answer": "I can help guide you! For physical office locations, the main office is at 123 Business Park. For process guidance, ask me about specific topics.",
+    "entity": "help",
+    "entities": []
+  },
+  {
+    "question": "Can you tell me more?",
+    "clean_question": "can you tell me more",
+    "tokens": [
+      "can",
+      "you",
+      "tell",
+      "me",
+      "more"
+    ],
+    "filtered_tokens": [
+      "tell"
+    ],
+    "lemmatized_tokens": [
+      "tell"
+    ],
+    "intent": "help",
+    "answer": "I'd be happy to provide more information! Ask me about any specific topic like password resets, IT support, HR policies, or leave.",
+    "entity": "help",
+    "entities": []
+  },
+  {
+    "question": "I need to speak to someone",
+    "clean_question": "i need to speak to someone",
+    "tokens": [
+      "i",
+      "need",
+      "to",
+      "speak",
+      "to",
+      "someone"
+    ],
+    "filtered_tokens": [
+      "need",
+      "speak",
+      "someone"
+    ],
+    "lemmatized_tokens": [
+      "need",
+      "speak",
+      "someone"
+    ],
+    "intent": "help",
+    "answer": "For immediate assistance, contact IT support at extension 1234, HR at extension 5678, or IT security at extension 9999. I can also help with common questions.",
+    "entity": "help",
+    "entities": []
+  },
+  {
+    "question": "How do I mark my attendance each day?",
+    "clean_question": "how do i mark my attendance each day",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "mark",
+      "my",
+      "attendance",
+      "each",
+      "day"
+    ],
+    "filtered_tokens": [
+      "mark",
+      "attendance",
+      "day"
+    ],
+    "lemmatized_tokens": [
+      "mark",
+      "attendance",
+      "day"
+    ],
+    "intent": "attendance",
+    "answer": "Use the biometric scanner or the HR mobile app to clock in and out. Your attendance is recorded automatically.",
+    "entity": "attendance",
+    "entities": [
+      "attendance"
+    ]
+  },
+  {
+    "question": "Can I view my attendance on the mobile app?",
+    "clean_question": "can i view my attendance on the mobile app",
+    "tokens": [
+      "can",
+      "i",
+      "view",
+      "my",
+      "attendance",
+      "on",
+      "the",
+      "mobile",
+      "app"
+    ],
+    "filtered_tokens": [
+      "view",
+      "attendance",
+      "mobile",
+      "app"
+    ],
+    "lemmatized_tokens": [
+      "view",
+      "attendance",
+      "mobile",
+      "app"
+    ],
+    "intent": "attendance",
+    "answer": "Yes, download the HR mobile app and go to the Attendance tab. You can view daily, weekly, and monthly records.",
+    "entity": "attendance",
+    "entities": [
+      "software",
+      "attendance"
+    ]
+  },
+  {
+    "question": "What should I do if the attendance system is down?",
+    "clean_question": "what should i do if the attendance system is down",
+    "tokens": [
+      "what",
+      "should",
+      "i",
+      "do",
+      "if",
+      "the",
+      "attendance",
+      "system",
+      "is",
+      "down"
+    ],
+    "filtered_tokens": [
+      "attendance",
+      "system"
+    ],
+    "lemmatized_tokens": [
+      "attendance",
+      "system"
+    ],
+    "intent": "attendance",
+    "answer": "Note your clock-in and clock-out times in a manual register and submit it to HR. The system will sync once it is back up.",
+    "entity": "attendance",
+    "entities": [
+      "attendance"
+    ]
+  },
+  {
+    "question": "How do I correct an incorrect attendance entry?",
+    "clean_question": "how do i correct an incorrect attendance entry",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "correct",
+      "an",
+      "incorrect",
+      "attendance",
+      "entry"
+    ],
+    "filtered_tokens": [
+      "correct",
+      "incorrect",
+      "attendance",
+      "entry"
+    ],
+    "lemmatized_tokens": [
+      "correct",
+      "incorrect",
+      "attendance",
+      "entry"
+    ],
+    "intent": "attendance",
+    "answer": "Submit a correction request through the HR portal within 24 hours. Your manager must approve the change.",
+    "entity": "attendance",
+    "entities": [
+      "attendance"
+    ]
+  },
+  {
+    "question": "Is there a grace period for clocking in?",
+    "clean_question": "is there a grace period for clocking in",
+    "tokens": [
+      "is",
+      "there",
+      "a",
+      "grace",
+      "period",
+      "for",
+      "clocking",
+      "in"
+    ],
+    "filtered_tokens": [
+      "grace",
+      "period",
+      "clocking"
+    ],
+    "lemmatized_tokens": [
+      "grace",
+      "period",
+      "clock"
+    ],
+    "intent": "attendance",
+    "answer": "A 10-minute grace period is allowed for clocking in each morning. Repeated late entries beyond the grace period will be flagged.",
+    "entity": "attendance",
+    "entities": []
+  },
+  {
+    "question": "How do I check my overtime hours?",
+    "clean_question": "how do i check my overtime hours",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "check",
+      "my",
+      "overtime",
+      "hours"
+    ],
+    "filtered_tokens": [
+      "check",
+      "overtime",
+      "hours"
+    ],
+    "lemmatized_tokens": [
+      "check",
+      "overtime",
+      "hour"
+    ],
+    "intent": "attendance",
+    "answer": "Overtime hours appear in the Attendance section of the HR portal. They are calculated based on your scheduled daily hours.",
+    "entity": "attendance",
+    "entities": []
+  },
+  {
+    "question": "Can my manager view my attendance records?",
+    "clean_question": "can my manager view my attendance records",
+    "tokens": [
+      "can",
+      "my",
+      "manager",
+      "view",
+      "my",
+      "attendance",
+      "records"
+    ],
+    "filtered_tokens": [
+      "manager",
+      "view",
+      "attendance",
+      "records"
+    ],
+    "lemmatized_tokens": [
+      "manager",
+      "view",
+      "attendance",
+      "record"
+    ],
+    "intent": "attendance",
+    "answer": "Yes, managers can view team attendance in the HR portal under Reports > Attendance. They can also approve or reject correction requests.",
+    "entity": "attendance",
+    "entities": [
+      "attendance"
+    ]
+  },
+  {
+    "question": "What happens if I forget to clock out?",
+    "clean_question": "what happens if i forget to clock out",
+    "tokens": [
+      "what",
+      "happens",
+      "if",
+      "i",
+      "forget",
+      "to",
+      "clock",
+      "out"
+    ],
+    "filtered_tokens": [
+      "happens",
+      "forget",
+      "clock"
+    ],
+    "lemmatized_tokens": [
+      "happens",
+      "forget",
+      "clock"
+    ],
+    "intent": "attendance",
+    "answer": "If you forget to clock out, contact HR at extension 5678 within the same day. The system will use your scheduled shift end time.",
+    "entity": "attendance",
+    "entities": []
+  },
+  {
+    "question": "How do I generate an attendance report?",
+    "clean_question": "how do i generate an attendance report",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "generate",
+      "an",
+      "attendance",
+      "report"
+    ],
+    "filtered_tokens": [
+      "generate",
+      "attendance",
+      "report"
+    ],
+    "lemmatized_tokens": [
+      "generate",
+      "attendance",
+      "report"
+    ],
+    "intent": "attendance",
+    "answer": "Go to HR Portal > Attendance > Reports. Select the date range and download the report as PDF or Excel.",
+    "entity": "attendance",
+    "entities": [
+      "attendance"
+    ]
+  },
+  {
+    "question": "Do part-time employees have different attendance rules?",
+    "clean_question": "do part-time employees have different attendance rules",
+    "tokens": [
+      "do",
+      "employees",
+      "have",
+      "different",
+      "attendance",
+      "rules"
+    ],
+    "filtered_tokens": [
+      "employees",
+      "different",
+      "attendance",
+      "rules"
+    ],
+    "lemmatized_tokens": [
+      "employee",
+      "different",
+      "attendance",
+      "rule"
+    ],
+    "intent": "attendance",
+    "answer": "Part-time employees follow a separate schedule set by their manager. Attendance is still tracked through the HR portal and mobile app.",
+    "entity": "attendance",
+    "entities": [
+      "attendance"
+    ]
+  },
+  {
+    "question": "How do I set up attendance notifications?",
+    "clean_question": "how do i set up attendance notifications",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "set",
+      "up",
+      "attendance",
+      "notifications"
+    ],
+    "filtered_tokens": [
+      "set",
+      "attendance",
+      "notifications"
+    ],
+    "lemmatized_tokens": [
+      "set",
+      "attendance",
+      "notification"
+    ],
+    "intent": "attendance",
+    "answer": "Enable notifications in the HR mobile app under Settings > Attendance. You will receive daily reminders to clock in and out.",
+    "entity": "attendance",
+    "entities": [
+      "attendance"
+    ]
+  },
+  {
+    "question": "What is the IT helpdesk email address?",
+    "clean_question": "what is the it helpdesk email address",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "it",
+      "helpdesk",
+      "email",
+      "address"
+    ],
+    "filtered_tokens": [
+      "helpdesk",
+      "email",
+      "address"
+    ],
+    "lemmatized_tokens": [
+      "helpdesk",
+      "email",
+      "address"
+    ],
+    "intent": "contact_information",
+    "answer": "Email IT support at it-support@company.com for non-urgent issues. For immediate assistance, call extension 1234.",
+    "entity": "contact",
+    "entities": [
+      "email",
+      "it_support"
+    ]
+  },
+  {
+    "question": "Where can I find the company directory?",
+    "clean_question": "where can i find the company directory",
+    "tokens": [
+      "where",
+      "can",
+      "i",
+      "find",
+      "the",
+      "company",
+      "directory"
+    ],
+    "filtered_tokens": [
+      "find",
+      "company",
+      "directory"
+    ],
+    "lemmatized_tokens": [
+      "find",
+      "company",
+      "directory"
+    ],
+    "intent": "contact_information",
+    "answer": "The company directory is on the company intranet under the Directory section. Search by name, department, or role to find contact details.",
+    "entity": "contact",
+    "entities": [
+      "contact"
+    ]
+  },
+  {
+    "question": "What is the general company contact number?",
+    "clean_question": "what is the general company contact number",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "general",
+      "company",
+      "contact",
+      "number"
+    ],
+    "filtered_tokens": [
+      "general",
+      "company",
+      "contact",
+      "number"
+    ],
+    "lemmatized_tokens": [
+      "general",
+      "company",
+      "contact",
+      "number"
+    ],
+    "intent": "contact_information",
+    "answer": "Call the main reception in the Building A lobby. Reception is available from 8 AM to 8 PM on weekdays.",
+    "entity": "contact",
+    "entities": [
+      "contact"
+    ]
+  },
+  {
+    "question": "How do I contact the security desk?",
+    "clean_question": "how do i contact the security desk",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "contact",
+      "the",
+      "security",
+      "desk"
+    ],
+    "filtered_tokens": [
+      "contact",
+      "security",
+      "desk"
+    ],
+    "lemmatized_tokens": [
+      "contact",
+      "security",
+      "desk"
+    ],
+    "intent": "contact_information",
+    "answer": "Reach the security desk at extension 9999 or security@company.com. The desk is in the main lobby of Building A.",
+    "entity": "contact",
+    "entities": [
+      "security",
+      "contact"
+    ]
+  },
+  {
+    "question": "How do I find a specific colleague's contact details?",
+    "clean_question": "how do i find a specific colleague's contact details",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "find",
+      "a",
+      "specific",
+      "colleague",
+      "s",
+      "contact",
+      "details"
+    ],
+    "filtered_tokens": [
+      "find",
+      "specific",
+      "colleague",
+      "contact",
+      "details"
+    ],
+    "lemmatized_tokens": [
+      "find",
+      "specific",
+      "colleague",
+      "contact",
+      "detail"
+    ],
+    "intent": "contact_information",
+    "answer": "Use the company directory on the company intranet. Search by name or employee ID to find their email and extension.",
+    "entity": "contact",
+    "entities": [
+      "contact"
+    ]
+  },
+  {
+    "question": "How can I contact HR for general inquiries?",
+    "clean_question": "how can i contact hr for general inquiries",
+    "tokens": [
+      "how",
+      "can",
+      "i",
+      "contact",
+      "hr",
+      "for",
+      "general",
+      "inquiries"
+    ],
+    "filtered_tokens": [
+      "contact",
+      "hr",
+      "general",
+      "inquiries"
+    ],
+    "lemmatized_tokens": [
+      "contact",
+      "hr",
+      "general",
+      "inquiry"
+    ],
+    "intent": "contact_information",
+    "answer": "Contact HR at extension 5678 or hr@company.com. The HR office is in Building B, Room 201.",
+    "entity": "contact",
+    "entities": [
+      "hr",
+      "contact"
+    ]
+  },
+  {
+    "question": "What is the best way to report an IT issue?",
+    "clean_question": "what is the best way to report an it issue",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "best",
+      "way",
+      "to",
+      "report",
+      "an",
+      "it",
+      "issue"
+    ],
+    "filtered_tokens": [
+      "best",
+      "way",
+      "report",
+      "issue"
+    ],
+    "lemmatized_tokens": [
+      "best",
+      "way",
+      "report",
+      "issue"
+    ],
+    "intent": "contact_information",
+    "answer": "Submit a ticket through the IT portal or call IT support at extension 1234. Email it-support@company.com for non-urgent issues.",
+    "entity": "contact",
+    "entities": []
+  },
+  {
+    "question": "Can I message my manager through the company platform?",
+    "clean_question": "can i message my manager through the company platform",
+    "tokens": [
+      "can",
+      "i",
+      "message",
+      "my",
+      "manager",
+      "through",
+      "the",
+      "company",
+      "platform"
+    ],
+    "filtered_tokens": [
+      "message",
+      "manager",
+      "company",
+      "platform"
+    ],
+    "lemmatized_tokens": [
+      "message",
+      "manager",
+      "company",
+      "platform"
+    ],
+    "intent": "contact_information",
+    "answer": "Yes, use the company communication platform to message your manager. Their profile is also listed in the company directory on the intranet.",
+    "entity": "contact",
+    "entities": []
+  },
+  {
+    "question": "Who should I contact for payroll questions?",
+    "clean_question": "who should i contact for payroll questions",
+    "tokens": [
+      "who",
+      "should",
+      "i",
+      "contact",
+      "for",
+      "payroll",
+      "questions"
+    ],
+    "filtered_tokens": [
+      "contact",
+      "payroll",
+      "questions"
+    ],
+    "lemmatized_tokens": [
+      "contact",
+      "payroll",
+      "question"
+    ],
+    "intent": "contact_information",
+    "answer": "Direct payroll inquiries to HR at extension 5678 or hr@company.com. They will route your request to the payroll team.",
+    "entity": "contact",
+    "entities": [
+      "payroll",
+      "contact"
+    ]
+  },
+  {
+    "question": "What are the emergency contact numbers?",
+    "clean_question": "what are the emergency contact numbers",
+    "tokens": [
+      "what",
+      "are",
+      "the",
+      "emergency",
+      "contact",
+      "numbers"
+    ],
+    "filtered_tokens": [
+      "emergency",
+      "contact",
+      "numbers"
+    ],
+    "lemmatized_tokens": [
+      "emergency",
+      "contact",
+      "number"
+    ],
+    "intent": "contact_information",
+    "answer": "For emergencies, contact security at extension 9999. For medical emergencies, call 911. HR is at extension 5678 for urgent matters.",
+    "entity": "contact",
+    "entities": [
+      "contact"
+    ]
+  },
+  {
+    "question": "How do I contact IT security?",
+    "clean_question": "how do i contact it security",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "contact",
+      "it",
+      "security"
+    ],
+    "filtered_tokens": [
+      "contact",
+      "security"
+    ],
+    "lemmatized_tokens": [
+      "contact",
+      "security"
+    ],
+    "intent": "contact_information",
+    "answer": "Contact IT security at extension 9999 or security@company.com for any security-related concerns.",
+    "entity": "contact",
+    "entities": [
+      "security",
+      "contact"
+    ]
+  },
+  {
+    "question": "Where can I find my employee ID on my payslip?",
+    "clean_question": "where can i find my employee id on my payslip",
+    "tokens": [
+      "where",
+      "can",
+      "i",
+      "find",
+      "my",
+      "employee",
+      "id",
+      "on",
+      "my",
+      "payslip"
+    ],
+    "filtered_tokens": [
+      "find",
+      "employee",
+      "id",
+      "payslip"
+    ],
+    "lemmatized_tokens": [
+      "find",
+      "employee",
+      "id",
+      "payslip"
+    ],
+    "intent": "employee_id",
+    "answer": "Your employee ID appears at the top right corner of your payslip in the HR portal. It starts with 'EMP-' followed by 5 digits.",
+    "entity": "employee_id",
+    "entities": [
+      "payroll",
+      "employee_id"
+    ]
+  },
+  {
+    "question": "I lost my employee ID card. What should I do?",
+    "clean_question": "i lost my employee id card what should i do",
+    "tokens": [
+      "i",
+      "lost",
+      "my",
+      "employee",
+      "id",
+      "card",
+      "what",
+      "should",
+      "i",
+      "do"
+    ],
+    "filtered_tokens": [
+      "lost",
+      "employee",
+      "id",
+      "card"
+    ],
+    "lemmatized_tokens": [
+      "lose",
+      "employee",
+      "id",
+      "card"
+    ],
+    "intent": "employee_id",
+    "answer": "Report the lost card to HR at extension 5678 immediately. A replacement card costs $10 and is ready in 3 business days.",
+    "entity": "employee_id",
+    "entities": [
+      "employee_id"
+    ]
+  },
+  {
+    "question": "How do I request a replacement employee ID card?",
+    "clean_question": "how do i request a replacement employee id card",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "request",
+      "a",
+      "replacement",
+      "employee",
+      "id",
+      "card"
+    ],
+    "filtered_tokens": [
+      "request",
+      "replacement",
+      "employee",
+      "id",
+      "card"
+    ],
+    "lemmatized_tokens": [
+      "request",
+      "replacement",
+      "employee",
+      "id",
+      "card"
+    ],
+    "intent": "employee_id",
+    "answer": "Submit a request through the HR portal under My Account > ID Card. Pick up your card from the HR office in Building B, Room 201.",
+    "entity": "employee_id",
+    "entities": [
+      "employee_id"
+    ]
+  },
+  {
+    "question": "What if I forget my employee ID number?",
+    "clean_question": "what if i forget my employee id number",
+    "tokens": [
+      "what",
+      "if",
+      "i",
+      "forget",
+      "my",
+      "employee",
+      "id",
+      "number"
+    ],
+    "filtered_tokens": [
+      "forget",
+      "employee",
+      "id",
+      "number"
+    ],
+    "lemmatized_tokens": [
+      "forget",
+      "employee",
+      "id",
+      "number"
+    ],
+    "intent": "employee_id",
+    "answer": "Your employee ID is listed in the HR portal under My Profile. You can also find it on your offer letter and pay stubs.",
+    "entity": "employee_id",
+    "entities": [
+      "employee_id"
+    ]
+  },
+  {
+    "question": "How do I activate my employee ID card for building access?",
+    "clean_question": "how do i activate my employee id card for building access",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "activate",
+      "my",
+      "employee",
+      "id",
+      "card",
+      "for",
+      "building",
+      "access"
+    ],
+    "filtered_tokens": [
+      "activate",
+      "employee",
+      "id",
+      "card",
+      "building",
+      "access"
+    ],
+    "lemmatized_tokens": [
+      "activate",
+      "employee",
+      "id",
+      "card",
+      "building",
+      "access"
+    ],
+    "intent": "employee_id",
+    "answer": "Visit the security desk in the Building A lobby with your ID card and employee ID number. Security will activate your card for building access.",
+    "entity": "employee_id",
+    "entities": [
+      "employee_id",
+      "location"
+    ]
+  },
+  {
+    "question": "Can I use my employee ID for cafeteria payments?",
+    "clean_question": "can i use my employee id for cafeteria payments",
+    "tokens": [
+      "can",
+      "i",
+      "use",
+      "my",
+      "employee",
+      "id",
+      "for",
+      "cafeteria",
+      "payments"
+    ],
+    "filtered_tokens": [
+      "use",
+      "employee",
+      "id",
+      "cafeteria",
+      "payments"
+    ],
+    "lemmatized_tokens": [
+      "use",
+      "employee",
+      "id",
+      "cafeteria",
+      "payment"
+    ],
+    "intent": "employee_id",
+    "answer": "Yes, link your employee ID to your cafeteria account through the HR portal under My Account > Cafeteria. Payroll deduction is set up automatically.",
+    "entity": "employee_id",
+    "entities": [
+      "employee_id",
+      "location"
+    ]
+  },
+  {
+    "question": "What is the format of my employee ID?",
+    "clean_question": "what is the format of my employee id",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "format",
+      "of",
+      "my",
+      "employee",
+      "id"
+    ],
+    "filtered_tokens": [
+      "format",
+      "employee",
+      "id"
+    ],
+    "lemmatized_tokens": [
+      "format",
+      "employee",
+      "id"
+    ],
+    "intent": "employee_id",
+    "answer": "Your employee ID follows the format EMP-XXXXX where X is a digit. It is unique to you and never changes.",
+    "entity": "employee_id",
+    "entities": [
+      "employee_id"
+    ]
+  },
+  {
+    "question": "How do I update a name change on my employee ID?",
+    "clean_question": "how do i update a name change on my employee id",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "update",
+      "a",
+      "name",
+      "change",
+      "on",
+      "my",
+      "employee",
+      "id"
+    ],
+    "filtered_tokens": [
+      "update",
+      "name",
+      "change",
+      "employee",
+      "id"
+    ],
+    "lemmatized_tokens": [
+      "update",
+      "name",
+      "change",
+      "employee",
+      "id"
+    ],
+    "intent": "employee_id",
+    "answer": "Submit a name change request through the HR portal with supporting documents. HR will issue a new employee ID card.",
+    "entity": "employee_id",
+    "entities": [
+      "employee_id"
+    ]
+  },
+  {
+    "question": "Where do I collect my employee ID card?",
+    "clean_question": "where do i collect my employee id card",
+    "tokens": [
+      "where",
+      "do",
+      "i",
+      "collect",
+      "my",
+      "employee",
+      "id",
+      "card"
+    ],
+    "filtered_tokens": [
+      "collect",
+      "employee",
+      "id",
+      "card"
+    ],
+    "lemmatized_tokens": [
+      "collect",
+      "employee",
+      "id",
+      "card"
+    ],
+    "intent": "employee_id",
+    "answer": "Collect your employee ID card from the HR office in Building B, Room 201. Bring a government-issued photo ID for verification.",
+    "entity": "employee_id",
+    "entities": [
+      "employee_id"
+    ]
+  },
+  {
+    "question": "Can a temporary contractor get an employee ID?",
+    "clean_question": "can a temporary contractor get an employee id",
+    "tokens": [
+      "can",
+      "a",
+      "temporary",
+      "contractor",
+      "get",
+      "an",
+      "employee",
+      "id"
+    ],
+    "filtered_tokens": [
+      "temporary",
+      "contractor",
+      "get",
+      "employee",
+      "id"
+    ],
+    "lemmatized_tokens": [
+      "temporary",
+      "contractor",
+      "get",
+      "employee",
+      "id"
+    ],
+    "intent": "employee_id",
+    "answer": "Contractors receive a vendor ID card instead of an employee ID. Contact HR at extension 5678 for details.",
+    "entity": "employee_id",
+    "entities": [
+      "employee_id"
+    ]
+  },
+  {
+    "question": "How do I reset my employee ID account password?",
+    "clean_question": "how do i reset my employee id account password",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "reset",
+      "my",
+      "employee",
+      "id",
+      "account",
+      "password"
+    ],
+    "filtered_tokens": [
+      "reset",
+      "employee",
+      "id",
+      "account",
+      "password"
+    ],
+    "lemmatized_tokens": [
+      "reset",
+      "employee",
+      "id",
+      "account",
+      "password"
+    ],
+    "intent": "employee_id",
+    "answer": "Employee ID account passwords are managed through the HR portal. Use the Forgot Password link under My Account.",
+    "entity": "employee_id",
+    "entities": [
+      "account",
+      "password",
+      "employee_id"
+    ]
+  },
+  {
+    "question": "How do I check the company holiday calendar?",
+    "clean_question": "how do i check the company holiday calendar",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "check",
+      "the",
+      "company",
+      "holiday",
+      "calendar"
+    ],
+    "filtered_tokens": [
+      "check",
+      "company",
+      "holiday",
+      "calendar"
+    ],
+    "lemmatized_tokens": [
+      "check",
+      "company",
+      "holiday",
+      "calendar"
+    ],
+    "intent": "holidays",
+    "answer": "The holiday calendar is on the company intranet under HR > Holidays. It is updated annually with all official company holidays.",
+    "entity": "holiday",
+    "entities": [
+      "holiday"
+    ]
+  },
+  {
+    "question": "Is Independence Day a company holiday?",
+    "clean_question": "is independence day a company holiday",
+    "tokens": [
+      "is",
+      "independence",
+      "day",
+      "a",
+      "company",
+      "holiday"
+    ],
+    "filtered_tokens": [
+      "independence",
+      "day",
+      "company",
+      "holiday"
+    ],
+    "lemmatized_tokens": [
+      "independence",
+      "day",
+      "company",
+      "holiday"
+    ],
+    "intent": "holidays",
+    "answer": "Yes, Independence Day is a company holiday. Check the intranet calendar under HR > Holidays for the exact date each year.",
+    "entity": "holiday",
+    "entities": [
+      "holiday"
+    ]
+  },
+  {
+    "question": "Are there any holidays in December?",
+    "clean_question": "are there any holidays in december",
+    "tokens": [
+      "are",
+      "there",
+      "any",
+      "holidays",
+      "in",
+      "december"
+    ],
+    "filtered_tokens": [
+      "holidays",
+      "december"
+    ],
+    "lemmatized_tokens": [
+      "holiday",
+      "december"
+    ],
+    "intent": "holidays",
+    "answer": "Major December holidays include Christmas Day and New Year's Day. The full list is on the company intranet under HR > Holidays.",
+    "entity": "holiday",
+    "entities": [
+      "holiday"
+    ]
+  },
+  {
+    "question": "How many paid holidays does the company provide?",
+    "clean_question": "how many paid holidays does the company provide",
+    "tokens": [
+      "how",
+      "many",
+      "paid",
+      "holidays",
+      "does",
+      "the",
+      "company",
+      "provide"
+    ],
+    "filtered_tokens": [
+      "many",
+      "paid",
+      "holidays",
+      "company",
+      "provide"
+    ],
+    "lemmatized_tokens": [
+      "many",
+      "pay",
+      "holiday",
+      "company",
+      "provide"
+    ],
+    "intent": "holidays",
+    "answer": "The company provides 10 paid holidays per year. The complete list is available on the company intranet under HR > Holidays.",
+    "entity": "holiday",
+    "entities": [
+      "holiday"
+    ]
+  },
+  {
+    "question": "Will salary be affected if payday falls on a holiday?",
+    "clean_question": "will salary be affected if payday falls on a holiday",
+    "tokens": [
+      "will",
+      "salary",
+      "be",
+      "affected",
+      "if",
+      "payday",
+      "falls",
+      "on",
+      "a",
+      "holiday"
+    ],
+    "filtered_tokens": [
+      "salary",
+      "affected",
+      "payday",
+      "falls",
+      "holiday"
+    ],
+    "lemmatized_tokens": [
+      "salary",
+      "affect",
+      "payday",
+      "fall",
+      "holiday"
+    ],
+    "intent": "holidays",
+    "answer": "Salary is paid on the last working day of the month. If payday falls on a weekend or holiday, salary is credited on the previous working day.",
+    "entity": "holiday",
+    "entities": [
+      "salary",
+      "payroll",
+      "holiday"
+    ]
+  },
+  {
+    "question": "Is New Year's Day a paid holiday?",
+    "clean_question": "is new year's day a paid holiday",
+    "tokens": [
+      "is",
+      "new",
+      "year",
+      "s",
+      "day",
+      "a",
+      "paid",
+      "holiday"
+    ],
+    "filtered_tokens": [
+      "new",
+      "year",
+      "day",
+      "paid",
+      "holiday"
+    ],
+    "lemmatized_tokens": [
+      "new",
+      "year",
+      "day",
+      "pay",
+      "holiday"
+    ],
+    "intent": "holidays",
+    "answer": "Yes, New Year's Day is a paid company holiday. It is listed on the company holiday calendar in the HR portal.",
+    "entity": "holiday",
+    "entities": [
+      "holiday"
+    ]
+  },
+  {
+    "question": "Are there any half-day holidays?",
+    "clean_question": "are there any half-day holidays",
+    "tokens": [
+      "are",
+      "there",
+      "any",
+      "holidays"
+    ],
+    "filtered_tokens": [
+      "holidays"
+    ],
+    "lemmatized_tokens": [
+      "holiday"
+    ],
+    "intent": "holidays",
+    "answer": "No half-day holidays are observed. All holidays are full days off. Check the calendar on the company intranet for the full list.",
+    "entity": "holiday",
+    "entities": [
+      "holiday"
+    ]
+  },
+  {
+    "question": "Can I work on a company holiday for extra pay?",
+    "clean_question": "can i work on a company holiday for extra pay",
+    "tokens": [
+      "can",
+      "i",
+      "work",
+      "on",
+      "a",
+      "company",
+      "holiday",
+      "for",
+      "extra",
+      "pay"
+    ],
+    "filtered_tokens": [
+      "work",
+      "company",
+      "holiday",
+      "extra",
+      "pay"
+    ],
+    "lemmatized_tokens": [
+      "work",
+      "company",
+      "holiday",
+      "extra",
+      "pay"
+    ],
+    "intent": "holidays",
+    "answer": "Working on a company holiday is discouraged and requires prior manager approval. Holiday work is compensated at 1.5x the regular rate.",
+    "entity": "holiday",
+    "entities": [
+      "holiday"
+    ]
+  },
+  {
+    "question": "How do I find the list of upcoming holidays?",
+    "clean_question": "how do i find the list of upcoming holidays",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "find",
+      "the",
+      "list",
+      "of",
+      "upcoming",
+      "holidays"
+    ],
+    "filtered_tokens": [
+      "find",
+      "list",
+      "upcoming",
+      "holidays"
+    ],
+    "lemmatized_tokens": [
+      "find",
+      "list",
+      "upcoming",
+      "holiday"
+    ],
+    "intent": "holidays",
+    "answer": "Access the company holiday list on the company intranet under HR > Holidays. The calendar shows all upcoming holidays for the current year.",
+    "entity": "holiday",
+    "entities": [
+      "holiday"
+    ]
+  },
+  {
+    "question": "Do I get paid if I work during a holiday?",
+    "clean_question": "do i get paid if i work during a holiday",
+    "tokens": [
+      "do",
+      "i",
+      "get",
+      "paid",
+      "if",
+      "i",
+      "work",
+      "during",
+      "a",
+      "holiday"
+    ],
+    "filtered_tokens": [
+      "get",
+      "paid",
+      "work",
+      "holiday"
+    ],
+    "lemmatized_tokens": [
+      "get",
+      "pay",
+      "work",
+      "holiday"
+    ],
+    "intent": "holidays",
+    "answer": "If you work on a company holiday with prior approval, you receive holiday pay plus 1.5x your regular hourly rate for the hours worked.",
+    "entity": "holiday",
+    "entities": [
+      "holiday"
+    ]
+  },
+  {
+    "question": "Is Labor Day a paid company holiday?",
+    "clean_question": "is labor day a paid company holiday",
+    "tokens": [
+      "is",
+      "labor",
+      "day",
+      "a",
+      "paid",
+      "company",
+      "holiday"
+    ],
+    "filtered_tokens": [
+      "labor",
+      "day",
+      "paid",
+      "company",
+      "holiday"
+    ],
+    "lemmatized_tokens": [
+      "labor",
+      "day",
+      "pay",
+      "company",
+      "holiday"
+    ],
+    "intent": "holidays",
+    "answer": "Yes, Labor Day is a paid company holiday. It is listed on the company holiday calendar under HR > Holidays on the company intranet.",
+    "entity": "holiday",
+    "entities": [
+      "holiday"
+    ]
+  },
+  {
+    "question": "How do I submit an HR case?",
+    "clean_question": "how do i submit an hr case",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "submit",
+      "an",
+      "hr",
+      "case"
+    ],
+    "filtered_tokens": [
+      "submit",
+      "hr",
+      "case"
+    ],
+    "lemmatized_tokens": [
+      "submit",
+      "hr",
+      "case"
+    ],
+    "intent": "hr_support",
+    "answer": "Submit an HR case through the HR portal under Support > New Case. Select the category and provide details for a prompt response.",
+    "entity": "hr",
+    "entities": [
+      "hr"
+    ]
+  },
+  {
+    "question": "What are HR office hours?",
+    "clean_question": "what are hr office hours",
+    "tokens": [
+      "what",
+      "are",
+      "hr",
+      "office",
+      "hours"
+    ],
+    "filtered_tokens": [
+      "hr",
+      "office",
+      "hours"
+    ],
+    "lemmatized_tokens": [
+      "hr",
+      "office",
+      "hour"
+    ],
+    "intent": "hr_support",
+    "answer": "HR office hours are 9:00 AM to 6:00 PM, Monday to Friday. The office is in Building B, Room 201.",
+    "entity": "hr",
+    "entities": [
+      "working_hours",
+      "hr"
+    ]
+  },
+  {
+    "question": "How do I schedule an appointment with HR?",
+    "clean_question": "how do i schedule an appointment with hr",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "schedule",
+      "an",
+      "appointment",
+      "with",
+      "hr"
+    ],
+    "filtered_tokens": [
+      "schedule",
+      "appointment",
+      "hr"
+    ],
+    "lemmatized_tokens": [
+      "schedule",
+      "appointment",
+      "hr"
+    ],
+    "intent": "hr_support",
+    "answer": "Book an appointment through the HR portal under Support > Schedule Meeting. Walk-ins are also accepted during office hours.",
+    "entity": "hr",
+    "entities": [
+      "hr"
+    ]
+  },
+  {
+    "question": "Can I request an employment verification letter?",
+    "clean_question": "can i request an employment verification letter",
+    "tokens": [
+      "can",
+      "i",
+      "request",
+      "an",
+      "employment",
+      "verification",
+      "letter"
+    ],
+    "filtered_tokens": [
+      "request",
+      "employment",
+      "verification",
+      "letter"
+    ],
+    "lemmatized_tokens": [
+      "request",
+      "employment",
+      "verification",
+      "letter"
+    ],
+    "intent": "hr_support",
+    "answer": "Request an employment verification letter through the HR portal under Services > Documents. It is issued within 2 business days.",
+    "entity": "hr",
+    "entities": []
+  },
+  {
+    "question": "How do I update my personal information in HR records?",
+    "clean_question": "how do i update my personal information in hr records",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "update",
+      "my",
+      "personal",
+      "information",
+      "in",
+      "hr",
+      "records"
+    ],
+    "filtered_tokens": [
+      "update",
+      "personal",
+      "information",
+      "hr",
+      "records"
+    ],
+    "lemmatized_tokens": [
+      "update",
+      "personal",
+      "information",
+      "hr",
+      "record"
+    ],
+    "intent": "hr_support",
+    "answer": "Update your personal information through the HR portal under My Account > Profile. Some changes require supporting documents.",
+    "entity": "hr",
+    "entities": [
+      "hr"
+    ]
+  },
+  {
+    "question": "How do I report a workplace concern to HR?",
+    "clean_question": "how do i report a workplace concern to hr",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "report",
+      "a",
+      "workplace",
+      "concern",
+      "to",
+      "hr"
+    ],
+    "filtered_tokens": [
+      "report",
+      "workplace",
+      "concern",
+      "hr"
+    ],
+    "lemmatized_tokens": [
+      "report",
+      "workplace",
+      "concern",
+      "hr"
+    ],
+    "intent": "hr_support",
+    "answer": "Report workplace concerns through the HR portal under Support > Report Issue or call extension 5678. All reports are confidential.",
+    "entity": "hr",
+    "entities": [
+      "hr"
+    ]
+  },
+  {
+    "question": "Can HR help with career counseling?",
+    "clean_question": "can hr help with career counseling",
+    "tokens": [
+      "can",
+      "hr",
+      "help",
+      "with",
+      "career",
+      "counseling"
+    ],
+    "filtered_tokens": [
+      "hr",
+      "help",
+      "career",
+      "counseling"
+    ],
+    "lemmatized_tokens": [
+      "hr",
+      "help",
+      "career",
+      "counseling"
+    ],
+    "intent": "hr_support",
+    "answer": "Yes, HR offers career counseling sessions. Book through the HR portal under Development > Career Counseling. Sessions are free and confidential.",
+    "entity": "hr",
+    "entities": [
+      "hr",
+      "help"
+    ]
+  },
+  {
+    "question": "How do I request a reference letter from HR?",
+    "clean_question": "how do i request a reference letter from hr",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "request",
+      "a",
+      "reference",
+      "letter",
+      "from",
+      "hr"
+    ],
+    "filtered_tokens": [
+      "request",
+      "reference",
+      "letter",
+      "hr"
+    ],
+    "lemmatized_tokens": [
+      "request",
+      "reference",
+      "letter",
+      "hr"
+    ],
+    "intent": "hr_support",
+    "answer": "Submit a request through the HR portal under Services > Documents > Reference Letter. It is issued within 2 business days.",
+    "entity": "hr",
+    "entities": [
+      "hr"
+    ]
+  },
+  {
+    "question": "What benefits does HR manage?",
+    "clean_question": "what benefits does hr manage",
+    "tokens": [
+      "what",
+      "benefits",
+      "does",
+      "hr",
+      "manage"
+    ],
+    "filtered_tokens": [
+      "benefits",
+      "hr",
+      "manage"
+    ],
+    "lemmatized_tokens": [
+      "benefit",
+      "hr",
+      "manage"
+    ],
+    "intent": "hr_support",
+    "answer": "HR manages health insurance, retirement plans, employee discounts, and wellness programs. Visit the HR portal under Benefits for full details.",
+    "entity": "hr",
+    "entities": [
+      "hr"
+    ]
+  },
+  {
+    "question": "How do I file a formal complaint with HR?",
+    "clean_question": "how do i file a formal complaint with hr",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "file",
+      "a",
+      "formal",
+      "complaint",
+      "with",
+      "hr"
+    ],
+    "filtered_tokens": [
+      "file",
+      "formal",
+      "complaint",
+      "hr"
+    ],
+    "lemmatized_tokens": [
+      "file",
+      "formal",
+      "complaint",
+      "hr"
+    ],
+    "intent": "hr_support",
+    "answer": "File a formal complaint through the HR portal under Support > Report Issue. All complaints are investigated confidentially.",
+    "entity": "hr",
+    "entities": [
+      "hr"
+    ]
+  },
+  {
+    "question": "How do I enroll in company benefits?",
+    "clean_question": "how do i enroll in company benefits",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "enroll",
+      "in",
+      "company",
+      "benefits"
+    ],
+    "filtered_tokens": [
+      "enroll",
+      "company",
+      "benefits"
+    ],
+    "lemmatized_tokens": [
+      "enroll",
+      "company",
+      "benefit"
+    ],
+    "intent": "hr_support",
+    "answer": "Benefits enrollment is done during onboarding. For changes, use the HR portal under Benefits > Enroll. Deadlines follow the annual open enrollment period.",
+    "entity": "hr",
+    "entities": []
+  },
+  {
+    "question": "My internet connection is very slow today.",
+    "clean_question": "my internet connection is very slow today",
+    "tokens": [
+      "my",
+      "internet",
+      "connection",
+      "is",
+      "very",
+      "slow",
+      "today"
+    ],
+    "filtered_tokens": [
+      "internet",
+      "connection",
+      "slow",
+      "today"
+    ],
+    "lemmatized_tokens": [
+      "internet",
+      "connection",
+      "slow",
+      "today"
+    ],
+    "intent": "internet_problems",
+    "answer": "Check if other devices are affected. Try restarting your router. If the issue persists, contact IT support at extension 1234.",
+    "entity": "internet",
+    "entities": [
+      "internet"
+    ]
+  },
+  {
+    "question": "The internet is completely down in my office.",
+    "clean_question": "the internet is completely down in my office",
+    "tokens": [
+      "the",
+      "internet",
+      "is",
+      "completely",
+      "down",
+      "in",
+      "my",
+      "office"
+    ],
+    "filtered_tokens": [
+      "internet",
+      "completely",
+      "office"
+    ],
+    "lemmatized_tokens": [
+      "internet",
+      "completely",
+      "office"
+    ],
+    "intent": "internet_problems",
+    "answer": "Check with colleagues to confirm the outage. Try restarting your router. If the outage is widespread, contact IT support at extension 1234.",
+    "entity": "internet",
+    "entities": [
+      "internet"
+    ]
+  },
+  {
+    "question": "How do I reset my network settings?",
+    "clean_question": "how do i reset my network settings",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "reset",
+      "my",
+      "network",
+      "settings"
+    ],
+    "filtered_tokens": [
+      "reset",
+      "network",
+      "settings"
+    ],
+    "lemmatized_tokens": [
+      "reset",
+      "network",
+      "setting"
+    ],
+    "intent": "internet_problems",
+    "answer": "Go to Control Panel > Network and Sharing Center > Change adapter settings. Right-click your connection and select Repair. If issues remain, call extension 1234.",
+    "entity": "internet",
+    "entities": [
+      "internet"
+    ]
+  },
+  {
+    "question": "My ethernet cable is not working.",
+    "clean_question": "my ethernet cable is not working",
+    "tokens": [
+      "my",
+      "ethernet",
+      "cable",
+      "is",
+      "not",
+      "working"
+    ],
+    "filtered_tokens": [
+      "ethernet",
+      "cable",
+      "working"
+    ],
+    "lemmatized_tokens": [
+      "ethernet",
+      "cable",
+      "work"
+    ],
+    "intent": "internet_problems",
+    "answer": "Check that the cable is firmly connected at both ends. Try a different port on the network switch. If it still fails, contact IT support at extension 1234.",
+    "entity": "internet",
+    "entities": []
+  },
+  {
+    "question": "Why can I not access certain websites?",
+    "clean_question": "why can i not access certain websites",
+    "tokens": [
+      "why",
+      "can",
+      "i",
+      "not",
+      "access",
+      "certain",
+      "websites"
+    ],
+    "filtered_tokens": [
+      "access",
+      "certain",
+      "websites"
+    ],
+    "lemmatized_tokens": [
+      "access",
+      "certain",
+      "website"
+    ],
+    "intent": "internet_problems",
+    "answer": "Some sites may be blocked by company security policy. If you need access for work, submit a request to IT support at extension 1234.",
+    "entity": "internet",
+    "entities": []
+  },
+  {
+    "question": "The WiFi works on my phone but not on my laptop.",
+    "clean_question": "the wifi works on my phone but not on my laptop",
+    "tokens": [
+      "the",
+      "wifi",
+      "works",
+      "on",
+      "my",
+      "phone",
+      "but",
+      "not",
+      "on",
+      "my",
+      "laptop"
+    ],
+    "filtered_tokens": [
+      "wifi",
+      "works",
+      "phone",
+      "laptop"
+    ],
+    "lemmatized_tokens": [
+      "wifi",
+      "work",
+      "phone",
+      "laptop"
+    ],
+    "intent": "internet_problems",
+    "answer": "Check your laptop's WiFi settings. Ensure you are connected to the correct SSID. Restart your laptop and try again, or call extension 1234.",
+    "entity": "internet",
+    "entities": [
+      "laptop",
+      "wifi",
+      "contact"
+    ]
+  },
+  {
+    "question": "My browser shows a DNS server not found error.",
+    "clean_question": "my browser shows a dns server not found error",
+    "tokens": [
+      "my",
+      "browser",
+      "shows",
+      "a",
+      "dns",
+      "server",
+      "not",
+      "found",
+      "error"
+    ],
+    "filtered_tokens": [
+      "browser",
+      "shows",
+      "dns",
+      "server",
+      "found",
+      "error"
+    ],
+    "lemmatized_tokens": [
+      "browser",
+      "show",
+      "dns",
+      "server",
+      "find",
+      "error"
+    ],
+    "intent": "internet_problems",
+    "answer": "Try flushing your DNS cache by running 'ipconfig /flushdns' in Command Prompt. If the error persists, contact IT support at extension 1234.",
+    "entity": "internet",
+    "entities": []
+  },
+  {
+    "question": "The network keeps disconnecting every few minutes.",
+    "clean_question": "the network keeps disconnecting every few minutes",
+    "tokens": [
+      "the",
+      "network",
+      "keeps",
+      "disconnecting",
+      "every",
+      "few",
+      "minutes"
+    ],
+    "filtered_tokens": [
+      "network",
+      "keeps",
+      "disconnecting",
+      "every",
+      "minutes"
+    ],
+    "lemmatized_tokens": [
+      "network",
+      "keep",
+      "disconnect",
+      "every",
+      "minute"
+    ],
+    "intent": "internet_problems",
+    "answer": "Move closer to the WiFi router. Check if the issue is with a specific device. If it continues, contact IT support at extension 1234.",
+    "entity": "internet",
+    "entities": [
+      "internet"
+    ]
+  },
+  {
+    "question": "Can I get a wired ethernet connection?",
+    "clean_question": "can i get a wired ethernet connection",
+    "tokens": [
+      "can",
+      "i",
+      "get",
+      "a",
+      "wired",
+      "ethernet",
+      "connection"
+    ],
+    "filtered_tokens": [
+      "get",
+      "wired",
+      "ethernet",
+      "connection"
+    ],
+    "lemmatized_tokens": [
+      "get",
+      "wired",
+      "ethernet",
+      "connection"
+    ],
+    "intent": "internet_problems",
+    "answer": "Ethernet cables are available from the IT helpdesk in Building A, Room 101. Contact IT support at extension 1234 to request one.",
+    "entity": "internet",
+    "entities": []
+  },
+  {
+    "question": "My VPN connection drops after 30 minutes.",
+    "clean_question": "my vpn connection drops after 30 minutes",
+    "tokens": [
+      "my",
+      "vpn",
+      "connection",
+      "drops",
+      "after",
+      "30",
+      "minutes"
+    ],
+    "filtered_tokens": [
+      "vpn",
+      "connection",
+      "drops",
+      "30",
+      "minutes"
+    ],
+    "lemmatized_tokens": [
+      "vpn",
+      "connection",
+      "drop",
+      "30",
+      "minute"
+    ],
+    "intent": "internet_problems",
+    "answer": "VPN sessions time out after 30 minutes of inactivity. Reconnect through the VPN portal at portal.company.com. If issues persist, call extension 1234.",
+    "entity": "internet",
+    "entities": []
+  },
+  {
+    "question": "How do I test my internet speed?",
+    "clean_question": "how do i test my internet speed",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "test",
+      "my",
+      "internet",
+      "speed"
+    ],
+    "filtered_tokens": [
+      "test",
+      "internet",
+      "speed"
+    ],
+    "lemmatized_tokens": [
+      "test",
+      "internet",
+      "speed"
+    ],
+    "intent": "internet_problems",
+    "answer": "Run the network diagnostics tool from the IT portal. For consistently slow speeds, contact IT support at extension 1234.",
+    "entity": "internet",
+    "entities": [
+      "internet"
+    ]
+  },
+  {
+    "question": "Where is the nearest coffee station?",
+    "clean_question": "where is the nearest coffee station",
+    "tokens": [
+      "where",
+      "is",
+      "the",
+      "nearest",
+      "coffee",
+      "station"
+    ],
+    "filtered_tokens": [
+      "nearest",
+      "coffee",
+      "station"
+    ],
+    "lemmatized_tokens": [
+      "near",
+      "coffee",
+      "station"
+    ],
+    "intent": "office_location",
+    "answer": "Coffee stations are in the break rooms on every floor. The main one is in the kitchen area near Building A, Room 105.",
+    "entity": "location",
+    "entities": [
+      "location"
+    ]
+  },
+  {
+    "question": "Where is the main cafeteria?",
+    "clean_question": "where is the main cafeteria",
+    "tokens": [
+      "where",
+      "is",
+      "the",
+      "main",
+      "cafeteria"
+    ],
+    "filtered_tokens": [
+      "main",
+      "cafeteria"
+    ],
+    "lemmatized_tokens": [
+      "main",
+      "cafeteria"
+    ],
+    "intent": "office_location",
+    "answer": "The main cafeteria is on the ground floor of Building A. It is open from 8 AM to 4 PM on weekdays.",
+    "entity": "location",
+    "entities": [
+      "location"
+    ]
+  },
+  {
+    "question": "How do I get to Building B?",
+    "clean_question": "how do i get to building b",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "get",
+      "to",
+      "building",
+      "b"
+    ],
+    "filtered_tokens": [
+      "get",
+      "building",
+      "b"
+    ],
+    "lemmatized_tokens": [
+      "get",
+      "building",
+      "b"
+    ],
+    "intent": "office_location",
+    "answer": "Building B is across the courtyard from Building A. Walk through the main lobby and follow signs to Building B. It houses HR and Finance.",
+    "entity": "location",
+    "entities": [
+      "location"
+    ]
+  },
+  {
+    "question": "Where is the nearest restroom?",
+    "clean_question": "where is the nearest restroom",
+    "tokens": [
+      "where",
+      "is",
+      "the",
+      "nearest",
+      "restroom"
+    ],
+    "filtered_tokens": [
+      "nearest",
+      "restroom"
+    ],
+    "lemmatized_tokens": [
+      "near",
+      "restroom"
+    ],
+    "intent": "office_location",
+    "answer": "Restrooms are located on every floor near the elevators. Gender-neutral restrooms are available on each floor as well.",
+    "entity": "location",
+    "entities": []
+  },
+  {
+    "question": "Where can I find a quiet workspace?",
+    "clean_question": "where can i find a quiet workspace",
+    "tokens": [
+      "where",
+      "can",
+      "i",
+      "find",
+      "a",
+      "quiet",
+      "workspace"
+    ],
+    "filtered_tokens": [
+      "find",
+      "quiet",
+      "workspace"
+    ],
+    "lemmatized_tokens": [
+      "find",
+      "quiet",
+      "workspace"
+    ],
+    "intent": "office_location",
+    "answer": "Quiet workspaces are in the library zone on the 3rd floor of Building A. These areas enforce no phone calls or meetings.",
+    "entity": "location",
+    "entities": []
+  },
+  {
+    "question": "Where is the nearest emergency exit?",
+    "clean_question": "where is the nearest emergency exit",
+    "tokens": [
+      "where",
+      "is",
+      "the",
+      "nearest",
+      "emergency",
+      "exit"
+    ],
+    "filtered_tokens": [
+      "nearest",
+      "emergency",
+      "exit"
+    ],
+    "lemmatized_tokens": [
+      "near",
+      "emergency",
+      "exit"
+    ],
+    "intent": "office_location",
+    "answer": "Emergency exits are marked with green signs. The nearest exit from most desks is at the end of the hallway near the stairwell.",
+    "entity": "location",
+    "entities": []
+  },
+  {
+    "question": "Where is the first aid station?",
+    "clean_question": "where is the first aid station",
+    "tokens": [
+      "where",
+      "is",
+      "the",
+      "first",
+      "aid",
+      "station"
+    ],
+    "filtered_tokens": [
+      "first",
+      "aid",
+      "station"
+    ],
+    "lemmatized_tokens": [
+      "first",
+      "aid",
+      "station"
+    ],
+    "intent": "office_location",
+    "answer": "First aid stations are in the main lobbies of Building A and Building B. Trained first aiders are available on each floor.",
+    "entity": "location",
+    "entities": []
+  },
+  {
+    "question": "Where can I find bookable meeting rooms?",
+    "clean_question": "where can i find bookable meeting rooms",
+    "tokens": [
+      "where",
+      "can",
+      "i",
+      "find",
+      "bookable",
+      "meeting",
+      "rooms"
+    ],
+    "filtered_tokens": [
+      "find",
+      "bookable",
+      "meeting",
+      "rooms"
+    ],
+    "lemmatized_tokens": [
+      "find",
+      "bookable",
+      "meeting",
+      "room"
+    ],
+    "intent": "office_location",
+    "answer": "Bookable meeting rooms are listed on the company intranet under Facilities > Meeting Rooms. Conference Room A seats 10 people.",
+    "entity": "location",
+    "entities": []
+  },
+  {
+    "question": "How do I find a specific conference room?",
+    "clean_question": "how do i find a specific conference room",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "find",
+      "a",
+      "specific",
+      "conference",
+      "room"
+    ],
+    "filtered_tokens": [
+      "find",
+      "specific",
+      "conference",
+      "room"
+    ],
+    "lemmatized_tokens": [
+      "find",
+      "specific",
+      "conference",
+      "room"
+    ],
+    "intent": "office_location",
+    "answer": "Conference rooms are numbered and labeled on each floor. The room directory is on the company intranet under Facilities > Meeting Rooms.",
+    "entity": "location",
+    "entities": []
+  },
+  {
+    "question": "Where is the employee parking lot?",
+    "clean_question": "where is the employee parking lot",
+    "tokens": [
+      "where",
+      "is",
+      "the",
+      "employee",
+      "parking",
+      "lot"
+    ],
+    "filtered_tokens": [
+      "employee",
+      "parking",
+      "lot"
+    ],
+    "lemmatized_tokens": [
+      "employee",
+      "parking",
+      "lot"
+    ],
+    "intent": "office_location",
+    "answer": "Employee parking is in the lot behind Building A. Display your parking permit on the dashboard. Visitor parking is in the front lot.",
+    "entity": "location",
+    "entities": []
+  },
+  {
+    "question": "Where is the fire assembly point?",
+    "clean_question": "where is the fire assembly point",
+    "tokens": [
+      "where",
+      "is",
+      "the",
+      "fire",
+      "assembly",
+      "point"
+    ],
+    "filtered_tokens": [
+      "fire",
+      "assembly",
+      "point"
+    ],
+    "lemmatized_tokens": [
+      "fire",
+      "assembly",
+      "point"
+    ],
+    "intent": "office_location",
+    "answer": "The fire assembly point is in the courtyard between Building A and Building B. Proceed there immediately during a fire alarm or drill.",
+    "entity": "location",
+    "entities": []
+  },
+  {
+    "question": "What documents are needed for salary processing?",
+    "clean_question": "what documents are needed for salary processing",
+    "tokens": [
+      "what",
+      "documents",
+      "are",
+      "needed",
+      "for",
+      "salary",
+      "processing"
+    ],
+    "filtered_tokens": [
+      "documents",
+      "needed",
+      "salary",
+      "processing"
+    ],
+    "lemmatized_tokens": [
+      "document",
+      "need",
+      "salary",
+      "processing"
+    ],
+    "intent": "payroll",
+    "answer": "Submit your bank details, PAN card, and PF UAN through the HR portal under My Account > Bank Details. Incomplete forms delay salary processing.",
+    "entity": "payroll",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "Who do I contact about a salary discrepancy?",
+    "clean_question": "who do i contact about a salary discrepancy",
+    "tokens": [
+      "who",
+      "do",
+      "i",
+      "contact",
+      "about",
+      "a",
+      "salary",
+      "discrepancy"
+    ],
+    "filtered_tokens": [
+      "contact",
+      "salary",
+      "discrepancy"
+    ],
+    "lemmatized_tokens": [
+      "contact",
+      "salary",
+      "discrepancy"
+    ],
+    "intent": "payroll",
+    "answer": "Contact the payroll team through HR at extension 5678 or hr@company.com. Provide your employee ID and the payslip with the discrepancy.",
+    "entity": "payroll",
+    "entities": [
+      "salary",
+      "contact"
+    ]
+  },
+  {
+    "question": "How do I update my bank account for salary credit?",
+    "clean_question": "how do i update my bank account for salary credit",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "update",
+      "my",
+      "bank",
+      "account",
+      "for",
+      "salary",
+      "credit"
+    ],
+    "filtered_tokens": [
+      "update",
+      "bank",
+      "account",
+      "salary",
+      "credit"
+    ],
+    "lemmatized_tokens": [
+      "update",
+      "bank",
+      "account",
+      "salary",
+      "credit"
+    ],
+    "intent": "payroll",
+    "answer": "Submit a bank detail update form through the HR portal under My Account > Bank Details. Changes take effect from the next pay cycle.",
+    "entity": "payroll",
+    "entities": [
+      "account",
+      "salary"
+    ]
+  },
+  {
+    "question": "What is the salary payment date each month?",
+    "clean_question": "what is the salary payment date each month",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "salary",
+      "payment",
+      "date",
+      "each",
+      "month"
+    ],
+    "filtered_tokens": [
+      "salary",
+      "payment",
+      "date",
+      "month"
+    ],
+    "lemmatized_tokens": [
+      "salary",
+      "payment",
+      "date",
+      "month"
+    ],
+    "intent": "payroll",
+    "answer": "Salary is credited on the last working day of each month. If the date falls on a weekend or holiday, salary is processed on the previous working day.",
+    "entity": "payroll",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "How do I request a salary advance?",
+    "clean_question": "how do i request a salary advance",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "request",
+      "a",
+      "salary",
+      "advance"
+    ],
+    "filtered_tokens": [
+      "request",
+      "salary",
+      "advance"
+    ],
+    "lemmatized_tokens": [
+      "request",
+      "salary",
+      "advance"
+    ],
+    "intent": "payroll",
+    "answer": "Submit a salary advance request through the HR portal under Services > Payments. Approval requires manager and HR sign-off.",
+    "entity": "payroll",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "What deductions appear on my payslip?",
+    "clean_question": "what deductions appear on my payslip",
+    "tokens": [
+      "what",
+      "deductions",
+      "appear",
+      "on",
+      "my",
+      "payslip"
+    ],
+    "filtered_tokens": [
+      "deductions",
+      "appear",
+      "payslip"
+    ],
+    "lemmatized_tokens": [
+      "deduction",
+      "appear",
+      "payslip"
+    ],
+    "intent": "payroll",
+    "answer": "Common deductions include income tax, PF, medical insurance, and professional tax. The detailed breakdown is in your payslip PDF.",
+    "entity": "payroll",
+    "entities": [
+      "payroll"
+    ]
+  },
+  {
+    "question": "Can I have my salary paid to a different bank account?",
+    "clean_question": "can i have my salary paid to a different bank account",
+    "tokens": [
+      "can",
+      "i",
+      "have",
+      "my",
+      "salary",
+      "paid",
+      "to",
+      "a",
+      "different",
+      "bank",
+      "account"
+    ],
+    "filtered_tokens": [
+      "salary",
+      "paid",
+      "different",
+      "bank",
+      "account"
+    ],
+    "lemmatized_tokens": [
+      "salary",
+      "pay",
+      "different",
+      "bank",
+      "account"
+    ],
+    "intent": "payroll",
+    "answer": "Yes, update your bank details in the HR portal under My Account > Bank Details. You may need to submit a voided cheque as proof.",
+    "entity": "payroll",
+    "entities": [
+      "account",
+      "salary"
+    ]
+  },
+  {
+    "question": "How do I request an income certificate?",
+    "clean_question": "how do i request an income certificate",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "request",
+      "an",
+      "income",
+      "certificate"
+    ],
+    "filtered_tokens": [
+      "request",
+      "income",
+      "certificate"
+    ],
+    "lemmatized_tokens": [
+      "request",
+      "income",
+      "certificate"
+    ],
+    "intent": "payroll",
+    "answer": "Request an income certificate through the HR portal under Services > Documents. It is issued within 2 business days.",
+    "entity": "payroll",
+    "entities": []
+  },
+  {
+    "question": "What is the salary reimbursement procedure?",
+    "clean_question": "what is the salary reimbursement procedure",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "salary",
+      "reimbursement",
+      "procedure"
+    ],
+    "filtered_tokens": [
+      "salary",
+      "reimbursement",
+      "procedure"
+    ],
+    "lemmatized_tokens": [
+      "salary",
+      "reimbursement",
+      "procedure"
+    ],
+    "intent": "payroll",
+    "answer": "Submit expense reports with receipts through the HR portal under Services > Reimbursements. Reimbursements are processed with your next salary.",
+    "entity": "payroll",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "How do I check my salary credit status?",
+    "clean_question": "how do i check my salary credit status",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "check",
+      "my",
+      "salary",
+      "credit",
+      "status"
+    ],
+    "filtered_tokens": [
+      "check",
+      "salary",
+      "credit",
+      "status"
+    ],
+    "lemmatized_tokens": [
+      "check",
+      "salary",
+      "credit",
+      "status"
+    ],
+    "intent": "payroll",
+    "answer": "Your salary credit status is shown in the HR portal under My Account > Payslips. The status updates to Credited once processed.",
+    "entity": "payroll",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "Where can I view my salary structure?",
+    "clean_question": "where can i view my salary structure",
+    "tokens": [
+      "where",
+      "can",
+      "i",
+      "view",
+      "my",
+      "salary",
+      "structure"
+    ],
+    "filtered_tokens": [
+      "view",
+      "salary",
+      "structure"
+    ],
+    "lemmatized_tokens": [
+      "view",
+      "salary",
+      "structure"
+    ],
+    "intent": "salary_information",
+    "answer": "Your salary structure is in the HR portal under My Account > Salary. It shows your basic pay, allowances, and deductions.",
+    "entity": "salary",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "How is my monthly salary calculated?",
+    "clean_question": "how is my monthly salary calculated",
+    "tokens": [
+      "how",
+      "is",
+      "my",
+      "monthly",
+      "salary",
+      "calculated"
+    ],
+    "filtered_tokens": [
+      "monthly",
+      "salary",
+      "calculated"
+    ],
+    "lemmatized_tokens": [
+      "monthly",
+      "salary",
+      "calculate"
+    ],
+    "intent": "salary_information",
+    "answer": "Your salary is calculated as basic pay plus allowances minus deductions. The detailed breakdown is in your payslip PDF.",
+    "entity": "salary",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "Can I see the salary breakup online?",
+    "clean_question": "can i see the salary breakup online",
+    "tokens": [
+      "can",
+      "i",
+      "see",
+      "the",
+      "salary",
+      "breakup",
+      "online"
+    ],
+    "filtered_tokens": [
+      "see",
+      "salary",
+      "breakup",
+      "online"
+    ],
+    "lemmatized_tokens": [
+      "see",
+      "salary",
+      "breakup",
+      "online"
+    ],
+    "intent": "salary_information",
+    "answer": "Yes, the complete salary breakup is available in the HR portal under My Account > Payslips. Download the PDF for full details.",
+    "entity": "salary",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "What components make up my monthly salary?",
+    "clean_question": "what components make up my monthly salary",
+    "tokens": [
+      "what",
+      "components",
+      "make",
+      "up",
+      "my",
+      "monthly",
+      "salary"
+    ],
+    "filtered_tokens": [
+      "components",
+      "make",
+      "monthly",
+      "salary"
+    ],
+    "lemmatized_tokens": [
+      "component",
+      "make",
+      "monthly",
+      "salary"
+    ],
+    "intent": "salary_information",
+    "answer": "Your salary includes basic pay, house rent allowance, conveyance, and bonuses minus tax and statutory deductions. See your payslip for details.",
+    "entity": "salary",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "How do I download my salary statement?",
+    "clean_question": "how do i download my salary statement",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "download",
+      "my",
+      "salary",
+      "statement"
+    ],
+    "filtered_tokens": [
+      "download",
+      "salary",
+      "statement"
+    ],
+    "lemmatized_tokens": [
+      "download",
+      "salary",
+      "statement"
+    ],
+    "intent": "salary_information",
+    "answer": "Download salary statements from the HR portal under My Account > Payslips. Statements are available for the past 24 months.",
+    "entity": "salary",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "Why is my salary lower than expected?",
+    "clean_question": "why is my salary lower than expected",
+    "tokens": [
+      "why",
+      "is",
+      "my",
+      "salary",
+      "lower",
+      "than",
+      "expected"
+    ],
+    "filtered_tokens": [
+      "salary",
+      "lower",
+      "expected"
+    ],
+    "lemmatized_tokens": [
+      "salary",
+      "low",
+      "expect"
+    ],
+    "intent": "salary_information",
+    "answer": "Check if there are new deductions or tax changes. Contact payroll through HR at extension 5678 with your employee ID for clarification.",
+    "entity": "salary",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "How do I view my past salary details?",
+    "clean_question": "how do i view my past salary details",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "view",
+      "my",
+      "past",
+      "salary",
+      "details"
+    ],
+    "filtered_tokens": [
+      "view",
+      "past",
+      "salary",
+      "details"
+    ],
+    "lemmatized_tokens": [
+      "view",
+      "past",
+      "salary",
+      "detail"
+    ],
+    "intent": "salary_information",
+    "answer": "Access past salary details in the HR portal under My Account > Payslips. Select the month and year to view the payslip PDF.",
+    "entity": "salary",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "What is the salary revision policy?",
+    "clean_question": "what is the salary revision policy",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "salary",
+      "revision",
+      "policy"
+    ],
+    "filtered_tokens": [
+      "salary",
+      "revision",
+      "policy"
+    ],
+    "lemmatized_tokens": [
+      "salary",
+      "revision",
+      "policy"
+    ],
+    "intent": "salary_information",
+    "answer": "Salary revisions are reviewed annually based on performance and market benchmarks. Discussions happen during the appraisal cycle.",
+    "entity": "salary",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "How do I request a salary certificate?",
+    "clean_question": "how do i request a salary certificate",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "request",
+      "a",
+      "salary",
+      "certificate"
+    ],
+    "filtered_tokens": [
+      "request",
+      "salary",
+      "certificate"
+    ],
+    "lemmatized_tokens": [
+      "request",
+      "salary",
+      "certificate"
+    ],
+    "intent": "salary_information",
+    "answer": "Request a salary certificate through the HR portal under Services > Documents. It is issued within 2 business days.",
+    "entity": "salary",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "How do I know if my salary has been credited?",
+    "clean_question": "how do i know if my salary has been credited",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "know",
+      "if",
+      "my",
+      "salary",
+      "has",
+      "been",
+      "credited"
+    ],
+    "filtered_tokens": [
+      "know",
+      "salary",
+      "credited"
+    ],
+    "lemmatized_tokens": [
+      "know",
+      "salary",
+      "credit"
+    ],
+    "intent": "salary_information",
+    "answer": "Salary credit status appears in the HR portal under My Account > Payslips. You will also receive an email notification when salary is credited.",
+    "entity": "salary",
+    "entities": [
+      "salary"
+    ]
+  },
+  {
+    "question": "How do I report a lost ID badge?",
+    "clean_question": "how do i report a lost id badge",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "report",
+      "a",
+      "lost",
+      "id",
+      "badge"
+    ],
+    "filtered_tokens": [
+      "report",
+      "lost",
+      "id",
+      "badge"
+    ],
+    "lemmatized_tokens": [
+      "report",
+      "lose",
+      "id",
+      "badge"
+    ],
+    "intent": "security",
+    "answer": "Report a lost ID badge immediately to the security desk at extension 9999. A replacement costs $10 and is ready in 2 business days.",
+    "entity": "security",
+    "entities": [
+      "security"
+    ]
+  },
+  {
+    "question": "How do I get after-hours access to the building?",
+    "clean_question": "how do i get after-hours access to the building",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "get",
+      "access",
+      "to",
+      "the",
+      "building"
+    ],
+    "filtered_tokens": [
+      "get",
+      "access",
+      "building"
+    ],
+    "lemmatized_tokens": [
+      "get",
+      "access",
+      "building"
+    ],
+    "intent": "security",
+    "answer": "Submit an after-hours access request through the HR portal under Services > Access. Security approves and sends a one-time access code.",
+    "entity": "security",
+    "entities": [
+      "location"
+    ]
+  },
+  {
+    "question": "What should I do if I see suspicious activity?",
+    "clean_question": "what should i do if i see suspicious activity",
+    "tokens": [
+      "what",
+      "should",
+      "i",
+      "do",
+      "if",
+      "i",
+      "see",
+      "suspicious",
+      "activity"
+    ],
+    "filtered_tokens": [
+      "see",
+      "suspicious",
+      "activity"
+    ],
+    "lemmatized_tokens": [
+      "see",
+      "suspicious",
+      "activity"
+    ],
+    "intent": "security",
+    "answer": "Immediately notify security at extension 9999 or security@company.com. Do not approach the individual. Provide details of the suspicious activity.",
+    "entity": "security",
+    "entities": [
+      "security"
+    ]
+  },
+  {
+    "question": "How do I update my security questions for login?",
+    "clean_question": "how do i update my security questions for login",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "update",
+      "my",
+      "security",
+      "questions",
+      "for",
+      "login"
+    ],
+    "filtered_tokens": [
+      "update",
+      "security",
+      "questions",
+      "login"
+    ],
+    "lemmatized_tokens": [
+      "update",
+      "security",
+      "question",
+      "login"
+    ],
+    "intent": "security",
+    "answer": "Go to Settings > Security > Security Questions in the employee portal. Update your questions and answers for account recovery.",
+    "entity": "security",
+    "entities": [
+      "account",
+      "security"
+    ]
+  },
+  {
+    "question": "What is the password change frequency policy?",
+    "clean_question": "what is the password change frequency policy",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "password",
+      "change",
+      "frequency",
+      "policy"
+    ],
+    "filtered_tokens": [
+      "password",
+      "change",
+      "frequency",
+      "policy"
+    ],
+    "lemmatized_tokens": [
+      "password",
+      "change",
+      "frequency",
+      "policy"
+    ],
+    "intent": "security",
+    "answer": "Company policy requires password changes every 90 days. You will receive an email reminder 7 days before expiration.",
+    "entity": "security",
+    "entities": [
+      "password"
+    ]
+  },
+  {
+    "question": "What is multi-factor authentication?",
+    "clean_question": "what is multi-factor authentication",
+    "tokens": [
+      "what",
+      "is",
+      "authentication"
+    ],
+    "filtered_tokens": [
+      "authentication"
+    ],
+    "lemmatized_tokens": [
+      "authentication"
+    ],
+    "intent": "security",
+    "answer": "Multi-factor authentication adds a second layer of security to your account. Enable it in Settings > Security > Two-Factor Authentication in the employee portal.",
+    "entity": "security",
+    "entities": []
+  },
+  {
+    "question": "How do I secure my workstation when I leave?",
+    "clean_question": "how do i secure my workstation when i leave",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "secure",
+      "my",
+      "workstation",
+      "when",
+      "i",
+      "leave"
+    ],
+    "filtered_tokens": [
+      "secure",
+      "workstation",
+      "leave"
+    ],
+    "lemmatized_tokens": [
+      "secure",
+      "workstation",
+      "leave"
+    ],
+    "intent": "security",
+    "answer": "Lock your computer with Ctrl+Alt+Delete or Windows+L. Report any unattended devices to security@company.com.",
+    "entity": "security",
+    "entities": [
+      "leave"
+    ]
+  },
+  {
+    "question": "What should I do if I clicked a phishing link?",
+    "clean_question": "what should i do if i clicked a phishing link",
+    "tokens": [
+      "what",
+      "should",
+      "i",
+      "do",
+      "if",
+      "i",
+      "clicked",
+      "a",
+      "phishing",
+      "link"
+    ],
+    "filtered_tokens": [
+      "clicked",
+      "phishing",
+      "link"
+    ],
+    "lemmatized_tokens": [
+      "click",
+      "phishing",
+      "link"
+    ],
+    "intent": "security",
+    "answer": "Immediately change your password and report the incident to IT security at extension 9999. Do not enter any further sensitive information.",
+    "entity": "security",
+    "entities": [
+      "security"
+    ]
+  },
+  {
+    "question": "What is the procedure for a lost or stolen laptop?",
+    "clean_question": "what is the procedure for a lost or stolen laptop",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "procedure",
+      "for",
+      "a",
+      "lost",
+      "or",
+      "stolen",
+      "laptop"
+    ],
+    "filtered_tokens": [
+      "procedure",
+      "lost",
+      "stolen",
+      "laptop"
+    ],
+    "lemmatized_tokens": [
+      "procedure",
+      "lose",
+      "steal",
+      "laptop"
+    ],
+    "intent": "security",
+    "answer": "Report a lost or stolen laptop to IT security at extension 9999 within 2 hours. The device will be remotely wiped and the incident documented.",
+    "entity": "security",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "How do I encrypt sensitive files?",
+    "clean_question": "how do i encrypt sensitive files",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "encrypt",
+      "sensitive",
+      "files"
+    ],
+    "filtered_tokens": [
+      "encrypt",
+      "sensitive",
+      "files"
+    ],
+    "lemmatized_tokens": [
+      "encrypt",
+      "sensitive",
+      "file"
+    ],
+    "intent": "security",
+    "answer": "Use the built-in encryption tool in the employee portal under Services > Security > File Encryption. Contact IT security at extension 9999 for help.",
+    "entity": "security",
+    "entities": []
+  },
+  {
+    "question": "What is the company's physical security policy?",
+    "clean_question": "what is the company's physical security policy",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "company",
+      "s",
+      "physical",
+      "security",
+      "policy"
+    ],
+    "filtered_tokens": [
+      "company",
+      "physical",
+      "security",
+      "policy"
+    ],
+    "lemmatized_tokens": [
+      "company",
+      "physical",
+      "security",
+      "policy"
+    ],
+    "intent": "security",
+    "answer": "All visitors must sign in at the front desk and wear a visitor badge. Employees must escort visitors at all times. Report violations to security at extension 9999.",
+    "entity": "security",
+    "entities": [
+      "security"
+    ]
+  },
+  {
+    "question": "My laptop is running very slowly.",
+    "clean_question": "my laptop is running very slowly",
+    "tokens": [
+      "my",
+      "laptop",
+      "is",
+      "running",
+      "very",
+      "slowly"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "running",
+      "slowly"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "running",
+      "slowly"
+    ],
+    "intent": "technical_support",
+    "answer": "Close unnecessary applications and restart your laptop. If it is still slow, check for updates in the IT portal. Contact IT support at extension 1234.",
+    "entity": "it_support",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "How do I connect a second monitor to my laptop?",
+    "clean_question": "how do i connect a second monitor to my laptop",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "connect",
+      "a",
+      "second",
+      "monitor",
+      "to",
+      "my",
+      "laptop"
+    ],
+    "filtered_tokens": [
+      "connect",
+      "second",
+      "monitor",
+      "laptop"
+    ],
+    "lemmatized_tokens": [
+      "connect",
+      "second",
+      "monitor",
+      "laptop"
+    ],
+    "intent": "technical_support",
+    "answer": "Connect the HDMI or VGA cable to your laptop and monitor. Extend or duplicate the display in Display Settings. Call extension 1234 if issues persist.",
+    "entity": "it_support",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop battery is draining too quickly.",
+    "clean_question": "my laptop battery is draining too quickly",
+    "tokens": [
+      "my",
+      "laptop",
+      "battery",
+      "is",
+      "draining",
+      "too",
+      "quickly"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "battery",
+      "draining",
+      "quickly"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "battery",
+      "drain",
+      "quickly"
+    ],
+    "intent": "technical_support",
+    "answer": "Check battery usage in Settings > System > Power. Reduce screen brightness and close background apps. If the battery is faulty, contact IT at extension 1234.",
+    "entity": "it_support",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "How do I back up my files automatically?",
+    "clean_question": "how do i back up my files automatically",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "back",
+      "up",
+      "my",
+      "files",
+      "automatically"
+    ],
+    "filtered_tokens": [
+      "back",
+      "files",
+      "automatically"
+    ],
+    "lemmatized_tokens": [
+      "back",
+      "file",
+      "automatically"
+    ],
+    "intent": "technical_support",
+    "answer": "The company backup agent runs daily in the background. For manual backup, use the backup tool in the IT portal. Contact IT support at extension 1234 for setup help.",
+    "entity": "it_support",
+    "entities": []
+  },
+  {
+    "question": "My laptop screen is flickering intermittently.",
+    "clean_question": "my laptop screen is flickering intermittently",
+    "tokens": [
+      "my",
+      "laptop",
+      "screen",
+      "is",
+      "flickering",
+      "intermittently"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "screen",
+      "flickering",
+      "intermittently"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "screen",
+      "flicker",
+      "intermittently"
+    ],
+    "intent": "technical_support",
+    "answer": "Update your graphics drivers through the IT portal. Check that the display cable is secure. If it persists, contact IT support at extension 1234.",
+    "entity": "it_support",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "How do I run system diagnostics on my laptop?",
+    "clean_question": "how do i run system diagnostics on my laptop",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "run",
+      "system",
+      "diagnostics",
+      "on",
+      "my",
+      "laptop"
+    ],
+    "filtered_tokens": [
+      "run",
+      "system",
+      "diagnostics",
+      "laptop"
+    ],
+    "lemmatized_tokens": [
+      "run",
+      "system",
+      "diagnostics",
+      "laptop"
+    ],
+    "intent": "technical_support",
+    "answer": "Run the built-in diagnostics tool from the IT portal under Tools > Diagnostics. Or access it through Settings > Update and Security > Troubleshoot.",
+    "entity": "it_support",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "My laptop overheats during heavy use.",
+    "clean_question": "my laptop overheats during heavy use",
+    "tokens": [
+      "my",
+      "laptop",
+      "overheats",
+      "during",
+      "heavy",
+      "use"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "overheats",
+      "heavy",
+      "use"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "overheats",
+      "heavy",
+      "use"
+    ],
+    "intent": "technical_support",
+    "answer": "Clean the air vents and ensure proper ventilation. Use a laptop stand. If overheating continues, contact IT support at extension 1234 for repair.",
+    "entity": "it_support",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "How do I reset my Outlook email profile?",
+    "clean_question": "how do i reset my outlook email profile",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "reset",
+      "my",
+      "outlook",
+      "email",
+      "profile"
+    ],
+    "filtered_tokens": [
+      "reset",
+      "outlook",
+      "email",
+      "profile"
+    ],
+    "lemmatized_tokens": [
+      "reset",
+      "outlook",
+      "email",
+      "profile"
+    ],
+    "intent": "technical_support",
+    "answer": "Go to Control Panel > Mail > Show Profiles. Create a new profile with your company email. Contact IT support at extension 1234 if needed.",
+    "entity": "it_support",
+    "entities": [
+      "email"
+    ]
+  },
+  {
+    "question": "My laptop will not power on.",
+    "clean_question": "my laptop will not power on",
+    "tokens": [
+      "my",
+      "laptop",
+      "will",
+      "not",
+      "power",
+      "on"
+    ],
+    "filtered_tokens": [
+      "laptop",
+      "power"
+    ],
+    "lemmatized_tokens": [
+      "laptop",
+      "power"
+    ],
+    "intent": "technical_support",
+    "answer": "Check the power cable and battery. Try a hard reset by holding the power button for 15 seconds. If it still will not start, contact IT support at extension 1234.",
+    "entity": "it_support",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "How do I free up disk space on my laptop?",
+    "clean_question": "how do i free up disk space on my laptop",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "free",
+      "up",
+      "disk",
+      "space",
+      "on",
+      "my",
+      "laptop"
+    ],
+    "filtered_tokens": [
+      "free",
+      "disk",
+      "space",
+      "laptop"
+    ],
+    "lemmatized_tokens": [
+      "free",
+      "disk",
+      "space",
+      "laptop"
+    ],
+    "intent": "technical_support",
+    "answer": "Run Disk Cleanup from the Start menu. Delete temporary files and empty the recycle bin. Contact IT support at extension 1234 for assistance.",
+    "entity": "it_support",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "How do I update my laptop drivers?",
+    "clean_question": "how do i update my laptop drivers",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "update",
+      "my",
+      "laptop",
+      "drivers"
+    ],
+    "filtered_tokens": [
+      "update",
+      "laptop",
+      "drivers"
+    ],
+    "lemmatized_tokens": [
+      "update",
+      "laptop",
+      "driver"
+    ],
+    "intent": "technical_support",
+    "answer": "Download drivers from the company software portal at software.company.com or use Windows Update. Contact IT support at extension 1234 for help.",
+    "entity": "it_support",
+    "entities": [
+      "laptop"
+    ]
+  },
+  {
+    "question": "Can I work from home on Fridays?",
+    "clean_question": "can i work from home on fridays",
+    "tokens": [
+      "can",
+      "i",
+      "work",
+      "from",
+      "home",
+      "on",
+      "fridays"
+    ],
+    "filtered_tokens": [
+      "work",
+      "home",
+      "fridays"
+    ],
+    "lemmatized_tokens": [
+      "work",
+      "home",
+      "friday"
+    ],
+    "intent": "working_hours",
+    "answer": "Remote work on Fridays is allowed with manager approval. Submit a remote work request through the HR portal at least 2 days in advance.",
+    "entity": "working_hours",
+    "entities": [
+      "working_hours"
+    ]
+  },
+  {
+    "question": "What are the standard working hours?",
+    "clean_question": "what are the standard working hours",
+    "tokens": [
+      "what",
+      "are",
+      "the",
+      "standard",
+      "working",
+      "hours"
+    ],
+    "filtered_tokens": [
+      "standard",
+      "working",
+      "hours"
+    ],
+    "lemmatized_tokens": [
+      "standard",
+      "working",
+      "hour"
+    ],
+    "intent": "working_hours",
+    "answer": "Standard working hours are 9:00 AM to 6:00 PM, Monday to Friday. Lunch break is from 1 PM to 2 PM.",
+    "entity": "working_hours",
+    "entities": [
+      "working_hours"
+    ]
+  },
+  {
+    "question": "How do I request a shift change?",
+    "clean_question": "how do i request a shift change",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "request",
+      "a",
+      "shift",
+      "change"
+    ],
+    "filtered_tokens": [
+      "request",
+      "shift",
+      "change"
+    ],
+    "lemmatized_tokens": [
+      "request",
+      "shift",
+      "change"
+    ],
+    "intent": "working_hours",
+    "answer": "Submit a shift change request through the HR portal under My Account > Schedule. Manager approval is required for all shift changes.",
+    "entity": "working_hours",
+    "entities": [
+      "working_hours"
+    ]
+  },
+  {
+    "question": "Can I work late and leave early on another day?",
+    "clean_question": "can i work late and leave early on another day",
+    "tokens": [
+      "can",
+      "i",
+      "work",
+      "late",
+      "and",
+      "leave",
+      "early",
+      "on",
+      "another",
+      "day"
+    ],
+    "filtered_tokens": [
+      "work",
+      "late",
+      "leave",
+      "early",
+      "another",
+      "day"
+    ],
+    "lemmatized_tokens": [
+      "work",
+      "late",
+      "leave",
+      "early",
+      "another",
+      "day"
+    ],
+    "intent": "working_hours",
+    "answer": "Flexible scheduling is available with manager approval. Submit a time change request through the HR portal with justification.",
+    "entity": "working_hours",
+    "entities": [
+      "leave"
+    ]
+  },
+  {
+    "question": "What is the lunch break policy?",
+    "clean_question": "what is the lunch break policy",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "lunch",
+      "break",
+      "policy"
+    ],
+    "filtered_tokens": [
+      "lunch",
+      "break",
+      "policy"
+    ],
+    "lemmatized_tokens": [
+      "lunch",
+      "break",
+      "policy"
+    ],
+    "intent": "working_hours",
+    "answer": "The lunch break is from 1 PM to 2 PM daily. It is unpaid unless you are on a flexible schedule approved by your manager.",
+    "entity": "working_hours",
+    "entities": []
+  },
+  {
+    "question": "How many hours should I work per week?",
+    "clean_question": "how many hours should i work per week",
+    "tokens": [
+      "how",
+      "many",
+      "hours",
+      "should",
+      "i",
+      "work",
+      "per",
+      "week"
+    ],
+    "filtered_tokens": [
+      "many",
+      "hours",
+      "work",
+      "per",
+      "week"
+    ],
+    "lemmatized_tokens": [
+      "many",
+      "hour",
+      "work",
+      "per",
+      "week"
+    ],
+    "intent": "working_hours",
+    "answer": "The standard work week is 40 hours, Monday to Friday. Overtime beyond 45 hours requires prior manager approval.",
+    "entity": "working_hours",
+    "entities": []
+  },
+  {
+    "question": "Can I work on weekends?",
+    "clean_question": "can i work on weekends",
+    "tokens": [
+      "can",
+      "i",
+      "work",
+      "on",
+      "weekends"
+    ],
+    "filtered_tokens": [
+      "work",
+      "weekends"
+    ],
+    "lemmatized_tokens": [
+      "work",
+      "weekend"
+    ],
+    "intent": "working_hours",
+    "answer": "Weekend work requires prior approval from your manager and HR. Weekend hours are compensated at 1.5x the regular rate.",
+    "entity": "working_hours",
+    "entities": []
+  },
+  {
+    "question": "What is the overtime policy?",
+    "clean_question": "what is the overtime policy",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "overtime",
+      "policy"
+    ],
+    "filtered_tokens": [
+      "overtime",
+      "policy"
+    ],
+    "lemmatized_tokens": [
+      "overtime",
+      "policy"
+    ],
+    "intent": "working_hours",
+    "answer": "Overtime is paid at 1.5x for hours beyond 45 per week. Submit overtime requests through the HR portal with manager approval.",
+    "entity": "working_hours",
+    "entities": []
+  },
+  {
+    "question": "How do I report my working hours for remote days?",
+    "clean_question": "how do i report my working hours for remote days",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "report",
+      "my",
+      "working",
+      "hours",
+      "for",
+      "remote",
+      "days"
+    ],
+    "filtered_tokens": [
+      "report",
+      "working",
+      "hours",
+      "remote",
+      "days"
+    ],
+    "lemmatized_tokens": [
+      "report",
+      "work",
+      "hour",
+      "remote",
+      "day"
+    ],
+    "intent": "working_hours",
+    "answer": "Log your working hours in the HR portal under My Account > Attendance. Include your start, end, and break times for each day.",
+    "entity": "working_hours",
+    "entities": [
+      "working_hours"
+    ]
+  },
+  {
+    "question": "What is the half-day policy?",
+    "clean_question": "what is the half-day policy",
+    "tokens": [
+      "what",
+      "is",
+      "the",
+      "policy"
+    ],
+    "filtered_tokens": [
+      "policy"
+    ],
+    "lemmatized_tokens": [
+      "policy"
+    ],
+    "intent": "working_hours",
+    "answer": "Half-day leave is allowed for personal matters. Apply at least 2 hours in advance through the HR portal under My Account > Leave.",
+    "entity": "working_hours",
+    "entities": []
+  },
+  {
+    "question": "How do I find out if the office is closed during a holiday?",
+    "clean_question": "how do i find out if the office is closed during a holiday",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "find",
+      "out",
+      "if",
+      "the",
+      "office",
+      "is",
+      "closed",
+      "during",
+      "a",
+      "holiday"
+    ],
+    "filtered_tokens": [
+      "find",
+      "office",
+      "closed",
+      "holiday"
+    ],
+    "lemmatized_tokens": [
+      "find",
+      "office",
+      "close",
+      "holiday"
+    ],
+    "intent": "working_hours",
+    "answer": "Check the company calendar on the intranet under HR > Holidays. If a holiday is declared, the office is closed and remote work is optional.",
+    "entity": "working_hours",
+    "entities": [
+      "holiday"
+    ]
+  },
+  {
+    "question": "How do I find the company WiFi network name?",
+    "clean_question": "how do i find the company wifi network name",
+    "tokens": [
+      "how",
+      "do",
+      "i",
+      "find",
+      "the",
+      "company",
+      "wifi",
+      "network",
+      "name"
+    ],
+    "filtered_tokens": [
+      "find",
+      "company",
+      "wifi",
+      "network",
+      "name"
+    ],
+    "lemmatized_tokens": [
+      "find",
+      "company",
+      "wifi",
+      "network",
+      "name"
+    ],
+    "intent": "wifi_problems",
+    "answer": "The company WiFi network name (SSID) is 'Company-Secure' for employees and 'Company-Guest' for visitors. Contact IT support at extension 1234 for passwords.",
+    "entity": "wifi",
+    "entities": [
+      "wifi",
+      "internet"
+    ]
+  },
+  {
+    "question": "Hey there",
+    "clean_question": "hey there",
+    "tokens": [
+      "hey",
+      "there"
+    ],
+    "filtered_tokens": [
+      "hey"
+    ],
+    "lemmatized_tokens": [
+      "hey"
+    ],
+    "intent": "greetings",
+    "answer": "Hello! How can I help you today? I can assist with IT issues, HR policies, and company questions.",
+    "entity": "greeting",
+    "entities": [
+      "greeting"
+    ]
+  },
+  {
+    "question": "Hi, how are you?",
+    "clean_question": "hi how are you",
+    "tokens": [
+      "hi",
+      "how",
+      "are",
+      "you"
+    ],
+    "filtered_tokens": [
+      "hi"
+    ],
+    "lemmatized_tokens": [
+      "hi"
+    ],
+    "intent": "greetings",
+    "answer": "I'm doing well, thank you! How can I help you today with IT, HR, or any other company questions?",
+    "entity": "greeting",
+    "entities": [
+      "greeting"
+    ]
+  },
+  {
+    "question": "I'm done asking questions",
+    "clean_question": "i'm done asking questions",
+    "tokens": [
+      "i",
+      "am",
+      "done",
+      "asking",
+      "questions"
+    ],
+    "filtered_tokens": [
+      "done",
+      "asking",
+      "questions"
+    ],
+    "lemmatized_tokens": [
+      "do",
+      "ask",
+      "question"
+    ],
+    "intent": "goodbye",
+    "answer": "Alright! If you need anything else, just ask. Have a great day ahead!",
+    "entity": "goodbye",
+    "entities": []
+  },
+  {
+    "question": "That's everything I needed",
+    "clean_question": "that's everything i needed",
+    "tokens": [
+      "that",
+      "is",
+      "everything",
+      "i",
+      "needed"
+    ],
+    "filtered_tokens": [
+      "everything",
+      "needed"
+    ],
+    "lemmatized_tokens": [
+      "everything",
+      "need"
+    ],
+    "intent": "goodbye",
+    "answer": "You're welcome! If you have more questions later, don't hesitate to ask. Goodbye!",
+    "entity": "goodbye",
+    "entities": []
+  }
+]

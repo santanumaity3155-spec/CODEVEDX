@@ -1,0 +1,113 @@
+NLP PREPROCESSING REPORT - Module 2
+Generated: 2026-08-15 00:54:14
+============================================================
+
+Dataset Statistics
+------------------------------------------------------------
+Input records            : 294
+Output records           : 294
+Number of intents        : 22
+Number of entities       : 22
+
+Question Statistics
+------------------------------------------------------------
+Average question length  : 33.1
+Minimum question length  : 3
+Maximum question length  : 58
+Average token count      : 6.51
+Minimum token count      : 1
+Maximum token count      : 13
+
+Vocabulary Statistics
+------------------------------------------------------------
+Raw vocabulary size      : 470
+Lemmatized vocabulary size: 386
+
+Intent Statistics
+------------------------------------------------------------
+Minimum examples/intent  : 12
+Maximum examples/intent  : 20
+Intent distribution:
+  help: 20
+  password_reset: 20
+  laptop_problems: 19
+  software_installation: 17
+  email_problems: 14
+  account_access: 12
+  attendance: 12
+  contact_information: 12
+  employee_id: 12
+  goodbye: 12
+  greetings: 12
+  holidays: 12
+  hr_support: 12
+  internet_problems: 12
+  leave_policy: 12
+  office_location: 12
+  payroll: 12
+  salary_information: 12
+  security: 12
+  technical_support: 12
+  wifi_problems: 12
+  working_hours: 12
+
+Entity Statistics
+------------------------------------------------------------
+Number of unique entities: 22
+Entity frequency:
+  help: 20
+  password: 20
+  laptop: 19
+  software: 17
+  email: 14
+  account: 12
+  attendance: 12
+  contact: 12
+  employee_id: 12
+  goodbye: 12
+  greeting: 12
+  holiday: 12
+  hr: 12
+  internet: 12
+  it_support: 12
+  leave: 12
+  location: 12
+  payroll: 12
+  salary: 12
+  security: 12
+  wifi: 12
+  working_hours: 12
+
+Preprocessing Validation
+------------------------------------------------------------
+Missing values                 : 0
+Duplicate questions            : 0
+Duplicate clean questions      : 0
+Records with empty clean_quest : 0
+Record count consistency        : OK
+
+Final Quality Gate
+------------------------------------------------------------
+[PASS] Module 1 dataset loads
+[PASS] Input records = 294
+[PASS] Output records = 294
+[PASS] Record count consistency
+[PASS] Intent count remains 22
+[PASS] Minimum intent examples >= 12
+[PASS] clean_question generated
+[PASS] Tokenization works
+[PASS] Stopword processing works
+[PASS] Lemmatization works
+[PASS] Intent normalization works
+[PASS] Entity preparation works
+[PASS] Entity extraction works
+[PASS] No unintended data loss
+[PASS] No duplicate questions introduced
+[PASS] No missing required values
+[PASS] NLP-ready CSV generated
+[PASS] NLP-ready JSON generated
+[PASS] NLP report generated
+[PASS] NLP charts generated
+[PASS] Preprocessing validation passes
+------------------------------------------------------------
+MODULE 2 QUALITY GATE: PASS
