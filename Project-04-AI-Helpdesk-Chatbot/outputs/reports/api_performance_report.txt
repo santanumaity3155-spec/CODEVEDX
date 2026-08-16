@@ -1,0 +1,15 @@
+Module 5: API Performance Report
+========================================
+
+Requests tested: 20
+Successful requests: 15
+Failed requests: 5
+Total time: 0.0338s
+Average latency: 1.6912ms
+Min latency: 0.224ms
+Max latency: 2.8915ms
+
+Model loaded once during app.create_app(). Subsequent requests reuse the cached model.
+
+Note: This is a local benchmark using Flask's test client.
+Actual network latency will vary in production deployments.

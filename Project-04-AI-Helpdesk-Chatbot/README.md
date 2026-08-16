@@ -265,3 +265,97 @@ laptop_problems / software_installation, internet_problems / wifi_problems /
 email_problems, leave_policy / attendance / working_hours / holidays,
 salary_information / payroll, employee_id / hr_support / office_location,
 contact_information / security / technical_support.
+
+## Module 5: Flask API Development
+
+Module 5 is **COMPLETE**. It exposes the Module 4 chatbot engine as a
+production-ready Flask REST API.
+
+### Architecture
+
+```
+src/
+    app.py              # Flask application factory + CLI entry point
+    config.py           # Flask + chatbot configuration
+    api/
+        __init__.py
+        routes.py       # API endpoints
+    chatbot.py          # Module 4 orchestrator (unchanged)
+    chatbot_config.py   # Module 4 config (unchanged)
+    ...
+```
+
+### API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/health` | GET | Health check with model/FAQ status |
+| `/api/chat` | POST | Primary chatbot endpoint |
+| `/api/predict` | POST | Intent prediction only |
+
+### Request / Response Example
+
+**Request:**
+```json
+POST /api/chat
+{
+    "message": "How do I reset my password?"
+}
+```
+
+**Response:**
+```json
+{
+    "success": true,
+    "message": "How do I reset my password?",
+    "intent": "password_reset",
+    "confidence": 0.705,
+    "response": "You can reset your password through the internal password reset portal...",
+    "fallback": false,
+    "entities": ["password"],
+    "confidence_level": "high"
+}
+```
+
+### Running the API
+
+```bash
+python src/app.py
+```
+
+The server starts on `http://127.0.0.1:5000` by default.
+
+### Configuration
+
+Environment variables (all optional):
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `APP_HOST` | `127.0.0.1` | Flask bind address |
+| `APP_PORT` | `5000` | Flask port |
+| `APP_DEBUG` | `false` | Debug mode |
+| `ALLOWED_ORIGINS` | `http://localhost:3000,http://127.0.0.1:3000` | CORS origins |
+| `MAX_MESSAGE_LENGTH` | `500` | Max characters per message |
+| `LOG_LEVEL` | `INFO` | Logging level |
+
+### Features
+
+- **Model loaded once** at startup (no per-request reload).
+- **Request validation**: empty, null, whitespace, oversized, invalid JSON.
+- **Structured JSON responses** with intent, confidence, entities, fallback flag.
+- **Centralised error handling**: no stack traces or local paths leaked to clients.
+- **CORS** configured via `ALLOWED_ORIGINS` environment variable.
+- **Logging** at INFO/WARNING/ERROR levels.
+
+### Test results
+
+- Module 5 API tests: **34 passed**
+- Module 5 integration tests: **15 passed**
+- Full test suite: **112 passed** / 0 failed
+- Regression: **zero failures** on existing Module 1–4 tests
+- Manual API testing: **passed** (health, chat, predict, validation, fallback)
+
+### Performance
+
+- Average request latency: ~1.7ms (local test client)
+- Model cached at startup; no per-request disk I/O for model loading.
