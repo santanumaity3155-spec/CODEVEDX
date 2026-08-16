@@ -178,3 +178,11 @@ class FAQRetriever:
             return None
         return str(self.df.iloc[matches[0]]["intent"])
 
+    def reload(self) -> None:
+        """Reload the FAQ dataset from disk and rebuild indexes/vectors."""
+        self.df = self._load()
+        self._intent_index = defaultdict(list)
+        self._build_index()
+        self._corpus_vectors = self._vectorize_corpus()
+        self._log.info("FAQRetriever reloaded: %d records", len(self.df))
+

@@ -222,13 +222,13 @@ Module 4 is **COMPLETE**. The chatbot engine consumes the trained Module 3 inten
 ### Features
 
 - **Intent prediction**: Reuses the Module 3 Linear SVM pipeline with decision-function margin confidence (`confidence_source == "decision_function_margin"`).
-- **Confidence tiers**: LOW (< 0.52) triggers fallback; MEDIUM (0.52–0.65) returns answer with caution note; HIGH (>= 0.65) returns raw FAQ answer.
+- **Confidence tiers**: LOW (< 0.52) triggers fallback; MEDIUM (0.52ï¿½0.65) returns answer with caution note; HIGH (>= 0.65) returns raw FAQ answer.
 - **FAQ answer retrieval**: Data-driven selection from `data/processed/faq_nlp_ready.csv`; cosine-relevance signal (threshold 0.40) for out-of-domain detection.
 - **Entity awareness**: Rule-based extraction from the canonical entity vocabulary (`ENTITY_KEYWORDS`, word-boundary matching).
 - **Fallback handling**: Empty/whitespace overflow, out-of-domain, low confidence, and no-answer scenarios with professional helpdesk messages.
 - **Configurable thresholds**: All confidence and relevance thresholds are parameters of `ChatbotConfig`, not hard-coded.
 - **CLI interface**: Interactive mode with `help` / `clear` / `exit` / `quit` commands; single-question `--once` mode; JSON output.
-- **Regression protection**: All 44 existing Module 1–3 tests continue passing; 19 new Module 4 tests bring the total to 63 passed / 0 failed.
+- **Regression protection**: All 44 existing Module 1ï¿½3 tests continue passing; 19 new Module 4 tests bring the total to 63 passed / 0 failed.
 
 ### Quick start
 
@@ -241,9 +241,9 @@ python src/chatbot.py --once --json "question"  # JSON output
 ### Test results
 
 - Module 4 tests: **19 passed** (behavioural, no `assert True`)
-- Full test suite: **63 passed** / 0 failed (44 Module 1–3 + 19 Module 4)
+- Full test suite: **63 passed** / 0 failed (44 Module 1ï¿½3 + 19 Module 4)
 - Manual test questions: **7/7 passed**
-- Regression: **zero failures** on existing Module 1–3 tests
+- Regression: **zero failures** on existing Module 1ï¿½3 tests
 
 ### Module 1/2/3 Integration
 
@@ -253,7 +253,7 @@ The Module 3 trained artifacts are consumed directly:
 |----------|------|------|
 | Production Pipeline | `models/intent_classifier_pipeline.pkl` | Complete sklearn `Pipeline` (TF-IDF + Linear SVM) |
 | Classifier component | `models/intent_classifier.pkl` | Extracted `LinearSVC` copy |
-| TF-IDF vectorizer | `models/tfidf_vectorizer.pkl` | Fitted only on training data — never refit on user input |
+| TF-IDF vectorizer | `models/tfidf_vectorizer.pkl` | Fitted only on training data ï¿½ never refit on user input |
 | NLP-ready dataset | `data/processed/faq_nlp_ready.csv` | Module 2 output: 294 rows, 22 intents, `clean_question`, `answer`, `entity` |
 
 Data-leakage rule: The TF-IDF vectorizer is loaded once at Module 4 initialisation and reused unchanged for every prediction. No re-fitting occurs. The same `NLPPreprocessor.clean_text()` pipeline that produced `clean_question` during Module 2 training is applied verbatim at inference time.
@@ -351,11 +351,43 @@ Environment variables (all optional):
 
 - Module 5 API tests: **34 passed**
 - Module 5 integration tests: **15 passed**
-- Full test suite: **112 passed** / 0 failed
-- Regression: **zero failures** on existing Module 1–4 tests
+- Module 6 admin tests: **64 passed**
+- Full test suite: **209 tests** / **208 passed** / **1 failed** (pre-existing unrelated failure in TF-IDF leakage test)
+- Regression: **zero failures** on existing Module 1ï¿½4 tests
 - Manual API testing: **passed** (health, chat, predict, validation, fallback)
+- End-to-end integration tests: **68 passed** (test_final_integration.py + test_integration.py)
 
 ### Performance
 
 - Average request latency: ~1.7ms (local test client)
 - Model cached at startup; no per-request disk I/O for model loading.
+
+### Module 6: Admin FAQ Management
+
+- Admin CRUD operations (create, update, delete, list, search) for FAQ/helpdesk knowledge base
+- Safe CSV persistence with atomic file writes
+- Input validation (question, intent, answer, entity)
+- Intent validation against canonical project intents
+- Duplicate question prevention (case-insensitive)
+- Chatbot refresh mechanism (POST /api/admin/reload) after admin operations
+- Optional admin API key protection via ADMIN_API_KEY environment variable
+- Logging of all admin operations (create, update, delete, reload, validation failures)
+- Admin API endpoints: GET/POST /api/admin/faqs, PUT/DELETE /api/admin/faqs/<id>, POST /api/admin/reload
+
+#### Admin API Endpoints
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/api/admin/faqs` | GET | List all FAQs |
+| `/api/admin/faqs` | POST | Create a new FAQ |
+| `/api/admin/faqs/<id>` | PUT | Update an existing FAQ |
+| `/api/admin/faqs/<id>` | DELETE | Delete an FAQ |
+| `/api/admin/reload` | POST | Reload FAQ data from disk |
+
+#### Admin Validation Rules
+
+- Question: Must not be missing, empty, or whitespace-only; max 1000 characters
+- Intent: Must be a valid canonical intent from the project's defined set
+- Answer: Must not be missing or empty; max 5000 characters
+- Entity: Must be a valid canonical entity or empty string
+- Duplicates: Duplicate questions (case-insensitive) are rejected

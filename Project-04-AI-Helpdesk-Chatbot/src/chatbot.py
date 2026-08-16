@@ -107,6 +107,11 @@ class HelpdeskChatbot:
         )
         _log.debug("HelpdeskChatbot initialised with %d FAQ answers", len(self.faq.df))
 
+    def refresh_faq(self) -> None:
+        """Reload the FAQ retriever from disk without restarting the model."""
+        self.faq.reload()
+        _log.info("Chatbot FAQ refreshed: %d records now available", len(self.faq.df))
+
     # ------------------------------------------------------------ validation
     def validate_input(self, query: object) -> tuple[bool, str]:
         """Validate raw user input.

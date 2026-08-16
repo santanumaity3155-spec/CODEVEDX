@@ -19,7 +19,7 @@ from pathlib import Path
 from flask import Flask, jsonify
 from flask_cors import CORS
 
-from api.routes import api_bp
+from api.routes import api_bp, admin_bp
 from chatbot_config import ChatbotConfig, get_logger
 from config import APIConfig, get_api_config, setup_logging
 
@@ -56,6 +56,7 @@ def create_app(config: APIConfig | None = None) -> Flask:
 
     # Register blueprints.
     app.register_blueprint(api_bp, url_prefix=cfg.api_prefix)
+    app.register_blueprint(admin_bp, url_prefix=f"{cfg.api_prefix}/admin")
 
     # Health-check alias at root (convenience).
     @app.route("/health", methods=["GET"])
