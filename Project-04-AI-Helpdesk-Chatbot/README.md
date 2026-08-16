@@ -214,3 +214,54 @@ development team.
 ## License
 
 Internal use only - CodeVedX Internship Program
+
+## Module 4: AI Helpdesk Chatbot Engine
+
+Module 4 is **COMPLETE**. The chatbot engine consumes the trained Module 3 intent-classification model (`models/intent_classifier_pipeline.pkl`) and provides the next production layer of the internal helpdesk chatbot:
+
+### Features
+
+- **Intent prediction**: Reuses the Module 3 Linear SVM pipeline with decision-function margin confidence (`confidence_source == "decision_function_margin"`).
+- **Confidence tiers**: LOW (< 0.52) triggers fallback; MEDIUM (0.52–0.65) returns answer with caution note; HIGH (>= 0.65) returns raw FAQ answer.
+- **FAQ answer retrieval**: Data-driven selection from `data/processed/faq_nlp_ready.csv`; cosine-relevance signal (threshold 0.40) for out-of-domain detection.
+- **Entity awareness**: Rule-based extraction from the canonical entity vocabulary (`ENTITY_KEYWORDS`, word-boundary matching).
+- **Fallback handling**: Empty/whitespace overflow, out-of-domain, low confidence, and no-answer scenarios with professional helpdesk messages.
+- **Configurable thresholds**: All confidence and relevance thresholds are parameters of `ChatbotConfig`, not hard-coded.
+- **CLI interface**: Interactive mode with `help` / `clear` / `exit` / `quit` commands; single-question `--once` mode; JSON output.
+- **Regression protection**: All 44 existing Module 1–3 tests continue passing; 19 new Module 4 tests bring the total to 63 passed / 0 failed.
+
+### Quick start
+
+```bash
+python src/chatbot.py               # interactive CLI
+python src/chatbot.py --once "How do I reset my password?"  # single question
+python src/chatbot.py --once --json "question"  # JSON output
+```
+
+### Test results
+
+- Module 4 tests: **19 passed** (behavioural, no `assert True`)
+- Full test suite: **63 passed** / 0 failed (44 Module 1–3 + 19 Module 4)
+- Manual test questions: **7/7 passed**
+- Regression: **zero failures** on existing Module 1–3 tests
+
+### Module 1/2/3 Integration
+
+The Module 3 trained artifacts are consumed directly:
+
+| Artifact | Path | Role |
+|----------|------|------|
+| Production Pipeline | `models/intent_classifier_pipeline.pkl` | Complete sklearn `Pipeline` (TF-IDF + Linear SVM) |
+| Classifier component | `models/intent_classifier.pkl` | Extracted `LinearSVC` copy |
+| TF-IDF vectorizer | `models/tfidf_vectorizer.pkl` | Fitted only on training data — never refit on user input |
+| NLP-ready dataset | `data/processed/faq_nlp_ready.csv` | Module 2 output: 294 rows, 22 intents, `clean_question`, `answer`, `entity` |
+
+Data-leakage rule: The TF-IDF vectorizer is loaded once at Module 4 initialisation and reused unchanged for every prediction. No re-fitting occurs. The same `NLPPreprocessor.clean_text()` pipeline that produced `clean_question` during Module 2 training is applied verbatim at inference time.
+
+### Intents covered by the base dataset (`data/raw/faq_dataset.csv`)
+
+greetings / goodbye / help, password_reset / account_access,
+laptop_problems / software_installation, internet_problems / wifi_problems /
+email_problems, leave_policy / attendance / working_hours / holidays,
+salary_information / payroll, employee_id / hr_support / office_location,
+contact_information / security / technical_support.
