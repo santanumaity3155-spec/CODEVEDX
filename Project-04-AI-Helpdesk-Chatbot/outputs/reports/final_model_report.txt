@@ -1,0 +1,122 @@
+================================================================================
+FINAL INTENT CLASSIFICATION MODEL REPORT - MODULE 3
+================================================================================
+Generated         : 2026-08-16T19:57:53
+
+1. DATASET
+   Input file                    : data/processed/faq_nlp_ready.csv
+   Records (total)               : 294
+   Intents                       : 22
+   Training samples              : 235
+   Test samples                  : 59
+   Missing clean_question        : 0
+   Missing intent                : 0
+
+2. TRAIN/TEST SPLIT
+   Strategy                      : stratified (random_state=42, test_size=0.20)
+   Every class in both sets      : PASS
+
+3. TF-IDF FEATURES
+   Model input text column       : clean_question
+   Selected configuration        : recommended
+   Parameters                    : {'ngram_range': (1, 2), 'sublinear_tf': True, 'min_df': 2, 'max_df': 0.9, 'stop_words': None}
+   Vocabulary size               : 264
+   Candidates compared (macro-F1 on training cross-validation):
+    - recommended            macro-F1 = 0.6250   accuracy = 0.6809
+    - no_min_df_filter       macro-F1 = 0.5508   accuracy = 0.6170
+    - unigrams_only          macro-F1 = 0.6110   accuracy = 0.6681
+    - english_stopwords      macro-F1 = 0.6222   accuracy = 0.6723
+
+4. COMPARISON OF ALL EVALUATED MODELS (metrics from 5-fold stratified CV on
+   the training set - the test set was untouched for model selection)
+    linear_svm_tuned             f1_macro=0.6828 f1_wt=0.6929 acc=0.7021 cv_f1_macro=0.6608+/-0.0438
+    linear_svm                   f1_macro=0.6780 f1_wt=0.6876 acc=0.6979 cv_f1_macro=0.6537+/-0.0506
+    logistic_regression_tuned    f1_macro=0.6655 f1_wt=0.6764 acc=0.6809 cv_f1_macro=0.6392+/-0.0709
+    logistic_regression          f1_macro=0.6522 f1_wt=0.6587 acc=0.6809 cv_f1_macro=0.6250+/-0.0554
+    multinomial_nb_tuned         f1_macro=0.5922 f1_wt=0.5984 acc=0.6255 cv_f1_macro=0.5615+/-0.0592
+    multinomial_nb               f1_macro=0.5343 f1_wt=0.5390 acc=0.5702 cv_f1_macro=0.4972+/-0.0667
+
+5. BEST MODEL
+   Model                         : linear_svm_tuned
+   Hyperparameters               : {'classifier__C': 1.0, 'classifier__class_weight': 'balanced'}
+   Selection criteria            : macro F1 primary, then weighted F1,
+                                   then accuracy, then simplicity
+   Selection reason              : Highest macro F1 (0.6828) on 5-fold stratified cross-validation of the training set. Weighted F1: 0.6929 (tie-breaker #1). Accuracy: 0.7021 (tie-breaker #2).
+
+6. FINAL TEST-SET EVALUATION (single / final use of the untouched test set)
+   Model name                    : linear_svm_tuned
+   Algorithm                     : Linear SVM
+   Accuracy                      : 0.7119
+   Precision (macro)             : 0.7083
+   Recall (macro)                : 0.7121
+   Macro F1                      : 0.6801
+   Weighted F1                   : 0.6899
+   Budget: this is the ONLY evaluation of the test set in the pipeline.
+
+7. CROSS-VALIDATION of the selected model (training data only, 5 folds)
+   Accuracy mean                 : 0.7021
+   Accuracy std                  : 0.0404
+   Macro F1 mean                 : 0.6608
+   Macro F1 std                  : 0.0438
+
+8. TIMING / ARTIFACT SIZE
+   Training time (final model)   : 0.010 seconds
+   Test prediction time          : 0.001272 seconds
+   Model file size (pipeline)    : 55,176 bytes
+   Total model artifacts size    : 110,460 bytes
+
+9. SAMPLE PREDICTIONS (real dataset questions, 10 intents)
+   Correct                       : 6 / 10  (accuracy 60.00%)
+    [FAIL] intent=password_reset         predicted=account_access         conf=0.742 (source: test)
+           Q: I locked my account after too many failed attempts.
+    [OK  ] intent=account_access         predicted=account_access         conf=0.780 (source: test)
+           Q: I cannot log into my account.
+    [FAIL] intent=attendance             predicted=help                   conf=0.597 (source: test)
+           Q: What happens if I forget to clock out?
+    [FAIL] intent=payroll                predicted=salary_information     conf=0.531 (source: test)
+           Q: What documents are needed for salary processing?
+    [OK  ] intent=salary_information     predicted=salary_information     conf=0.811 (source: test)
+           Q: How do I download my salary statement?
+    [OK  ] intent=wifi_problems          predicted=wifi_problems          conf=0.885 (source: test)
+           Q: My Wi-Fi shows limited connectivity.
+    [OK  ] intent=email_problems         predicted=email_problems         conf=0.809 (source: test)
+           Q: My email attachments are being blocked.
+    [OK  ] intent=employee_id            predicted=employee_id            conf=0.791 (source: test)
+           Q: How do I request a replacement employee ID card?
+    [FAIL] intent=holidays               predicted=wifi_problems          conf=0.526 (source: test)
+           Q: How do I find the list of upcoming holidays?
+    [OK  ] intent=working_hours          predicted=working_hours          conf=0.768 (source: test)
+           Q: What are the working hours?
+
+10. ERROR ANALYSIS (test set)
+    Misclassified examples       : 17 / 59
+    Most common confusion pairs:
+    goodbye -> greetings  (3x)
+    technical_support -> laptop_problems  (2x)
+    contact_information -> hr_support  (1x)
+    email_problems -> technical_support  (1x)
+    holidays -> wifi_problems  (1x)
+    attendance -> help  (1x)
+    hr_support -> payroll  (1x)
+    laptop_problems -> help  (1x)
+    password_reset -> account_access  (1x)
+    office_location -> working_hours  (1x)
+
+11. DATA LEAKAGE CHECK (per specification STEP 26)
+   [PASS] Test data never used for fitting TF-IDF.
+   [PASS] Test labels were never used for model tuning.
+   [PASS] Test data was not used in cross-validation.
+   [PASS] Hyperparameter tuning used training data only.
+   [PASS] Final test evaluation happened only after model selection.
+
+12. MODEL FILES
+   models/intent_classifier_pipeline.pkl   (PRODUCTION - complete sklearn Pipeline)
+   models/tfidf_vectorizer.pkl            (TF-IDF component copy)
+   models/intent_classifier.pkl           (classifier component copy)
+
+13. PREDICTION CONSISTENCY (STEP 21)
+   Prediction before save == prediction after reload:
+   PASS
+================================================================================
+END OF REPORT
+================================================================================

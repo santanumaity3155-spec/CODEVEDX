@@ -1,0 +1,33 @@
+INTENT CLASSIFICATION - PER-INTENT CLASSIFICATION REPORT
+Final model evaluated on the UNTOUCHED test set.
+Metric format: precision  recall  f1-score  support (per intent)
+==============================================================================
+
+                       precision    recall  f1-score   support
+
+       account_access     0.6667    1.0000    0.8000         2
+           attendance     1.0000    0.5000    0.6667         2
+  contact_information     1.0000    0.5000    0.6667         2
+       email_problems     1.0000    0.6667    0.8000         3
+          employee_id     1.0000    1.0000    1.0000         2
+              goodbye     0.0000    0.0000    0.0000         3
+            greetings     0.4000    1.0000    0.5714         2
+                 help     0.6667    1.0000    0.8000         4
+             holidays     1.0000    0.6667    0.8000         3
+           hr_support     0.6667    0.6667    0.6667         3
+    internet_problems     1.0000    1.0000    1.0000         2
+      laptop_problems     0.6000    0.7500    0.6667         4
+         leave_policy     1.0000    1.0000    1.0000         2
+      office_location     1.0000    0.6667    0.8000         3
+       password_reset     1.0000    0.7500    0.8571         4
+              payroll     0.2500    0.5000    0.3333         2
+   salary_information     0.6667    0.6667    0.6667         3
+             security     0.0000    0.0000    0.0000         2
+software_installation     1.0000    1.0000    1.0000         4
+    technical_support     0.5000    0.3333    0.4000         3
+        wifi_problems     0.6667    1.0000    0.8000         2
+        working_hours     0.5000    1.0000    0.6667         2
+
+             accuracy                         0.7119        59
+            macro avg     0.7083    0.7121    0.6801        59
+         weighted avg     0.7209    0.7119    0.6899        59

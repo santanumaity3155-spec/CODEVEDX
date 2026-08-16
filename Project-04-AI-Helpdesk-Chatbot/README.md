@@ -56,6 +56,84 @@ email_problems, leave_policy / attendance / working_hours / holidays,
 salary_information / payroll, employee_id / hr_support / office_location,
 contact_information / security / technical_support.
 
+## Module 2: NLP Text Preprocessing
+
+Module 2 is **COMPLETE**. `src/nlp_preprocessor.py` provides a reproducible,
+deterministic text preprocessing pipeline used by the Module 3 models:
+
+- lowercasing
+- HTML/URL/email/phone/number/entity token masking
+- punctuation removal
+- tokenization
+- stop-word removal (custom internal-helpdesk stop list)
+- lemmatization
+
+**Tests:** `tests/test_nlp_preprocessing.py` (6 tests). Run with
+`python -m pytest tests/test_nlp_preprocessing.py -v`.
+
+## Module 3: Intent Classification Model Development & Evaluation
+
+Module 3 is **COMPLETE**. `src/train_intent_model.py` implements the
+`IntentTrainingPipeline` and `src/intent_classifier.py` implements the
+`IntentClassifier` prediction wrapper. Everything is reproducible with
+`random_state=42`.
+
+### Running the training pipeline (CLI)
+
+```bash
+python src/train_intent_model.py
+```
+
+### Reproducing the notebook
+
+```bash
+python build_model_training_notebook.py          # build notebooks/model_training.ipynb
+jupyter nbconvert --to notebook --execute notebooks/model_training.ipynb --inplace
+```
+
+The notebook walks through the full pipeline in 20 sections and ends with a
+final quality gate (`MODULE 3: COMPLETE`).
+
+### Results (best model: Linear SVM — `linear_svm_tuned`)
+
+| Metric (test set)        | Value   |
+| ------------------------ | ------- |
+| Accuracy                 | 0.7119  |
+| Macro Precision          | 0.7083  |
+| Macro Recall             | 0.7121  |
+| **Macro F1**             | **0.6801** |
+| Weighted F1              | 0.6899  |
+
+Cross-validation (best model, training data only): macro F1 = 0.6608 ± 0.0438,
+accuracy = 0.7021 ± 0.0404.
+
+6 models compared: Logistic Regression, Linear SVM and Multinomial NB, each
+baseline and hyperparameter-tuned; the best model is selected by the highest
+5-fold CV macro F1.
+
+### Outputs
+
+- **Production model:** `models/intent_classifier_pipeline.pkl`
+  (complete `Pipeline` = TF-IDF + Linear SVM)
+- **Component models:** `models/intent_classifier.pkl`,
+  `models/tfidf_vectorizer.pkl`
+- **Reports:** `outputs/reports/model_comparison.csv`,
+  `outputs/reports/final_model_report.txt`, `outputs/reports/classification_report.txt`,
+  `outputs/reports/top_features_by_intent.txt`, `outputs/reports/error_analysis.csv`,
+  `outputs/reports/model_metadata.json`
+- **Charts:** `outputs/charts/confusion_matrix.png` (all 22 intents)
+
+### Tests
+
+```bash
+python -m pytest -v
+```
+
+The full suite (44 tests) covers Module 1 regression (15), Module 2
+(6) and Module 3 intent-classification (23). See
+`MODULE_3_COMPLETION_REPORT.md` for the full report and the data-leakage
+verification.
+
 ## Setup
 
 ### Prerequisites
@@ -122,10 +200,8 @@ pipeline across 16 sections with real executable cells:
 15. Save Processed Dataset
 16. Final Quality Gate
 
-## Next Steps (Module 2+)
+## Next Steps (Module 4+)
 
-- Module 2: NLP text preprocessing (see `src/nlp_preprocessor.py`)
-- Module 3: Intent classification model training
 - Module 4: Chatbot prediction engine
 - Module 5: Flask API development
 - Module 6: Admin panel and CRUD operations

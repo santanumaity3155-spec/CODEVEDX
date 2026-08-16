@@ -1,0 +1,53 @@
+TOP TF-IDF FEATURES BY INTENT (FINAL MODEL)
+==============================================================================
+Model            : Linear SVM (tuned)
+TF-IDF config    : recommended
+Features (vocab) : 264
+
+Feature measure  : per-class learned linear coefficient (higher => more class-discriminative)
+(the actual sample-order of the matrix follows the fitted class list)
+
+[account_access]
+  account=1.8501, my account=1.2666, do change=0.7772, change my=0.5632, do=0.5226, how do=0.5155, my old=0.5069, old=0.5069, new=0.4749, it=0.4078, how=0.4036, was=0.4002
+[attendance]
+  attendance=2.4465, my attendance=0.9207, overtime=0.7321, period for=0.6161, period=0.6161, if the=0.5419, hours=0.5203, different=0.4769, in=0.4687, there=0.4295, check my=0.4059, incorrect=0.3904
+[contact_information]
+  contact=1.8103, it=1.6293, the=0.7087, details=0.6991, manager=0.6459, my manager=0.6459, find the=0.5716, company=0.5194, should=0.5140, contact number=0.4923, emergency=0.4562, number=0.4545
+[email_problems]
+  my email=1.9919, emails=1.6541, email=0.9978, list=0.8157, do create=0.5441, create=0.5441, cannot=0.5393, do recover=0.4489, recover=0.3769, calendar=0.3165, not=0.3119, the office=0.2870
+[employee_id]
+  employee id=1.3532, id=1.1356, employee=1.1100, my employee=1.0457, do reset=0.4680, card=0.4618, id card=0.4618, name=0.2977, cafeteria=0.2739, can use=0.2312, use my=0.2312, what if=0.2228
+[goodbye]
+  bye=1.5144, take=1.0524, see you=0.9853, questions=0.9185, see=0.8008, good day=0.6242, you=0.5088, day=0.2394, have=0.1955, for=0.0979, do reset=0.0000, reset my=0.0000
+[greetings]
+  good=1.3912, hey=1.3646, hi=1.2689, hello=1.2624, chatbot=0.7521, there=0.3311, are=0.2701, good day=0.1941, you=0.1527
+[help]
+  need=1.5022, can you=1.1681, have=1.0489, me=0.9949, help=0.8660, lost=0.8658, what are=0.6584, don=0.6058, know=0.5645, information=0.4682, support=0.4593, to=0.4434
+[holidays]
+  holiday=1.6693, holidays=1.1283, company holiday=1.0425, paid=0.8763, there any=0.6842, are there=0.6842, any=0.6842, the company=0.6269, if=0.5102, company=0.5100, will=0.4161, does=0.4046
+[hr_support]
+  hr=2.5537, benefits=1.0161, in=0.9001, with hr=0.4923, with=0.4923, from=0.4512, company=0.3527, records=0.3449, my personal=0.3185, personal=0.3014, do contact=0.2622, do report=0.2429
+[internet_problems]
+  ethernet=1.3307, network=1.1583, connection=1.1574, my internet=1.0014, minutes=0.9328, not=0.9055, internet=0.8857, shows=0.8415, why=0.6466, access=0.5906, speed=0.5263, wifi=0.4395
+[laptop_problems]
+  my laptop=1.4162, laptop=1.2527, laptop is=0.6841, laptop won=0.6062, won=0.6062, are not=0.6059, is not=0.5565, sensitive=0.3931, very slow=0.3835, slow=0.3835, has=0.3807, not working=0.3313
+[leave_policy]
+  leave=2.1657, leave policy=0.8960, can take=0.7766, days=0.7648, for leave=0.6900, do apply=0.5268, apply=0.5268, apply for=0.5268, many=0.4912, how many=0.4912, do get=0.3901, request=0.3588
+[office_location]
+  where is=1.2373, where=1.1618, building=0.9083, find=0.7712, is the=0.6340, nearest=0.5725, the nearest=0.5725, find specific=0.5398, specific=0.5398, can find=0.5152, do get=0.4858, station=0.4284
+[password_reset]
+  password=2.0676, my password=1.4558, password reset=0.7822, reset=0.6999, unlock=0.5576, do unlock=0.5576, the password=0.5536, my=0.5180, to reset=0.4645, security questions=0.3681, my security=0.3681, my mobile=0.3078
+[payroll]
+  salary=1.0389, salary credit=0.9630, credit=0.9630, on my=0.8032, when=0.7919, bank account=0.7864, bank=0.7864, payday=0.7515, the salary=0.7226, each=0.6637, who=0.6632, an=0.6356
+[salary_information]
+  salary=1.8610, my salary=1.2631, certificate=0.7738, is my=0.6946, policy=0.6290, view=0.5753, view my=0.5753, details=0.4842, know=0.4242, my=0.3765, the salary=0.3657, how=0.2944
+[security]
+  security=1.3479, when=1.0735, sensitive=0.7974, files=0.7660, link=0.7421, or=0.7286, do report=0.7269, after=0.6775, do if=0.6493, activity=0.6476, to the=0.6429, login=0.6383
+[software_installation]
+  software=1.9186, install=1.6254, my work=1.0152, to install=0.9801, do install=0.7906, license=0.6244, software license=0.6244, tools=0.5955, my software=0.5728, work=0.5023, need to=0.3606, office=0.3008
+[technical_support]
+  up=1.2565, my laptop=0.9077, will=0.8642, support=0.8334, use=0.7171, files=0.6907, laptop=0.6569, during=0.6452, drivers=0.6138, email=0.5343, running very=0.5049, running=0.5049
+[wifi_problems]
+  wi fi=1.4456, fi=1.4456, wi=1.4456, my wi=0.6850, name=0.6085, wifi=0.5234, find the=0.5078, do find=0.3995, network=0.3842, my mobile=0.2337, new=0.2161, find=0.2091
+[working_hours]
+  hours=1.1370, can work=1.1305, policy=1.0811, working hours=1.0671, work=0.9801, change=0.8890, working=0.6494, overtime=0.5480, half day=0.4990, half=0.4990, the office=0.4858, on=0.4655
