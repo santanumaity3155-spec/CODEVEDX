@@ -131,3 +131,126 @@ def sample_genome_scores_df(sample_genome_tags_df: pd.DataFrame) -> pd.DataFrame
             "relevance": pd.array([0.05, 0.5, 0.95] * 2, dtype="float32"),
         }
     )
+
+# ---------------------------------------------------------------------------
+# Module 2 fixtures (content feature engineering)
+# ---------------------------------------------------------------------------
+
+MOVIE_CATALOG = pd.DataFrame(
+    {
+        "movieId": pd.array([1, 2, 3, 4, 5, 6], dtype="int32"),
+        "title": pd.array(
+            [
+                "The Matrix (1999)",
+                "Toy Story (1995)",
+                "Jurassic Park (1993)",
+                "The Godfather (1972)",
+                "The Godfather: Part II (1974)",
+                "Stand By Me (1986)",
+            ],
+            dtype="string",
+        ),
+        "genres": pd.array(
+            [
+                "Action|Sci-Fi|Thriller",
+                "Animation|Children|Comedy",
+                "Adventure|Sci-Fi",
+                "Crime|Drama",
+                "Crime|Drama",
+                "Adventure|Drama",
+            ],
+            dtype="string",
+        ),
+    }
+)
+
+MOVIE_TAGS = pd.DataFrame(
+    {
+        "userId": pd.array([10, 10, 11, 11, 12, 12, 13, 13, 14, 15], dtype="int32"),
+        "movieId": pd.array([1, 1, 2, 2, 3, 3, 4, 4, 5, 5], dtype="int32"),
+        "tag": pd.array(
+            [
+                "sci-fi",
+                "futuristic",
+                "pixar",
+                "animation",
+                "dinosaurs",
+                "Sci-Fi  ",
+                "mafia",
+                "classic",
+                "godfather",
+                "  ",
+            ],
+            dtype="string",
+        ),
+    }
+)
+
+
+@pytest.fixture
+def feature_movies_df() -> pd.DataFrame:
+    """Synthetic cleaned movie catalog (6 movies, movie 6 has no tags)."""
+    return MOVIE_CATALOG.copy()
+
+
+@pytest.fixture
+def feature_tags_df() -> pd.DataFrame:
+    """Synthetic cleaned tags; includes a duplicate-case and a blank tag."""
+    return MOVIE_TAGS.copy()
+
+
+@pytest.fixture
+def feature_paths(tmp_path: Path, monkeypatch) -> dict:
+    """Redirect Module 2 inputs/outputs and TF-IDF tuning to a temp dir.
+
+    Small synthetic corpora need a relaxed ``min_df`` so the vocabulary is
+    non-empty; the production defaults (min_df=2, max_df=0.90) stay untouched.
+    """
+    processed = tmp_path / "processed"
+    models = tmp_path / "models"
+    reports = tmp_path / "reports"
+    processed.mkdir()
+    models.mkdir()
+    reports.mkdir()
+
+    monkeypatch.setattr(config, "PROCESSED_MOVIES_PATH", processed / "movies_clean.csv")
+    monkeypatch.setattr(config, "PROCESSED_TAGS_PATH", processed / "tags_clean.csv")
+    monkeypatch.setattr(
+        config, "PROCESSED_MOVIE_CONTENT_FEATURES_PATH",
+        processed / "movie_content_features.csv",
+    )
+    monkeypatch.setattr(
+        config, "PROCESSED_MOVIE_GENRE_FEATURES_PATH",
+        processed / "movie_genre_features.csv",
+    )
+    monkeypatch.setattr(config, "PROCESSED_MOVIE_TFIDF_PATH", processed / "movie_tfidf.npz")
+    monkeypatch.setattr(
+        config, "PROCESSED_MOVIE_FEATURE_INDEX_PATH",
+        processed / "movie_feature_index.csv",
+    )
+    monkeypatch.setattr(config, "MODELS_DIR", models)
+    monkeypatch.setattr(
+        config, "MOVIE_TFIDF_VECTORIZER_PATH", models / "movie_tfidf_vectorizer.pkl"
+    )
+    monkeypatch.setattr(config, "REPORTS_DIR", reports)
+    monkeypatch.setattr(
+        config, "FEATURE_ENGINEERING_REPORT_JSON_PATH",
+        reports / "feature_engineering_report.json",
+    )
+    monkeypatch.setattr(
+        config, "FEATURE_ENGINEERING_REPORT_TXT_PATH",
+        reports / "feature_engineering_report.txt",
+    )
+    monkeypatch.setattr(config, "TFIDF_MIN_DF", 1)
+    monkeypatch.setattr(config, "TFIDF_MAX_DF", 1.0)
+    return {"processed": processed, "models": models, "reports": reports}
+
+
+@pytest.fixture
+def feature_pipeline(feature_paths, feature_movies_df, feature_tags_df):
+    """A FeatureEngineeringPipeline wired to temp inputs/outputs."""
+    from src.feature_engineering import FeatureEngineeringPipeline
+
+    feature_movies_df.to_csv(config.PROCESSED_MOVIES_PATH, index=False)
+    feature_tags_df.to_csv(config.PROCESSED_TAGS_PATH, index=False)
+    return FeatureEngineeringPipeline()

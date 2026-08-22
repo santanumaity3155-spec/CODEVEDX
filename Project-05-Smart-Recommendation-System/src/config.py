@@ -65,3 +65,48 @@ TOP_MOVIES_MIN_RATINGS = 50
 TOP_MOVIES_REPORT_SIZE = 100
 
 LOG_FILE_NAME = "pipeline.log"
+
+# ---------------------------------------------------------------------------
+# Module 2 - Content feature engineering outputs
+# ---------------------------------------------------------------------------
+# Module 2 builds ML-ready movie representations from the cleaned MovieLens
+# catalog and user tags (processed Module 1 data only - never raw files).
+PROCESSED_MOVIE_CONTENT_FEATURES_PATH = (
+    PROCESSED_DATA_DIR / "movie_content_features.csv"
+)
+PROCESSED_MOVIE_GENRE_FEATURES_PATH = (
+    PROCESSED_DATA_DIR / "movie_genre_features.csv"
+)
+PROCESSED_MOVIE_TFIDF_PATH = PROCESSED_DATA_DIR / "movie_tfidf.npz"
+PROCESSED_MOVIE_FEATURE_INDEX_PATH = (
+    PROCESSED_DATA_DIR / "movie_feature_index.csv"
+)
+
+# Fitted TF-IDF vectorizer (joblib pickle). Loaded independently by Module 3.
+MOVIE_TFIDF_VECTORIZER_PATH = MODELS_DIR / "movie_tfidf_vectorizer.pkl"
+
+# Module 2 reports.
+FEATURE_ENGINEERING_REPORT_JSON_PATH = (
+    REPORTS_DIR / "feature_engineering_report.json"
+)
+FEATURE_ENGINEERING_REPORT_TXT_PATH = (
+    REPORTS_DIR / "feature_engineering_report.txt"
+)
+
+# TF-IDF configuration.
+# IMPORTANT: the vectorizer is fit ONLY on the movie-content corpus so the
+# vocabulary leaks no information from ratings, predictions or evaluation data.
+TFIDF_NGRAM_RANGE = (1, 2)       # unigrams + bigrams capture multi-word tags/terms
+TFIDF_MIN_DF = 2                 # drop terms appearing in fewer than 2 documents
+TFIDF_MAX_DF = 0.90              # drop corpus-frequent terms (generic noise)
+TFIDF_SUBLINEAR_TF = True        # dampen term-frequency saturation (1 + log(tf))
+TFIDF_MAX_FEATURES = 20000        # cap vocabulary size for bounded memory
+TFIDF_NORM = "l2"                # cosine-friendly row normalization
+TFIDF_DTYPE = "float32"          # half-precision sparse matrix to limit memory
+
+# Token pattern: Unicode alphanumeric runs with internal hyphens preserved so
+# MovieLens genres/tags such as "sci-fi" and "film-noir" stay single terms and
+# non-ASCII movie titles (Arabic/Greek/Cyrillic) still yield content tokens.
+# `[^\W_]` is a Unicode-aware "word char except underscore", so meaningful
+# foreign-language title words are retained instead of producing empty documents.
+TFIDF_TOKEN_PATTERN = r"[^\W_]+(?:-[^\W_]+)*"

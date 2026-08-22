@@ -7,4 +7,12 @@ Files:
 - links_clean.csv           cleaned external-ID links (<NA> kept)
 - movies_features_base.csv  recommendation-ready base table (id/title/year/genres + binary genre flags; no ML features yet)
 
+Module 2 feature artifacts (python -m src.feature_engineering):
+- movie_content_features.csv  one content document per movie (title/genres/tags + normalized content_text)
+- movie_genre_features.csv     multi-hot genre flags (vocabulary derived from data)
+- movie_tfidf.npz              sparse TF-IDF matrix (CSR float32)
+- movie_feature_index.csv      deterministic movieId -> contiguous row_index map
+
+Fitted model: models/movie_tfidf_vectorizer.pkl (joblib) - loadable with src.feature_engineering.load_feature_vectorizer().
+
 Genome files are validated but intentionally NOT duplicated into data/processed at Module 1 (~435 MiB); later modules consume them directly from data/raw when required.

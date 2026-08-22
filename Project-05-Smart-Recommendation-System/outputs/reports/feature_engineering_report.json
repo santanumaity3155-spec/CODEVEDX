@@ -1,0 +1,200 @@
+{
+  "module": "Module 2 - Content Feature Engineering",
+  "dataset_name": "ml-25m",
+  "status": "PENDING",
+  "generated_at_utc": "2026-08-22T14:03:40+00:00",
+  "inputs": {
+    "movies": {
+      "path": "data\\processed\\movies_clean.csv",
+      "rows": 62423,
+      "columns": [
+        "movieId",
+        "title",
+        "genres"
+      ]
+    },
+    "tags": {
+      "path": "data\\processed\\tags_clean.csv",
+      "rows": 1093335,
+      "present": true
+    }
+  },
+  "content_documents": {
+    "num_documents": 62423,
+    "num_movies": 62423,
+    "movies_with_tags": 45251,
+    "movies_without_tags": 17172,
+    "missing_content_text": 0,
+    "columns": [
+      "movieId",
+      "title",
+      "release_year",
+      "genres",
+      "normalized_genres",
+      "num_genres",
+      "aggregated_tags",
+      "num_tags",
+      "content_text"
+    ]
+  },
+  "genres": {
+    "genre_feature_count": 20,
+    "genre_vocab": [
+      "(no genres listed)",
+      "Action",
+      "Adventure",
+      "Animation",
+      "Children",
+      "Comedy",
+      "Crime",
+      "Documentary",
+      "Drama",
+      "Fantasy",
+      "Film-Noir",
+      "Horror",
+      "IMAX",
+      "Musical",
+      "Mystery",
+      "Romance",
+      "Sci-Fi",
+      "Thriller",
+      "War",
+      "Western"
+    ],
+    "genre_flag_columns": 20,
+    "movies_with_no_genre": 5062
+  },
+  "tag_statistics": {
+    "total_tag_records": 1093335,
+    "valid_tag_records": 1093296,
+    "unique_tags": 64946,
+    "unique_users_tagging": 14591,
+    "unique_movies_tagged": 45251,
+    "avg_unique_tags_per_movie": 10.2362,
+    "most_frequent_tags": {
+      "sci-fi": 8795,
+      "atmospheric": 7053,
+      "action": 6783,
+      "comedy": 6370,
+      "surreal": 5584,
+      "funny": 5368,
+      "based on a book": 5196,
+      "twist ending": 4904,
+      "visually appealing": 4691,
+      "romance": 4489,
+      "dystopia": 4329,
+      "dark comedy": 4133,
+      "quirky": 3999,
+      "bd-r": 3966,
+      "thought-provoking": 3847,
+      "fantasy": 3818,
+      "stylized": 3758,
+      "classic": 3735,
+      "psychology": 3646,
+      "woman director": 3590
+    }
+  },
+  "tfidf": {
+    "vocabulary_size": 20000,
+    "matrix_rows": 62423,
+    "matrix_columns": 20000,
+    "non_zero_elements": 1250369,
+    "sparsity_percent": 99.899847,
+    "matrix_dtype": "float32",
+    "matrix_shape": [
+      62423,
+      20000
+    ],
+    "vectorizer_configuration": {
+      "lowercase": true,
+      "token_pattern": "[^\\W_]+(?:-[^\\W_]+)*",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 2,
+      "max_df": 0.9,
+      "max_features": 20000,
+      "sublinear_tf": true,
+      "norm": "l2",
+      "dtype": "float32"
+    }
+  },
+  "feature_index": {
+    "rows": 62423,
+    "row_index_min": 0,
+    "row_index_max": 62422,
+    "indices_contiguous": true
+  },
+  "quality_checks": [
+    {
+      "check": "every_movie_has_feature_row",
+      "passed": true,
+      "detail": "movies=62423 content_rows=62423"
+    },
+    {
+      "check": "movie_ids_unique_in_content",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "matrix_rows_equal_movie_count",
+      "passed": true,
+      "detail": "matrix_rows=62423"
+    },
+    {
+      "check": "feature_index_rows_equal_movie_count",
+      "passed": true,
+      "detail": "index_rows=62423"
+    },
+    {
+      "check": "matrix_no_nan",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "matrix_no_inf",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "vocabulary_non_empty",
+      "passed": true,
+      "detail": "vocab=20000"
+    },
+    {
+      "check": "feature_index_unique_movieid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "ordering_sorted_ascending",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "indices_contiguous",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "different_content_different_vectors",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "movies_without_tags_have_content",
+      "passed": true,
+      "detail": "no_tag_movies=17172"
+    }
+  ],
+  "quality_checks_all_passed": true,
+  "generated_files": {
+    "movie_content_features.csv": "data\\processed\\movie_content_features.csv",
+    "movie_genre_features.csv": "data\\processed\\movie_genre_features.csv",
+    "movie_tfidf.npz": "data\\processed\\movie_tfidf.npz",
+    "movie_tfidf_vectorizer.pkl": "models\\movie_tfidf_vectorizer.pkl",
+    "movie_feature_index.csv": "data\\processed\\movie_feature_index.csv"
+  },
+  "feature_quality_gate": "PASS"
+}

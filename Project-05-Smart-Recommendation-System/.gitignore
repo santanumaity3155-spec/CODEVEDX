@@ -29,6 +29,12 @@ logs/*.log
 # control. The directory itself is kept via .gitkeep.
 data/processed/*.csv
 
+# Module 2 sparse TF-IDF matrix is reproducible via the feature pipeline.
+data/processed/*.npz
+
+# Fitted models are reproducible via the feature pipeline.
+models/*.pkl
+
 # Generated chart images are reproducible via `python -m src.pipeline`.
 outputs/charts/*.png
 outputs/**/*.html

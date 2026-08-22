@@ -1,0 +1,83 @@
+==============================================================================
+MOVIELENS 25M - MODULE 2 CONTENT FEATURE ENGINEERING REPORT
+==============================================================================
+Dataset                : ml-25m
+Generated (UTC)        : 2026-08-22T14:03:40+00:00
+Feature quality gate   : PASS
+
+Inputs
+------------------------------------------------------------------------------
+  movies_clean rows    : 62,423
+  tags_clean rows      : 1,093,335 (present=True)
+
+Content documents
+------------------------------------------------------------------------------
+  documents            : 62,423
+  movies               : 62,423
+  movies with tags     : 45,251
+  movies without tags  : 17,172
+
+Genres
+------------------------------------------------------------------------------
+  distinct genres      : 20
+  genre flag columns   : 20
+  movies with no genre : 5,062
+
+Tags
+------------------------------------------------------------------------------
+  tag records          : 1,093,335
+  valid tag records    : 1,093,296
+  unique tags          : 64,946
+  movies tagged        : 45,251
+
+TF-IDF
+------------------------------------------------------------------------------
+  vocabulary size      : 20,000
+  matrix rows          : 62,423
+  matrix columns       : 20,000
+  non-zero elements    : 1,250,369
+  sparsity             : 99.8998%
+  matrix dtype         : float32
+  configuration:
+    lowercase       : True
+    token_pattern   : [^\W_]+(?:-[^\W_]+)*
+    ngram_range     : [1, 2]
+    min_df          : 2
+    max_df          : 0.9
+    max_features    : 20000
+    sublinear_tf    : True
+    norm            : l2
+    dtype           : float32
+
+Feature index
+------------------------------------------------------------------------------
+  rows                 : 62,423
+  row range            : [0 .. 62422]
+  contiguous           : True
+
+Quality checks
+------------------------------------------------------------------------------
+  [PASS] every_movie_has_feature_row                  movies=62423 content_rows=62423
+  [PASS] movie_ids_unique_in_content                  
+  [PASS] matrix_rows_equal_movie_count                matrix_rows=62423
+  [PASS] feature_index_rows_equal_movie_count         index_rows=62423
+  [PASS] matrix_no_nan                                
+  [PASS] matrix_no_inf                                
+  [PASS] vocabulary_non_empty                         vocab=20000
+  [PASS] feature_index_unique_movieid                 
+  [PASS] ordering_sorted_ascending                    
+  [PASS] indices_contiguous                           
+  [PASS] different_content_different_vectors          
+  [PASS] movies_without_tags_have_content             no_tag_movies=17172
+
+Generated files
+------------------------------------------------------------------------------
+  movie_content_features.csv: data\processed\movie_content_features.csv
+  movie_genre_features.csv: data\processed\movie_genre_features.csv
+  movie_tfidf.npz       : data\processed\movie_tfidf.npz
+  movie_tfidf_vectorizer.pkl: models\movie_tfidf_vectorizer.pkl
+  movie_feature_index.csv: data\processed\movie_feature_index.csv
+
+==============================================================================
+STATUS: PASS
+==============================================================================
