@@ -2,9 +2,10 @@
 
 A movie recommendation system built on the **MovieLens 25M** dataset.
 The project is developed in staged modules; **Module 1 (data foundation,
-exploration & preprocessing) and Module 2 (content feature engineering) are
-complete**. Later modules will add similarity/recommendation algorithms,
-evaluation, personalization, and a final application layer.
+exploration & preprocessing), Module 2 (content feature engineering) and
+Module 3 (content-based recommendation engine + offline evaluation) are
+complete**. Later modules will add personalization and a final application
+layer.
 
 ## Objective
 
@@ -150,12 +151,62 @@ always produce the same movie ordering, feature index, vocabulary and a
 numerically equal TF-IDF matrix. It refuses to finalize unless every feature
 quality check passes (12/12, gate PASS).
 
+## How to run Module 3 (recommendation engine)
+
+Requires the Module 1 processed outputs and the Module 2 feature artifacts:
+
+```bash
+python -m src.pipeline --module 3                 # full run incl. regression tests
+python -m src.pipeline --module 3 --skip-regression-tests   # faster iteration
+python scripts/smoke_test_recommendations.py      # real-data demo
+```
+
+The pipeline is deterministic: same inputs produce identical recommendations,
+feature-index ordering and reports. It loads the Module 2 artifacts as-is
+(the vectorizer is verified, never re-fit), generates sample recommendations,
+runs the leakage-free offline evaluation, executes the Module 3 quality
+checks (optionally the full pytest regression suite) and writes JSON + TXT
+reports under `outputs/reports/`.
+
+Programmatic use:
+
+```python
+from src.recommender import ContentRecommender
+
+recommender = ContentRecommender.from_artifacts()
+recs = recommender.recommend_similar_movies(1, top_k=10)
+# columns: rank, movieId, title, genres, similarity
+```
+
+### Module 3 design notes
+
+* **Similarity** - exact cosine over the sparse TF-IDF rows; the 62,423 x
+  20,000 matrix is never densified (one dense score vector per query).
+  Deterministic ordering: descending similarity, ties broken by ascending
+  `movieId`. The seed movie can never be returned; unknown IDs raise
+  `MovieNotFoundError` at engine level and degrade gracefully (empty result)
+  at the recommender level.
+* **Quality control** - movies with fewer than
+  `RECOMMENDATION_MIN_MOVIE_RATINGS` ratings (configurable) are excluded from
+  candidates; movies with missing titles/genres are never recommended.
+  Optional per-call filters: `genres`, `min_year`, `max_year`, `min_ratings`.
+* **Offline evaluation protocol (leakage-free)** - for each evaluated user the
+  interactions are split by timestamp: the newest
+  `EVALUATION_TEST_FRACTION` share (at least `EVALUATION_MIN_TEST_ITEMS`)
+  becomes held-out ground truth; all earlier interactions form the history.
+  The content profile is the mean TF-IDF vector of history movies rated >=
+  `EVALUATION_LIKE_THRESHOLD`; every history movie is excluded as a candidate;
+  relevant items are liked test movies only. Metrics: Precision@K,
+  Recall@K, HitRate@K, MAP@K, NDCG@K for each configured K.
+* **Personalization** remains a placeholder (`src/personalization.py`) and is
+  scheduled for a later module, per the original module roadmap.
+
 ## How to run tests
 
 ```bash
-python -m pytest tests -v            # full suite (Module 1 + Module 2)
-python -m pytest tests/test_feature_engineering.py -v   # Module 2 only
-python -m pytest tests -q            # quiet gate
+python -m pytest tests -q            # full suite (Modules 1-3)
+python -m pytest tests/test_similarity_engine.py tests/test_recommender.py \
+    tests/test_evaluation.py tests/test_recommendation_pipeline.py -v  # Module 3 only
 ```
 
 Tests never modify `data/raw` or the real `data/processed` / `models`
@@ -206,6 +257,13 @@ Reports (`outputs/reports/`):
 - `feature_engineering_report.txt` - Module 2 feature report (human-readable)
 - `feature_engineering_report.json` - Module 2 metrics (movies, documents, genres,
   tags, TF-IDF vocabulary/matrix/sparsity, vectorizer config, quality checks)
+- `recommendation_quality_report.txt` / `.json` - Module 3 sample recommendations
+  for real seed movies plus the recommendation quality checks
+- `evaluation_report.txt` / `.json` - Module 3 offline evaluation protocol,
+  evaluated-user counts and Precision@K / Recall@K / HitRate@K / MAP@K /
+  NDCG@K metrics
+- `module3_quality_gate_report.txt` / `.json` - final Module 3 gate verdict
+  (checks + regression-test outcome)
 
 ## Project structure
 
@@ -225,9 +283,13 @@ Project-05-Smart-Recommendation-System/
 │   ├── analysis.py          # ratings/users/movies/genres/tags analyses
 │   ├── visualization.py     # chart generation
 │   ├── reporting.py         # TXT + JSON quality reports
-│   ├── pipeline.py          # Module 1 end-to-end entry point
+│   ├── pipeline.py          # Module 1 + Module 3 entry points (--module {1,3})
+│   ├── similarity_engine.py    # Module 3 exact cosine top-K over TF-IDF rows
+│   ├── recommender.py          # Module 3 public recommend_similar_movies API
+│   ├── evaluation.py           # Module 3 ranking metrics + leakage-free evaluator
+│   └── personalization.py      # placeholder (later module)
 │   └── feature_engineering.py  # Module 2 content features (python -m src.feature_engineering)
-├── tests/                   # pytest suite (Module 1 + Module 2) + hash manifest
+├── tests/                   # pytest suite (Modules 1-3) + hash manifest
 ├── logs/                    # pipeline.log (rotating)
 ├── outputs/
 │   ├── charts/
@@ -237,8 +299,8 @@ Project-05-Smart-Recommendation-System/
 └── README.md
 ```
 
-Placeholder modules reserved for later stages (`similarity_engine.py`,
-`recommender.py`, `personalization.py`, `evaluation.py`) are intentionally
-untouched in Modules 1-2; Module 3 will consume the artifacts generated here
-(`movie_tfidf.npz`, `movie_feature_index.csv`, content documents, and the
-loaded vectorizer).
+Module 3 consumed the reserved placeholders `similarity_engine.py`,
+`recommender.py` and `evaluation.py`, building on the artifacts generated by
+Modules 1-2 (`movie_tfidf.npz`, `movie_feature_index.csv`, content documents
+and the fitted vectorizer). `personalization.py` remains a placeholder for
+the next module.

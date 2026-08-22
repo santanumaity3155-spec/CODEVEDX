@@ -1,0 +1,40 @@
+{
+  "protocol": "Per-user temporal split: newest 20% of each user's interactions (min 1) held out as ground truth; profiles built from earlier likes only (rating >= 4.0); all history movies excluded from candidates.",
+  "params": {
+    "k_values": [
+      5,
+      10
+    ],
+    "like_threshold": 4.0,
+    "test_fraction": 0.2,
+    "min_test_items": 1,
+    "min_user_ratings": 5,
+    "max_users": 1500,
+    "seed": 42,
+    "popularity_filter_applied": false
+  },
+  "users": {
+    "eligible": 1500,
+    "evaluated": 1461,
+    "skipped_no_liked_history": 4,
+    "skipped_no_relevant_test_items": 35
+  },
+  "metrics_at_k": {
+    "5": {
+      "precision": 0.07734428473648226,
+      "recall": 0.038619927987712355,
+      "hit_rate": 0.2662559890485969,
+      "map": 0.0511527492584988,
+      "ndcg": 0.08464661438572751
+    },
+    "10": {
+      "precision": 0.06379192334017786,
+      "recall": 0.06192209392483607,
+      "hit_rate": 0.3702943189596167,
+      "map": 0.040939763596517825,
+      "ndcg": 0.08356863490041802
+    }
+  },
+  "generated_at_utc": "2026-08-22T18:00:00.011170+00:00",
+  "status": "PASS"
+}

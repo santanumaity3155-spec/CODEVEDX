@@ -1,0 +1,23 @@
+==============================================================================
+MODULE 3 - QUALITY GATE REPORT
+==============================================================================
+Generated (UTC): 2026-08-22T18:00:00.015199+00:00
+Regression tests executed: True
+Regression result: PASS (48.8s)
+
+Checks
+------------------------------------------------------------------------------
+  [PASS] engine_loaded_and_dimensions_agree - matrix=62423x20000
+  [PASS] candidate_pool_non_empty - candidates=62423
+  [PASS] top_k_respected - top_k=10, samples=5
+  [PASS] self_recommendation_excluded
+  [PASS] duplicate_recommendations_absent
+  [PASS] recommendations_sorted_descending
+  [PASS] recommended_metadata_valid
+  [PASS] unknown_movie_handled_gracefully - unknown movieId returned an empty frame instead of raising
+  [PASS] strict_engine_raises_movie_not_found - SimilarityEngine raises MovieNotFoundError for unknown IDs
+  [PASS] evaluation_metrics_executed - k_values=['10', '5']
+  [PASS] module1_module2_regression_tests - 269 passed in 44.17s
+
+GATE: PASS
+==============================================================================

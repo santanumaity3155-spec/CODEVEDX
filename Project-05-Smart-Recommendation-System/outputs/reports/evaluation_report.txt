@@ -1,0 +1,34 @@
+==============================================================================
+MODULE 3 - OFFLINE EVALUATION REPORT
+==============================================================================
+Generated (UTC): 2026-08-22T18:00:00.011170+00:00
+
+Protocol:
+  Per-user temporal split: newest 20% of each user's interactions (min 1)
+  held out as ground truth; profiles built from earlier likes only (rating
+  >= 4.0); all history movies excluded from candidates.
+
+Configuration:
+  K values                : [5, 10]
+  like threshold          : 4.0
+  test fraction           : 0.2
+  min test items per user : 1
+  min user history        : 5
+  max evaluated users     : 1500
+  random seed             : 42
+  popularity filter       : False
+
+Users:
+  eligible                : 1500
+  evaluated               : 1461
+  skipped (no liked hist) : 4
+  skipped (no liked test) : 35
+
+Metrics (means over evaluated users)
+------------------------------------------------------------------------------
+     K  Precision     Recall    HitRate        MAP       NDCG
+     5     0.0773     0.0386     0.2663     0.0512     0.0846
+    10     0.0638     0.0619     0.3703     0.0409     0.0836
+
+STATUS: PASS
+==============================================================================

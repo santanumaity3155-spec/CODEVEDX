@@ -1,0 +1,481 @@
+{
+  "module": "Module 3 - Content-Based Recommendation Engine",
+  "generated_at_utc": "2026-08-22T17:59:11.177748+00:00",
+  "dataset_name": "ml-25m",
+  "engine": {
+    "n_movies": 62423,
+    "n_features": 20000,
+    "nnz": 1250369
+  },
+  "catalog": {
+    "movies": 62423,
+    "candidates": 13176
+  },
+  "config": {
+    "top_k": 10,
+    "min_movie_ratings": 50,
+    "seed_title_hints": [
+      "Toy Story",
+      "Braveheart",
+      "Jurassic Park",
+      "Matrix",
+      "Back to the Future"
+    ],
+    "num_seeds": 5
+  },
+  "samples": [
+    {
+      "seed": {
+        "movieId": 1,
+        "title": "Toy Story (1995)",
+        "genres": "Adventure|Animation|Children|Comedy|Fantasy"
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "movieId": 3114,
+          "title": "Toy Story 2 (1999)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "similarity": 0.4648210953451209
+        },
+        {
+          "rank": 2,
+          "movieId": 596,
+          "title": "Pinocchio (1940)",
+          "genres": "Animation|Children|Fantasy|Musical",
+          "similarity": 0.31688001483331285
+        },
+        {
+          "rank": 3,
+          "movieId": 6377,
+          "title": "Finding Nemo (2003)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "similarity": 0.30247968214023224
+        },
+        {
+          "rank": 4,
+          "movieId": 8961,
+          "title": "Incredibles, The (2004)",
+          "genres": "Action|Adventure|Animation|Children|Comedy",
+          "similarity": 0.2828948243806305
+        },
+        {
+          "rank": 5,
+          "movieId": 78499,
+          "title": "Toy Story 3 (2010)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy|IMAX",
+          "similarity": 0.27308844255186854
+        },
+        {
+          "rank": 6,
+          "movieId": 4886,
+          "title": "Monsters, Inc. (2001)",
+          "genres": "Adventure|Animation|Children|Comedy|Fantasy",
+          "similarity": 0.27011851171097684
+        },
+        {
+          "rank": 7,
+          "movieId": 201588,
+          "title": "Toy Story 4 (2019)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "similarity": 0.26507216360341324
+        },
+        {
+          "rank": 8,
+          "movieId": 120474,
+          "title": "Toy Story That Time Forgot (2014)",
+          "genres": "Animation|Children",
+          "similarity": 0.2494550634002613
+        },
+        {
+          "rank": 9,
+          "movieId": 45517,
+          "title": "Cars (2006)",
+          "genres": "Animation|Children|Comedy",
+          "similarity": 0.24804615278203002
+        },
+        {
+          "rank": 10,
+          "movieId": 2355,
+          "title": "Bug's Life, A (1998)",
+          "genres": "Adventure|Animation|Children|Comedy",
+          "similarity": 0.24533571582140615
+        }
+      ]
+    },
+    {
+      "seed": {
+        "movieId": 110,
+        "title": "Braveheart (1995)",
+        "genres": "Action|Drama|War"
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "movieId": 1204,
+          "title": "Lawrence of Arabia (1962)",
+          "genres": "Adventure|Drama|War",
+          "similarity": 0.31191986982922115
+        },
+        {
+          "rank": 2,
+          "movieId": 1287,
+          "title": "Ben-Hur (1959)",
+          "genres": "Action|Adventure|Drama",
+          "similarity": 0.30501533823673216
+        },
+        {
+          "rank": 3,
+          "movieId": 527,
+          "title": "Schindler's List (1993)",
+          "genres": "Drama|War",
+          "similarity": 0.30228169109190944
+        },
+        {
+          "rank": 4,
+          "movieId": 590,
+          "title": "Dances with Wolves (1990)",
+          "genres": "Adventure|Drama|Western",
+          "similarity": 0.29789851046600235
+        },
+        {
+          "rank": 5,
+          "movieId": 1090,
+          "title": "Platoon (1986)",
+          "genres": "Drama|War",
+          "similarity": 0.27862788628849966
+        },
+        {
+          "rank": 6,
+          "movieId": 1250,
+          "title": "Bridge on the River Kwai, The (1957)",
+          "genres": "Adventure|Drama|War",
+          "similarity": 0.27394515457078333
+        },
+        {
+          "rank": 7,
+          "movieId": 1960,
+          "title": "Last Emperor, The (1987)",
+          "genres": "Drama",
+          "similarity": 0.26997144246049554
+        },
+        {
+          "rank": 8,
+          "movieId": 318,
+          "title": "Shawshank Redemption, The (1994)",
+          "genres": "Crime|Drama",
+          "similarity": 0.26878871606463617
+        },
+        {
+          "rank": 9,
+          "movieId": 2028,
+          "title": "Saving Private Ryan (1998)",
+          "genres": "Action|Drama|War",
+          "similarity": 0.2682600721879672
+        },
+        {
+          "rank": 10,
+          "movieId": 1225,
+          "title": "Amadeus (1984)",
+          "genres": "Drama",
+          "similarity": 0.2647018988330956
+        }
+      ]
+    },
+    {
+      "seed": {
+        "movieId": 480,
+        "title": "Jurassic Park (1993)",
+        "genres": "Action|Adventure|Sci-Fi|Thriller"
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "movieId": 1544,
+          "title": "Lost World: Jurassic Park, The (1997)",
+          "genres": "Action|Adventure|Sci-Fi|Thriller",
+          "similarity": 0.33360435274484596
+        },
+        {
+          "rank": 2,
+          "movieId": 589,
+          "title": "Terminator 2: Judgment Day (1991)",
+          "genres": "Action|Sci-Fi",
+          "similarity": 0.33012170108907896
+        },
+        {
+          "rank": 3,
+          "movieId": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "similarity": 0.3244011712034217
+        },
+        {
+          "rank": 4,
+          "movieId": 1198,
+          "title": "Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)",
+          "genres": "Action|Adventure",
+          "similarity": 0.3063017171047272
+        },
+        {
+          "rank": 5,
+          "movieId": 1097,
+          "title": "E.T. the Extra-Terrestrial (1982)",
+          "genres": "Children|Drama|Sci-Fi",
+          "similarity": 0.3054096531822709
+        },
+        {
+          "rank": 6,
+          "movieId": 2628,
+          "title": "Star Wars: Episode I - The Phantom Menace (1999)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "similarity": 0.2717909383515738
+        },
+        {
+          "rank": 7,
+          "movieId": 4638,
+          "title": "Jurassic Park III (2001)",
+          "genres": "Action|Adventure|Sci-Fi|Thriller",
+          "similarity": 0.26431760057906284
+        },
+        {
+          "rank": 8,
+          "movieId": 780,
+          "title": "Independence Day (a.k.a. ID4) (1996)",
+          "genres": "Action|Adventure|Sci-Fi|Thriller",
+          "similarity": 0.25217687980248893
+        },
+        {
+          "rank": 9,
+          "movieId": 2987,
+          "title": "Who Framed Roger Rabbit? (1988)",
+          "genres": "Adventure|Animation|Children|Comedy|Crime|Fantasy|Mystery",
+          "similarity": 0.251837693203917
+        },
+        {
+          "rank": 10,
+          "movieId": 356,
+          "title": "Forrest Gump (1994)",
+          "genres": "Comedy|Drama|Romance|War",
+          "similarity": 0.25155092064170664
+        }
+      ]
+    },
+    {
+      "seed": {
+        "movieId": 2571,
+        "title": "Matrix, The (1999)",
+        "genres": "Action|Sci-Fi|Thriller"
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "movieId": 6365,
+          "title": "Matrix Reloaded, The (2003)",
+          "genres": "Action|Adventure|Sci-Fi|Thriller|IMAX",
+          "similarity": 0.42951126357804603
+        },
+        {
+          "rank": 2,
+          "movieId": 6934,
+          "title": "Matrix Revolutions, The (2003)",
+          "genres": "Action|Adventure|Sci-Fi|Thriller|IMAX",
+          "similarity": 0.39192992306230356
+        },
+        {
+          "rank": 3,
+          "movieId": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "similarity": 0.31280620510798113
+        },
+        {
+          "rank": 4,
+          "movieId": 589,
+          "title": "Terminator 2: Judgment Day (1991)",
+          "genres": "Action|Sci-Fi",
+          "similarity": 0.294114972234426
+        },
+        {
+          "rank": 5,
+          "movieId": 1240,
+          "title": "Terminator, The (1984)",
+          "genres": "Action|Sci-Fi|Thriller",
+          "similarity": 0.2664584555875761
+        },
+        {
+          "rank": 6,
+          "movieId": 924,
+          "title": "2001: A Space Odyssey (1968)",
+          "genres": "Adventure|Drama|Sci-Fi",
+          "similarity": 0.2548929167856996
+        },
+        {
+          "rank": 7,
+          "movieId": 541,
+          "title": "Blade Runner (1982)",
+          "genres": "Action|Sci-Fi|Thriller",
+          "similarity": 0.2524271758449736
+        },
+        {
+          "rank": 8,
+          "movieId": 480,
+          "title": "Jurassic Park (1993)",
+          "genres": "Action|Adventure|Sci-Fi|Thriller",
+          "similarity": 0.2459561601873857
+        },
+        {
+          "rank": 9,
+          "movieId": 79132,
+          "title": "Inception (2010)",
+          "genres": "Action|Crime|Drama|Mystery|Sci-Fi|Thriller|IMAX",
+          "similarity": 0.23823232022666418
+        },
+        {
+          "rank": 10,
+          "movieId": 1748,
+          "title": "Dark City (1998)",
+          "genres": "Adventure|Film-Noir|Sci-Fi|Thriller",
+          "similarity": 0.23758240561259739
+        }
+      ]
+    },
+    {
+      "seed": {
+        "movieId": 1270,
+        "title": "Back to the Future (1985)",
+        "genres": "Adventure|Comedy|Sci-Fi"
+      },
+      "recommendations": [
+        {
+          "rank": 1,
+          "movieId": 2011,
+          "title": "Back to the Future Part II (1989)",
+          "genres": "Adventure|Comedy|Sci-Fi",
+          "similarity": 0.5058984840165391
+        },
+        {
+          "rank": 2,
+          "movieId": 2012,
+          "title": "Back to the Future Part III (1990)",
+          "genres": "Adventure|Comedy|Sci-Fi|Western",
+          "similarity": 0.4009220241314492
+        },
+        {
+          "rank": 3,
+          "movieId": 1097,
+          "title": "E.T. the Extra-Terrestrial (1982)",
+          "genres": "Children|Drama|Sci-Fi",
+          "similarity": 0.2802767991228926
+        },
+        {
+          "rank": 4,
+          "movieId": 260,
+          "title": "Star Wars: Episode IV - A New Hope (1977)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "similarity": 0.2595927137434328
+        },
+        {
+          "rank": 5,
+          "movieId": 1198,
+          "title": "Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)",
+          "genres": "Action|Adventure",
+          "similarity": 0.24682895514393455
+        },
+        {
+          "rank": 6,
+          "movieId": 1240,
+          "title": "Terminator, The (1984)",
+          "genres": "Action|Sci-Fi|Thriller",
+          "similarity": 0.24230969375768732
+        },
+        {
+          "rank": 7,
+          "movieId": 1196,
+          "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "similarity": 0.2382702894231139
+        },
+        {
+          "rank": 8,
+          "movieId": 2987,
+          "title": "Who Framed Roger Rabbit? (1988)",
+          "genres": "Adventure|Animation|Children|Comedy|Crime|Fantasy|Mystery",
+          "similarity": 0.23103721993718077
+        },
+        {
+          "rank": 9,
+          "movieId": 480,
+          "title": "Jurassic Park (1993)",
+          "genres": "Action|Adventure|Sci-Fi|Thriller",
+          "similarity": 0.22125809587217063
+        },
+        {
+          "rank": 10,
+          "movieId": 1210,
+          "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+          "genres": "Action|Adventure|Sci-Fi",
+          "similarity": 0.21930975650478318
+        }
+      ]
+    }
+  ],
+  "quality_checks": [
+    {
+      "check": "engine_loaded_and_dimensions_agree",
+      "passed": true,
+      "detail": "matrix=62423x20000"
+    },
+    {
+      "check": "candidate_pool_non_empty",
+      "passed": true,
+      "detail": "candidates=62423"
+    },
+    {
+      "check": "top_k_respected",
+      "passed": true,
+      "detail": "top_k=10, samples=5"
+    },
+    {
+      "check": "self_recommendation_excluded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "duplicate_recommendations_absent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "recommendations_sorted_descending",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "recommended_metadata_valid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "unknown_movie_handled_gracefully",
+      "passed": true,
+      "detail": "unknown movieId returned an empty frame instead of raising"
+    },
+    {
+      "check": "strict_engine_raises_movie_not_found",
+      "passed": true,
+      "detail": "SimilarityEngine raises MovieNotFoundError for unknown IDs"
+    },
+    {
+      "check": "evaluation_metrics_executed",
+      "passed": true,
+      "detail": "k_values=['10', '5']"
+    },
+    {
+      "check": "module1_module2_regression_tests",
+      "passed": true,
+      "detail": "269 passed in 44.17s"
+    }
+  ],
+  "status": "PASS"
+}

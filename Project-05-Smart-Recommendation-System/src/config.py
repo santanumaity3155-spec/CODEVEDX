@@ -110,3 +110,68 @@ TFIDF_DTYPE = "float32"          # half-precision sparse matrix to limit memory
 # `[^\W_]` is a Unicode-aware "word char except underscore", so meaningful
 # foreign-language title words are retained instead of producing empty documents.
 TFIDF_TOKEN_PATTERN = r"[^\W_]+(?:-[^\W_]+)*"
+
+# ---------------------------------------------------------------------------
+# Module 3 - Recommendation engine (similarity, recommender, evaluation)
+# ---------------------------------------------------------------------------
+# Report outputs (same conventions as Modules 1-2: JSON + TXT pairs).
+RECOMMENDATION_REPORT_JSON_PATH = (
+    REPORTS_DIR / "recommendation_quality_report.json"
+)
+RECOMMENDATION_REPORT_TXT_PATH = REPORTS_DIR / "recommendation_quality_report.txt"
+EVALUATION_REPORT_JSON_PATH = REPORTS_DIR / "evaluation_report.json"
+EVALUATION_REPORT_TXT_PATH = REPORTS_DIR / "evaluation_report.txt"
+MODULE3_QUALITY_GATE_JSON_PATH = REPORTS_DIR / "module3_quality_gate_report.json"
+MODULE3_QUALITY_GATE_TXT_PATH = REPORTS_DIR / "module3_quality_gate_report.txt"
+
+# Default number of recommendations returned per request.
+DEFAULT_TOP_K = 10
+
+# Quality control: a movie must have at least this many ratings to be
+# recommended. Prevents obscure titles with a handful of interactions from
+# dominating similarity rankings. Set to 0 (or None) to disable filtering.
+# Aligned with the Module 1 popularity-report threshold for consistency.
+RECOMMENDATION_MIN_MOVIE_RATINGS = 50
+
+# Number of seed movies showcased in the recommendation-quality report.
+# Seeds are resolved dynamically by searching real catalog titles
+# (case-insensitive substring match, most-rated match wins).
+RECOMMENDATION_REPORT_NUM_SEEDS = 5
+RECOMMENDATION_SEED_TITLE_HINTS = (
+    "Toy Story",
+    "Braveheart",
+    "Jurassic Park",
+    "Matrix",
+    "Back to the Future",
+)
+
+# Chunk size (rows) when streaming the large ratings_clean.csv for
+# per-movie popularity aggregation.
+POPULARITY_CHUNKSIZE = 5_000_000
+
+# Dtypes used when reading the processed ratings dataset.
+PROCESSED_RATINGS_DTYPE = {
+    "userId": "int32",
+    "movieId": "int32",
+    "rating": "float32",
+    "timestamp": "int64",
+}
+
+# --- Offline evaluation configuration ---------------------------------------
+# Protocol (leakage-free, documented in src/evaluation.py):
+#   * interactions are split PER USER by timestamp;
+#   * the most recent `EVALUATION_TEST_FRACTION` share (at least
+#     `EVALUATION_MIN_TEST_ITEMS`) of each evaluated user's interactions
+#     becomes the held-out ground truth ("test");
+#   * all earlier interactions ("train") drive the user profile vector and
+#     the already-seen exclusion set;
+#   * a test movie counts as relevant when its rating is
+#     >= EVALUATION_LIKE_THRESHOLD (a "liked" movie).
+EVALUATION_K_VALUES = (5, 10)
+EVALUATION_LIKE_THRESHOLD = 4.0
+EVALUATION_TEST_FRACTION = 0.2
+EVALUATION_MIN_TEST_ITEMS = 1
+EVALUATION_MIN_USER_RATINGS = 5      # users with fewer interactions are skipped
+EVALUATION_MAX_USERS = 1500          # cap evaluated users for bounded runtime
+EVALUATION_PROGRESS_LOG_EVERY = 250  # log progress every N evaluated users
+TFIDF_TOKEN_PATTERN = r"[^\W_]+(?:-[^\W_]+)*"

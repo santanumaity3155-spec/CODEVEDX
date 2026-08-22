@@ -1,0 +1,90 @@
+==============================================================================
+MODULE 3 - RECOMMENDATION QUALITY REPORT
+==============================================================================
+Generated (UTC): 2026-08-22T17:59:11.177748+00:00
+Dataset: ml-25m
+
+Artifacts loaded:
+  movies in feature index : 62423
+  TF-IDF features         : 20000
+  matrix non-zeros        : 1250369
+  catalog movies          : 62423
+  candidate pool (quality): 13176
+  min movie ratings       : 50
+  top_k                   : 10
+
+Sample recommendations
+------------------------------------------------------------------------------
+Seed #1: Toy Story (1995) [Adventure|Animation|Children|Comedy|Fantasy]
+   1. Toy Story 2 (1999)                                   (id=3114, score=0.4648)
+   2. Pinocchio (1940)                                     (id=596, score=0.3169)
+   3. Finding Nemo (2003)                                  (id=6377, score=0.3025)
+   4. Incredibles, The (2004)                              (id=8961, score=0.2829)
+   5. Toy Story 3 (2010)                                   (id=78499, score=0.2731)
+   6. Monsters, Inc. (2001)                                (id=4886, score=0.2701)
+   7. Toy Story 4 (2019)                                   (id=201588, score=0.2651)
+   8. Toy Story That Time Forgot (2014)                    (id=120474, score=0.2495)
+   9. Cars (2006)                                          (id=45517, score=0.2480)
+  10. Bug's Life, A (1998)                                 (id=2355, score=0.2453)
+Seed #110: Braveheart (1995) [Action|Drama|War]
+   1. Lawrence of Arabia (1962)                            (id=1204, score=0.3119)
+   2. Ben-Hur (1959)                                       (id=1287, score=0.3050)
+   3. Schindler's List (1993)                              (id=527, score=0.3023)
+   4. Dances with Wolves (1990)                            (id=590, score=0.2979)
+   5. Platoon (1986)                                       (id=1090, score=0.2786)
+   6. Bridge on the River Kwai, The (1957)                 (id=1250, score=0.2739)
+   7. Last Emperor, The (1987)                             (id=1960, score=0.2700)
+   8. Shawshank Redemption, The (1994)                     (id=318, score=0.2688)
+   9. Saving Private Ryan (1998)                           (id=2028, score=0.2683)
+  10. Amadeus (1984)                                       (id=1225, score=0.2647)
+Seed #480: Jurassic Park (1993) [Action|Adventure|Sci-Fi|Thriller]
+   1. Lost World: Jurassic Park, The (1997)                (id=1544, score=0.3336)
+   2. Terminator 2: Judgment Day (1991)                    (id=589, score=0.3301)
+   3. Star Wars: Episode IV - A New Hope (1977)            (id=260, score=0.3244)
+   4. Raiders of the Lost Ark (Indiana Jones and the Raide (id=1198, score=0.3063)
+   5. E.T. the Extra-Terrestrial (1982)                    (id=1097, score=0.3054)
+   6. Star Wars: Episode I - The Phantom Menace (1999)     (id=2628, score=0.2718)
+   7. Jurassic Park III (2001)                             (id=4638, score=0.2643)
+   8. Independence Day (a.k.a. ID4) (1996)                 (id=780, score=0.2522)
+   9. Who Framed Roger Rabbit? (1988)                      (id=2987, score=0.2518)
+  10. Forrest Gump (1994)                                  (id=356, score=0.2516)
+Seed #2571: Matrix, The (1999) [Action|Sci-Fi|Thriller]
+   1. Matrix Reloaded, The (2003)                          (id=6365, score=0.4295)
+   2. Matrix Revolutions, The (2003)                       (id=6934, score=0.3919)
+   3. Star Wars: Episode IV - A New Hope (1977)            (id=260, score=0.3128)
+   4. Terminator 2: Judgment Day (1991)                    (id=589, score=0.2941)
+   5. Terminator, The (1984)                               (id=1240, score=0.2665)
+   6. 2001: A Space Odyssey (1968)                         (id=924, score=0.2549)
+   7. Blade Runner (1982)                                  (id=541, score=0.2524)
+   8. Jurassic Park (1993)                                 (id=480, score=0.2460)
+   9. Inception (2010)                                     (id=79132, score=0.2382)
+  10. Dark City (1998)                                     (id=1748, score=0.2376)
+Seed #1270: Back to the Future (1985) [Adventure|Comedy|Sci-Fi]
+   1. Back to the Future Part II (1989)                    (id=2011, score=0.5059)
+   2. Back to the Future Part III (1990)                   (id=2012, score=0.4009)
+   3. E.T. the Extra-Terrestrial (1982)                    (id=1097, score=0.2803)
+   4. Star Wars: Episode IV - A New Hope (1977)            (id=260, score=0.2596)
+   5. Raiders of the Lost Ark (Indiana Jones and the Raide (id=1198, score=0.2468)
+   6. Terminator, The (1984)                               (id=1240, score=0.2423)
+   7. Star Wars: Episode V - The Empire Strikes Back (1980 (id=1196, score=0.2383)
+   8. Who Framed Roger Rabbit? (1988)                      (id=2987, score=0.2310)
+   9. Jurassic Park (1993)                                 (id=480, score=0.2213)
+  10. Star Wars: Episode VI - Return of the Jedi (1983)    (id=1210, score=0.2193)
+
+Quality checks
+------------------------------------------------------------------------------
+  [PASS] engine_loaded_and_dimensions_agree - matrix=62423x20000
+  [PASS] candidate_pool_non_empty - candidates=62423
+  [PASS] top_k_respected - top_k=10, samples=5
+  [PASS] self_recommendation_excluded
+  [PASS] duplicate_recommendations_absent
+  [PASS] recommendations_sorted_descending
+  [PASS] recommended_metadata_valid
+  [PASS] unknown_movie_handled_gracefully - unknown movieId returned an empty frame instead of raising
+  [PASS] strict_engine_raises_movie_not_found - SimilarityEngine raises MovieNotFoundError for unknown IDs
+  [PASS] evaluation_metrics_executed - k_values=['10', '5']
+  [PASS] module1_module2_regression_tests - 269 passed in 44.17s
+
+Checks passed: 11/11
+STATUS: PASS
+==============================================================================

@@ -1,0 +1,69 @@
+{
+  "module": "Module 3 - Quality Gate",
+  "generated_at_utc": "2026-08-22T18:00:00.015199+00:00",
+  "regression_tests_executed": true,
+  "regression_tests": {
+    "status": "PASS",
+    "duration_sec": 48.8,
+    "summary_tail": "........................................................................ [ 80%]\n.....................................................                    [100%]\n269 passed in 44.17s"
+  },
+  "quality_checks": [
+    {
+      "check": "engine_loaded_and_dimensions_agree",
+      "passed": true,
+      "detail": "matrix=62423x20000"
+    },
+    {
+      "check": "candidate_pool_non_empty",
+      "passed": true,
+      "detail": "candidates=62423"
+    },
+    {
+      "check": "top_k_respected",
+      "passed": true,
+      "detail": "top_k=10, samples=5"
+    },
+    {
+      "check": "self_recommendation_excluded",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "duplicate_recommendations_absent",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "recommendations_sorted_descending",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "recommended_metadata_valid",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "unknown_movie_handled_gracefully",
+      "passed": true,
+      "detail": "unknown movieId returned an empty frame instead of raising"
+    },
+    {
+      "check": "strict_engine_raises_movie_not_found",
+      "passed": true,
+      "detail": "SimilarityEngine raises MovieNotFoundError for unknown IDs"
+    },
+    {
+      "check": "evaluation_metrics_executed",
+      "passed": true,
+      "detail": "k_values=['10', '5']"
+    },
+    {
+      "check": "module1_module2_regression_tests",
+      "passed": true,
+      "detail": "269 passed in 44.17s"
+    }
+  ],
+  "evaluation_status": "PASS",
+  "gate": "PASS"
+}
