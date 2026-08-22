@@ -1,23 +1,37 @@
+# Python
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 *.pyc
+
+# Test / tooling caches
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments & secrets
 .venv/
 venv/
 env/
 .env
 .env.*
-.ipynb_checkpoints/
+
+# OS / IDE noise
 .DS_Store
 .idea/
 .vscode/
-*.log
+
+# Logs (pipeline writes rotating logs here)
 logs/*.log
-models/*.pkl
-models/*.joblib
-models/*.h5
-outputs/**/*.csv
-outputs/**/*.json
-outputs/**/*.png
+
+# Generated data: cleaned MovieLens datasets total several hundred MB and are
+# reproducible with `python -m src.pipeline`, so they stay out of version
+# control. The directory itself is kept via .gitkeep.
+data/processed/*.csv
+
+# Generated chart images are reproducible via `python -m src.pipeline`.
+outputs/charts/*.png
 outputs/**/*.html
+
+# NOTE: outputs/reports/*.txt|json ARE tracked - they are small, valuable
+# quality artifacts consumed by later modules.

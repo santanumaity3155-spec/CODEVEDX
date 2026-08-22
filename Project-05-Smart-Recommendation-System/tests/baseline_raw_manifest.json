@@ -1,0 +1,26 @@
+{
+  "genome-scores.csv": {
+    "sha256": "dcee649a8ba5c02b14b5ac5ff34dd27edcf58beff1d902cdf9c114927d1f8f70",
+    "bytes": 435164157
+  },
+  "genome-tags.csv": {
+    "sha256": "c84bf1e2addbf38432426a2bb2a117a59d76c0873fc875fe8764e92842fd3bfb",
+    "bytes": 18103
+  },
+  "links.csv": {
+    "sha256": "dd07bbd9aa8e76d263d8323ddd18ec87b6e00a79a68a5896afe9a737af22322b",
+    "bytes": 1368578
+  },
+  "movies.csv": {
+    "sha256": "c50dea6973e619f9bc1decd4afa3e35358b83a5fb663dac0ec82252a011d023d",
+    "bytes": 3038099
+  },
+  "ratings.csv": {
+    "sha256": "9c85525758597dca76e8d98cebb9c13e018c2317b09a0878b6d383179526e385",
+    "bytes": 678260987
+  },
+  "tags.csv": {
+    "sha256": "84793c391a8e2a8b93190b5e780f781563a184c413d02ff2104cc2f442e2830a",
+    "bytes": 38810332
+  }
+}

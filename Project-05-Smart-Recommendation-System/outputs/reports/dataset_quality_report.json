@@ -1,0 +1,1582 @@
+{
+  "movies": {
+    "rows": 62423,
+    "columns": 3,
+    "column_names": [
+      "movieId",
+      "title",
+      "genres"
+    ],
+    "dtypes": {
+      "movieId": "int32",
+      "title": "string",
+      "genres": "string"
+    },
+    "memory_mb": 8.43,
+    "missing_values": {},
+    "unique_counts": {
+      "movieId": 62423,
+      "title": 62325,
+      "genres": 1639
+    },
+    "duplicate_rows": 0,
+    "missing_values_total": 0
+  },
+  "ratings": {
+    "rows": 25000095,
+    "columns": 4,
+    "column_names": [
+      "userId",
+      "movieId",
+      "rating",
+      "timestamp"
+    ],
+    "dtypes": {
+      "userId": "int32",
+      "movieId": "int32",
+      "rating": "float32",
+      "timestamp": "int64"
+    },
+    "memory_mb": 476.84,
+    "missing_values": {},
+    "unique_counts": {
+      "userId": 162541,
+      "movieId": 59047,
+      "rating": 10,
+      "timestamp": 20115267
+    },
+    "duplicate_rows": 0,
+    "missing_values_total": 0
+  },
+  "tags": {
+    "rows": 1093360,
+    "columns": 4,
+    "column_names": [
+      "userId",
+      "movieId",
+      "tag",
+      "timestamp"
+    ],
+    "dtypes": {
+      "userId": "int32",
+      "movieId": "int32",
+      "tag": "string",
+      "timestamp": "Int64"
+    },
+    "memory_mb": 79.98,
+    "missing_values": {
+      "tag": 16
+    },
+    "unique_counts": {
+      "userId": 14592,
+      "movieId": 45251,
+      "tag": 73050,
+      "timestamp": 907730
+    },
+    "duplicate_rows": 0,
+    "missing_values_total": 16
+  },
+  "links": {
+    "rows": 62423,
+    "columns": 3,
+    "column_names": [
+      "movieId",
+      "imdbId",
+      "tmdbId"
+    ],
+    "dtypes": {
+      "movieId": "int32",
+      "imdbId": "Int64",
+      "tmdbId": "Int64"
+    },
+    "memory_mb": 1.31,
+    "missing_values": {
+      "tmdbId": 107
+    },
+    "unique_counts": {
+      "movieId": 62423,
+      "imdbId": 62423,
+      "tmdbId": 62281
+    },
+    "duplicate_rows": 0,
+    "missing_values_total": 107
+  },
+  "genome_scores": {
+    "rows": 15584448,
+    "columns": 3,
+    "column_names": [
+      "movieId",
+      "tagId",
+      "relevance"
+    ],
+    "dtypes": {
+      "movieId": "int32",
+      "tagId": "int16",
+      "relevance": "float32"
+    },
+    "memory_mb": 148.63,
+    "missing_values": {},
+    "unique_counts": {
+      "movieId": 13816,
+      "tagId": 1128,
+      "relevance": 4000
+    },
+    "duplicate_rows": 0,
+    "missing_values_total": 0
+  },
+  "genome_tags": {
+    "rows": 1128,
+    "columns": 2,
+    "column_names": [
+      "tagId",
+      "tag"
+    ],
+    "dtypes": {
+      "tagId": "int16",
+      "tag": "string"
+    },
+    "memory_mb": 0.07,
+    "missing_values": {},
+    "unique_counts": {
+      "tagId": 1128,
+      "tag": 1128
+    },
+    "duplicate_rows": 0,
+    "missing_values_total": 0
+  },
+  "status": "PASS",
+  "dataset_name": "ml-25m",
+  "rating_statistics": {
+    "total_ratings": 25000095,
+    "min": 0.5,
+    "max": 5.0,
+    "mean": 3.5339,
+    "median": 3.5,
+    "std": 1.0607
+  },
+  "rating_distribution": {
+    "counts_by_value": {
+      "0.5": 393068,
+      "1.0": 776815,
+      "1.5": 399490,
+      "2.0": 1640868,
+      "2.5": 1262797,
+      "3.0": 4896928,
+      "3.5": 3177318,
+      "4.0": 6639798,
+      "4.5": 2200539,
+      "5.0": 3612474
+    },
+    "star_summary": {
+      "0.5-star": {
+        "count": 393068,
+        "pct": 1.572
+      },
+      "1-star": {
+        "count": 776815,
+        "pct": 3.107
+      },
+      "1.5-star": {
+        "count": 399490,
+        "pct": 1.598
+      },
+      "2-star": {
+        "count": 1640868,
+        "pct": 6.563
+      },
+      "2.5-star": {
+        "count": 1262797,
+        "pct": 5.051
+      },
+      "3-star": {
+        "count": 4896928,
+        "pct": 19.588
+      },
+      "3.5-star": {
+        "count": 3177318,
+        "pct": 12.709
+      },
+      "4-star": {
+        "count": 6639798,
+        "pct": 26.559
+      },
+      "4.5-star": {
+        "count": 2200539,
+        "pct": 8.802
+      },
+      "5-star": {
+        "count": 3612474,
+        "pct": 14.45
+      }
+    }
+  },
+  "user_statistics": {
+    "unique_users": 162541,
+    "ratings_per_user_min": 20,
+    "ratings_per_user_max": 32202,
+    "ratings_per_user_mean": 153.8079,
+    "ratings_per_user_median": 71.0,
+    "highly_active_users_ge_99th_pct": 1627,
+    "high_activity_threshold_99th_pct": 1228.0,
+    "low_activity_users_le_1st_pct": 4611,
+    "low_activity_threshold_1st_pct": 20.0
+  },
+  "movie_statistics": {
+    "unique_movies_rated": 59047,
+    "ratings_per_movie_min": 1,
+    "ratings_per_movie_max": 81491,
+    "ratings_per_movie_mean": 423.3931,
+    "ratings_per_movie_median": 6.0,
+    "top_movies_by_rating_count": [
+      {
+        "rank": 1,
+        "movieId": 356,
+        "title": "Forrest Gump (1994)",
+        "rating_count": 81491,
+        "mean_rating": 4.048
+      },
+      {
+        "rank": 2,
+        "movieId": 318,
+        "title": "Shawshank Redemption, The (1994)",
+        "rating_count": 81482,
+        "mean_rating": 4.4136
+      },
+      {
+        "rank": 3,
+        "movieId": 296,
+        "title": "Pulp Fiction (1994)",
+        "rating_count": 79672,
+        "mean_rating": 4.1889
+      },
+      {
+        "rank": 4,
+        "movieId": 593,
+        "title": "Silence of the Lambs, The (1991)",
+        "rating_count": 74127,
+        "mean_rating": 4.1513
+      },
+      {
+        "rank": 5,
+        "movieId": 2571,
+        "title": "Matrix, The (1999)",
+        "rating_count": 72674,
+        "mean_rating": 4.1541
+      },
+      {
+        "rank": 6,
+        "movieId": 260,
+        "title": "Star Wars: Episode IV - A New Hope (1977)",
+        "rating_count": 68717,
+        "mean_rating": 4.1202
+      },
+      {
+        "rank": 7,
+        "movieId": 480,
+        "title": "Jurassic Park (1993)",
+        "rating_count": 64144,
+        "mean_rating": 3.6792
+      },
+      {
+        "rank": 8,
+        "movieId": 527,
+        "title": "Schindler's List (1993)",
+        "rating_count": 60411,
+        "mean_rating": 4.2476
+      },
+      {
+        "rank": 9,
+        "movieId": 110,
+        "title": "Braveheart (1995)",
+        "rating_count": 59184,
+        "mean_rating": 4.0023
+      },
+      {
+        "rank": 10,
+        "movieId": 2959,
+        "title": "Fight Club (1999)",
+        "rating_count": 58773,
+        "mean_rating": 4.2283
+      },
+      {
+        "rank": 11,
+        "movieId": 589,
+        "title": "Terminator 2: Judgment Day (1991)",
+        "rating_count": 57379,
+        "mean_rating": 3.9464
+      },
+      {
+        "rank": 12,
+        "movieId": 1196,
+        "title": "Star Wars: Episode V - The Empire Strikes Back (1980)",
+        "rating_count": 57361,
+        "mean_rating": 4.1441
+      },
+      {
+        "rank": 13,
+        "movieId": 1,
+        "title": "Toy Story (1995)",
+        "rating_count": 57309,
+        "mean_rating": 3.8937
+      },
+      {
+        "rank": 14,
+        "movieId": 4993,
+        "title": "Lord of the Rings: The Fellowship of the Ring, The (2001)",
+        "rating_count": 55736,
+        "mean_rating": 4.0912
+      },
+      {
+        "rank": 15,
+        "movieId": 50,
+        "title": "Usual Suspects, The (1995)",
+        "rating_count": 55366,
+        "mean_rating": 4.2844
+      },
+      {
+        "rank": 16,
+        "movieId": 1210,
+        "title": "Star Wars: Episode VI - Return of the Jedi (1983)",
+        "rating_count": 54917,
+        "mean_rating": 3.9965
+      },
+      {
+        "rank": 17,
+        "movieId": 1198,
+        "title": "Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981)",
+        "rating_count": 54675,
+        "mean_rating": 4.1239
+      },
+      {
+        "rank": 18,
+        "movieId": 2858,
+        "title": "American Beauty (1999)",
+        "rating_count": 53689,
+        "mean_rating": 4.1073
+      },
+      {
+        "rank": 19,
+        "movieId": 858,
+        "title": "Godfather, The (1972)",
+        "rating_count": 52498,
+        "mean_rating": 4.3243
+      },
+      {
+        "rank": 20,
+        "movieId": 5952,
+        "title": "Lord of the Rings: The Two Towers, The (2002)",
+        "rating_count": 51138,
+        "mean_rating": 4.0681
+      },
+      {
+        "rank": 21,
+        "movieId": 7153,
+        "title": "Lord of the Rings: The Return of the King, The (2003)",
+        "rating_count": 50797,
+        "mean_rating": 4.0903
+      },
+      {
+        "rank": 22,
+        "movieId": 47,
+        "title": "Seven (a.k.a. Se7en) (1995)",
+        "rating_count": 50596,
+        "mean_rating": 4.0792
+      },
+      {
+        "rank": 23,
+        "movieId": 457,
+        "title": "Fugitive, The (1993)",
+        "rating_count": 49638,
+        "mean_rating": 3.9722
+      },
+      {
+        "rank": 24,
+        "movieId": 1270,
+        "title": "Back to the Future (1985)",
+        "rating_count": 49595,
+        "mean_rating": 3.9539
+      },
+      {
+        "rank": 25,
+        "movieId": 780,
+        "title": "Independence Day (a.k.a. ID4) (1996)",
+        "rating_count": 48902,
+        "mean_rating": 3.3739
+      },
+      {
+        "rank": 26,
+        "movieId": 150,
+        "title": "Apollo 13 (1995)",
+        "rating_count": 48377,
+        "mean_rating": 3.8736
+      },
+      {
+        "rank": 27,
+        "movieId": 608,
+        "title": "Fargo (1996)",
+        "rating_count": 47823,
+        "mean_rating": 4.1114
+      },
+      {
+        "rank": 28,
+        "movieId": 32,
+        "title": "Twelve Monkeys (a.k.a. 12 Monkeys) (1995)",
+        "rating_count": 47054,
+        "mean_rating": 3.9058
+      },
+      {
+        "rank": 29,
+        "movieId": 2028,
+        "title": "Saving Private Ryan (1998)",
+        "rating_count": 46783,
+        "mean_rating": 4.0441
+      },
+      {
+        "rank": 30,
+        "movieId": 2762,
+        "title": "Sixth Sense, The (1999)",
+        "rating_count": 46713,
+        "mean_rating": 4.0098
+      },
+      {
+        "rank": 31,
+        "movieId": 3578,
+        "title": "Gladiator (2000)",
+        "rating_count": 44656,
+        "mean_rating": 3.9515
+      },
+      {
+        "rank": 32,
+        "movieId": 592,
+        "title": "Batman (1989)",
+        "rating_count": 44110,
+        "mean_rating": 3.4069
+      },
+      {
+        "rank": 33,
+        "movieId": 588,
+        "title": "Aladdin (1992)",
+        "rating_count": 43373,
+        "mean_rating": 3.6988
+      },
+      {
+        "rank": 34,
+        "movieId": 364,
+        "title": "Lion King, The (1994)",
+        "rating_count": 42745,
+        "mean_rating": 3.8171
+      },
+      {
+        "rank": 35,
+        "movieId": 4306,
+        "title": "Shrek (2001)",
+        "rating_count": 42303,
+        "mean_rating": 3.7548
+      },
+      {
+        "rank": 36,
+        "movieId": 380,
+        "title": "True Lies (1994)",
+        "rating_count": 41673,
+        "mean_rating": 3.4923
+      },
+      {
+        "rank": 37,
+        "movieId": 590,
+        "title": "Dances with Wolves (1990)",
+        "rating_count": 41615,
+        "mean_rating": 3.7257
+      },
+      {
+        "rank": 38,
+        "movieId": 58559,
+        "title": "Dark Knight, The (2008)",
+        "rating_count": 41519,
+        "mean_rating": 4.1665
+      },
+      {
+        "rank": 39,
+        "movieId": 377,
+        "title": "Speed (1994)",
+        "rating_count": 41302,
+        "mean_rating": 3.4812
+      },
+      {
+        "rank": 40,
+        "movieId": 4226,
+        "title": "Memento (2000)",
+        "rating_count": 41195,
+        "mean_rating": 4.15
+      },
+      {
+        "rank": 41,
+        "movieId": 1580,
+        "title": "Men in Black (a.k.a. MIB) (1997)",
+        "rating_count": 40308,
+        "mean_rating": 3.5817
+      },
+      {
+        "rank": 42,
+        "movieId": 1704,
+        "title": "Good Will Hunting (1997)",
+        "rating_count": 38947,
+        "mean_rating": 4.0749
+      },
+      {
+        "rank": 43,
+        "movieId": 79132,
+        "title": "Inception (2010)",
+        "rating_count": 38895,
+        "mean_rating": 4.1555
+      },
+      {
+        "rank": 44,
+        "movieId": 1240,
+        "title": "Terminator, The (1984)",
+        "rating_count": 38612,
+        "mean_rating": 3.8968
+      },
+      {
+        "rank": 45,
+        "movieId": 1291,
+        "title": "Indiana Jones and the Last Crusade (1989)",
+        "rating_count": 37908,
+        "mean_rating": 3.9852
+      },
+      {
+        "rank": 46,
+        "movieId": 1197,
+        "title": "Princess Bride, The (1987)",
+        "rating_count": 37863,
+        "mean_rating": 4.1291
+      },
+      {
+        "rank": 47,
+        "movieId": 1136,
+        "title": "Monty Python and the Holy Grail (1975)",
+        "rating_count": 37723,
+        "mean_rating": 4.1477
+      },
+      {
+        "rank": 48,
+        "movieId": 1721,
+        "title": "Titanic (1997)",
+        "rating_count": 37712,
+        "mean_rating": 3.3812
+      },
+      {
+        "rank": 49,
+        "movieId": 1265,
+        "title": "Groundhog Day (1993)",
+        "rating_count": 37616,
+        "mean_rating": 3.8918
+      },
+      {
+        "rank": 50,
+        "movieId": 344,
+        "title": "Ace Ventura: Pet Detective (1994)",
+        "rating_count": 37453,
+        "mean_rating": 2.9898
+      },
+      {
+        "rank": 51,
+        "movieId": 6539,
+        "title": "Pirates of the Caribbean: The Curse of the Black Pearl (2003)",
+        "rating_count": 37227,
+        "mean_rating": 3.7892
+      },
+      {
+        "rank": 52,
+        "movieId": 648,
+        "title": "Mission: Impossible (1996)",
+        "rating_count": 37035,
+        "mean_rating": 3.4016
+      },
+      {
+        "rank": 53,
+        "movieId": 1036,
+        "title": "Die Hard (1988)",
+        "rating_count": 36716,
+        "mean_rating": 3.9332
+      },
+      {
+        "rank": 54,
+        "movieId": 541,
+        "title": "Blade Runner (1982)",
+        "rating_count": 36702,
+        "mean_rating": 4.1158
+      },
+      {
+        "rank": 55,
+        "movieId": 1214,
+        "title": "Alien (1979)",
+        "rating_count": 36357,
+        "mean_rating": 4.0555
+      },
+      {
+        "rank": 56,
+        "movieId": 1193,
+        "title": "One Flew Over the Cuckoo's Nest (1975)",
+        "rating_count": 36058,
+        "mean_rating": 4.2187
+      },
+      {
+        "rank": 57,
+        "movieId": 595,
+        "title": "Beauty and the Beast (1991)",
+        "rating_count": 35723,
+        "mean_rating": 3.6809
+      },
+      {
+        "rank": 58,
+        "movieId": 6377,
+        "title": "Finding Nemo (2003)",
+        "rating_count": 34712,
+        "mean_rating": 3.834
+      },
+      {
+        "rank": 59,
+        "movieId": 1089,
+        "title": "Reservoir Dogs (1992)",
+        "rating_count": 34634,
+        "mean_rating": 4.0923
+      },
+      {
+        "rank": 60,
+        "movieId": 367,
+        "title": "Mask, The (1994)",
+        "rating_count": 34621,
+        "mean_rating": 3.183
+      },
+      {
+        "rank": 61,
+        "movieId": 1097,
+        "title": "E.T. the Extra-Terrestrial (1982)",
+        "rating_count": 34602,
+        "mean_rating": 3.7331
+      },
+      {
+        "rank": 62,
+        "movieId": 4886,
+        "title": "Monsters, Inc. (2001)",
+        "rating_count": 34572,
+        "mean_rating": 3.8486
+      },
+      {
+        "rank": 63,
+        "movieId": 4973,
+        "title": "Amelie (Fabuleux destin d'Amélie Poulain, Le) (2001)",
+        "rating_count": 34320,
+        "mean_rating": 4.1013
+      },
+      {
+        "rank": 64,
+        "movieId": 597,
+        "title": "Pretty Woman (1990)",
+        "rating_count": 34234,
+        "mean_rating": 3.4265
+      },
+      {
+        "rank": 65,
+        "movieId": 500,
+        "title": "Mrs. Doubtfire (1993)",
+        "rating_count": 34194,
+        "mean_rating": 3.3863
+      },
+      {
+        "rank": 66,
+        "movieId": 1221,
+        "title": "Godfather: Part II, The (1974)",
+        "rating_count": 34188,
+        "mean_rating": 4.2618
+      },
+      {
+        "rank": 67,
+        "movieId": 6874,
+        "title": "Kill Bill: Vol. 1 (2003)",
+        "rating_count": 33827,
+        "mean_rating": 3.8578
+      },
+      {
+        "rank": 68,
+        "movieId": 1682,
+        "title": "Truman Show, The (1998)",
+        "rating_count": 33731,
+        "mean_rating": 3.8597
+      },
+      {
+        "rank": 69,
+        "movieId": 165,
+        "title": "Die Hard: With a Vengeance (1995)",
+        "rating_count": 33731,
+        "mean_rating": 3.5066
+      },
+      {
+        "rank": 70,
+        "movieId": 293,
+        "title": "Léon: The Professional (a.k.a. The Professional) (Léon) (1994)",
+        "rating_count": 33680,
+        "mean_rating": 4.0886
+      },
+      {
+        "rank": 71,
+        "movieId": 7361,
+        "title": "Eternal Sunshine of the Spotless Mind (2004)",
+        "rating_count": 33225,
+        "mean_rating": 4.0664
+      },
+      {
+        "rank": 72,
+        "movieId": 1527,
+        "title": "Fifth Element, The (1997)",
+        "rating_count": 33153,
+        "mean_rating": 3.7699
+      },
+      {
+        "rank": 73,
+        "movieId": 1213,
+        "title": "Goodfellas (1990)",
+        "rating_count": 32663,
+        "mean_rating": 4.1805
+      },
+      {
+        "rank": 74,
+        "movieId": 3793,
+        "title": "X-Men (2000)",
+        "rating_count": 32584,
+        "mean_rating": 3.5597
+      },
+      {
+        "rank": 75,
+        "movieId": 2716,
+        "title": "Ghostbusters (a.k.a. Ghost Busters) (1984)",
+        "rating_count": 32118,
+        "mean_rating": 3.7591
+      },
+      {
+        "rank": 76,
+        "movieId": 733,
+        "title": "Rock, The (1996)",
+        "rating_count": 31979,
+        "mean_rating": 3.6686
+      },
+      {
+        "rank": 77,
+        "movieId": 231,
+        "title": "Dumb & Dumber (Dumb and Dumber) (1994)",
+        "rating_count": 31843,
+        "mean_rating": 2.965
+      },
+      {
+        "rank": 78,
+        "movieId": 2628,
+        "title": "Star Wars: Episode I - The Phantom Menace (1999)",
+        "rating_count": 31837,
+        "mean_rating": 3.0699
+      },
+      {
+        "rank": 79,
+        "movieId": 4963,
+        "title": "Ocean's Eleven (2001)",
+        "rating_count": 31775,
+        "mean_rating": 3.8092
+      },
+      {
+        "rank": 80,
+        "movieId": 4995,
+        "title": "Beautiful Mind, A (2001)",
+        "rating_count": 31760,
+        "mean_rating": 3.9611
+      },
+      {
+        "rank": 81,
+        "movieId": 1200,
+        "title": "Aliens (1986)",
+        "rating_count": 31684,
+        "mean_rating": 3.9993
+      },
+      {
+        "rank": 82,
+        "movieId": 34,
+        "title": "Babe (1995)",
+        "rating_count": 31456,
+        "mean_rating": 3.6032
+      },
+      {
+        "rank": 83,
+        "movieId": 2329,
+        "title": "American History X (1998)",
+        "rating_count": 31157,
+        "mean_rating": 4.14
+      },
+      {
+        "rank": 84,
+        "movieId": 153,
+        "title": "Batman Forever (1995)",
+        "rating_count": 31101,
+        "mean_rating": 2.8717
+      },
+      {
+        "rank": 85,
+        "movieId": 736,
+        "title": "Twister (1996)",
+        "rating_count": 31040,
+        "mean_rating": 3.189
+      },
+      {
+        "rank": 86,
+        "movieId": 316,
+        "title": "Stargate (1994)",
+        "rating_count": 30910,
+        "mean_rating": 3.3711
+      },
+      {
+        "rank": 87,
+        "movieId": 33794,
+        "title": "Batman Begins (2005)",
+        "rating_count": 30684,
+        "mean_rating": 3.93
+      },
+      {
+        "rank": 88,
+        "movieId": 8961,
+        "title": "Incredibles, The (2004)",
+        "rating_count": 30562,
+        "mean_rating": 3.8549
+      },
+      {
+        "rank": 89,
+        "movieId": 3147,
+        "title": "Green Mile, The (1999)",
+        "rating_count": 30482,
+        "mean_rating": 4.0278
+      },
+      {
+        "rank": 90,
+        "movieId": 5445,
+        "title": "Minority Report (2002)",
+        "rating_count": 30195,
+        "mean_rating": 3.69
+      },
+      {
+        "rank": 91,
+        "movieId": 5349,
+        "title": "Spider-Man (2002)",
+        "rating_count": 30010,
+        "mean_rating": 3.4786
+      },
+      {
+        "rank": 92,
+        "movieId": 2997,
+        "title": "Being John Malkovich (1999)",
+        "rating_count": 29943,
+        "mean_rating": 3.9335
+      },
+      {
+        "rank": 93,
+        "movieId": 1258,
+        "title": "Shining, The (1980)",
+        "rating_count": 29931,
+        "mean_rating": 4.0279
+      },
+      {
+        "rank": 94,
+        "movieId": 1206,
+        "title": "Clockwork Orange, A (1971)",
+        "rating_count": 29856,
+        "mean_rating": 3.9842
+      },
+      {
+        "rank": 95,
+        "movieId": 586,
+        "title": "Home Alone (1990)",
+        "rating_count": 29540,
+        "mean_rating": 3.1419
+      },
+      {
+        "rank": 96,
+        "movieId": 111,
+        "title": "Taxi Driver (1976)",
+        "rating_count": 29133,
+        "mean_rating": 4.0835
+      },
+      {
+        "rank": 97,
+        "movieId": 5418,
+        "title": "Bourne Identity, The (2002)",
+        "rating_count": 28934,
+        "mean_rating": 3.9088
+      },
+      {
+        "rank": 98,
+        "movieId": 924,
+        "title": "2001: A Space Odyssey (1968)",
+        "rating_count": 28820,
+        "mean_rating": 3.9813
+      },
+      {
+        "rank": 99,
+        "movieId": 778,
+        "title": "Trainspotting (1996)",
+        "rating_count": 28702,
+        "mean_rating": 4.0077
+      },
+      {
+        "rank": 100,
+        "movieId": 587,
+        "title": "Ghost (1990)",
+        "rating_count": 28516,
+        "mean_rating": 3.4342
+      }
+    ]
+  },
+  "genre_statistics": {
+    "total_movies": 62423,
+    "movies_with_no_genre": 5062,
+    "avg_genres_per_movie": 1.718,
+    "num_distinct_genres": 19,
+    "movies_by_genre": {
+      "Drama": {
+        "count": 25606,
+        "pct_of_movies": 41.02
+      },
+      "Comedy": {
+        "count": 16870,
+        "pct_of_movies": 27.025
+      },
+      "Thriller": {
+        "count": 8654,
+        "pct_of_movies": 13.863
+      },
+      "Romance": {
+        "count": 7719,
+        "pct_of_movies": 12.366
+      },
+      "Action": {
+        "count": 7348,
+        "pct_of_movies": 11.771
+      },
+      "Horror": {
+        "count": 5989,
+        "pct_of_movies": 9.594
+      },
+      "Documentary": {
+        "count": 5605,
+        "pct_of_movies": 8.979
+      },
+      "Crime": {
+        "count": 5319,
+        "pct_of_movies": 8.521
+      },
+      "(no genres listed)": {
+        "count": 5062,
+        "pct_of_movies": 8.109
+      },
+      "Adventure": {
+        "count": 4145,
+        "pct_of_movies": 6.64
+      },
+      "Sci-Fi": {
+        "count": 3595,
+        "pct_of_movies": 5.759
+      },
+      "Children": {
+        "count": 2935,
+        "pct_of_movies": 4.702
+      },
+      "Animation": {
+        "count": 2929,
+        "pct_of_movies": 4.692
+      },
+      "Mystery": {
+        "count": 2925,
+        "pct_of_movies": 4.686
+      },
+      "Fantasy": {
+        "count": 2731,
+        "pct_of_movies": 4.375
+      },
+      "War": {
+        "count": 1874,
+        "pct_of_movies": 3.002
+      },
+      "Western": {
+        "count": 1399,
+        "pct_of_movies": 2.241
+      },
+      "Musical": {
+        "count": 1054,
+        "pct_of_movies": 1.688
+      },
+      "Film-Noir": {
+        "count": 353,
+        "pct_of_movies": 0.565
+      },
+      "IMAX": {
+        "count": 195,
+        "pct_of_movies": 0.312
+      }
+    }
+  },
+  "tag_statistics": {
+    "total_tag_records": 1093335,
+    "unique_users_tagging": 14591,
+    "unique_movies_tagged": 45251,
+    "unique_tags_case_insensitive": 65402,
+    "most_frequent_tags": {
+      "sci-fi": 8795,
+      "atmospheric": 7053,
+      "action": 6783,
+      "comedy": 6368,
+      "surreal": 5584,
+      "funny": 5354,
+      "based on a book": 5194,
+      "twist ending": 4904,
+      "visually appealing": 4691,
+      "romance": 4482,
+      "dystopia": 4329,
+      "dark comedy": 4133,
+      "quirky": 3999,
+      "bd-r": 3966,
+      "thought-provoking": 3847,
+      "fantasy": 3816,
+      "stylized": 3758,
+      "classic": 3733,
+      "psychology": 3646,
+      "woman director": 3590
+    }
+  },
+  "quality_checks": {
+    "schema_validation": {
+      "movies": {
+        "dataset": "movies",
+        "required_columns": [
+          "movieId",
+          "title",
+          "genres"
+        ],
+        "missing_columns": [],
+        "unexpected_extra_columns": [],
+        "valid": true
+      },
+      "ratings": {
+        "dataset": "ratings",
+        "required_columns": [
+          "userId",
+          "movieId",
+          "rating",
+          "timestamp"
+        ],
+        "missing_columns": [],
+        "unexpected_extra_columns": [],
+        "valid": true
+      },
+      "tags": {
+        "dataset": "tags",
+        "required_columns": [
+          "userId",
+          "movieId",
+          "tag",
+          "timestamp"
+        ],
+        "missing_columns": [],
+        "unexpected_extra_columns": [],
+        "valid": true
+      },
+      "links": {
+        "dataset": "links",
+        "required_columns": [
+          "movieId",
+          "imdbId",
+          "tmdbId"
+        ],
+        "missing_columns": [],
+        "unexpected_extra_columns": [],
+        "valid": true
+      },
+      "genome_scores": {
+        "dataset": "genome_scores",
+        "required_columns": [
+          "movieId",
+          "tagId",
+          "relevance"
+        ],
+        "missing_columns": [],
+        "unexpected_extra_columns": [],
+        "valid": true
+      },
+      "genome_tags": {
+        "dataset": "genome_tags",
+        "required_columns": [
+          "tagId",
+          "tag"
+        ],
+        "missing_columns": [],
+        "unexpected_extra_columns": [],
+        "valid": true
+      }
+    },
+    "missing_values": {
+      "movies": {
+        "total_missing_cells": 0,
+        "by_column": {
+          "movieId": {
+            "missing": 0,
+            "pct": 0.0
+          },
+          "title": {
+            "missing": 0,
+            "pct": 0.0
+          },
+          "genres": {
+            "missing": 0,
+            "pct": 0.0
+          }
+        }
+      },
+      "ratings": {
+        "total_missing_cells": 0,
+        "by_column": {
+          "userId": {
+            "missing": 0,
+            "pct": 0.0
+          },
+          "movieId": {
+            "missing": 0,
+            "pct": 0.0
+          },
+          "rating": {
+            "missing": 0,
+            "pct": 0.0
+          },
+          "timestamp": {
+            "missing": 0,
+            "pct": 0.0
+          }
+        }
+      },
+      "tags": {
+        "total_missing_cells": 16,
+        "by_column": {
+          "userId": {
+            "missing": 0,
+            "pct": 0.0
+          },
+          "movieId": {
+            "missing": 0,
+            "pct": 0.0
+          },
+          "tag": {
+            "missing": 16,
+            "pct": 0.0015
+          },
+          "timestamp": {
+            "missing": 0,
+            "pct": 0.0
+          }
+        }
+      },
+      "links": {
+        "total_missing_cells": 107,
+        "by_column": {
+          "movieId": {
+            "missing": 0,
+            "pct": 0.0
+          },
+          "imdbId": {
+            "missing": 0,
+            "pct": 0.0
+          },
+          "tmdbId": {
+            "missing": 107,
+            "pct": 0.1714
+          }
+        }
+      },
+      "genome_scores": {
+        "total_missing_cells": 0,
+        "by_column": {
+          "movieId": {
+            "missing": 0,
+            "pct": 0.0
+          },
+          "tagId": {
+            "missing": 0,
+            "pct": 0.0
+          },
+          "relevance": {
+            "missing": 0,
+            "pct": 0.0
+          }
+        }
+      },
+      "genome_tags": {
+        "total_missing_cells": 0,
+        "by_column": {
+          "tagId": {
+            "missing": 0,
+            "pct": 0.0
+          },
+          "tag": {
+            "missing": 0,
+            "pct": 0.0
+          }
+        }
+      }
+    },
+    "id_validation": {
+      "movies": {
+        "dataset": "movies",
+        "checked": [
+          "movieId"
+        ],
+        "issues": {},
+        "valid": true
+      },
+      "ratings": {
+        "dataset": "ratings",
+        "checked": [
+          "userId",
+          "movieId"
+        ],
+        "issues": {},
+        "valid": true
+      },
+      "tags": {
+        "dataset": "tags",
+        "checked": [
+          "userId",
+          "movieId"
+        ],
+        "issues": {},
+        "valid": true
+      },
+      "links": {
+        "dataset": "links",
+        "checked": [
+          "movieId"
+        ],
+        "issues": {},
+        "valid": true
+      },
+      "genome_scores": {
+        "dataset": "genome_scores",
+        "checked": [
+          "movieId",
+          "tagId"
+        ],
+        "issues": {},
+        "valid": true
+      },
+      "genome_tags": {
+        "dataset": "genome_tags",
+        "checked": [
+          "tagId"
+        ],
+        "issues": {},
+        "valid": true
+      }
+    },
+    "duplicates": {
+      "movies": {
+        "duplicate_movieId": {
+          "key": [
+            "movieId"
+          ],
+          "rule": "duplicate movieId: keep first",
+          "duplicate_records": 0,
+          "example_keys": []
+        },
+        "duplicate_title": {
+          "key": [
+            "title"
+          ],
+          "rule": "duplicate title with distinct movieId: legitimate, retain",
+          "duplicate_records": 98,
+          "example_keys": [
+            [
+              "Men with Guns (1997)"
+            ],
+            [
+              "War of the Worlds (2005)"
+            ],
+            [
+              "Hamlet (2000)"
+            ],
+            [
+              "Chaos (2005)"
+            ],
+            [
+              "Blackout (2007)"
+            ]
+          ]
+        }
+      },
+      "ratings": {
+        "exact_duplicates": {
+          "key": [
+            "userId",
+            "movieId",
+            "timestamp"
+          ],
+          "rule": "exact repeat (user+movie+timestamp): invalid, remove",
+          "duplicate_records": 0,
+          "example_keys": []
+        },
+        "repeated_user_movie_interactions": {
+          "key": [
+            "userId",
+            "movieId"
+          ],
+          "rule": "re-rating of same movie at different time: legitimate, retain",
+          "duplicate_records": 0,
+          "example_keys": []
+        }
+      },
+      "tags": {
+        "exact_duplicates": {
+          "key": [
+            "userId",
+            "movieId",
+            "tag",
+            "timestamp"
+          ],
+          "rule": "exact repeat: invalid, remove",
+          "duplicate_records": 0,
+          "example_keys": []
+        }
+      },
+      "links": {
+        "duplicate_movieId": {
+          "key": [
+            "movieId"
+          ],
+          "rule": "keep first",
+          "duplicate_records": 0,
+          "example_keys": []
+        }
+      },
+      "genome_scores": {
+        "duplicate_movie_tag_pairs": {
+          "key": [
+            "movieId",
+            "tagId"
+          ],
+          "rule": "keep first",
+          "duplicate_records": 0,
+          "example_keys": []
+        }
+      }
+    },
+    "referential_integrity": {
+      "checks": [
+        {
+          "relationship": "ratings.movieId -> movies.movieId",
+          "child_rows": 25000095,
+          "orphan_records": 0,
+          "orphan_pct": 0.0,
+          "orphan_key_examples": []
+        },
+        {
+          "relationship": "tags.movieId -> movies.movieId",
+          "child_rows": 1093360,
+          "orphan_records": 0,
+          "orphan_pct": 0.0,
+          "orphan_key_examples": []
+        },
+        {
+          "relationship": "genome_scores.movieId -> movies.movieId",
+          "child_rows": 15584448,
+          "orphan_records": 0,
+          "orphan_pct": 0.0,
+          "orphan_key_examples": []
+        },
+        {
+          "relationship": "genome_scores.tagId -> genome_tags.tagId",
+          "child_rows": 15584448,
+          "orphan_records": 0,
+          "orphan_pct": 0.0,
+          "orphan_key_examples": []
+        },
+        {
+          "relationship": "links.movieId -> movies.movieId",
+          "child_rows": 62423,
+          "orphan_records": 0,
+          "orphan_pct": 0.0,
+          "orphan_key_examples": []
+        }
+      ],
+      "total_orphan_records": 0
+    },
+    "rating_domain": {
+      "min_allowed": 0.5,
+      "max_allowed": 5.0,
+      "out_of_range": 0,
+      "off_half_star_grid": 0,
+      "invalid_total": 0,
+      "valid": true
+    }
+  },
+  "cleaning": {
+    "rules": [
+      {
+        "dataset": "movies",
+        "rule": "drop missing movieId or blank title",
+        "records_removed": 0,
+        "records_retained": 62423
+      },
+      {
+        "dataset": "movies",
+        "rule": "fill missing genres with '(no genres listed)'",
+        "records_removed": 0,
+        "records_retained": 62423
+      },
+      {
+        "dataset": "movies",
+        "rule": "duplicate movieId kept-first removal",
+        "records_removed": 0,
+        "records_retained": 62423
+      },
+      {
+        "dataset": "ratings",
+        "rule": "drop rows missing required fields",
+        "records_removed": 0,
+        "records_retained": 25000095
+      },
+      {
+        "dataset": "ratings",
+        "rule": "drop out-of-range / off-grid ratings",
+        "records_removed": 0,
+        "records_retained": 25000095
+      },
+      {
+        "dataset": "ratings",
+        "rule": "exact duplicate (user,movie,timestamp) kept-first removal",
+        "records_removed": 0,
+        "records_retained": 25000095
+      },
+      {
+        "dataset": "ratings",
+        "rule": "orphan movieId removal vs. catalog",
+        "records_removed": 0,
+        "records_retained": 25000095
+      },
+      {
+        "dataset": "ratings",
+        "rule": "retain legitimate repeated user-movie re-ratings",
+        "records_removed": 0,
+        "records_retained": 25000095
+      },
+      {
+        "dataset": "tags",
+        "rule": "drop rows missing userId/movieId/tag",
+        "records_removed": 16,
+        "records_retained": 1093335
+      },
+      {
+        "dataset": "tags",
+        "rule": "drop empty-after-trim tags",
+        "records_removed": 9,
+        "records_retained": 1093335
+      },
+      {
+        "dataset": "tags",
+        "rule": "retain missing timestamps as <NA>",
+        "records_removed": 0,
+        "records_retained": 1093335
+      },
+      {
+        "dataset": "tags",
+        "rule": "exact duplicate (user,movie,tag,timestamp) kept-first removal",
+        "records_removed": 0,
+        "records_retained": 1093335
+      },
+      {
+        "dataset": "links",
+        "rule": "drop rows missing movieId",
+        "records_removed": 0,
+        "records_retained": 62423
+      },
+      {
+        "dataset": "links",
+        "rule": "duplicate movieId kept-first removal",
+        "records_removed": 0,
+        "records_retained": 62423
+      },
+      {
+        "dataset": "links",
+        "rule": "retain missing external IDs (<NA>)",
+        "records_removed": 0,
+        "records_retained": 62423
+      },
+      {
+        "dataset": "links",
+        "rule": "orphan movieId removal vs. catalog",
+        "records_removed": 0,
+        "records_retained": 62423
+      },
+      {
+        "dataset": "movies_features_base",
+        "rule": "deterministic normalization (no rows changed)",
+        "records_removed": 0,
+        "records_retained": 62423
+      }
+    ],
+    "per_dataset": {
+      "movies": {
+        "records_removed": 0
+      },
+      "ratings": {
+        "records_removed": 0
+      },
+      "tags": {
+        "records_removed": 25
+      },
+      "links": {
+        "records_removed": 0
+      },
+      "movies_features_base": {
+        "records_removed": 0
+      }
+    },
+    "total_removed": 25
+  },
+  "processed_files": [
+    "data\\processed\\movies_clean.csv",
+    "data\\processed\\ratings_clean.csv",
+    "data\\processed\\tags_clean.csv",
+    "data\\processed\\links_clean.csv",
+    "data\\processed\\movies_features_base.csv"
+  ],
+  "charts": [
+    "outputs\\charts\\rating_distribution.png",
+    "outputs\\charts\\user_activity_distribution.png",
+    "outputs\\charts\\movie_popularity_distribution.png",
+    "outputs\\charts\\genre_distribution.png",
+    "outputs\\charts\\top_tags.png"
+  ],
+  "processed_dataset_dtypes": {
+    "movies": {
+      "movieId": "int32",
+      "title": "string",
+      "genres": "string"
+    },
+    "ratings": {
+      "userId": "int32",
+      "movieId": "int32",
+      "rating": "float32",
+      "timestamp": "int64"
+    },
+    "tags": {
+      "userId": "int32",
+      "movieId": "int32",
+      "tag": "string",
+      "timestamp": "Int64"
+    },
+    "links": {
+      "movieId": "int32",
+      "imdbId": "Int64",
+      "tmdbId": "Int64"
+    }
+  }
+}

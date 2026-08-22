@@ -1,0 +1,195 @@
+========================================================================
+MOVIELENS 25M - MODULE 1 DATASET QUALITY REPORT
+========================================================================
+Dataset: ml-25m
+Raw directory: D:\New Project\CodeVedex Projects\CODEVEDX\Project-05-Smart-Recommendation-System\data\raw
+Random seed: 42
+
+Dataset overview
+------------------------------------------------------------------------
+movies:
+  rows:             62,423
+  columns:          3 (movieId, title, genres)
+  memory (MiB):     8.43
+ratings:
+  rows:             25,000,095
+  columns:          4 (userId, movieId, rating, timestamp)
+  memory (MiB):     476.84
+tags:
+  rows:             1,093,360
+  columns:          4 (userId, movieId, tag, timestamp)
+  memory (MiB):     79.98
+links:
+  rows:             62,423
+  columns:          3 (movieId, imdbId, tmdbId)
+  memory (MiB):     1.31
+genome_scores:
+  rows:             15,584,448
+  columns:          3 (movieId, tagId, relevance)
+  memory (MiB):     148.63
+genome_tags:
+  rows:             1,128
+  columns:          2 (tagId, tag)
+  memory (MiB):     0.07
+
+Data quality
+------------------------------------------------------------------------
+Schema validation:
+  movies: PASS
+  ratings: PASS
+  tags: PASS
+  links: PASS
+  genome_scores: PASS
+  genome_tags: PASS
+Missing cells across raw datasets: 123
+Duplicates (by documented rule):
+  movies.duplicate_movieId: 0
+  movies.duplicate_title: 98
+  ratings.exact_duplicates: 0
+  ratings.repeated_user_movie_interactions: 0
+  tags.exact_duplicates: 0
+  links.duplicate_movieId: 0
+  genome_scores.duplicate_movie_tag_pairs: 0
+Orphan records (all relationships): 0
+  ratings.movieId -> movies.movieId: 0 (0.0%)
+  tags.movieId -> movies.movieId: 0 (0.0%)
+  genome_scores.movieId -> movies.movieId: 0 (0.0%)
+  genome_scores.tagId -> genome_tags.tagId: 0 (0.0%)
+  links.movieId -> movies.movieId: 0 (0.0%)
+Rating domain validation:
+  out-of-range: 0
+  off half-star grid: 0
+ID validation:
+  movies: PASS
+  ratings: PASS
+  tags: PASS
+  links: PASS
+  genome_scores: PASS
+  genome_tags: PASS
+
+Rating statistics
+------------------------------------------------------------------------
+total ratings: 25,000,095
+mean:   3.5339
+median: 3.5000
+min:    0.5
+max:    5.0
+std:    1.0607
+counts by value:
+  0.5-star: 393,068
+  1.0-star: 776,815
+  1.5-star: 399,490
+  2.0-star: 1,640,868
+  2.5-star: 1,262,797
+  3.0-star: 4,896,928
+  3.5-star: 3,177,318
+  4.0-star: 6,639,798
+  4.5-star: 2,200,539
+  5.0-star: 3,612,474
+
+User statistics
+------------------------------------------------------------------------
+unique users: 162,541
+ratings/user min:    20
+ratings/user max:    32,202
+ratings/user mean:   153.81
+ratings/user median: 71.0
+highly active users (>= 1228.0): 1,627
+low activity users (<= 20.0): 4,611
+
+Movie statistics
+------------------------------------------------------------------------
+movies in catalog: 62,423
+unique movies rated: 59,047
+ratings/movie min:    1
+ratings/movie max:    81,491
+ratings/movie mean:   423.39
+ratings/movie median: 6.0
+top movies by rating count (first 10 of 100):
+  #  1    81,491 ratings | avg 4.05 | Forrest Gump (1994)
+  #  2    81,482 ratings | avg 4.41 | Shawshank Redemption, The (1994)
+  #  3    79,672 ratings | avg 4.19 | Pulp Fiction (1994)
+  #  4    74,127 ratings | avg 4.15 | Silence of the Lambs, The (1991)
+  #  5    72,674 ratings | avg 4.15 | Matrix, The (1999)
+  #  6    68,717 ratings | avg 4.12 | Star Wars: Episode IV - A New Hope (1977)
+  #  7    64,144 ratings | avg 3.68 | Jurassic Park (1993)
+  #  8    60,411 ratings | avg 4.25 | Schindler's List (1993)
+  #  9    59,184 ratings | avg 4.00 | Braveheart (1995)
+  # 10    58,773 ratings | avg 4.23 | Fight Club (1999)
+
+Genre statistics
+------------------------------------------------------------------------
+distinct genres: 19
+movies with '(no genres listed)': 5,062
+average genres per movie: 1.72
+movies per genre:
+  Drama                          25,606 (41.02% of movies)
+  Comedy                         16,870 (27.02% of movies)
+  Thriller                        8,654 (13.86% of movies)
+  Romance                         7,719 (12.37% of movies)
+  Action                          7,348 (11.77% of movies)
+  Horror                          5,989 (9.59% of movies)
+  Documentary                     5,605 (8.98% of movies)
+  Crime                           5,319 (8.52% of movies)
+  (no genres listed)              5,062 (8.11% of movies)
+  Adventure                       4,145 (6.64% of movies)
+  Sci-Fi                          3,595 (5.76% of movies)
+  Children                        2,935 (4.70% of movies)
+  Animation                       2,929 (4.69% of movies)
+  Mystery                         2,925 (4.69% of movies)
+  Fantasy                         2,731 (4.38% of movies)
+  War                             1,874 (3.00% of movies)
+  Western                         1,399 (2.24% of movies)
+  Musical                         1,054 (1.69% of movies)
+  Film-Noir                         353 (0.56% of movies)
+  IMAX                              195 (0.31% of movies)
+
+Tag statistics
+------------------------------------------------------------------------
+tag records: 1,093,335
+unique users tagging: 14,591
+unique movies tagged: 45,251
+unique tags (case-insensitive): 65,402
+most frequent tags (top 10):
+  sci-fi                         8,795
+  atmospheric                    7,053
+  action                         6,783
+  comedy                         6,368
+  surreal                        5,584
+  funny                          5,354
+  based on a book                5,194
+  twist ending                   4,904
+  visually appealing             4,691
+  romance                        4,482
+
+Final cleaning
+------------------------------------------------------------------------
+total records removed: 25
+  [movies] drop missing movieId or blank title: removed 0
+  [movies] fill missing genres with '(no genres listed)': removed 0
+  [movies] duplicate movieId kept-first removal: removed 0
+  [ratings] drop rows missing required fields: removed 0
+  [ratings] drop out-of-range / off-grid ratings: removed 0
+  [ratings] exact duplicate (user,movie,timestamp) kept-first removal: removed 0
+  [ratings] orphan movieId removal vs. catalog: removed 0
+  [ratings] retain legitimate repeated user-movie re-ratings: removed 0
+  [tags] drop rows missing userId/movieId/tag: removed 16
+  [tags] drop empty-after-trim tags: removed 9
+  [tags] retain missing timestamps as <NA>: removed 0
+  [tags] exact duplicate (user,movie,tag,timestamp) kept-first removal: removed 0
+  [links] drop rows missing movieId: removed 0
+  [links] duplicate movieId kept-first removal: removed 0
+  [links] retain missing external IDs (<NA>): removed 0
+  [links] orphan movieId removal vs. catalog: removed 0
+  [movies_features_base] deterministic normalization (no rows changed): removed 0
+processed files generated:
+  data\processed\movies_clean.csv
+  data\processed\ratings_clean.csv
+  data\processed\tags_clean.csv
+  data\processed\links_clean.csv
+  data\processed\movies_features_base.csv
+
+Final status
+------------------------------------------------------------------------
+STATUS: PASS
+========================================================================
